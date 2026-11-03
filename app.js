@@ -135,7 +135,7 @@ function card(p, i) {
     <div class="thumb" style="background:linear-gradient(135deg,${GRADS[i % GRADS.length]})">${p.e}</div>
     <div>
       <div class="name"><span>${p.n}</span><button class="heart" data-save="${p.id}" aria-label="Save">${saved.has(p.id) ? "❤️" : "🤍"}</button></div>
-      <div class="meta">${dist}${p.area} · ${p.c} · <b>${"$".repeat(p.p)}</b></div>
+      <div class="meta">${dist}${p.area} · ${p.c}${p.p ? ` · <b>${"$".repeat(p.p)}</b>` : ""}</div>
       <div class="status" style="color:var(--${st.cls})"><span class="dot" style="background:var(--${st.cls})"></span>${st.txt}</div>
       <div class="tags">${p.tags.map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
       <div class="acts">
@@ -152,7 +152,7 @@ function render() {
   shown = PLACES.filter(matches);
   if (state.me) shown.sort((a, b) => miles(state.me, a) - miles(state.me, b));
   const list = $("list");
-  list.innerHTML = `<div class="note">🧪 Early version: ${PLACES.length} top Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>
+  list.innerHTML = `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>
     <div class="count"><span>${shown.length} spot${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
     (shown.length ? shown.map(card).join("") : `<div class="empty">No matches. Try fewer vibes.</div>`);
   const c = $("clear"); if (c) c.onclick = clearAll;
