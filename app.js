@@ -131,13 +131,13 @@ function card(p, i) {
   const dist = state.me ? `${miles(state.me, p).toFixed(1)} mi · ` : "";
   const menu = p.web || `https://www.google.com/search?q=${encodeURIComponent(p.n + " " + p.area + " SC menu")}`;
   const dir = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`;
-  return `<article class="card ${state.hl === p.id ? "hl" : ""}" id="c${p.id}" data-id="${p.id}">
+  return `<article class="card ${state.hl === p.id ? "hl" : ""} ${p.f ? "feat" : ""}" id="c${p.id}" data-id="${p.id}">
     <div class="thumb" style="background:linear-gradient(135deg,${GRADS[i % GRADS.length]})">${p.e}</div>
     <div>
       <div class="name"><span>${p.n}</span><button class="heart" data-save="${p.id}" aria-label="Save">${saved.has(p.id) ? "❤️" : "🤍"}</button></div>
       <div class="meta">${dist}${p.area} · ${p.c}${p.p ? ` · <b>${"$".repeat(p.p)}</b>` : ""}</div>
       <div class="status" style="color:var(--${st.cls})"><span class="dot" style="background:var(--${st.cls})"></span>${st.txt}</div>
-      <div class="tags">${p.tags.map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
+      <div class="tags">${p.f ? `<span class="tag feat">⭐ Featured</span>` : ""}${p.tags.map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
       <div class="acts">
         <a href="${menu}" target="_blank" rel="noopener">📖 Menu</a>
         <a href="${dir}" target="_blank" rel="noopener">🧭 Go</a>
@@ -171,12 +171,14 @@ function todoBox() {
 let shown = [];
 function render() {
   shown = PLACES.filter(matches);
+  // Featured spots go first unless the list is sorted by distance.
   if (state.me) shown.sort((a, b) => miles(state.me, a) - miles(state.me, b));
+  else shown.sort((a, b) => (b.f || 0) - (a.f || 0));
   const list = $("list");
   list.innerHTML = `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>
     <div class="count"><span>${shown.length} spot${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
     (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + card(p)).join("") + (shown.length <= 6 ? todoBox() : "") : `<div class="empty">No matches. Try fewer vibes.</div>` + todoBox()) +
-    `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Restaurant listings are never paid.<div class="guides">Guides: <a href="waterfront-restaurants-myrtle-beach/">Waterfront restaurants</a> · <a href="breakfast-myrtle-beach/">Myrtle Beach breakfast</a> · <a href="murrells-inlet-restaurants/">Murrells Inlet &amp; MarshWalk</a> · <a href="north-myrtle-beach-restaurants/">North Myrtle Beach</a> · <a href="surfside-beach-restaurants/">Surfside Beach</a></div></div>`;
+    `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked ⭐ Featured may be paid placements; every other listing is free.<div class="guides">Guides: <a href="waterfront-restaurants-myrtle-beach/">Waterfront restaurants</a> · <a href="breakfast-myrtle-beach/">Myrtle Beach breakfast</a> · <a href="murrells-inlet-restaurants/">Murrells Inlet &amp; MarshWalk</a> · <a href="north-myrtle-beach-restaurants/">North Myrtle Beach</a> · <a href="surfside-beach-restaurants/">Surfside Beach</a></div></div>`;
   const c = $("clear"); if (c) c.onclick = clearAll;
 
   layer.clearLayers();

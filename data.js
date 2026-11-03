@@ -4,13 +4,13 @@
 // tags: water, music, dog, breakfast, date, brewery, family, oceanfront
 window.PLACES = [
   {id:1, n:"Hook and Barrel", lat:33.75076, lon:-78.81331, area:"Myrtle Beach", c:"Seafood · American", e:"🦞", p:3, tags:["date"], h:"Mo-Th 16:00-21:00; Fr,Sa 16:00-21:30; Su off", web:"https://hookandbarrelrestaurant.com/"},
-  {id:2, n:"Wicked Tuna", lat:33.55642, lon:-79.03366, area:"Murrells Inlet", c:"Seafood · Sushi", e:"🐟", p:3, tags:["water","date"], h:"Mo-Su 11:00-22:00"},
+  {id:2, f:1, n:"Wicked Tuna", lat:33.55642, lon:-79.03366, area:"Murrells Inlet", c:"Seafood · Sushi", e:"🐟", p:3, tags:["water","date"], h:"Mo-Su 11:00-22:00"},
   {id:3, n:"River City Cafe", lat:33.55136, lon:-79.04096, area:"Murrells Inlet", c:"Burgers", e:"🍔", p:1, tags:["family"], h:"Mo-Su 11:00-22:00", web:"https://rivercitycafe.com/"},
-  {id:4, n:"Sea Captain's House", lat:33.70834, lon:-78.86046, area:"Myrtle Beach", c:"Southern · Seafood", e:"⚓", p:3, tags:["water","oceanfront","date","breakfast"], h:"Mo-Su 07:00-21:00"},
+  {id:4, f:1, n:"Sea Captain's House", lat:33.70834, lon:-78.86046, area:"Myrtle Beach", c:"Southern · Seafood", e:"⚓", p:3, tags:["water","oceanfront","date","breakfast"], h:"Mo-Su 07:00-21:00"},
   {id:5, n:"Angelo's Steak & Pasta", lat:33.67169, lon:-78.90912, area:"Myrtle Beach", c:"Steak · Italian", e:"🍝", p:2, tags:["family","date"], h:"Mo-Su 15:00-20:30", web:"https://angelosteakandpasta.com/"},
-  {id:6, n:"Big Chill Island House", lat:33.80129, lon:-78.74447, area:"North Myrtle Beach", c:"Seafood · Bar", e:"🌴", p:2, tags:["water","music"], h:"Mo-Th 11:00-21:00; Fr,Sa 11:00-22:00; Su 11:00-21:00", web:"https://www.bigchillislandhouse.com/", tel:"+18434919949"},
-  {id:7, n:"Johnny D's Waffles", lat:33.6215, lon:-78.97275, area:"Surfside Beach", c:"Breakfast · Brunch", e:"🧇", p:1, tags:["breakfast","family"], h:"Mo-Su 07:00-14:00"},
-  {id:8, n:"Tidal Creek Brewhouse", lat:33.6691, lon:-78.93741, area:"Market Common", c:"Brewery · Cafe", e:"🍺", p:2, tags:["dog","brewery","breakfast"], h:"Mo-Th 08:00-22:00; Fr,Sa 08:00-23:00; Su 08:00-22:00", web:"https://www.tidalcreekbrewhouse.com/", tel:"+18438390959"},
+  {id:6, f:1, n:"Big Chill Island House", lat:33.80129, lon:-78.74447, area:"North Myrtle Beach", c:"Seafood · Bar", e:"🌴", p:2, tags:["water","music"], h:"Mo-Th 11:00-21:00; Fr,Sa 11:00-22:00; Su 11:00-21:00", web:"https://www.bigchillislandhouse.com/", tel:"+18434919949"},
+  {id:7, f:1, n:"Johnny D's Waffles", lat:33.6215, lon:-78.97275, area:"Surfside Beach", c:"Breakfast · Brunch", e:"🧇", p:1, tags:["breakfast","family"], h:"Mo-Su 07:00-14:00"},
+  {id:8, f:1, n:"Tidal Creek Brewhouse", lat:33.6691, lon:-78.93741, area:"Market Common", c:"Brewery · Cafe", e:"🍺", p:2, tags:["dog","brewery","breakfast"], h:"Mo-Th 08:00-22:00; Fr,Sa 08:00-23:00; Su 08:00-22:00", web:"https://www.tidalcreekbrewhouse.com/", tel:"+18438390959"},
   {id:9, n:"The Sneaky Beagle", lat:33.75317, lon:-78.86193, area:"Carolina Forest", c:"Pub · American", e:"🐶", p:2, tags:["dog","family"], h:"Su-Th 11:00-21:00; Fr,Sa 11:00-22:30", web:"https://sneakybeaglemyrtlebeach.com/", tel:"+18439037877"},
   {id:10, n:"Pier 14 Restaurant", lat:33.6947, lon:-78.87518, area:"Myrtle Beach", c:"Seafood", e:"🌊", p:2, tags:["water","oceanfront","dog"], h:"Mo-Su 11:30-21:30", web:"https://pier14.com/", tel:"+18434484314"},
   {id:11, n:"Captain Archie's", lat:33.85383, lon:-78.65223, area:"Little River", c:"Seafood · Steak", e:"⛵", p:2, tags:["water","dog"], h:"Mo-Su 11:00-23:30", web:"https://www.captainarchies.com/"},
