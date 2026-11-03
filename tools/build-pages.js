@@ -23,6 +23,15 @@ const PAGES = [
     stay: ["Myrtle Beach", "North Myrtle Beach", "Murrells Inlet", "Garden City"],
   },
   {
+    slug: "seafood-restaurants-myrtle-beach",
+    title: "Best Local Seafood Restaurants in Myrtle Beach & the Grand Strand",
+    h1: "Local seafood restaurants on the Grand Strand",
+    desc: "Local (no chains) seafood restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and nearby, with prices, vibes and directions.",
+    intro: "Fresh shrimp, oysters, flounder and Calabash-style fried platters are what most people come to the Grand Strand to eat. These are the local, non-chain seafood spots on our map, from the Murrells Inlet MarshWalk up to Little River. Waits get long in summer, so go early or call ahead.",
+    match: p => /seafood/i.test(p.c),
+    stay: ["Myrtle Beach", "Murrells Inlet", "North Myrtle Beach"],
+  },
+  {
     slug: "breakfast-myrtle-beach",
     title: "Best Local Breakfast Spots in Myrtle Beach",
     h1: "Local breakfast spots in Myrtle Beach",
