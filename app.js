@@ -147,6 +147,22 @@ function card(p, i) {
   </article>`;
 }
 
+// GetYourGuide affiliate links (partner GFIFJ6X), shown as a "Things to do" box in the list.
+const GYG = q => `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}&partner_id=GFIFJ6X&utm_medium=online_publisher`;
+const TODO = [
+  ["🐬", "Dolphin cruises", "Myrtle Beach dolphin"],
+  ["🌅", "Sunset cruises", "Myrtle Beach sunset cruise"],
+  ["🎭", "Dinner shows", "Myrtle Beach dinner show"],
+  ["🛶", "Kayak & river tours", "Myrtle Beach kayak"],
+  ["🎣", "Fishing trips", "Myrtle Beach fishing"],
+  ["🎟", "All things to do", "Myrtle Beach"],
+];
+function todoBox() {
+  return `<div class="todo"><div class="todo-h">After dinner: things to do on the Grand Strand</div>
+    <div class="todo-links">${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div>
+    <div class="todo-f">Booked through GetYourGuide. Affiliate links.</div></div>`;
+}
+
 let shown = [];
 function render() {
   shown = PLACES.filter(matches);
@@ -154,7 +170,7 @@ function render() {
   const list = $("list");
   list.innerHTML = `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>
     <div class="count"><span>${shown.length} spot${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
-    (shown.length ? shown.map(card).join("") : `<div class="empty">No matches. Try fewer vibes.</div>`) +
+    (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + card(p)).join("") + (shown.length <= 6 ? todoBox() : "") : `<div class="empty">No matches. Try fewer vibes.</div>` + todoBox()) +
     `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Restaurant listings are never paid.</div>`;
   const c = $("clear"); if (c) c.onclick = clearAll;
 
