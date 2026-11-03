@@ -154,7 +154,8 @@ function render() {
   const list = $("list");
   list.innerHTML = `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>
     <div class="count"><span>${shown.length} spot${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
-    (shown.length ? shown.map(card).join("") : `<div class="empty">No matches. Try fewer vibes.</div>`);
+    (shown.length ? shown.map(card).join("") : `<div class="empty">No matches. Try fewer vibes.</div>`) +
+    `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Restaurant listings are never paid.</div>`;
   const c = $("clear"); if (c) c.onclick = clearAll;
 
   layer.clearLayers();
