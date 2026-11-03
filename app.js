@@ -149,6 +149,9 @@ function card(p, i) {
 
 // GetYourGuide affiliate links (partner GFIFJ6X), shown as a "Things to do" box in the list.
 const GYG = q => `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}&partner_id=GFIFJ6X&utm_medium=online_publisher`;
+// Stay22 hotel links (aid grandstrandeats): a Booking.com search for the area.
+const STAY = a => `https://www.stay22.com/allez/booking?link=${encodeURIComponent("https://www.booking.com/searchresults.html?ss=" + a + ", South Carolina")}&aid=grandstrandeats`;
+const STAY_AREAS = ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach", "Murrells Inlet", "Garden City"];
 const TODO = [
   ["🐬", "Dolphin cruises", "Myrtle Beach dolphin"],
   ["🌅", "Sunset cruises", "Myrtle Beach sunset cruise"],
@@ -160,7 +163,9 @@ const TODO = [
 function todoBox() {
   return `<div class="todo"><div class="todo-h">After dinner: things to do on the Grand Strand</div>
     <div class="todo-links">${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div>
-    <div class="todo-f">Booked through GetYourGuide. Affiliate links.</div></div>`;
+    <div class="todo-h" style="margin-top:12px">Where to stay</div>
+    <div class="todo-links">${STAY_AREAS.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 ${a}</a>`).join("")}</div>
+    <div class="todo-f">Tours booked through GetYourGuide, hotels through Stay22. Affiliate links.</div></div>`;
 }
 
 let shown = [];

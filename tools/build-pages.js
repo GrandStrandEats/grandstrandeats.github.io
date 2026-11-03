@@ -20,7 +20,7 @@ const PAGES = [
     desc: "Local (no chains) waterfront and oceanfront restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and Garden City, with prices and links.",
     intro: "Eating with a view of the water is half the fun of a Grand Strand trip. These are the local, non-chain spots on our map that sit on the ocean, the inlet, the marsh or the Intracoastal Waterway. Many are busiest at sunset, so plan ahead on weekends.",
     match: p => p.tags.includes("water") || p.tags.includes("oceanfront"),
-    group: true,
+    stay: ["Myrtle Beach", "North Myrtle Beach", "Murrells Inlet", "Garden City"],
   },
   {
     slug: "breakfast-myrtle-beach",
@@ -29,7 +29,7 @@ const PAGES = [
     desc: "Local breakfast and brunch restaurants in Myrtle Beach, Market Common and nearby, no chains. Prices, websites and directions.",
     intro: "Pancake houses are a Myrtle Beach tradition, but the local diners and cafés are where the regulars go. Here are the independent breakfast spots in and around Myrtle Beach on our map. Morning hours change by season, so check before you go.",
     match: p => p.tags.includes("breakfast") && MB_AREAS.includes(p.area),
-    group: true,
+    stay: ["Myrtle Beach"],
   },
   {
     slug: "murrells-inlet-restaurants",
@@ -38,7 +38,7 @@ const PAGES = [
     desc: "Every local (non-chain) restaurant in Murrells Inlet on our map, including the MarshWalk, with prices, vibes and directions.",
     intro: "Murrells Inlet calls itself the seafood capital of South Carolina, and the MarshWalk boardwalk is lined with restaurants looking out over the marsh. Below is every local spot in Murrells Inlet on our map, MarshWalk places first.",
     match: p => p.area === "Murrells Inlet" || p.area === "MarshWalk",
-    group: true,
+    stay: ["Murrells Inlet", "Garden City"],
   },
   {
     slug: "north-myrtle-beach-restaurants",
@@ -47,7 +47,7 @@ const PAGES = [
     desc: "Local (non-chain) restaurants in North Myrtle Beach, from Cherry Grove to Barefoot Landing, with prices, vibes and directions.",
     intro: "North Myrtle Beach has a slower, more local feel than the main strip. Here is every independent restaurant in North Myrtle Beach on our map, starting with the spots we've checked by hand.",
     match: p => p.area === "North Myrtle Beach",
-    group: true,
+    stay: ["North Myrtle Beach"],
   },
   {
     slug: "surfside-beach-restaurants",
@@ -56,7 +56,7 @@ const PAGES = [
     desc: "Local (non-chain) restaurants in Surfside Beach, SC, the family beach south of Myrtle Beach. Prices, vibes and directions.",
     intro: "Surfside Beach is known as \"The Family Beach,\" and its restaurants match: casual, friendly and close to the sand. Here is every independent restaurant in Surfside Beach on our map.",
     match: p => p.area === "Surfside Beach",
-    group: true,
+    stay: ["Surfside Beach"],
   },
 ];
 
@@ -68,6 +68,8 @@ const TODO = [
   ["🛶", "Kayak & river tours", "Myrtle Beach kayak"],
   ["🎣", "Fishing trips", "Myrtle Beach fishing"],
 ];
+// Stay22 hotel links (aid grandstrandeats): a Booking.com search for the area.
+const STAY = a => `https://www.stay22.com/allez/booking?link=${encodeURIComponent("https://www.booking.com/searchresults.html?ss=" + a + ", South Carolina")}&aid=grandstrandeats`;
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const price = p => p.p ? "$".repeat(p.p) : "";
@@ -146,8 +148,9 @@ ${spots.map(spot).join("\n")}
 </ol>
 <div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the restaurant's website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
 <div class="box"><h2>After dinner: things to do on the Grand Strand</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
+<div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
-<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour or activity through them, we may earn a small commission at no extra cost to you. Restaurant listings are never paid.</footer>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Restaurant listings are never paid.</footer>
 </div>
 </body>
 </html>
