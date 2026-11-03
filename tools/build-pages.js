@@ -12,7 +12,25 @@ const SITE = "https://grandstrandeats.com/";
 const TAG_LABEL = {water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const MB_AREAS = ["Myrtle Beach", "Market Common", "Boardwalk", "Downtown", "Carolina Forest", "Socastee"];
 
+// Thanksgiving 2026: id -> what the restaurant's own website says. Only add a spot once it has posted 2026 plans.
+const THANKSGIVING = {
+  140: "🦃 Open 10:30 AM–9 PM · Thanksgiving dinner $30.95, kids under 10 $15.95 · Regular menu too · Preorder to-go for pickup Nov 26",
+  47: "🦃 Thanksgiving buffet 11 AM–8 PM · $51.99 · All 4 Captain George's locations",
+  28: "🦃 Open 11 AM–8 PM · Thanksgiving dinner $30.95, kids $15.95 · Regular menu too · Preorder to-go",
+  518: "🦃 Open Thanksgiving (call for hours: 843-215-5255) · Thanksgiving dinner $30.95, kids $15.95 · Regular menu too · Preorder to-go",
+};
+
 const PAGES = [
+  {
+    slug: "restaurants-open-thanksgiving-myrtle-beach",
+    title: "Restaurants Open on Thanksgiving 2026 in Myrtle Beach",
+    h1: "Restaurants open on Thanksgiving 2026 in Myrtle Beach",
+    desc: "Local Myrtle Beach and Grand Strand restaurants open on Thanksgiving Day, Thursday, November 26, 2026, with holiday hours, prices and to-go options.",
+    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 3, 2026.",
+    notes: THANKSGIVING,
+    match: p => p.id in THANKSGIVING,
+    stay: ["Myrtle Beach", "Murrells Inlet", "Surfside Beach"],
+  },
   {
     slug: "waterfront-restaurants-myrtle-beach",
     title: "Waterfront Restaurants in Myrtle Beach & the Grand Strand",
@@ -86,11 +104,11 @@ const price = p => p.p ? "$".repeat(p.p) : "";
 // Hand-checked spots (ids 1-124) first, then A-Z.
 const sortSpots = list => list.slice().sort((a, b) => ((a.id > 124) - (b.id > 124)) || a.n.localeCompare(b.n));
 
-function spot(p) {
+function spot(p, note) {
   const dir = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n + ", " + p.area + ", SC")}`;
   const meta = [p.area, p.c.replace(/ · /g, ", "), price(p)].filter(Boolean).join(" · ");
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("");
-  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
+  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
 }
 
 function page(cfg, spots) {
@@ -133,6 +151,7 @@ ol{list-style:none;padding:0;margin:0}
 .em{font-size:30px;text-align:center}
 h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .meta{font-size:13.5px;color:var(--muted)}
+.hol{font-size:13.5px;font-weight:600;margin:5px 0 2px}
 .tags{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0 2px}
 .tag{font-size:11.5px;font-weight:700;background:var(--chip);border-radius:8px;padding:3px 7px}
 .acts{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
@@ -153,7 +172,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 <a class="cta" href="../">🗺 See them on the map</a>
 <div class="count">${spots.length} local spots · no chains</div>
 <ol>
-${spots.map(spot).join("\n")}
+${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 </ol>
 <div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the restaurant's website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
 <div class="box"><h2>After dinner: things to do on the Grand Strand</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
