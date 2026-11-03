@@ -601,4 +601,5 @@ window.PLACES = [
   {id:613, n:"The Venue Club  Restaurant at International Club", lat:33.59856, lon:-79.04208, area:"Murrells Inlet", c:"Pizza · Burgers", e:"🍕", p:1, tags:["family"], h:null, web:"https://internationalclubgolf.com/the-venue/"},
   {id:614, n:"Island Cafe", lat:33.71492, lon:-78.89913, area:"Myrtle Beach", c:"Quick bite", e:"🍟", p:1, tags:[], h:null},
   {id:615, f:1, n:"Outriggers Bar & Grill", lat:33.56254, lon:-79.08586, area:"Murrells Inlet", c:"Seafood · Bar", e:"⛵", p:2, tags:["water","family","music"], h:"Su-Th 11:00-20:30; Fr,Sa 11:00-21:00", tel:"+18436512994"},
+  {id:616, n:"Tidewater Grill & Bistro", lat:33.84981, lon:-78.65481, area:"North Myrtle Beach", c:"Seafood · Steaks", e:"🦞", p:2, tags:[], h:"Mo-Su 11:00-21:00", web:"https://tidewatergrillandbistro.com/", tel:"+18436635639"}
 ];
