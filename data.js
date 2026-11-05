@@ -607,5 +607,11 @@ window.PLACES = [
   {id:620, n:"Big Fish", lat:33.71627, lon:-78.88076, area:"Myrtle Beach", c:"Seafood", e:"🐟", p:2, tags:["water","family"], h:null},
   {id:621, n:"Local Eat Drink Celebrate", lat:33.44326, lon:-79.12379, area:"Pawleys Island", c:"Southern · Wine", e:"🐢", p:3, tags:["date"], h:null, tel:"+18433140474"},
   {id:622, n:"Fire To Table", lat:33.57475, lon:-79.02552, area:"Murrells Inlet", c:"BBQ · Grill", e:"🔥", p:2, tags:["music","family"], h:null, tel:"+18433571515"},
-  {id:623, n:"Winna's Kitchen", lat:33.69393, lon:-78.88241, area:"Myrtle Beach", c:"Brunch · Bakery", e:"🥐", p:2, tags:["breakfast"], h:"Mo-Sa 08:00-15:00", web:"https://winnaskitchen.com/", tel:"+18438488181"}
+  {id:623, n:"Winna's Kitchen", lat:33.69393, lon:-78.88241, area:"Myrtle Beach", c:"Brunch · Bakery", e:"🥐", p:2, tags:["breakfast"], h:"Mo-Sa 08:00-15:00", web:"https://winnaskitchen.com/", tel:"+18438488181"},
+  {id:624, n:"The Library", lat:33.73927, lon:-78.82812, area:"Myrtle Beach", c:"Fine dining · Continental", e:"📚", p:3, tags:["date"], h:"Tu-Sa 17:00-22:00", tel:"+18434484527"},
+  {id:625, n:"Drifters Saloon", lat:33.70926, lon:-78.86397, area:"Myrtle Beach", c:"Bar & grill · Burgers", e:"🍔", p:1, tags:[], h:null, tel:"+18436264464"},
+  {id:626, n:"Pawleys Tap House & Grill", lat:33.47170, lon:-79.10511, area:"Pawleys Island", c:"Craft beer · Grill", e:"🍺", p:2, tags:["brewery"], h:null, tel:"+18439791010"},
+  {id:627, n:"Filet's", lat:33.85109, lon:-78.65526, area:"North Myrtle Beach", c:"Steak · Seafood · Sushi", e:"🥩", p:3, tags:["water","date"], h:null, web:"https://filetswaterfront.com/", tel:"+18432805200"},
+  {id:628, n:"42nd Street Bar and Grill", lat:33.71836, lon:-78.85308, area:"Myrtle Beach", c:"American · Steak · Seafood", e:"🍽️", p:2, tags:[], h:null, tel:"+18439459310"},
+  {id:629, n:"Horst Gasthaus", lat:33.80201, lon:-78.72533, area:"North Myrtle Beach", c:"German", e:"🥨", p:2, tags:[], h:null, tel:"+18432723351"}
 ];
