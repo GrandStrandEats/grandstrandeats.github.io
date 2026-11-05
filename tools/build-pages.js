@@ -72,6 +72,36 @@ const PAGES = [
     h1: "Local seafood restaurants on the Grand Strand",
     desc: "Local (no chains) seafood restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and nearby, with prices, vibes and directions.",
     intro: "Fresh shrimp, oysters, flounder and Calabash-style fried platters are what most people come to the Grand Strand to eat. These are the local, non-chain seafood spots on our map, from the Murrells Inlet MarshWalk up to Little River. Waits get long in summer, so go early or call ahead.",
+    guide: [
+      {h: "What to order: Grand Strand seafood classics", p: [
+        "<strong>Calabash-style seafood.</strong> Shrimp, flounder, oysters and scallops in a light, thin breading, fried fast and served in big platters with hushpuppies and slaw. The style is named for Calabash, North Carolina, a fishing town just over the state line from Little River, and you'll see \"Calabash\" on menus all up and down the coast.",
+        "<strong>Shrimp and grits.</strong> A Lowcountry staple. Every kitchen does it a little differently, usually with a gravy of sausage or bacon, peppers and onions over creamy stone-ground grits.",
+        "<strong>She-crab soup.</strong> A rich, creamy crab soup from the South Carolina coast, traditionally finished with a splash of sherry. Most local seafood spots have their own version.",
+        "<strong>Lowcountry boil.</strong> Also called Frogmore stew: shrimp, smoked sausage, corn on the cob and red potatoes boiled together with seasoning. It's a great order for a group.",
+        "<strong>Fresh catch.</strong> Many places list a fish of the day, often grouper, flounder, mahi-mahi, tuna or wahoo, grilled, blackened or fried. Ask your server what came in locally that day.",
+      ]},
+      {h: "Buffet, sit-down or raw bar?", p: [
+        "<strong>Seafood buffets</strong> are a Myrtle Beach tradition, with crab legs, fried and steamed seafood, and a long dessert table. Captain George's, The Giant Crab and Crabby Mike's Calabash Seafood are local, family-run options. They're a good deal for big eaters and groups with kids, but they cost more per person than a single platter, so they're not the best pick for a light appetite.",
+        "<strong>Sit-down seafood restaurants</strong> are where you'll find the fresh catch, shrimp and grits and she-crab soup done well. The Murrells Inlet waterfront is the best-known stretch for this, and Wicked Tuna, Drunken Jack's and The Claw House are all there. In Myrtle Beach, Sea Captain's House and Hook and Barrel are popular for a nicer dinner.",
+        "<strong>Raw bars and crab houses</strong> are the most casual of the three: oysters on the half shell, steamed shrimp by the pound, crab legs and cold beer. Rockefellers Raw Bar in North Myrtle Beach and Inlet Crab House & Raw Bar in Murrells Inlet are on our map.",
+      ]},
+      {h: "What's in season", p: [
+        "South Carolina's wild shrimp are caught from late spring through early winter, and local white shrimp are at their best in late summer and fall. Wild oyster season on the South Carolina coast usually runs from fall through spring, and oyster roasts are a cool-weather tradition. Offshore fish like mahi-mahi, tuna and wahoo are most common on menus in late spring and summer.",
+        "Not everything on a beach menu is local, especially in the busy summer months. If that matters to you, ask what's local today. Good seafood spots are happy to tell you.",
+      ]},
+    ],
+    tips: [
+      "\"MP\" on a menu means market price, which changes with the catch. Ask before you order if you're on a budget.",
+      "In summer, eat early. Many seafood spots don't take reservations, and 6 to 8 PM waits can be long.",
+      "Hushpuppies come free with most platters, and refills are often free too. Just ask.",
+      "Order fried seafood \"Calabash style\" if you want it lightly breaded instead of heavy batter.",
+      "Buffets usually charge less for kids, often by age or height. Check the price board before you sit down.",
+    ],
+    faq: [
+      ["What is Calabash-style seafood?", "It's seafood, usually shrimp, flounder, oysters or scallops, in a thin, light breading, quickly fried and served in big platters with hushpuppies and slaw. It's named after Calabash, North Carolina, just north of Little River."],
+      ["Where is the best seafood near Myrtle Beach?", "Murrells Inlet, about 25 minutes south, is the area best known for seafood, with many restaurants along the inlet and the MarshWalk. Myrtle Beach and North Myrtle Beach also have plenty of local seafood spots, from buffets to raw bars."],
+      ["Are Myrtle Beach seafood buffets worth it?", "They can be for big eaters and families, since you get crab legs, fried and steamed seafood and desserts in one price. For a lighter meal or the freshest local fish, a sit-down seafood restaurant is usually the better choice."],
+    ],
     match: p => /seafood/i.test(p.c),
     stay: ["Myrtle Beach", "Murrells Inlet", "North Myrtle Beach"],
   },
