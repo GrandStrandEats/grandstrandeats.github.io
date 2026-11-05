@@ -85,6 +85,89 @@ const PAGES = [
     match: p => p.area === "Surfside Beach",
     stay: ["Surfside Beach"],
   },
+  {
+    slug: "romantic-restaurants-myrtle-beach",
+    title: "Romantic Restaurants in Myrtle Beach: Local Date Night Spots",
+    h1: "Romantic date night restaurants on the Grand Strand",
+    desc: "Local (no chains) romantic restaurants for date night or an anniversary in Myrtle Beach, Murrells Inlet, Pawleys Island and North Myrtle Beach.",
+    intro: "Planning an anniversary, a proposal or just a night out without the kids? These are the local spots on our map that we've marked as good for date night: quieter rooms, water views, good wine lists and food worth dressing up for. Most of them take reservations, and the best tables go first on summer weekends.",
+    tips: [
+      "Book ahead for Friday and Saturday nights from Memorial Day through Labor Day. Off-season weeknights are much easier.",
+      "Ask for a window or patio table when you book if you want a water view. Those go first.",
+      "Check sunset time before you go. Inlet and marsh views are at their best in the half hour before dark.",
+      "Several of these are on the Murrells Inlet MarshWalk, where you can walk the boardwalk after dinner.",
+    ],
+    match: p => p.tags.includes("date"),
+    stay: ["Myrtle Beach", "Murrells Inlet", "Pawleys Island"],
+  },
+  {
+    slug: "italian-restaurants-myrtle-beach",
+    title: "Local Italian Restaurants in Myrtle Beach & the Grand Strand",
+    h1: "Local Italian restaurants on the Grand Strand",
+    desc: "Independent Italian restaurants in Myrtle Beach, North Myrtle Beach, Murrells Inlet and nearby, from family red-sauce spots to date night. No chains.",
+    intro: "When you've had your fill of fried seafood, a plate of pasta hits the spot. These are the independent Italian restaurants on our map, from casual family places with big portions to quieter rooms for a night out. Spots we've checked by hand are listed first.",
+    tips: [
+      "Many local Italian places do a lot of takeout. Ordering ahead is a good way to skip the summer wait.",
+      "Family-style platters can feed a whole group for less than ordering one plate each.",
+      "Some smaller spots close one or two days a week, often Sunday or Monday, especially in the off-season. Check hours before you go.",
+    ],
+    match: p => /italian/i.test(p.c),
+    stay: ["Myrtle Beach", "North Myrtle Beach"],
+  },
+  {
+    slug: "market-common-restaurants",
+    title: "Market Common Restaurants in Myrtle Beach: Local Spots",
+    h1: "Market Common restaurants",
+    desc: "Local restaurants at The Market Common in Myrtle Beach, the walkable shopping and dining district near the airport and Grand Park. No chains.",
+    intro: "The Market Common is a walkable shopping and dining district in south Myrtle Beach, built on the former Myrtle Beach Air Force Base. It's a good pick when you want dinner, a stroll and some shopping in one stop, away from the busy oceanfront. Here are the local restaurants there on our map.",
+    tips: [
+      "Parking is free in the lots and garages around the district.",
+      "Grand Park, right next door, has a lake with a walking path. It's an easy after-dinner walk.",
+      "It's a short drive from Myrtle Beach International Airport, so it works well for a first or last meal of a trip.",
+    ],
+    match: p => p.area === "Market Common",
+    stay: ["Myrtle Beach"],
+  },
+  {
+    slug: "garden-city-restaurants",
+    title: "Garden City Beach Restaurants: Local Spots, No Chains",
+    h1: "Garden City Beach restaurants",
+    desc: "Local (non-chain) restaurants in Garden City Beach, SC, between Surfside Beach and Murrells Inlet, with prices, vibes and directions.",
+    intro: "Garden City Beach sits between Surfside Beach and Murrells Inlet, with the Garden City Pier at its center and the inlet on its back side. It's casual and laid back, with plenty of spots to grab a meal in flip-flops. Here is every local restaurant in Garden City on our map.",
+    tips: [
+      "Murrells Inlet and the MarshWalk are only a few minutes away if you want more seafood choices.",
+      "Some beach spots keep shorter hours or close for part of the winter, so check before you drive over in the off-season.",
+    ],
+    match: p => p.area === "Garden City",
+    stay: ["Garden City", "Murrells Inlet"],
+  },
+  {
+    slug: "pawleys-island-restaurants",
+    title: "Pawleys Island & Litchfield Restaurants: Local Spots",
+    h1: "Pawleys Island and Litchfield restaurants",
+    desc: "Local restaurants in Pawleys Island and Litchfield Beach, SC, at the quiet south end of the Grand Strand. No chains.",
+    intro: "Pawleys Island and Litchfield Beach are the quiet south end of the Grand Strand. Pawleys likes to call itself \"arrogantly shabby,\" and the restaurants fit: relaxed, local and unfussy, with some special-occasion spots mixed in. Here is every local restaurant in Pawleys Island and Litchfield on our map.",
+    tips: [
+      "Most of the restaurants are along Highway 17, not on the island itself.",
+      "It's about 30 minutes south of Myrtle Beach, and an easy day trip from Murrells Inlet.",
+      "Historic Georgetown is about 15 minutes farther south if you want to make a day of it.",
+    ],
+    match: p => p.area === "Pawleys Island" || p.area === "Litchfield Beach",
+    stay: ["Pawleys Island"],
+  },
+  {
+    slug: "conway-sc-restaurants",
+    title: "Conway SC Restaurants: Local Spots Near Myrtle Beach",
+    h1: "Conway, SC restaurants",
+    desc: "Local (non-chain) restaurants in Conway, South Carolina, including historic downtown near the Riverwalk, about 20 minutes from Myrtle Beach.",
+    intro: "Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River. Its historic downtown and Riverwalk make a nice break from the beach crowds, and it's home to Coastal Carolina University. Here is every local restaurant in Conway on our map.",
+    tips: [
+      "Downtown Conway is small and walkable. Park once and walk to dinner and the Riverwalk.",
+      "Coastal Carolina home games and graduation weekends get busy, so plan ahead on those dates.",
+    ],
+    match: p => p.area === "Conway",
+    stay: ["Conway"],
+  },
 ];
 
 const GYG = q => `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}&partner_id=GFIFJ6X&utm_medium=online_publisher`;
@@ -161,6 +244,7 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .box div{display:flex;flex-wrap:wrap;gap:6px}
 .box p{font-size:11.5px;color:var(--muted);margin:8px 0 0}
 .note{font-size:12.5px;color:var(--muted);background:var(--chip);border-radius:12px;padding:10px 12px;margin:18px 0}
+.tips ul{margin:0;padding-left:20px}.tips li{font-size:14.5px;margin:5px 0}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
 </style>
 </head>
@@ -174,6 +258,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 <ol>
 ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 </ol>
+${cfg.tips ? `<div class="box tips"><h2>Local tips</h2><ul>${cfg.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
 <div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the restaurant's website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
 <div class="box"><h2>After dinner: things to do on the Grand Strand</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
