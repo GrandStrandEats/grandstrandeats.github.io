@@ -37,6 +37,32 @@ const PAGES = [
     h1: "Waterfront restaurants on the Grand Strand",
     desc: "Local (no chains) waterfront and oceanfront restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and Garden City, with prices and links.",
     intro: "Eating with a view of the water is half the fun of a Grand Strand trip. These are the local, non-chain spots on our map that sit on the ocean, the inlet, the marsh or the Intracoastal Waterway. Many are busiest at sunset, so plan ahead on weekends.",
+    guide: [
+      {h: "Pick your kind of water view", p: [
+        "\"Waterfront\" means four pretty different things on the Grand Strand, and each one suits a different kind of night out.",
+        "<strong>The ocean.</strong> Along the Myrtle Beach oceanfront you'll find beach bars and grills right on the sand, rooftop decks, and spots by the Boardwalk and the piers. Expect a breeze, a lively crowd and casual food like burgers, fish tacos and fried shrimp. Sea Captain's House and Pier 14 are good picks when you want a real sit-down meal with the ocean in view.",
+        "<strong>The Murrells Inlet MarshWalk.</strong> A boardwalk along the salt marsh, lined with restaurants and bars with open decks. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack are all on it. Many have live music on summer evenings, and it's easy to walk the boardwalk between dinner and a drink. More inlet favorites, like Wicked Tuna, Capt. Dave's Dockside and The Claw House, sit just off the MarshWalk on the same water.",
+        "<strong>The Intracoastal Waterway.</strong> A calmer view of boats and marsh, away from the beach crowds. In North Myrtle Beach, Barefoot Landing has several restaurants on the waterway, and Boathouse Waterway Bar & Grill has a big outdoor deck on the water.",
+        "<strong>Little River and Garden City.</strong> At the north end, Little River is an old fishing village with seafood spots like Captain Archie's on the waterfront. At the south end, Gulfstream Cafe in Garden City looks out over the inlet and is a favorite for a dressier dinner at sunset.",
+      ]},
+      {h: "When to go", p: [
+        "Sunset is the busiest time at almost every place on this list. From late May through Labor Day, a 45-minute or longer wait at prime time is normal at the popular inlet and oceanfront spots. Eating at 4:30 or 5 PM, or after 8, makes a big difference.",
+        "Spring and fall are the best seasons for eating outside: warm days, cooler evenings, fewer bugs and shorter waits. In winter some decks close, and a few spots cut back their hours or close one or two days a week, so check before you drive over.",
+        "Summer afternoon thunderstorms are common. Most places will move you inside, but outdoor-only bars may close their decks until the storm passes.",
+      ]},
+    ],
+    tips: [
+      "Ask for a deck or window table when you put your name in. Those go first, and many places won't hold them.",
+      "Bring bug spray for marsh-side tables around dusk, especially on the MarshWalk and the Intracoastal.",
+      "Want the view without the wait? Go for lunch or an early happy hour instead of dinner.",
+      "Some waterfront patios welcome dogs. Look for the dog-friendly tag below, and call to check, since rules can change by season.",
+      "Parking near the MarshWalk and the Myrtle Beach oceanfront fills up on summer evenings. Arrive early or plan to walk a few blocks.",
+    ],
+    faq: [
+      ["Where can I eat on the water in Myrtle Beach?", "For ocean views, try the beach bars and grills along the Myrtle Beach oceanfront and Boardwalk, or Sea Captain's House and Pier 14 for a sit-down meal. For marsh views and live music, head to the Murrells Inlet MarshWalk, about 25 minutes south. For a calmer view of the Intracoastal Waterway, try Barefoot Landing in North Myrtle Beach."],
+      ["What is the Murrells Inlet MarshWalk?", "It's a boardwalk along the salt marsh in Murrells Inlet, lined with seafood restaurants and bars with outdoor decks. Many have live music in the evenings, and you can walk the boardwalk between spots."],
+      ["What's the best time to get a waterfront table?", "Go before 5 PM or after 8 PM, especially from late May through Labor Day. Sunset is the busiest time everywhere on the water."],
+    ],
     match: p => p.tags.includes("water") || p.tags.includes("oceanfront"),
     stay: ["Myrtle Beach", "North Myrtle Beach", "Murrells Inlet", "Garden City"],
   },
@@ -215,6 +241,7 @@ function page(cfg, spots) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
+${cfg.faq ? `<script type="application/ld+json">${JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", mainEntity: cfg.faq.map(([q, a]) => ({"@type": "Question", name: q, acceptedAnswer: {"@type": "Answer", text: a}}))})}</script>` : ""}
 <style>
 :root{--bg:#f6f3ee;--surface:#fff;--ink:#14212b;--muted:#5d6b75;--line:#e6e0d6;--brand:#0e7c86;--brand-ink:#fff;--sun:#ff8a3d;--chip:#eef2f2}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f161b;--surface:#172229;--ink:#ecf2f4;--muted:#9aa9b2;--line:#24333c;--brand:#2cc0c9;--brand-ink:#06252a;--chip:#1f2d35}}
@@ -244,6 +271,7 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .box div{display:flex;flex-wrap:wrap;gap:6px}
 .box p{font-size:11.5px;color:var(--muted);margin:8px 0 0}
 .note{font-size:12.5px;color:var(--muted);background:var(--chip);border-radius:12px;padding:10px 12px;margin:18px 0}
+.guide{margin:26px 0}.guide h2{font-size:21px;letter-spacing:-.02em;margin:0 0 8px}.guide p{font-size:15.5px;margin:0 0 12px}.faq h3{font-size:16px;margin:14px 0 4px}
 .tips ul{margin:0;padding-left:20px}.tips li{font-size:14.5px;margin:5px 0}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
 </style>
@@ -258,7 +286,9 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 <ol>
 ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 </ol>
+${cfg.guide ? cfg.guide.map(s => `<section class="guide"><h2>${esc(s.h)}</h2>${s.p.map(t => `<p>${t}</p>`).join("")}</section>`).join("\n") : ""}
 ${cfg.tips ? `<div class="box tips"><h2>Local tips</h2><ul>${cfg.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
+${cfg.faq ? `<section class="guide faq"><h2>Common questions</h2>${cfg.faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>` : ""}
 <div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the restaurant's website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
 <div class="box"><h2>After dinner: things to do on the Grand Strand</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
