@@ -47,7 +47,7 @@ window.PLACES = [
   {id:43, n:"Painter's Homemade Ice Cream", lat:33.59497, lon:-78.99966, area:"Surfside Beach", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-21:30"},
   {id:44, n:"Mr. Fish", lat:33.73941, lon:-78.8285, area:"Myrtle Beach", c:"Seafood", e:"🐠", p:2, tags:["family"], h:"Mo-Th 10:00-19:00; Fr,Sa 10:00-20:00; Su 10:00-19:00"},
   {id:45, n:"Sharkey's", lat:33.68889, lon:-78.88255, area:"Myrtle Beach", c:"Seafood · Bar", e:"🦈", p:2, tags:[], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-22:00", web:"https://sharkeysclub.com/"},
-  {id:46, n:"Flamingo Grill", lat:33.74253, lon:-78.82333, area:"Myrtle Beach", c:"Steak · Seafood", e:"🦩", p:3, tags:["date"], h:"Mo-Su 16:15-21:00"},
+  {id:46, n:"Flamingo Grill", lat:33.74253, lon:-78.82333, area:"Myrtle Beach", c:"Steak · Seafood", e:"🦩", p:3, tags:["date"], h:"Mo-Su 16:15-21:00", web:"https://flamingogrill.com/"},
   {id:47, n:"Captain George's Seafood Restaurant", lat:33.72085, lon:-78.88247, area:"Myrtle Beach", c:"Seafood buffet", e:"🦐", p:3, tags:["family"], h:"Mo-Fr 15:30-20:30; Sa 14:00-21:00; Su 12:00-20:30", web:"https://captaingeorges.com"},
   {id:48, n:"Donald's Pancake House", lat:33.70647, lon:-78.86648, area:"Myrtle Beach", c:"Breakfast", e:"🥞", p:1, tags:["breakfast","family"], h:"Mo-Su 07:00-14:00", web:"http://donaldspancakehouse.com", tel:"+18436265941"},
   {id:49, n:"Pan American Pancake & Omelette House", lat:33.67683, lon:-78.90183, area:"Myrtle Beach", c:"Breakfast", e:"🥞", p:1, tags:["breakfast","family"], h:"Mo-Su 06:00-13:30", web:"https://panamericanpancake.com/"},
