@@ -111,6 +111,30 @@ const PAGES = [
     h1: "Local breakfast spots in Myrtle Beach",
     desc: "Local breakfast and brunch restaurants in Myrtle Beach, Market Common and nearby, no chains. Prices, websites and directions.",
     intro: "Pancake houses are a Myrtle Beach tradition, but the local diners and cafés are where the regulars go. Here are the independent breakfast spots in and around Myrtle Beach on our map. Morning hours change by season, so check before you go.",
+    guide: [
+      {h: "The Myrtle Beach pancake house tradition", p: [
+        "Drive down Kings Highway and you'll pass one pancake house after another. Myrtle Beach has had a big breakfast culture since the early days of beach vacations, when families wanted a full meal before a long day on the sand. Some of the local pancake houses have been family-run for decades.",
+        "A classic pancake house breakfast means big stacks of buttermilk pancakes, Belgian waffles, omelettes, bacon and sausage, and bottomless coffee, at prices that are easy on a family budget. Donald's Pancake House and Pan American Pancake & Omelette House are two long-running local spots on our map, and Pan American opens early for people heading out to fish or golf.",
+      ]},
+      {h: "Southern breakfast and brunch", p: [
+        "For something more Southern, look for biscuits and gravy, a side of grits, country ham, and shrimp and grits on brunch menus. Blueberry's Grill is a popular local breakfast and lunch spot, and Mimosa Restaurant is a good pick when you want brunch with a mimosa to match the name.",
+        "Want breakfast with an ocean view? Sea Captain's House serves breakfast in its oceanfront dining room, and it's one of the few places where you can watch the waves over a plate of eggs.",
+      ]},
+      {h: "Coffee shops for a lighter start", p: [
+        "Not a big-breakfast person? The local coffee shops on our map, like Grand Strand Coffee and HiFi Coffeebar, are good for a latte and a pastry before the beach. Check their hours before you go, since some open later in the morning.",
+      ]},
+    ],
+    tips: [
+      "Go before 8 AM or after 10:30 AM in summer. The busiest time at pancake houses is 8:30 to 10 on weekends.",
+      "Most breakfast spots close by early afternoon, often around 1:30 or 2 PM, so this isn't a late-brunch town.",
+      "Big groups should arrive early or split up. Large tables are the hardest to get during the summer rush.",
+      "Hours change in the off-season. Several spots close one day a week in winter, so check before you drive over.",
+    ],
+    faq: [
+      ["Why are there so many pancake houses in Myrtle Beach?", "Breakfast has been a big part of a Myrtle Beach vacation for generations. Families wanted a filling, affordable meal before a day at the beach, and many local, family-run pancake houses opened along Kings Highway to serve them."],
+      ["What time do breakfast places open in Myrtle Beach?", "Most open between 6 and 7:30 AM and close in the early afternoon, around 1:30 to 2:30 PM. Coffee shops often open a little later and stay open longer."],
+      ["Where can I eat breakfast on the ocean in Myrtle Beach?", "Sea Captain's House serves breakfast in its oceanfront dining room. It's popular, so arrive early in summer."],
+    ],
     match: p => p.tags.includes("breakfast") && MB_AREAS.includes(p.area),
     stay: ["Myrtle Beach"],
   },
