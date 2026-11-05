@@ -399,9 +399,33 @@ const PAGES = [
     h1: "Conway, SC restaurants",
     desc: "Local (non-chain) restaurants in Conway, South Carolina, including historic downtown near the Riverwalk, about 20 minutes from Myrtle Beach.",
     intro: "Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River. Its historic downtown and Riverwalk make a nice break from the beach crowds, and it's home to Coastal Carolina University. Here is every local restaurant in Conway on our map.",
+    guide: [
+      {h: "What Conway is like", p: [
+        "Conway is an old river town and the county seat of Horry County, about 20 minutes inland from Myrtle Beach. Big live oaks shade the streets, and the historic downtown sits right by the Waccamaw River.",
+        "Downtown restaurants are mostly local: cafés, Southern cooking, bars, pizza and a few nicer dinner spots, many of them in older storefronts. Out along Highway 501 and near Coastal Carolina University you'll find more casual places and student favorites.",
+      ]},
+      {h: "Why eat in Conway", p: [
+        "If you're staying at the beach, Conway makes a nice half-day trip. You trade the tourist crowds for a small Southern downtown where the people at the next table are more likely to be locals than visitors.",
+        "Because Conway doesn't depend on summer visitors, its restaurants don't swing as much with the seasons as the beach spots do. It's a good choice in the off-season, when some beach restaurants cut back.",
+        "Pair your meal with a walk on the <strong>Conway Riverwalk</strong>, a boardwalk along the Waccamaw River through cypress trees and river marsh. It's free, shaded and close to downtown.",
+      ]},
+      {h: "Planning your visit", p: [
+        "Conway is about 20 to 25 minutes from Myrtle Beach on Highway 501. On summer Saturdays, traffic on 501 mostly backs up heading toward the beach, so driving inland in the afternoon is usually easy.",
+        "Some downtown spots keep shorter hours, and a few close on Sundays or Mondays. Check hours before you drive in.",
+        "Coastal Carolina University home football games and graduation weekends bring big crowds, so plan ahead on those dates.",
+      ]},
+    ],
     tips: [
       "Downtown Conway is small and walkable. Park once and walk to dinner and the Riverwalk.",
       "Coastal Carolina home games and graduation weekends get busy, so plan ahead on those dates.",
+      "The Riverwalk is free and shaded. It's a good walk before or after a meal.",
+      "Some downtown spots close early or take a day off on Sunday or Monday. Check hours first.",
+      "Heading in from the beach? Go inland in the afternoon and drive back after dinner to miss the worst traffic.",
+    ],
+    faq: [
+      ["How far is Conway from Myrtle Beach?", "About 20 to 25 minutes by car on Highway 501, depending on where you start and on traffic."],
+      ["Is downtown Conway worth visiting?", "Yes, if you want a break from the beach. It's a small, walkable historic downtown with local restaurants, shops and the Riverwalk along the Waccamaw River."],
+      ["What is the Conway Riverwalk?", "It's a boardwalk along the Waccamaw River near downtown Conway, with views of cypress trees and river marsh. It's free and makes an easy walk before or after a meal."],
     ],
     match: p => p.area === "Conway",
     stay: ["Conway"],
