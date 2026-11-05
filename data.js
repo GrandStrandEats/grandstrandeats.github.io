@@ -618,5 +618,6 @@ window.PLACES = [
   {id:633, n:"Bistro 217", lat:33.44128, lon:-79.12530, area:"Pawleys Island", c:"American · Asian fusion", e:"🍷", p:3, tags:["date"], h:null, web:"https://www.bistro217.com/", tel:"+18432358217"},
   {id:634, n:"Rosie's Pizzeria", lat:33.43654, lon:-79.13150, area:"Pawleys Island", c:"Pizza · Italian", e:"🍕", p:1, tags:["family"], h:null, tel:"+18433143730"},
   {id:635, n:"Carolina Seafood & Steak", lat:33.77256, lon:-78.80040, area:"Myrtle Beach", c:"Seafood · Steak", e:"🦞", p:2, tags:["family"], h:null, tel:"+18439459288"},
-  {id:636, n:"OD Arcade & Lounge", lat:33.81841, lon:-78.67359, area:"North Myrtle Beach", c:"Bar & grill", e:"🍔", p:1, tags:["music"], h:null, tel:"+18432496460"}
+  {id:636, n:"OD Arcade & Lounge", lat:33.81841, lon:-78.67359, area:"North Myrtle Beach", c:"Bar & grill", e:"🍔", p:1, tags:["music"], h:null, tel:"+18432496460"},
+  {id:637, n:"44 & King", lat:33.71964, lon:-78.85206, area:"Myrtle Beach", c:"Southern · Pub", e:"👑", p:2, tags:["music"], h:null, web:"https://44andking.com/", tel:"+18436265464"}
 ];
