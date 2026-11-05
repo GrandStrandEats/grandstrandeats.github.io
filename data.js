@@ -47,7 +47,7 @@ window.PLACES = [
   {id:43, n:"Painter's Homemade Ice Cream", lat:33.59497, lon:-78.99966, area:"Surfside Beach", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-21:30"},
   {id:44, n:"Mr. Fish", lat:33.73941, lon:-78.8285, area:"Myrtle Beach", c:"Seafood", e:"🐠", p:2, tags:["family"], h:"Mo-Th 10:00-19:00; Fr,Sa 10:00-20:00; Su 10:00-19:00"},
   {id:45, n:"Sharkey's", lat:33.68889, lon:-78.88255, area:"Myrtle Beach", c:"Seafood · Bar", e:"🦈", p:2, tags:[], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-22:00", web:"https://sharkeysclub.com/"},
-  {id:46, n:"Flamingo's", lat:33.74253, lon:-78.82333, area:"Myrtle Beach", c:"Steak · Seafood", e:"🦩", p:3, tags:["date"], h:"Mo-Su 16:15-21:00"},
+  {id:46, n:"Flamingo Grill", lat:33.74253, lon:-78.82333, area:"Myrtle Beach", c:"Steak · Seafood", e:"🦩", p:3, tags:["date"], h:"Mo-Su 16:15-21:00"},
   {id:47, n:"Captain George's Seafood Restaurant", lat:33.72085, lon:-78.88247, area:"Myrtle Beach", c:"Seafood buffet", e:"🦐", p:3, tags:["family"], h:"Mo-Fr 15:30-20:30; Sa 14:00-21:00; Su 12:00-20:30", web:"https://captaingeorges.com"},
   {id:48, n:"Donald's Pancake House", lat:33.70647, lon:-78.86648, area:"Myrtle Beach", c:"Breakfast", e:"🥞", p:1, tags:["breakfast","family"], h:"Mo-Su 07:00-14:00", web:"http://donaldspancakehouse.com", tel:"+18436265941"},
   {id:49, n:"Pan American Pancake & Omelette House", lat:33.67683, lon:-78.90183, area:"Myrtle Beach", c:"Breakfast", e:"🥞", p:1, tags:["breakfast","family"], h:"Mo-Su 06:00-13:30", web:"https://panamericanpancake.com/"},
@@ -600,5 +600,8 @@ window.PLACES = [
   {id:613, n:"The Venue Club  Restaurant at International Club", lat:33.59856, lon:-79.04208, area:"Murrells Inlet", c:"Pizza · Burgers", e:"🍕", p:1, tags:["family"], h:null, web:"https://internationalclubgolf.com/the-venue/"},
   {id:614, n:"Island Cafe", lat:33.71492, lon:-78.89913, area:"Myrtle Beach", c:"Quick bite", e:"🍟", p:1, tags:[], h:null},
   {id:615, f:1, n:"Outriggers Bar & Grill", lat:33.56254, lon:-79.08586, area:"Murrells Inlet", c:"Seafood · Bar", e:"⛵", p:2, tags:["water","family","music"], h:"Su-Th 11:00-20:30; Fr,Sa 11:00-21:00", tel:"+18436512994"},
-  {id:616, n:"Tidewater Grill & Bistro", lat:33.84981, lon:-78.65481, area:"North Myrtle Beach", c:"Seafood · Steaks", e:"🦞", p:2, tags:[], h:"Mo-Su 11:00-21:00", web:"https://tidewatergrillandbistro.com/", tel:"+18436635639"}
+  {id:616, n:"Tidewater Grill & Bistro", lat:33.84981, lon:-78.65481, area:"North Myrtle Beach", c:"Seafood · Steaks", e:"🦞", p:2, tags:[], h:"Mo-Su 11:00-21:00", web:"https://tidewatergrillandbistro.com/", tel:"+18436635639"},
+  {id:617, n:"Russell's Seafood Grill & Raw Bar", lat:33.53984, lon:-79.05079, area:"Murrells Inlet", c:"Seafood · Raw bar", e:"🦪", p:2, tags:["family"], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-22:00", web:"https://russellsseafood.com/", tel:"+18436510553"},
+  {id:618, n:"Captain Benjamin's Calabash Seafood", lat:33.68378, lon:-78.89257, area:"Myrtle Beach", c:"Seafood buffet", e:"🦀", p:3, tags:["family"], h:"Mo-Th 15:00-21:30; Fr 15:00-22:30; Sa 11:00-22:30; Su 11:00-22:00", web:"https://captainbenjamins.com/", tel:"+18436269354"},
+  {id:619, n:"Bovine's Wood Fired Specialties", lat:33.55925, lon:-79.03138, area:"MarshWalk", c:"Steak · Seafood · Pizza", e:"🔥", p:3, tags:["water","date"], h:"Mo-Su 16:00-22:00", web:"http://www.bovinesrestaurant.com/", tel:"+18436512888"}
 ];
