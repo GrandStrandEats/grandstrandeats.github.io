@@ -288,10 +288,33 @@ const PAGES = [
     h1: "Market Common restaurants",
     desc: "Local restaurants at The Market Common in Myrtle Beach, the walkable shopping and dining district near the airport and Grand Park. No chains.",
     intro: "The Market Common is a walkable shopping and dining district in south Myrtle Beach, built on the former Myrtle Beach Air Force Base. It's a good pick when you want dinner, a stroll and some shopping in one stop, away from the busy oceanfront. Here are the local restaurants there on our map.",
+    guide: [
+      {h: "What the Market Common is like", p: [
+        "The Market Common is a neighborhood and shopping district in south Myrtle Beach, built on the grounds of the former Myrtle Beach Air Force Base. Its main streets have shops and restaurants on the ground floor and apartments above, so it feels more like a small downtown than a mall.",
+        "It's only a few minutes from the airport and the beach, but it has a very different feel from the oceanfront: newer, quieter and easy to walk. Locals come here for dinner and a stroll, and families like it for Grand Park next door.",
+      ]},
+      {h: "Where to eat", p: [
+        "Travinia Italian Kitchen and Co Sushi are good choices for date night. King Street Grille is a sports bar that works for families and has a dog-friendly patio. Tidal Creek Brewhouse is a local brewery and café that serves breakfast too, and dogs are welcome there as well.",
+        "For something quick and light, Bowled serves poke and grain bowls.",
+        "Many restaurants here have sidewalk or patio seating, which is the best way to eat at the Market Common on a spring or fall evening.",
+      ]},
+      {h: "Planning your visit", p: [
+        "The Market Common is about 10 to 15 minutes south of downtown Myrtle Beach and just a few minutes from Myrtle Beach International Airport. Surfside Beach is a short drive farther south.",
+        "It's busiest on Friday and Saturday evenings and during events in the district and at Grand Park. Weeknights are relaxed, and you can often walk right in.",
+        "It's a good pick on a rainy day or in the off-season, when the beachfront is quiet but the Market Common still has people out walking and eating.",
+      ]},
+    ],
     tips: [
       "Parking is free in the lots and garages around the district.",
       "Grand Park, right next door, has a lake with a walking path. It's an easy after-dinner walk.",
       "It's a short drive from Myrtle Beach International Airport, so it works well for a first or last meal of a trip.",
+      "Ask for a patio table on spring and fall evenings. They're the nicest seats in the district.",
+      "Bringing the dog? Look for the dog-friendly tag below, and call ahead to check the patio rules.",
+    ],
+    faq: [
+      ["What is the Market Common in Myrtle Beach?", "It's a walkable shopping, dining and residential district in south Myrtle Beach, built on the former Myrtle Beach Air Force Base, next to Grand Park."],
+      ["How far is the Market Common from the Myrtle Beach airport?", "Only a few minutes by car, which makes it an easy stop for a meal on the way in or out of town."],
+      ["Is the Market Common good for families?", "Yes. It's easy to walk, parking is free, and Grand Park next door has a lake with a walking path. Several restaurants there have family-friendly menus."],
     ],
     match: p => p.area === "Market Common",
     stay: ["Myrtle Beach"],
