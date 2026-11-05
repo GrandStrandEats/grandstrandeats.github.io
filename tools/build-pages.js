@@ -178,7 +178,101 @@ ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 <div class="box"><h2>After dinner: things to do on the Grand Strand</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
-<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free.</footer>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free.${INFO_LINKS}</footer>
+</div>
+</body>
+</html>
+`;
+}
+
+// About / Privacy / Contact: plain text pages that reuse the guide page styles.
+const FB = "https://www.facebook.com/profile.php?id=61596237747958";
+const UPDATED = "November 5, 2026";
+const INFO = [
+  {
+    slug: "about", title: "About Grand Strand Eats", h1: "About Grand Strand Eats",
+    desc: "Grand Strand Eats is a free map of local, non-chain restaurants from Little River to Pawleys Island. Here is how the listings are chosen and checked.",
+    body: `<p>Grand Strand Eats is a free map of local restaurants along South Carolina's Grand Strand, from Little River and North Myrtle Beach down through Myrtle Beach, Surfside, Garden City, Murrells Inlet and Pawleys Island. It is an independent site run by Christy, and it is not connected to any restaurant, tourism board or chamber of commerce.</p>
+<h2>Why local spots only</h2>
+<p>National chains are easy to find. The independent seafood shacks, pancake houses, breweries and marsh-side grills are harder to sort through when you're visiting, or even when you live here. So the map leaves chains out and keeps the focus on places that are only on the Grand Strand.</p>
+<h2>Where the listings come from</h2>
+<p>About 120 spots were picked and written up by hand. The rest come from OpenStreetMap, a free map that anyone can edit. For those, the price level and vibe are often a best guess from the type of food until someone checks them. We check listings against each restaurant's own website and Facebook page a few at a time, and fix hours, prices and addresses when they change.</p>
+<p>Restaurants open, close and change hours all the time, especially between seasons. Please call ahead or check the restaurant's site before you go.</p>
+<h2>How the site makes money</h2>
+<p>Every listing is free. Spots marked ⭐ Featured may be paid placements, and that label is always shown. Some links to tours, activities and hotels are affiliate links through GetYourGuide and Stay22: if you book through them, we may earn a small commission at no extra cost to you. Paid placement never changes what we write about a restaurant.</p>
+<h2>Help keep it right</h2>
+<p>Know a local spot we're missing, or see hours that are wrong? See the <a href="../contact/">contact page</a>. Restaurant owners are welcome to send updates too.</p>`,
+  },
+  {
+    slug: "privacy", title: "Privacy Policy", h1: "Privacy policy",
+    desc: "How Grand Strand Eats handles your information: no accounts, no tracking of saved spots, and what the map, hosting and affiliate partners can see.",
+    body: `<p><em>Last updated ${UPDATED}</em></p>
+<p>Grand Strand Eats (grandstrandeats.com) does not ask you to sign up, does not have forms, and does not collect your name or email address.</p>
+<h2>Saved spots and "Near me"</h2>
+<p>Spots you save are kept in your own browser's local storage. They stay on your device and are never sent to us. If you tap "Near me," your browser asks for permission to share your location. Your location is used only inside your browser to sort the list by distance. It is not sent to us or stored.</p>
+<h2>Offline use</h2>
+<p>The site saves a copy of its own files in your browser so it loads quickly and works with a weak signal at the beach. You can clear this at any time by clearing your browser's site data.</p>
+<h2>Services that load with the site</h2>
+<p>Like any website, these services receive your IP address and basic browser information when your browser loads files from them:</p>
+<ul>
+<li>GitHub Pages, which hosts the site and may keep server logs for security.</li>
+<li>Google Fonts, for the site's font.</li>
+<li>OpenFreeMap, for the map tiles, and cdnjs and unpkg, for the map code.</li>
+</ul>
+<h2>Affiliate links</h2>
+<p>Some links go to GetYourGuide and to hotel searches through Stay22 and Booking.com. When you click one of these, those companies may set cookies so they can tell that your booking came from us. Their own privacy policies apply on their sites.</p>
+<h2>Advertising</h2>
+<p>We may show ads from Google AdSense in the future. If we do, third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. Google's use of advertising cookies lets it and its partners serve ads to you based on your visits to this and other sites. You can opt out of personalized advertising in <a href="https://www.google.com/settings/ads" rel="noopener">Google's Ads Settings</a>, or opt out of some other vendors' cookies at <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>.</p>
+<h2>Analytics</h2>
+<p>We do not use analytics or tracking scripts on this site right now. If that changes, we will update this page.</p>
+<h2>Children</h2>
+<p>This site is meant for a general audience and does not knowingly collect information from children under 13.</p>
+<h2>Changes and questions</h2>
+<p>If this policy changes, the date at the top will change too. Questions? See the <a href="../contact/">contact page</a>.</p>`,
+  },
+  {
+    slug: "contact", title: "Contact Grand Strand Eats", h1: "Contact us",
+    desc: "Suggest a local Grand Strand restaurant, report wrong hours or prices, or ask about a Featured listing.",
+    body: `<p>The quickest way to reach Grand Strand Eats is to send a message to our <a href="${FB}">Facebook page</a>. We read every message.</p>
+<h2>Good reasons to get in touch</h2>
+<ul>
+<li><strong>Suggest a spot.</strong> Know a local, non-chain restaurant, food truck or brewery we're missing? Tell us its name and town.</li>
+<li><strong>Fix a listing.</strong> Wrong hours, a closed restaurant, a bad address or a price that's off? Let us know and we'll check it.</li>
+<li><strong>Restaurant owners.</strong> Send your current hours and menu link, or ask about a ⭐ Featured listing.</li>
+</ul>
+<p><a class="cta" href="${FB}">💬 Message us on Facebook</a></p>`,
+  },
+];
+
+const INFO_CSS = `.prose h2{font-size:19px;letter-spacing:-.02em;margin:26px 0 6px}.prose p,.prose li{font-size:15.5px}.prose a:not(.cta){color:var(--brand);font-weight:700}.prose ul{padding-left:20px}`;
+const INFO_LINKS = `<div style="margin-top:8px;font-weight:700"><a href="../about/" style="color:var(--brand)">About</a> · <a href="../privacy/" style="color:var(--brand)">Privacy</a> · <a href="../contact/" style="color:var(--brand)">Contact</a></div>`;
+
+function infoPage(cfg, style) {
+  const url = SITE + cfg.slug + "/";
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(cfg.title)} | Grand Strand Eats</title>
+<meta name="description" content="${esc(cfg.desc)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="${esc(cfg.title)}"><meta property="og:description" content="${esc(cfg.desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}share.png">
+<meta name="theme-color" content="#0e7c86">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+${style.replace("</style>", INFO_CSS + "\n</style>")}
+</head>
+<body>
+<div class="wrap">
+<header><a href="../"><span class="logo">🌅</span>Grand Strand Eats</a></header>
+<h1>${esc(cfg.h1)}</h1>
+<div class="prose">
+${cfg.body}
+</div>
+<div class="box"><h2>Grand Strand guides</h2><div>${PAGES.map(o => `<a href="../${o.slug}/">${esc(o.h1)}</a>`).join("")}</div></div>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants.${INFO_LINKS}</footer>
 </div>
 </body>
 </html>
@@ -194,6 +288,15 @@ for (const cfg of PAGES) {
   fs.writeFileSync(path.join(dir, "index.html"), page(cfg, spots));
   urls.push(SITE + cfg.slug + "/");
   console.log(cfg.slug, spots.length);
+}
+
+const STYLE = page(PAGES[0], []).match(/<style>[\s\S]*?<\/style>/)[0];
+for (const cfg of INFO) {
+  const dir = path.join(ROOT, cfg.slug);
+  fs.mkdirSync(dir, {recursive: true});
+  fs.writeFileSync(path.join(dir, "index.html"), infoPage(cfg, STYLE));
+  urls.push(SITE + cfg.slug + "/");
+  console.log(cfg.slug);
 }
 
 const today = new Date().toISOString().slice(0, 10);
