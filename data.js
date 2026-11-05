@@ -33,7 +33,7 @@ window.PLACES = [
   {id:29, n:"The Claw House", lat:33.55694, lon:-79.03371, area:"Murrells Inlet", c:"Seafood", e:"🦀", p:2, tags:["water","family"], h:"Mo 11:00-22:00; Tu-Th 11:00-21:00; Fr,Sa 11:00-22:00; Su 11:00-21:00"},
   {id:30, n:"Inlet Sports Bar & Grill", lat:33.55179, lon:-79.04084, area:"Murrells Inlet", c:"American · Sports bar", e:"🏈", p:1, tags:["family"], h:"Mo-Su 10:00-02:00", web:"https://www.inletsportsbar.com/"},
   {id:31, n:"Crab Daddy's Seafood", lat:33.58147, lon:-79.01756, area:"Murrells Inlet", c:"Seafood", e:"🦀", p:2, tags:["family"], h:"Mo-Fr 14:30-21:30; Sa,Su 14:00-21:30"},
-  {id:32, n:"Captain Jimmy's Inlet Crab House", lat:33.56981, lon:-79.02683, area:"Murrells Inlet", c:"Seafood · Crab house", e:"🦀", p:2, tags:["family"], h:"Mo-Sa 11:30-21:00; Su off"},
+  {id:32, n:"Inlet Crab House & Raw Bar", lat:33.56981, lon:-79.02683, area:"Murrells Inlet", c:"Seafood · Crab house", e:"🦀", p:2, tags:["family"], h:"Mo-Sa 11:30-21:00; Su off", tel:"+18436518452"},
   {id:33, n:"O'Keefe's Irish Pub", lat:33.58313, lon:-79.02241, area:"Murrells Inlet", c:"Irish pub", e:"☘️", p:2, tags:["music"], h:"Mo-Su 11:00--02:00", tel:"+18436517211"},
   {id:34, n:"Suck Bang Blow", lat:33.57508, lon:-79.02518, area:"Murrells Inlet", c:"Biker bar · American", e:"🏍", p:1, tags:["music"], h:"Mo-Su 11:00-02:00", web:"https://suckbangblow.com", tel:"+18436517960"},
   {id:35, n:"Sam's Corner", lat:33.57686, lon:-78.9988, area:"Murrells Inlet", c:"Hot dogs", e:"🌭", p:1, tags:["family"], h:null, hn:"Temporarily closed"},
@@ -619,5 +619,11 @@ window.PLACES = [
   {id:634, n:"Rosie's Pizzeria", lat:33.43654, lon:-79.13150, area:"Pawleys Island", c:"Pizza · Italian", e:"🍕", p:1, tags:["family"], h:null, tel:"+18433143730"},
   {id:635, n:"Carolina Seafood & Steak", lat:33.77256, lon:-78.80040, area:"Myrtle Beach", c:"Seafood · Steak", e:"🦞", p:2, tags:["family"], h:null, tel:"+18439459288"},
   {id:636, n:"OD Arcade & Lounge", lat:33.81841, lon:-78.67359, area:"North Myrtle Beach", c:"Bar & grill", e:"🍔", p:1, tags:["music"], h:null, tel:"+18432496460"},
-  {id:637, n:"44 & King", lat:33.71964, lon:-78.85206, area:"Myrtle Beach", c:"Southern · Pub", e:"👑", p:2, tags:["music"], h:null, web:"https://44andking.com/", tel:"+18436265464"}
+  {id:637, n:"44 & King", lat:33.71964, lon:-78.85206, area:"Myrtle Beach", c:"Southern · Pub", e:"👑", p:2, tags:["music"], h:null, web:"https://44andking.com/", tel:"+18436265464"},
+  {id:638, n:"Oscar's Food & Spirits", lat:33.80078, lon:-78.73294, area:"North Myrtle Beach", c:"Bar & grill · Pizza", e:"🏈", p:1, tags:[], h:null, web:"https://oscarsnmb.com/", tel:"+18432720707"},
+  {id:639, n:"Neal's Creekhouse", lat:33.56431, lon:-79.02875, area:"Murrells Inlet", c:"Southern · Seafood", e:"🦐", p:2, tags:["water"], h:null, tel:"+18436510022"},
+  {id:640, n:"The Grove House", lat:33.82800, lon:-78.64311, area:"North Myrtle Beach", c:"American · Pizza", e:"🍕", p:1, tags:["family"], h:null, web:"https://thegrovehousenmb.com/", tel:"+18436631811"},
+  {id:641, n:"On the Half Shell", lat:33.55168, lon:-79.04714, area:"Murrells Inlet", c:"Seafood · Raw bar", e:"🦪", p:2, tags:["music"], h:null, tel:"+18436511296"},
+  {id:642, n:"Hot Tomato", lat:33.70223, lon:-78.87192, area:"Myrtle Beach", c:"Italian · Brick-oven pizza", e:"🍅", p:2, tags:[], h:null, tel:"+18438399400"},
+  {id:643, n:"Costa Coastal Kitchen & Bar", lat:33.54685, lon:-79.04554, area:"Murrells Inlet", c:"Italian · American", e:"🍷", p:3, tags:["date"], h:null, tel:"+18432991970"}
 ];
