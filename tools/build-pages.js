@@ -302,9 +302,32 @@ const PAGES = [
     h1: "Garden City Beach restaurants",
     desc: "Local (non-chain) restaurants in Garden City Beach, SC, between Surfside Beach and Murrells Inlet, with prices, vibes and directions.",
     intro: "Garden City Beach sits between Surfside Beach and Murrells Inlet, with the Garden City Pier at its center and the inlet on its back side. It's casual and laid back, with plenty of spots to grab a meal in flip-flops. Here is every local restaurant in Garden City on our map.",
+    guide: [
+      {h: "A laid-back beach between two busy ones", p: [
+        "Garden City Beach is a narrow strip of land between the ocean and the back side of Murrells Inlet. It runs right into Surfside Beach to the north, and it feels a lot like it: beach houses, small hotels and casual places to eat.",
+        "The Garden City Pier is the center of the beachfront, with arcades nearby and the Pier Snack Bar right there for burgers and breakfast. At the south end, the road runs out toward the inlet, and that's where you'll find Gulfstream Cafe, a dressier spot looking out over the water.",
+      ]},
+      {h: "What to eat", p: [
+        "Most Garden City restaurants are casual: seafood, bars and grills, pizza, breakfast and ice cream. Many are a short walk or bike ride from the beach rentals, so you can skip the car for a night.",
+        "Conch Cafe is a casual oceanfront seafood spot. It's closed for the season and plans to reopen in 2027, so check before you go.",
+        "For a sunset dinner, Gulfstream Cafe is the local favorite on this stretch. For a bigger choice of seafood restaurants, the Murrells Inlet MarshWalk is only a few minutes south.",
+      ]},
+      {h: "Planning your visit", p: [
+        "Garden City is about 20 to 25 minutes south of downtown Myrtle Beach. Traffic on the roads into the beach can back up on summer Saturdays, when a lot of rentals turn over.",
+        "In the off-season Garden City gets very quiet. Some beach spots close for weeks or months in winter, while restaurants along Highway 17 and in Murrells Inlet stay open.",
+      ]},
+    ],
     tips: [
       "Murrells Inlet and the MarshWalk are only a few minutes away if you want more seafood choices.",
       "Some beach spots keep shorter hours or close for part of the winter, so check before you drive over in the off-season.",
+      "The south end looks out over the inlet, and sunset there is one of the prettiest on the Grand Strand. Ask for a window table.",
+      "The pier makes an easy after-dinner walk.",
+      "Rainy day? The arcades near the pier are a simple way to pass an hour with kids.",
+    ],
+    faq: [
+      ["Where is Garden City Beach?", "Between Surfside Beach and Murrells Inlet, about 20 to 25 minutes south of downtown Myrtle Beach."],
+      ["Is there a restaurant on the water in Garden City?", "Yes. Gulfstream Cafe looks out over the inlet at the south end, and the Pier Snack Bar is right at the Garden City Pier. Conch Cafe, on the oceanfront, is closed for the season until 2027."],
+      ["Are Garden City restaurants open in winter?", "Many are, but some beach spots close for part of the winter or cut back their hours. Check before you go, or head a few minutes south to Murrells Inlet, where more places stay open."],
     ],
     match: p => p.area === "Garden City",
     stay: ["Garden City", "Murrells Inlet"],
