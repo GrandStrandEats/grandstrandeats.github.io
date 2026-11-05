@@ -144,6 +144,35 @@ const PAGES = [
     h1: "Murrells Inlet restaurants",
     desc: "Every local (non-chain) restaurant in Murrells Inlet on our map, including the MarshWalk, with prices, vibes and directions.",
     intro: "Murrells Inlet calls itself the seafood capital of South Carolina, and the MarshWalk boardwalk is lined with restaurants looking out over the marsh. Below is every local spot in Murrells Inlet on our map, MarshWalk places first.",
+    guide: [
+      {h: "What makes Murrells Inlet different", p: [
+        "Murrells Inlet is an old fishing village about 15 miles south of Myrtle Beach. The town wraps around a saltwater inlet and marsh, and boats still head out from here for fishing charters and deep-sea trips. That's a big part of why it calls itself the seafood capital of South Carolina.",
+        "Most of the restaurants sit along Business 17, which runs right beside the inlet. You won't find big resort hotels or a strip of chain restaurants here. It's mostly local, family-run places, and a lot of them have decks looking out over the water.",
+        "<strong>The MarshWalk</strong> is the heart of it all. It's a wooden boardwalk along the marsh, lined with restaurants and bars. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack all open onto it, so you can walk from one to the next. On warm evenings there's often live music, and it's a fun place to watch the sunset and the boats coming in.",
+      ]},
+      {h: "Beyond the MarshWalk", p: [
+        "More of the inlet's best-known seafood spots sit just off the boardwalk on the same stretch of water. Wicked Tuna, Capt. Dave's Dockside, The Claw House and Hot Fish Club all have water views, and Wicked Tuna and Hot Fish Club are good picks for a date night.",
+        "For a plain, roll-up-your-sleeves seafood meal, try Crab Daddy's Seafood or Inlet Crab House & Raw Bar. Harvest, J Peters Grill & Bar and Inlet Prohibition Company are a few more local options along the main road.",
+        "Not every meal here has to be seafood. There's O'Keefe's Irish Pub, River City Cafe for burgers, Sam's Corner for hot dogs, and Southern buffet cooking at Judy Boone's. Carolina Food Park brings in a rotating lineup of food trucks. Suck Bang Blow is a well-known biker bar, and it gets packed during bike rally weeks.",
+      ]},
+      {h: "Planning your visit", p: [
+        "From Myrtle Beach it's about a 25 to 30 minute drive down Highway 17, longer on summer weekends. From Garden City and Surfside Beach it's only a few minutes.",
+        "Summer evenings are the busiest. From late May through Labor Day, an hour wait at sunset is common at the waterfront spots. Spring and fall are lovely here: the marsh is green or gold, there are fewer bugs, and you can often walk right in on a weeknight.",
+        "Want to make a day of it? Huntington Beach State Park and Brookgreen Gardens are both just south of the inlet on Highway 17, and they pair well with an early dinner on the water.",
+      ]},
+    ],
+    tips: [
+      "Walk the whole MarshWalk before you choose. It's short, and you can peek at each deck and see who has live music that night.",
+      "Put your name in at one restaurant, then stroll the boardwalk while you wait.",
+      "Parking near the MarshWalk fills up on summer nights. Come early or be ready to walk a few minutes.",
+      "Bring bug spray for marsh-side tables around dusk.",
+      "Ask your server what seafood came in fresh that day. Local catches change with the season.",
+    ],
+    faq: [
+      ["Is Murrells Inlet worth the drive from Myrtle Beach?", "Yes, if you like seafood and water views. It's about 25 to 30 minutes south, and it's mostly local, family-run restaurants instead of chains. The MarshWalk lets you try more than one spot in a single night."],
+      ["Where is the Murrells Inlet MarshWalk?", "It runs along the marsh side of Business 17 in Murrells Inlet. Restaurants like Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack open right onto the boardwalk."],
+      ["Is the MarshWalk good for kids?", "Yes, especially earlier in the evening. The boardwalk is free to walk, and family-friendly spots like Creek Ratz and Drunken Jack's welcome kids. Later at night the bars get louder with live music."],
+    ],
     match: p => p.area === "Murrells Inlet" || p.area === "MarshWalk",
     stay: ["Murrells Inlet", "Garden City"],
   },
