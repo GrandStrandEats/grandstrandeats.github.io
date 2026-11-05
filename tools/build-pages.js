@@ -259,11 +259,31 @@ const PAGES = [
     h1: "Romantic date night restaurants on the Grand Strand",
     desc: "Local (no chains) romantic restaurants for date night or an anniversary in Myrtle Beach, Murrells Inlet, Pawleys Island and North Myrtle Beach.",
     intro: "Planning an anniversary, a proposal or just a night out without the kids? These are the local spots on our map that we've marked as good for date night: quieter rooms, water views, good wine lists and food worth dressing up for. Most of them take reservations, and the best tables go first on summer weekends.",
+    guide: [
+      {h: "Pick the right spot for your night", p: [
+        "<strong>A water view at sunset.</strong> Sea Captain's House sits right on the ocean in Myrtle Beach. Gulfstream Cafe in Garden City looks out over the inlet. Wicked Tuna, Wahoo's Fish House and Hot Fish Club are all in Murrells Inlet, and Clark's Seafood and Chophouse is on the water in Little River. Joe's Bar & Grill in North Myrtle Beach is another water-view pick.",
+        "<strong>A dressy, special-occasion dinner.</strong> Aspen Grille, Thoroughbreds, SeaBlue Restaurant and Wine Bar and 21 Main Prime Steakhouse are the most upscale spots on this list, with prices to match. Flamingo Grill and Hook and Barrel are good for steak and seafood in a nice room.",
+        "<strong>Italian.</strong> Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna, Benny's Trattoria and Angelo's Steak & Pasta all made our date-night list.",
+        "<strong>Something a little different.</strong> Rioz Brazilian Steakhouse carves meat at your table. Co Sushi and Art Burger Sushi Bar are fun for a more relaxed date, Bistro90 is another good North Myrtle Beach choice, and Heirloom Bistro works well for a brunch date.",
+      ]},
+      {h: "Planning a special night", p: [
+        "Reserve as soon as you know your dates, especially for Friday and Saturday in summer and around Valentine's Day. If a place doesn't take reservations, go early.",
+        "Tell the restaurant if it's a birthday, anniversary or proposal when you book. Many will try to give you a better table.",
+        "Dress on the Grand Strand is relaxed. Even at the nicer spots, resort casual is fine: a collared shirt or a sundress. Save the flip-flops for the beach bars.",
+        "Plan a walk after dinner. The Murrells Inlet MarshWalk, the Myrtle Beach Boardwalk, Barefoot Landing and the Market Common all make an easy, pretty stroll.",
+      ]},
+    ],
     tips: [
       "Book ahead for Friday and Saturday nights from Memorial Day through Labor Day. Off-season weeknights are much easier.",
       "Ask for a window or patio table when you book if you want a water view. Those go first.",
       "Check sunset time before you go. Inlet and marsh views are at their best in the half hour before dark.",
       "Several of these are on the Murrells Inlet MarshWalk, where you can walk the boardwalk after dinner.",
+      "Mention a birthday or anniversary when you reserve. It can make a difference in where you're seated.",
+    ],
+    faq: [
+      ["What's the most romantic restaurant in Myrtle Beach?", "It depends on the night you want. For a sunset view, try Sea Captain's House on the ocean or Gulfstream Cafe on the inlet. For a dressy dinner, Aspen Grille or Thoroughbreds. For Italian, Toscana or Villa Romana."],
+      ["Do I need a reservation for date night in Myrtle Beach?", "For Friday and Saturday nights in summer, yes, if the restaurant takes them. Off-season weeknights are much easier, and you can often walk in."],
+      ["What should I wear to a nice dinner in Myrtle Beach?", "Resort casual works almost everywhere: nice shorts or slacks with a collared shirt, or a sundress. A few upscale spots lean dressier, so call ahead if you're unsure."],
     ],
     match: p => p.tags.includes("date"),
     stay: ["Myrtle Beach", "Murrells Inlet", "Pawleys Island"],
