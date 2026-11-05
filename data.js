@@ -603,5 +603,9 @@ window.PLACES = [
   {id:616, n:"Tidewater Grill & Bistro", lat:33.84981, lon:-78.65481, area:"North Myrtle Beach", c:"Seafood · Steaks", e:"🦞", p:2, tags:[], h:"Mo-Su 11:00-21:00", web:"https://tidewatergrillandbistro.com/", tel:"+18436635639"},
   {id:617, n:"Russell's Seafood Grill & Raw Bar", lat:33.53984, lon:-79.05079, area:"Murrells Inlet", c:"Seafood · Raw bar", e:"🦪", p:2, tags:["family"], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-22:00", web:"https://russellsseafood.com/", tel:"+18436510553"},
   {id:618, n:"Captain Benjamin's Calabash Seafood", lat:33.68378, lon:-78.89257, area:"Myrtle Beach", c:"Seafood buffet", e:"🦀", p:3, tags:["family"], h:"Mo-Th 15:00-21:30; Fr 15:00-22:30; Sa 11:00-22:30; Su 11:00-22:00", web:"https://captainbenjamins.com/", tel:"+18436269354"},
-  {id:619, n:"Bovine's Wood Fired Specialties", lat:33.55925, lon:-79.03138, area:"MarshWalk", c:"Steak · Seafood · Pizza", e:"🔥", p:3, tags:["water","date"], h:"Mo-Su 16:00-22:00", web:"http://www.bovinesrestaurant.com/", tel:"+18436512888"}
+  {id:619, n:"Bovine's Wood Fired Specialties", lat:33.55925, lon:-79.03138, area:"MarshWalk", c:"Steak · Seafood · Pizza", e:"🔥", p:3, tags:["water","date"], h:"Mo-Su 16:00-22:00", web:"http://www.bovinesrestaurant.com/", tel:"+18436512888"},
+  {id:620, n:"Big Fish", lat:33.71627, lon:-78.88076, area:"Myrtle Beach", c:"Seafood", e:"🐟", p:2, tags:["water","family"], h:null},
+  {id:621, n:"Local Eat Drink Celebrate", lat:33.44326, lon:-79.12379, area:"Pawleys Island", c:"Southern · Wine", e:"🐢", p:3, tags:["date"], h:null, tel:"+18433140474"},
+  {id:622, n:"Fire To Table", lat:33.57475, lon:-79.02552, area:"Murrells Inlet", c:"BBQ · Grill", e:"🔥", p:2, tags:["music","family"], h:null, tel:"+18433571515"},
+  {id:623, n:"Winna's Kitchen", lat:33.69393, lon:-78.88241, area:"Myrtle Beach", c:"Brunch · Bakery", e:"🥐", p:2, tags:["breakfast"], h:"Mo-Sa 08:00-15:00", web:"https://winnaskitchen.com/", tel:"+18438488181"}
 ];
