@@ -614,5 +614,6 @@ window.PLACES = [
   {id:627, n:"Filet's", lat:33.85109, lon:-78.65526, area:"North Myrtle Beach", c:"Steak · Seafood · Sushi", e:"🥩", p:3, tags:["water","date"], h:null, web:"https://filetswaterfront.com/", tel:"+18432805200"},
   {id:628, n:"42nd Street Bar and Grill", lat:33.71836, lon:-78.85308, area:"Myrtle Beach", c:"American · Steak · Seafood", e:"🍽️", p:2, tags:[], h:null, tel:"+18439459310"},
   {id:629, n:"Horst Gasthaus", lat:33.80201, lon:-78.72533, area:"North Myrtle Beach", c:"German", e:"🥨", p:2, tags:[], h:null, tel:"+18432723351"},
-  {id:630, n:"LUNA Mexican Bar & Grill", lat:33.55256, lon:-79.04654, area:"Murrells Inlet", c:"Mexican", e:"🌮", p:2, tags:["date"], h:null, web:"https://www.lunarestaurant.net/", tel:"+18432992365"}
+  {id:630, n:"LUNA Mexican Bar & Grill", lat:33.55256, lon:-79.04654, area:"Murrells Inlet", c:"Mexican", e:"🌮", p:2, tags:["date"], h:null, web:"https://www.lunarestaurant.net/", tel:"+18432992365"},
+  {id:631, n:"Margaritas Mexican Restaurant", lat:33.78314, lon:-78.78613, area:"Myrtle Beach", c:"Mexican", e:"🌮", p:1, tags:["family"], h:null, tel:"+18434975960"}
 ];
