@@ -45,7 +45,6 @@ window.PLACES = [
   {id:41, n:"Mango Thai", lat:33.59278, lon:-79.00424, area:"Surfside Beach", c:"Thai", e:"🥭", p:2, tags:[], h:"We-Sa 12:00-20:00; Su 12:00-19:00", web:"https://themangothai.com/", tel:"+18436512456"},
   {id:42, n:"Wooden Spoon", lat:33.61167, lon:-78.98088, area:"Surfside Beach", c:"Southern · Breakfast", e:"🥄", p:1, tags:["breakfast","family"], h:"Mo off; Tu,We 07:30-14:30; Th-Sa 07:30-14:30,17:00-21:00; Su 07:30-14:30"},
   {id:43, n:"Painter's Homemade Ice Cream", lat:33.59497, lon:-78.99966, area:"Surfside Beach", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-21:30"},
-  {id:44, n:"Mr. Fish", lat:33.73941, lon:-78.8285, area:"Myrtle Beach", c:"Seafood", e:"🐠", p:2, tags:["family"], h:"Mo-Th 10:00-19:00; Fr,Sa 10:00-20:00; Su 10:00-19:00"},
   {id:45, n:"Sharkey's", lat:33.68889, lon:-78.88255, area:"Myrtle Beach", c:"Seafood · Bar", e:"🦈", p:2, tags:[], h:"Su-Th 12:00-21:00; Fr,Sa 12:00-22:00", web:"https://sharkeysclub.com/"},
   {id:46, n:"Flamingo Grill", lat:33.74253, lon:-78.82333, area:"Myrtle Beach", c:"Steak · Seafood", e:"🦩", p:3, tags:["date"], h:"Mo-Su 16:15-21:00", web:"https://flamingogrill.com/"},
   {id:47, n:"Captain George's Seafood Restaurant", lat:33.72085, lon:-78.88247, area:"Myrtle Beach", c:"Seafood buffet", e:"🦐", p:3, tags:["family"], h:"Mo-Fr 15:30-20:30; Sa 14:00-21:00; Su 12:00-20:30", web:"https://captaingeorges.com"},
@@ -208,7 +207,6 @@ window.PLACES = [
   {id:212, n:"Driftwood's Seafood", lat:33.61472, lon:-79.04845, area:"Garden City", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:213, n:"Pacino's", lat:33.58053, lon:-79.01912, area:"Garden City", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:214, n:"Farlo's Burrito Bar", lat:33.6936, lon:-78.88378, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:[], h:null},
-  {id:215, n:"Mr. Fish Seafood", lat:33.69534, lon:-78.88246, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:216, n:"Fresh Brewed", lat:33.69535, lon:-78.88235, area:"Myrtle Beach", c:"Cafe", e:"☕", p:1, tags:[], h:null},
   {id:217, n:"Mammy's Kitchen", lat:33.69516, lon:-78.88019, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family","breakfast"], h:null},
   {id:218, n:"Hot Stacks Pancake House", lat:33.69873, lon:-78.87699, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["breakfast","family"], h:null},
@@ -418,7 +416,7 @@ window.PLACES = [
   {id:427, n:"Carolina Food Park", lat:33.56524, lon:-79.03828, area:"Murrells Inlet", c:"Food trucks", e:"🚚", p:2, tags:[], h:"Tu 11:00-18:00", web:"https://carolinafoodpark.com", tel:"+18432511368"},
   {id:428, n:"Francesco’s Pizza Kitchen", lat:33.59258, lon:-79.00463, area:"Murrells Inlet", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null, web:"https://francescosmurrellsinlet.com/", tel:"+18432992700"},
   {id:429, n:"Pizza de Roma", lat:33.69421, lon:-78.88425, area:"Myrtle Beach", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null, web:"https://pizzaderomasc.com/", tel:"+18433854355"},
-  {id:430, n:"Mr. Fish Seafood Market", lat:33.73755, lon:-78.83045, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null, tel:"+18434920374"},
+  {id:430, n:"Mr. Fish Seafood Market & Grill", lat:33.73755, lon:-78.83045, area:"Myrtle Beach", c:"Seafood", e:"🐠", p:2, tags:["family"], h:null, web:"https://mrfish.com/", tel:"+18434920374"},
   {id:431, n:"Amici Pizza", lat:33.76154, lon:-78.8911, area:"Myrtle Beach", c:"Pizza", e:"🍕", p:1, tags:["family"], h:"Mo-Su 11:00-21:00", web:"https://amicipizzamb.com/", tel:"+18432360209"},
   {id:432, n:"Chianti South", lat:33.88217, lon:-78.60184, area:"Little River", c:"Restaurant", e:"🍽", p:3, tags:["date"], h:null},
   {id:433, n:"Taco Libre", lat:33.82347, lon:-78.68665, area:"North Myrtle Beach", c:"Quick bite", e:"🍟", p:1, tags:[], h:null},
@@ -618,5 +616,6 @@ window.PLACES = [
   {id:631, n:"Margaritas Mexican Restaurant", lat:33.78314, lon:-78.78613, area:"Myrtle Beach", c:"Mexican", e:"🌮", p:1, tags:["family"], h:null, tel:"+18434975960"},
   {id:632, n:"Quigley's Pint & Plate", lat:33.50199, lon:-79.12585, area:"Pawleys Island", c:"Brewpub · American", e:"🍺", p:2, tags:["brewery","family"], h:null, web:"https://pintandplate.com/", tel:"+18432377010"},
   {id:633, n:"Bistro 217", lat:33.44128, lon:-79.12530, area:"Pawleys Island", c:"American · Asian fusion", e:"🍷", p:3, tags:["date"], h:null, web:"https://www.bistro217.com/", tel:"+18432358217"},
-  {id:634, n:"Rosie's Pizzeria", lat:33.43654, lon:-79.13150, area:"Pawleys Island", c:"Pizza · Italian", e:"🍕", p:1, tags:["family"], h:null, tel:"+18433143730"}
+  {id:634, n:"Rosie's Pizzeria", lat:33.43654, lon:-79.13150, area:"Pawleys Island", c:"Pizza · Italian", e:"🍕", p:1, tags:["family"], h:null, tel:"+18433143730"},
+  {id:635, n:"Carolina Seafood & Steak", lat:33.77256, lon:-78.80040, area:"Myrtle Beach", c:"Seafood · Steak", e:"🦞", p:2, tags:["family"], h:null, tel:"+18439459288"}
 ];
