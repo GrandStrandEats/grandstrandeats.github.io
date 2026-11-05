@@ -629,5 +629,7 @@ window.PLACES = [
   {id:644, n:"Mexico Lindo", lat:33.70853, lon:-78.86483, area:"Myrtle Beach", c:"Mexican", e:"🌮", p:1, tags:["family"], h:null, tel:"+18436264566"},
   {id:645, n:"Honey Barrel Breakfast & Steakhouse", lat:33.83027, lon:-78.67729, area:"North Myrtle Beach", c:"Breakfast · Steakhouse", e:"🥩", p:2, tags:["breakfast"], h:null, tel:"+18432810228"},
   {id:646, n:"Seabrisa's Waterfront Seafood Restaurant", lat:33.87095, lon:-78.61155, area:"Little River", c:"Seafood · California-style American", e:"🦐", p:2, tags:["water"], h:null, web:"https://seabrisaswaterfront.com/", tel:"+18432735052"},
-  {id:647, n:"Seabrisa's at the Marina", lat:33.86706, lon:-78.62399, area:"Little River", c:"Seafood", e:"⛵", p:3, tags:["water","date"], h:"Mo-Su 08:00-21:00", web:"https://seabrisasmarina.com/"}
+  {id:647, n:"Seabrisa's at the Marina", lat:33.86706, lon:-78.62399, area:"Little River", c:"Seafood", e:"⛵", p:3, tags:["water","date"], h:"Mo-Su 08:00-21:00", web:"https://seabrisasmarina.com/"},
+  {id:648, n:"Ducati's Pizza Trattoria", lat:33.76019, lon:-78.81492, area:"Myrtle Beach", c:"Italian · Pizza", e:"🍕", p:2, tags:["family"], h:null, web:"https://www.ducatispizzatrattoria.com/", tel:"+18438395373"},
+  {id:649, n:"Ocean & Oak Coastal Kitchen", lat:33.80101, lon:-78.73154, area:"North Myrtle Beach", c:"Breakfast · Brunch · Coastal", e:"🍳", p:2, tags:["breakfast"], h:null}
 ];
