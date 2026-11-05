@@ -338,10 +338,34 @@ const PAGES = [
     h1: "Pawleys Island and Litchfield restaurants",
     desc: "Local restaurants in Pawleys Island and Litchfield Beach, SC, at the quiet south end of the Grand Strand. No chains.",
     intro: "Pawleys Island and Litchfield Beach are the quiet south end of the Grand Strand. Pawleys likes to call itself \"arrogantly shabby,\" and the restaurants fit: relaxed, local and unfussy, with some special-occasion spots mixed in. Here is every local restaurant in Pawleys Island and Litchfield on our map.",
+    guide: [
+      {h: "What Pawleys Island is like", p: [
+        "Pawleys Island is a small barrier island with old beach houses, a quiet beach and almost no businesses. You reach it by two causeways over the marsh, and most of the island is homes and rentals.",
+        "Nearly all the restaurants are on the mainland along Highway 17, in small shopping centers and old cottages, with Litchfield Beach just to the north. The Hammock Shops, where the well-known Pawleys Island rope hammocks are sold, are on the same stretch.",
+        "The pace is slower than Myrtle Beach. Expect seafood, Southern cooking, a few dressier dinner spots, pizza, coffee and casual bars, most of them local.",
+      ]},
+      {h: "How to choose", p: [
+        "<strong>For a nice dinner</strong>, look for the spots marked date night on our map. Pawleys has some quieter, more grown-up dining rooms, good for an anniversary or a night away from the beach crowd.",
+        "<strong>For a casual meal</strong>, the shopping centers along Highway 17 have pizza, tacos, sandwiches and bar food, easy to grab after a beach day.",
+        "<strong>For seafood on the water</strong>, the Murrells Inlet MarshWalk is about 15 minutes north, and plenty of Pawleys visitors make the drive for a sunset dinner.",
+      ]},
+      {h: "Planning your visit", p: [
+        "Pawleys Island is about 30 to 40 minutes south of Myrtle Beach on Highway 17. Brookgreen Gardens and Huntington Beach State Park are on the way, so it's easy to make a day of it.",
+        "Highway 17 is the main road along this part of the coast, so summer traffic can back up around lunch and dinner. Give yourself a few extra minutes.",
+        "Summer is busy, but Pawleys stays calmer than Myrtle Beach. Spring and fall are lovely. Some restaurants close one or two days a week, especially in winter.",
+      ]},
+    ],
     tips: [
       "Most of the restaurants are along Highway 17, not on the island itself.",
       "It's about 30 minutes south of Myrtle Beach, and an easy day trip from Murrells Inlet.",
       "Historic Georgetown is about 15 minutes farther south if you want to make a day of it.",
+      "Many spots are tucked into small shopping centers, so watch for signs from the highway.",
+      "Staying on the island? Plan on a short drive to dinner, since the restaurants aren't within walking distance.",
+    ],
+    faq: [
+      ["Are there restaurants on Pawleys Island itself?", "Very few. Almost all of them are on the mainland along Highway 17 and in Litchfield, a short drive over the causeway."],
+      ["How far is Pawleys Island from Myrtle Beach?", "About 30 to 40 minutes south on Highway 17, depending on where you start and on summer traffic."],
+      ["What can I do near Pawleys Island besides eat?", "Browse the Hammock Shops, visit Brookgreen Gardens or Huntington Beach State Park on the way down, or drive 15 minutes south to historic Georgetown."],
     ],
     match: p => p.area === "Pawleys Island" || p.area === "Litchfield Beach",
     stay: ["Pawleys Island"],
