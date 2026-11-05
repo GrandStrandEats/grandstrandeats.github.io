@@ -358,7 +358,7 @@ window.PLACES = [
   {id:366, n:"Islander Bar and Grill", lat:33.42972, lon:-79.14718, area:"Pawleys Island", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:367, n:"Parlor Donuts", lat:33.44863, lon:-79.12086, area:"Pawleys Island", c:"Coffee · Donuts", e:"☕", p:1, tags:["breakfast"], h:"Mo-Sa 06:00-18:00; Su 07:00-18:00", web:"https://parlordoughnuts.com/", tel:"+18433143131"},
   {id:368, n:"Wiseguys Bar & Grill", lat:33.70159, lon:-78.87207, area:"Myrtle Beach", c:"Pub", e:"🍺", p:2, tags:[], h:null, web:"https://www.wiseguysmb.com/", tel:"+18437121472"},
-  {id:369, n:"Burky's Grill", lat:33.71736, lon:-78.85464, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
+  {id:369, n:"Burky's Grill", lat:33.71693, lon:-78.85480, area:"Myrtle Beach", c:"Burgers · Hot dogs · Ice cream", e:"🍔", p:1, tags:["family"], h:"Mo-Su 11:00-21:00", tel:"+18432327137"},
   {id:370, n:"Sweet South Popcorn Company", lat:33.71733, lon:-78.88239, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family"], h:null},
   {id:371, n:"King Kong Sushi", lat:33.71731, lon:-78.88232, area:"Myrtle Beach", c:"Sushi", e:"🍣", p:2, tags:[], h:null, web:"https://www.kingkongsushi.com/"},
   {id:372, n:"Frapp'a Joe", lat:33.71658, lon:-78.87976, area:"Myrtle Beach", c:"Cafe", e:"☕", p:1, tags:[], h:null},
