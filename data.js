@@ -69,7 +69,7 @@ window.PLACES = [
   {id:66, n:"Wet Willie's", lat:33.71714, lon:-78.88207, area:"Myrtle Beach", c:"Daiquiri bar", e:"🍹", p:1, tags:[], h:"Mo-Th 11:30-22:00; Fr,Sa 11:30-00:00; Su 11:30-22:00"},
   {id:67, n:"Ocean Annie's", lat:33.75916, lon:-78.78959, area:"Myrtle Beach", c:"Beach bar", e:"🏝", p:2, tags:["oceanfront","water","music"], h:"Mo-Su 11:00-23:00"},
   {id:68, n:"RipTydz Oceanfront Grille & Rooftop Bar", lat:33.69492, lon:-78.87636, area:"Myrtle Beach", c:"Burgers · Rooftop bar", e:"🌇", p:2, tags:["oceanfront","water","music"], h:"Mo-We 11:00-22:00; Th 11:00-23:00; Fr 11:00-00:00; Sa 11:00-02:00; Su 11:00-22:00"},
-  {id:69, n:"8th Avenue Tiki Bar & Grill", lat:33.69061, lon:-78.88097, area:"Myrtle Beach", c:"Tiki bar", e:"🍍", p:2, tags:["oceanfront","water","music"], h:"Mo-Th 12:00-22:00; Fr,Sa 12:00-01:00; Su 12:00-22:00"},
+  {id:69, n:"8th Avenue Tiki Bar & Grill", lat:33.69061, lon:-78.88097, area:"Myrtle Beach", c:"Tiki bar", e:"🍍", p:2, tags:["oceanfront","water","music"], h:"Mo-Th 12:00-22:00; Fr,Sa 12:00-01:00; Su 12:00-22:00", tel:"+18437122340"},
   {id:70, n:"Bummz Beach Cafe & Bar", lat:33.70004, lon:-78.87105, area:"Myrtle Beach", c:"Beach bar · American", e:"🏖", p:2, tags:["oceanfront","water","music"], h:"Mo-Su 11:00-00:00"},
   {id:71, n:"Grumpy Monk", lat:33.71627, lon:-78.88336, area:"Myrtle Beach", c:"Burgers · Craft beer", e:"🍺", p:2, tags:["dog"], h:"Su-Th 11:00-21:30; Fr,Sa 11:00-22:00", web:"https://www.grumpymonkmyrtlebeach.com/", tel:"+18437128020"},
   {id:73, n:"Finn McCool's", lat:33.76878, lon:-78.78976, area:"Myrtle Beach", c:"Irish pub", e:"☘️", p:2, tags:["music"], h:"Mo 07:00-22:00; Tu off; We-Su 07:00-22:00", web:"http://www.finnmccoolsmb.com/"},
@@ -625,5 +625,7 @@ window.PLACES = [
   {id:640, n:"The Grove House", lat:33.82800, lon:-78.64311, area:"North Myrtle Beach", c:"American · Pizza", e:"🍕", p:1, tags:["family"], h:null, web:"https://thegrovehousenmb.com/", tel:"+18436631811"},
   {id:641, n:"On the Half Shell", lat:33.55168, lon:-79.04714, area:"Murrells Inlet", c:"Seafood · Raw bar", e:"🦪", p:2, tags:["music"], h:null, tel:"+18436511296"},
   {id:642, n:"Hot Tomato", lat:33.70223, lon:-78.87192, area:"Myrtle Beach", c:"Italian · Brick-oven pizza", e:"🍅", p:2, tags:[], h:null, tel:"+18438399400"},
-  {id:643, n:"Costa Coastal Kitchen & Bar", lat:33.54685, lon:-79.04554, area:"Murrells Inlet", c:"Italian · American", e:"🍷", p:3, tags:["date"], h:null, tel:"+18432991970"}
+  {id:643, n:"Costa Coastal Kitchen & Bar", lat:33.54685, lon:-79.04554, area:"Murrells Inlet", c:"Italian · American", e:"🍷", p:3, tags:["date"], h:null, tel:"+18432991970"},
+  {id:644, n:"Mexico Lindo", lat:33.70853, lon:-78.86483, area:"Myrtle Beach", c:"Mexican", e:"🌮", p:1, tags:["family"], h:null, tel:"+18436264566"},
+  {id:645, n:"Honey Barrel Breakfast & Steakhouse", lat:33.83027, lon:-78.67729, area:"North Myrtle Beach", c:"Breakfast · Steakhouse", e:"🥩", p:2, tags:["breakfast"], h:null, tel:"+18432810228"}
 ];
