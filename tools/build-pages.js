@@ -182,6 +182,36 @@ const PAGES = [
     h1: "North Myrtle Beach restaurants",
     desc: "Local (non-chain) restaurants in North Myrtle Beach, from Cherry Grove to Barefoot Landing, with prices, vibes and directions.",
     intro: "North Myrtle Beach has a slower, more local feel than the main strip. Here is every independent restaurant in North Myrtle Beach on our map, starting with the spots we've checked by hand.",
+    guide: [
+      {h: "North Myrtle Beach, area by area", p: [
+        "North Myrtle Beach is really four old beach towns that joined together in 1968: Cherry Grove, Ocean Drive, Crescent Beach and Windy Hill. Each one still has its own feel, and the restaurants change as you go.",
+        "<strong>Cherry Grove</strong>, at the north end, has marsh channels behind the beach and the Cherry Grove Pier. <strong>Ocean Drive</strong>, or OD, is the old center of town around Main Street. It's where the shag, South Carolina's state dance, grew up in the beach clubs. <strong>Crescent Beach</strong> and <strong>Windy Hill</strong>, to the south, are quieter and mostly homes and condos.",
+        "<strong>Barefoot Landing</strong> sits on the Intracoastal Waterway near the south end of town, with shops and several restaurants on the water. And just north of the city line, <strong>Little River</strong> is an old fishing village with seafood spots on the waterfront.",
+      ]},
+      {h: "What to eat", p: [
+        "Seafood is the big draw. Preston's and The Giant Crab are big seafood buffets, Flying Fish has water views, and Rockefellers Raw Bar and Maine Street Lobster Roll are casual picks for oysters and lobster rolls. Snooky's Oceanfront puts you right by the ocean, with live music and a dog-friendly spot to sit.",
+        "For a special night out, SeaBlue Restaurant and Wine Bar, 21 Main Prime Steakhouse, Bistro90 and Rioz Brazilian Steakhouse are some of the dressier choices. For Italian, try Villa Tuscanna or Benny's Trattoria.",
+        "Breakfast is easy to find too. Hoskin's Restaurant serves Southern breakfast and lunch, and Hot Stacks Pancake House, Kitchen Table and Souffle's are local morning spots. Finish the day with a cone at Original Painter's Homemade Ice Cream.",
+        "If you want to see the shag up close, O D Lounge is a classic place to watch beach-music dancing, and Molly Darcy's Irish Pub is a lively spot for a pint.",
+      ]},
+      {h: "Planning your visit", p: [
+        "North Myrtle Beach is about 20 to 30 minutes north of downtown Myrtle Beach on Highway 17, depending on traffic. Main Street, Barefoot Landing and Cherry Grove are spread out, so you'll want a car to get between them.",
+        "Summer is busy, but it usually feels calmer than the Myrtle Beach strip. In spring and fall, shag dancing gatherings bring big crowds to Main Street, so expect longer waits on those weekends.",
+        "Many restaurants keep shorter hours from November through February, and a few close a day or two a week. Check before you drive over.",
+      ]},
+    ],
+    tips: [
+      "Main Street in Ocean Drive is the walkable part of town. Park once and walk between dinner, ice cream and the beach.",
+      "Barefoot Landing is an easy pick with kids: shops, water views and several places to eat in one stop.",
+      "Seafood buffets are busiest at peak dinner time in summer. Eating before 5 PM usually means a shorter line.",
+      "Even if you don't dance, it's fun to watch the shag at a beach club on an early evening.",
+      "Little River is only about 10 minutes north if you want more seafood on the water.",
+    ],
+    faq: [
+      ["Is North Myrtle Beach a separate town from Myrtle Beach?", "Yes. North Myrtle Beach is its own city, made up of the old beach towns of Cherry Grove, Ocean Drive, Crescent Beach and Windy Hill. It's about 20 to 30 minutes north of downtown Myrtle Beach."],
+      ["Where can I eat on the water in North Myrtle Beach?", "Barefoot Landing has several restaurants on the Intracoastal Waterway. For ocean views, try Snooky's Oceanfront or Pirate's Cove Rooftop. Flying Fish and Joe's Bar & Grill also have water views."],
+      ["What is shag dancing?", "The shag is a laid-back partner dance done to beach music. It started in the beach clubs of the Carolinas, it's closely tied to Ocean Drive in North Myrtle Beach, and it's South Carolina's official state dance."],
+    ],
     match: p => p.area === "North Myrtle Beach",
     stay: ["North Myrtle Beach"],
   },
