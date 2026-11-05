@@ -294,10 +294,32 @@ const PAGES = [
     h1: "Local Italian restaurants on the Grand Strand",
     desc: "Independent Italian restaurants in Myrtle Beach, North Myrtle Beach, Murrells Inlet and nearby, from family red-sauce spots to date night. No chains.",
     intro: "When you've had your fill of fried seafood, a plate of pasta hits the spot. These are the independent Italian restaurants on our map, from casual family places with big portions to quieter rooms for a night out. Spots we've checked by hand are listed first.",
+    guide: [
+      {h: "Italian food at the beach", p: [
+        "The Grand Strand has more Italian restaurants than you might expect at a seafood beach. A lot of the local places lean toward hearty, red-sauce cooking with big portions, the kind of meal that's welcome after a long day in the sun.",
+        "There are two main kinds of spots. <strong>Family places</strong> like Luigi's Trattoria, Angelo's Steak & Pasta and Crave Italian Oven & Bar are relaxed, kid-friendly and easy on a group budget. <strong>Date-night rooms</strong> like Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna and Benny's Trattoria are quieter and better for a slow dinner with a glass of wine.",
+      ]},
+      {h: "How to choose", p: [
+        "<strong>Start with location.</strong> The Italian spots are spread from North Myrtle Beach down to the Market Common, and summer traffic on Kings Highway can turn a short trip into a long one. Villa Tuscanna, Benny's Trattoria and Crave are in North Myrtle Beach, Travinia is at the Market Common, and the rest are in Myrtle Beach.",
+        "<strong>Check the price level.</strong> Each listing below shows dollar signs. One or two means a casual meal, and three means a nicer night out.",
+        "<strong>Think about the night you want.</strong> With kids or a big group, pick a family spot and order a few platters to share. For an anniversary, book one of the quieter rooms and ask for a corner table.",
+      ]},
+      {h: "Planning your visit", p: [
+        "Summer evenings from about 6 to 8 PM are the busiest, especially on weekends. Many places take reservations, and an early or late dinner makes a big difference.",
+        "In the off-season, some smaller spots close a day or two a week. Call or check online before you drive over.",
+      ]},
+    ],
     tips: [
       "Many local Italian places do a lot of takeout. Ordering ahead is a good way to skip the summer wait.",
       "Family-style platters can feed a whole group for less than ordering one plate each.",
       "Some smaller spots close one or two days a week, often Sunday or Monday, especially in the off-season. Check hours before you go.",
+      "Ask about the specials. Local spots often have dishes that aren't on the printed menu.",
+      "Big group? Call ahead so the restaurant can set up a table for you.",
+    ],
+    faq: [
+      ["Where can I find good Italian food in Myrtle Beach?", "For a nicer night out, try Toscana Italian Kitchen and Bar or Villa Romana in Myrtle Beach, or Travinia Italian Kitchen at the Market Common. For a casual family meal, Luigi's Trattoria and Angelo's Steak & Pasta are good picks."],
+      ["Are there Italian restaurants in North Myrtle Beach?", "Yes. Villa Tuscanna, Benny's Trattoria and Crave Italian Oven & Bar are all in North Myrtle Beach."],
+      ["Is there a kid-friendly Italian restaurant in Myrtle Beach?", "Luigi's Trattoria, Angelo's Steak & Pasta and Crave Italian Oven & Bar are relaxed family spots where kids fit right in."],
     ],
     match: p => /italian/i.test(p.c),
     stay: ["Myrtle Beach", "North Myrtle Beach"],
