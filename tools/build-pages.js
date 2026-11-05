@@ -221,6 +221,35 @@ const PAGES = [
     h1: "Surfside Beach restaurants",
     desc: "Local (non-chain) restaurants in Surfside Beach, SC, the family beach south of Myrtle Beach. Prices, vibes and directions.",
     intro: "Surfside Beach is known as \"The Family Beach,\" and its restaurants match: casual, friendly and close to the sand. Here is every independent restaurant in Surfside Beach on our map.",
+    guide: [
+      {h: "Eating in \"The Family Beach\"", p: [
+        "Surfside Beach is a small town just south of Myrtle Beach, with Garden City on its other side. It's mostly beach homes, rentals and low-rise hotels, without a big amusement strip, which is how it earned the nickname The Family Beach.",
+        "The restaurants fit that feel. Think pancake houses, diners, burger joints, pizza and seafood, at prices that work for a family on vacation. Most places are casual enough to walk in straight from the beach.",
+        "The Surfside Beach Pier is the center of the beachfront, and most of the restaurants are a short drive away along Highway 17 and the roads that lead down to the ocean.",
+      ]},
+      {h: "Where to eat", p: [
+        "<strong>Breakfast</strong> is a big deal here. Surf Diner, Golden Egg Pancake House, Johnny D's Waffles and Wooden Spoon are all local morning spots, and Wooden Spoon serves Southern cooking too.",
+        "<strong>Seafood:</strong> Crabby Mike's Calabash Seafood is a big buffet with Calabash-style fried seafood, Pirate's Table is another seafood buffet, and Bubba's Fish Shack is a casual place for fried fish.",
+        "<strong>Casual eats:</strong> Hamburger Joe's for burgers, Pizza Hyena for pizza, Mango Thai when you want something different, and Neal & Pam's Bar and Grill for a drink and bar food. Hamburger Joe's, Pizza Hyena and Neal & Pam's are marked dog-friendly on our map. End the night with a cone at Painter's Homemade Ice Cream.",
+      ]},
+      {h: "Planning your visit", p: [
+        "Surfside is about 15 to 20 minutes south of downtown Myrtle Beach, and only a few minutes from Garden City and the Murrells Inlet MarshWalk. Staying here puts you close to both ends of the action.",
+        "Summer weekends are busy, but waits are usually shorter than on the Myrtle Beach strip. Breakfast spots have the longest lines, mostly between 8:30 and 10 AM.",
+        "In winter, a few places shorten their hours or close one day a week. It's a quiet, easy time to visit if you don't mind cooler beach days.",
+      ]},
+    ],
+    tips: [
+      "Eat breakfast early. The pancake houses fill up fast on summer mornings.",
+      "Calabash-style means lightly breaded, fried seafood. It's a classic on this part of the coast.",
+      "Several spots welcome dogs on their patios. Look for the dog-friendly tag below and call to check the rules.",
+      "Beach parking near the pier fills up early in summer, and some of it is paid. Check the signs before you leave the car.",
+      "Garden City and the MarshWalk are a short drive south if you want dinner on the water.",
+    ],
+    faq: [
+      ["Why is Surfside Beach called The Family Beach?", "It's a small, quiet town with mostly homes, rentals and low-rise hotels, and its restaurants and shops lean casual and kid-friendly."],
+      ["Where can I get breakfast in Surfside Beach?", "Surf Diner, Golden Egg Pancake House, Johnny D's Waffles and Wooden Spoon are local breakfast spots. Go before 8:30 AM on summer weekends to skip the longest waits."],
+      ["How far is Surfside Beach from Myrtle Beach?", "About 15 to 20 minutes by car from downtown Myrtle Beach, depending on traffic. The Murrells Inlet MarshWalk is about 10 to 15 minutes south."],
+    ],
     match: p => p.area === "Surfside Beach",
     stay: ["Surfside Beach"],
   },
