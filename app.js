@@ -257,6 +257,14 @@ $("near").onclick = () => {
 let deferred = null;
 window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferred = e; $("install").style.display = "flex"; });
 $("install").onclick = async () => { if (!deferred) return; deferred.prompt(); await deferred.userChoice; deferred = null; $("install").style.display = "none"; };
+// iPhone/iPad: no install prompt, so show Add to Home Screen steps
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isStandalone = window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+if (isIOS && !isStandalone) {
+  $("iosinstall").style.display = "flex";
+  $("iosinstall").onclick = () => { $("iosnote").hidden = false; };
+  $("iosclose").onclick = () => { $("iosnote").hidden = true; };
+}
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 
 render();

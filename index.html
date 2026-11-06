@@ -8,7 +8,9 @@
 <meta name="description" content="Free map of 600+ local Myrtle Beach &amp; Grand Strand restaurants. No chains. Filter by waterfront, live music, dog-friendly, breakfast, and what's open now."><meta property="og:type" content="website"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="Grand Strand Eats: Local Myrtle Beach Restaurant Map"><meta property="og:description" content="Free map of 600+ local Myrtle Beach &amp; Grand Strand restaurants. No chains. Filter by waterfront, live music, dog-friendly, breakfast, and what's open now."><meta property="og:url" content="https://grandstrandeats.com/"><meta property="og:image" content="https://grandstrandeats.com/share-v2.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Strand Eats">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,6 +89,11 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 .me{width:16px;height:16px;border-radius:50%;background:#2f80ff;border:3px solid #fff;box-shadow:0 0 0 6px rgba(47,128,255,.25)}
 .viewtoggle{display:none}
 .install{display:none}
+.iosnote{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:16px 44px 16px 16px;font-size:15px;line-height:1.5;max-width:420px;margin:0 auto}
+.iosnote[hidden]{display:none}
+.iosnote b{font-weight:800}
+.iosnote ol{margin:6px 0 0;padding-left:20px}
+.iosnote .x{position:absolute;top:8px;right:8px;border:0;background:var(--chip);color:var(--ink);border-radius:999px;width:30px;height:30px;font-size:16px}
 .leaflet-popup-content{font-family:inherit;font-weight:700}
 @media (max-width:820px){
   main{grid-template-columns:1fr}
@@ -99,12 +106,14 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 </style>
 </head>
 <body>
+<div class="iosnote" id="iosnote" role="dialog" aria-label="Add to Home Screen" hidden><button class="x" id="iosclose" aria-label="Close">✕</button><b>📱 Put Grand Strand Eats on your iPhone</b><ol><li>Tap the <b>Share</b> button <span aria-hidden="true">(the square with an arrow ⬆)</span> in Safari.</li><li>Scroll down and tap <b>Add to Home Screen</b>.</li></ol>It opens like an app, full screen, and works offline.</div>
 <div class="app">
 <header>
   <div class="top">
     <div class="logo">🌅</div>
     <div class="brand">Grand Strand Eats<small>Myrtle Beach &amp; the Grand Strand</small></div>
     <button class="iconbtn install" id="install">⬇ Get the app</button>
+    <button class="iconbtn install" id="iosinstall">📱 Get the app</button>
     <button class="iconbtn viewtoggle" id="viewtoggle">🗺 Map</button>
   </div>
   <div class="ask">What's the <span>vibe</span> tonight?</div>
