@@ -18,6 +18,9 @@ const THANKSGIVING = {
   47: "🦃 Thanksgiving buffet 11 AM–8 PM · $51.99 · All 4 Captain George's locations",
   28: "🦃 Open 11 AM–8 PM · Thanksgiving dinner $30.95, kids $15.95 · Regular menu too · Preorder to-go",
   518: "🦃 Open Thanksgiving (call for hours: 843-215-5255) · Thanksgiving dinner $30.95, kids $15.95 · Regular menu too · Preorder to-go",
+  18: "🦃 Seafood & traditional buffet 11 AM–4:30 PM · Adults $48.95, kids 6–11 $15.95, 5 & under free · 20% gratuity added · Reservations preferred: 843-651-5800",
+  2: "🦃 Open 11 AM–10:30 PM · Thanksgiving buffet 11 AM–5 PM · Reservations recommended",
+  234: "🦃 Thanksgiving Day feature (call 843-497-2636) · At-home dinner for 4, $225, pickup Nov 24–25, 1–5 PM · Order by Sat, Nov 21",
 };
 
 const PAGES = [
@@ -26,7 +29,7 @@ const PAGES = [
     title: "Restaurants Open on Thanksgiving 2026 in Myrtle Beach",
     h1: "Restaurants open on Thanksgiving 2026 in Myrtle Beach",
     desc: "Local Myrtle Beach and Grand Strand restaurants open on Thanksgiving Day, Thursday, November 26, 2026, with holiday hours, prices and to-go options.",
-    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 3, 2026.",
+    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 6, 2026.",
     notes: THANKSGIVING,
     match: p => p.id in THANKSGIVING,
     stay: ["Myrtle Beach", "Murrells Inlet", "Surfside Beach"],
