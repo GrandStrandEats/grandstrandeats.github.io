@@ -44,7 +44,7 @@ const PAGES = [
       {h: "What kinds of waterfront restaurants are on the Grand Strand?", p: [
         "<strong>You can eat by the ocean, on the Murrells Inlet MarshWalk, along the Intracoastal Waterway, or by the water in Little River and Garden City.</strong> Each one suits a different kind of night out.",
         "<strong>The ocean.</strong> Along the Myrtle Beach oceanfront you'll find beach bars and grills right on the sand, rooftop decks, and spots by the Boardwalk and the piers. Expect a breeze, a lively crowd and casual food like burgers, fish tacos and fried shrimp. Sea Captain's House and Pier 14 are good picks when you want a real sit-down meal with the ocean in view.",
-        "<strong>The Murrells Inlet MarshWalk.</strong> A boardwalk along the salt marsh, lined with restaurants and bars with open decks. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack are all on it. Many have live music on summer evenings, and it's easy to walk the boardwalk between dinner and a drink. More inlet favorites, like Wicked Tuna and The Claw House, sit just off the MarshWalk on the same water.",
+        "<strong>The Murrells Inlet MarshWalk.</strong> A boardwalk along the salt marsh, lined with restaurants and bars with open decks. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and The Claw House are all on it. Many have live music on summer evenings, and it's easy to walk the boardwalk between dinner and a drink. More inlet favorites, like Wicked Tuna and The Claw House, sit just off the MarshWalk on the same water.",
         "<strong>The Intracoastal Waterway.</strong> A calmer view of boats and marsh, away from the beach crowds. In North Myrtle Beach, Barefoot Landing has several restaurants on the waterway, and Boathouse Waterway Bar & Grill has a big outdoor deck on the water.",
         "<strong>Little River and Garden City.</strong> At the north end, Little River is an old fishing village with seafood spots like Captain Archie's on the waterfront. At the south end, Gulfstream Cafe in Garden City looks out over the inlet and is a favorite for a dressier dinner at sunset.",
       ]},
@@ -153,7 +153,7 @@ const PAGES = [
       {h: "What makes Murrells Inlet restaurants different?", p: [
         "<strong>Murrells Inlet is an old fishing village where most restaurants are local, family-run places with decks over the water, not chains.</strong> It sits about 15 miles south of Myrtle Beach. The town wraps around a saltwater inlet and marsh, and boats still head out from here for fishing charters and deep-sea trips. That's a big part of why it calls itself the seafood capital of South Carolina.",
         "Most of the restaurants sit along Business 17, which runs right beside the inlet. You won't find big resort hotels or a strip of chain restaurants here. It's mostly local, family-run places, and a lot of them have decks looking out over the water.",
-        "<strong>The MarshWalk</strong> is the heart of it all. It's a wooden boardwalk along the marsh, lined with restaurants and bars. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack all open onto it, so you can walk from one to the next. On warm evenings there's often live music, and it's a fun place to watch the sunset and the boats coming in.",
+        "<strong>The MarshWalk</strong> is the heart of it all. It's a wooden boardwalk along the marsh, lined with restaurants and bars. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and The Claw House all open onto it, so you can walk from one to the next. On warm evenings there's often live music, and it's a fun place to watch the sunset and the boats coming in.",
       ]},
       {h: "Where else can I eat in Murrells Inlet besides the MarshWalk?", p: [
         "<strong>Wicked Tuna, The Claw House and Hot Fish Club all sit on the same water just off the boardwalk.</strong> More of the inlet's best-known seafood spots sit just off the boardwalk on the same stretch of water. Wicked Tuna, The Claw House and Hot Fish Club all have water views, and Wicked Tuna and Hot Fish Club are good picks for a date night.",
@@ -175,7 +175,7 @@ const PAGES = [
     ],
     faq: [
       ["Is Murrells Inlet worth the drive from Myrtle Beach?", "Yes, if you like seafood and water views. It's about 25 to 30 minutes south, and it's mostly local, family-run restaurants instead of chains. The MarshWalk lets you try more than one spot in a single night."],
-      ["Where is the Murrells Inlet MarshWalk?", "It runs along the marsh side of Business 17 in Murrells Inlet. Restaurants like Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack open right onto the boardwalk."],
+      ["Where is the Murrells Inlet MarshWalk?", "It runs along the marsh side of Business 17 in Murrells Inlet. Restaurants like Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and The Claw House open right onto the boardwalk."],
       ["Is the MarshWalk good for kids?", "Yes, especially earlier in the evening. The boardwalk is free to walk, and family-friendly spots like Creek Ratz and Drunken Jack's welcome kids. Later at night the bars get louder with live music."],
     ],
     match: p => p.area === "Murrells Inlet" || p.area === "MarshWalk",
