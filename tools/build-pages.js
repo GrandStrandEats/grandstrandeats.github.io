@@ -41,15 +41,15 @@ const PAGES = [
     desc: "Local (no chains) waterfront and oceanfront restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and Garden City, with prices and links.",
     intro: "Eating with a view of the water is half the fun of a Grand Strand trip. These are the local, non-chain spots on our map that sit on the ocean, the inlet, the marsh or the Intracoastal Waterway. Many are busiest at sunset, so plan ahead on weekends.",
     guide: [
-      {h: "Pick your kind of water view", p: [
-        "\"Waterfront\" means four pretty different things on the Grand Strand, and each one suits a different kind of night out.",
+      {h: "What kinds of waterfront restaurants are on the Grand Strand?", p: [
+        "<strong>You can eat by the ocean, on the Murrells Inlet MarshWalk, along the Intracoastal Waterway, or by the water in Little River and Garden City.</strong> Each one suits a different kind of night out.",
         "<strong>The ocean.</strong> Along the Myrtle Beach oceanfront you'll find beach bars and grills right on the sand, rooftop decks, and spots by the Boardwalk and the piers. Expect a breeze, a lively crowd and casual food like burgers, fish tacos and fried shrimp. Sea Captain's House and Pier 14 are good picks when you want a real sit-down meal with the ocean in view.",
         "<strong>The Murrells Inlet MarshWalk.</strong> A boardwalk along the salt marsh, lined with restaurants and bars with open decks. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack are all on it. Many have live music on summer evenings, and it's easy to walk the boardwalk between dinner and a drink. More inlet favorites, like Wicked Tuna, Capt. Dave's Dockside and The Claw House, sit just off the MarshWalk on the same water.",
         "<strong>The Intracoastal Waterway.</strong> A calmer view of boats and marsh, away from the beach crowds. In North Myrtle Beach, Barefoot Landing has several restaurants on the waterway, and Boathouse Waterway Bar & Grill has a big outdoor deck on the water.",
         "<strong>Little River and Garden City.</strong> At the north end, Little River is an old fishing village with seafood spots like Captain Archie's on the waterfront. At the south end, Gulfstream Cafe in Garden City looks out over the inlet and is a favorite for a dressier dinner at sunset.",
       ]},
-      {h: "When to go", p: [
-        "Sunset is the busiest time at almost every place on this list. From late May through Labor Day, a 45-minute or longer wait at prime time is normal at the popular inlet and oceanfront spots. Eating at 4:30 or 5 PM, or after 8, makes a big difference.",
+      {h: "When is the best time to eat at a waterfront restaurant?", p: [
+        "<strong>Go before 5 PM or after 8 PM, and pick spring or fall if you can.</strong> Sunset is the busiest time at almost every place on this list. From late May through Labor Day, a 45-minute or longer wait at prime time is normal at the popular inlet and oceanfront spots. Eating at 4:30 or 5 PM, or after 8, makes a big difference.",
         "Spring and fall are the best seasons for eating outside: warm days, cooler evenings, fewer bugs and shorter waits. In winter some decks close, and a few spots cut back their hours or close one or two days a week, so check before you drive over.",
         "Summer afternoon thunderstorms are common. Most places will move you inside, but outdoor-only bars may close their decks until the storm passes.",
       ]},
@@ -76,20 +76,22 @@ const PAGES = [
     desc: "Local (no chains) seafood restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and nearby, with prices, vibes and directions.",
     intro: "Fresh shrimp, oysters, flounder and Calabash-style fried platters are what most people come to the Grand Strand to eat. These are the local, non-chain seafood spots on our map, from the Murrells Inlet MarshWalk up to Little River. Waits get long in summer, so go early or call ahead.",
     guide: [
-      {h: "What to order: Grand Strand seafood classics", p: [
+      {h: "What seafood should I order on the Grand Strand?", p: [
+        "<strong>Try Calabash-style fried seafood, shrimp and grits, she-crab soup, a Lowcountry boil, or the fresh catch of the day.</strong> Here's what each one is.",
         "<strong>Calabash-style seafood.</strong> Shrimp, flounder, oysters and scallops in a light, thin breading, fried fast and served in big platters with hushpuppies and slaw. The style is named for Calabash, North Carolina, a fishing town just over the state line from Little River, and you'll see \"Calabash\" on menus all up and down the coast.",
         "<strong>Shrimp and grits.</strong> A Lowcountry staple. Every kitchen does it a little differently, usually with a gravy of sausage or bacon, peppers and onions over creamy stone-ground grits.",
         "<strong>She-crab soup.</strong> A rich, creamy crab soup from the South Carolina coast, traditionally finished with a splash of sherry. Most local seafood spots have their own version.",
         "<strong>Lowcountry boil.</strong> Also called Frogmore stew: shrimp, smoked sausage, corn on the cob and red potatoes boiled together with seasoning. It's a great order for a group.",
         "<strong>Fresh catch.</strong> Many places list a fish of the day, often grouper, flounder, mahi-mahi, tuna or wahoo, grilled, blackened or fried. Ask your server what came in locally that day.",
       ]},
-      {h: "Buffet, sit-down or raw bar?", p: [
+      {h: "Should I pick a seafood buffet, a sit-down restaurant or a raw bar?", p: [
+        "<strong>Pick a buffet for big eaters and families, a sit-down restaurant for the freshest fish, and a raw bar for a casual night of oysters and cold beer.</strong>",
         "<strong>Seafood buffets</strong> are a Myrtle Beach tradition, with crab legs, fried and steamed seafood, and a long dessert table. Captain George's, The Giant Crab and Crabby Mike's Calabash Seafood are local, family-run options. They're a good deal for big eaters and groups with kids, but they cost more per person than a single platter, so they're not the best pick for a light appetite.",
         "<strong>Sit-down seafood restaurants</strong> are where you'll find the fresh catch, shrimp and grits and she-crab soup done well. The Murrells Inlet waterfront is the best-known stretch for this, and Wicked Tuna, Drunken Jack's and The Claw House are all there. In Myrtle Beach, Sea Captain's House and Hook and Barrel are popular for a nicer dinner.",
         "<strong>Raw bars and crab houses</strong> are the most casual of the three: oysters on the half shell, steamed shrimp by the pound, crab legs and cold beer. Rockefellers Raw Bar in North Myrtle Beach and Inlet Crab House & Raw Bar in Murrells Inlet are on our map.",
       ]},
-      {h: "What's in season", p: [
-        "South Carolina's wild shrimp are caught from late spring through early winter, and local white shrimp are at their best in late summer and fall. Wild oyster season on the South Carolina coast usually runs from fall through spring, and oyster roasts are a cool-weather tradition. Offshore fish like mahi-mahi, tuna and wahoo are most common on menus in late spring and summer.",
+      {h: "What seafood is in season in South Carolina?", p: [
+        "<strong>Local white shrimp are best in late summer and fall, oysters run from fall through spring, and offshore fish like mahi-mahi and tuna show up most in late spring and summer.</strong> South Carolina's wild shrimp are caught from late spring through early winter, and local white shrimp are at their best in late summer and fall. Wild oyster season on the South Carolina coast usually runs from fall through spring, and oyster roasts are a cool-weather tradition. Offshore fish like mahi-mahi, tuna and wahoo are most common on menus in late spring and summer.",
         "Not everything on a beach menu is local, especially in the busy summer months. If that matters to you, ask what's local today. Good seafood spots are happy to tell you.",
       ]},
     ],
@@ -115,16 +117,16 @@ const PAGES = [
     desc: "Local breakfast and brunch restaurants in Myrtle Beach, Market Common and nearby, no chains. Prices, websites and directions.",
     intro: "Pancake houses are a Myrtle Beach tradition, but the local diners and cafés are where the regulars go. Here are the independent breakfast spots in and around Myrtle Beach on our map. Morning hours change by season, so check before you go.",
     guide: [
-      {h: "The Myrtle Beach pancake house tradition", p: [
-        "Drive down Kings Highway and you'll pass one pancake house after another. Myrtle Beach has had a big breakfast culture since the early days of beach vacations, when families wanted a full meal before a long day on the sand. Some of the local pancake houses have been family-run for decades.",
+      {h: "Why does Myrtle Beach have so many pancake houses?", p: [
+        "<strong>Families on beach vacations wanted a big, affordable breakfast before a long day on the sand, and local pancake houses opened along Kings Highway to serve them.</strong> Drive down Kings Highway and you'll pass one pancake house after another. Myrtle Beach has had a big breakfast culture since the early days of beach vacations, when families wanted a full meal before a long day on the sand. Some of the local pancake houses have been family-run for decades.",
         "A classic pancake house breakfast means big stacks of buttermilk pancakes, Belgian waffles, omelettes, bacon and sausage, and bottomless coffee, at prices that are easy on a family budget. Donald's Pancake House and Pan American Pancake & Omelette House are two long-running local spots on our map, and Pan American opens early for people heading out to fish or golf.",
       ]},
-      {h: "Southern breakfast and brunch", p: [
-        "For something more Southern, look for biscuits and gravy, a side of grits, country ham, and shrimp and grits on brunch menus. Blueberry's Grill is a popular local breakfast and lunch spot, and Mimosa Restaurant is a good pick when you want brunch with a mimosa to match the name.",
+      {h: "Where can I get Southern breakfast or brunch in Myrtle Beach?", p: [
+        "<strong>Blueberry's Grill and Mimosa Restaurant are good local picks, and Sea Captain's House serves breakfast with an ocean view.</strong> For something more Southern, look for biscuits and gravy, a side of grits, country ham, and shrimp and grits on brunch menus. Blueberry's Grill is a popular local breakfast and lunch spot, and Mimosa Restaurant is a good pick when you want brunch with a mimosa to match the name.",
         "Want breakfast with an ocean view? Sea Captain's House serves breakfast in its oceanfront dining room, and it's one of the few places where you can watch the waves over a plate of eggs.",
       ]},
-      {h: "Coffee shops for a lighter start", p: [
-        "Not a big-breakfast person? The local coffee shops on our map, like Grand Strand Coffee and HiFi Coffeebar, are good for a latte and a pastry before the beach. Check their hours before you go, since some open later in the morning.",
+      {h: "Where can I get coffee before the beach in Myrtle Beach?", p: [
+        "<strong>Local coffee shops like Grand Strand Coffee and HiFi Coffeebar are good for a latte and a pastry before the beach.</strong> They're a nice pick if you're not a big-breakfast person. Check their hours before you go, since some open later in the morning.",
       ]},
     ],
     tips: [
