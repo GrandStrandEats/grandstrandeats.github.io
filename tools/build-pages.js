@@ -376,17 +376,17 @@ const PAGES = [
     desc: "Local (non-chain) restaurants in Garden City Beach, SC, between Surfside Beach and Murrells Inlet, with prices, vibes and directions.",
     intro: "Garden City Beach sits between Surfside Beach and Murrells Inlet, with the Garden City Pier at its center and the inlet on its back side. It's casual and laid back, with plenty of spots to grab a meal in flip-flops. Here is every local restaurant in Garden City on our map.",
     guide: [
-      {h: "A laid-back beach between two busy ones", p: [
-        "Garden City Beach is a narrow strip of land between the ocean and the back side of Murrells Inlet. It runs right into Surfside Beach to the north, and it feels a lot like it: beach houses, small hotels and casual places to eat.",
+      {h: "What is Garden City Beach like?", p: [
+        "<strong>Garden City Beach is a laid-back beach town between Surfside Beach and Murrells Inlet, with beach houses, small hotels and casual places to eat.</strong> It's a narrow strip of land between the ocean and the back side of Murrells Inlet. It runs right into Surfside Beach to the north, and it feels a lot like it: beach houses, small hotels and casual places to eat.",
         "The Garden City Pier is the center of the beachfront, with arcades nearby and the Pier Snack Bar right there for burgers and breakfast. At the south end, the road runs out toward the inlet, and that's where you'll find Gulfstream Cafe, a dressier spot looking out over the water.",
       ]},
-      {h: "What to eat", p: [
-        "Most Garden City restaurants are casual: seafood, bars and grills, pizza, breakfast and ice cream. Many are a short walk or bike ride from the beach rentals, so you can skip the car for a night.",
+      {h: "Where should I eat in Garden City Beach?", p: [
+        "<strong>Most Garden City restaurants are casual seafood, bar and grill, pizza, breakfast and ice cream spots, and Gulfstream Cafe is the local favorite for a sunset dinner.</strong> Many are a short walk or bike ride from the beach rentals, so you can skip the car for a night.",
         "Conch Cafe is a casual oceanfront seafood spot. It's closed for the season and plans to reopen in 2027, so check before you go.",
-        "For a sunset dinner, Gulfstream Cafe is the local favorite on this stretch. For a bigger choice of seafood restaurants, the Murrells Inlet MarshWalk is only a few minutes south.",
+        "For a bigger choice of seafood restaurants, the Murrells Inlet MarshWalk is only a few minutes south.",
       ]},
-      {h: "Planning your visit", p: [
-        "Garden City is about 20 to 25 minutes south of downtown Myrtle Beach. Traffic on the roads into the beach can back up on summer Saturdays, when a lot of rentals turn over.",
+      {h: "How far is Garden City Beach from Myrtle Beach?", p: [
+        "<strong>Garden City is about 20 to 25 minutes south of downtown Myrtle Beach.</strong> Traffic on the roads into the beach can back up on summer Saturdays, when a lot of rentals turn over.",
         "In the off-season Garden City gets very quiet. Some beach spots close for weeks or months in winter, while restaurants along Highway 17 and in Murrells Inlet stay open.",
       ]},
     ],
@@ -412,18 +412,19 @@ const PAGES = [
     desc: "Local restaurants in Pawleys Island and Litchfield Beach, SC, at the quiet south end of the Grand Strand. No chains.",
     intro: "Pawleys Island and Litchfield Beach are the quiet south end of the Grand Strand. Pawleys likes to call itself \"arrogantly shabby,\" and the restaurants fit: relaxed, local and unfussy, with some special-occasion spots mixed in. Here is every local restaurant in Pawleys Island and Litchfield on our map.",
     guide: [
-      {h: "What Pawleys Island is like", p: [
-        "Pawleys Island is a small barrier island with old beach houses, a quiet beach and almost no businesses. You reach it by two causeways over the marsh, and most of the island is homes and rentals.",
-        "Nearly all the restaurants are on the mainland along Highway 17, in small shopping centers and old cottages, with Litchfield Beach just to the north. The Hammock Shops, where the well-known Pawleys Island rope hammocks are sold, are on the same stretch.",
+      {h: "Are there restaurants on Pawleys Island?", p: [
+        "<strong>Very few. Pawleys Island is a small barrier island of old beach houses, and nearly all the restaurants are on the mainland along Highway 17.</strong> You reach it by two causeways over the marsh, and most of the island is homes and rentals.",
+        "Those mainland restaurants sit in small shopping centers and old cottages, with Litchfield Beach just to the north. The Hammock Shops, where the well-known Pawleys Island rope hammocks are sold, are on the same stretch.",
         "The pace is slower than Myrtle Beach. Expect seafood, Southern cooking, a few dressier dinner spots, pizza, coffee and casual bars, most of them local.",
       ]},
-      {h: "How to choose", p: [
+      {h: "How do I choose a restaurant in Pawleys Island?", p: [
+        "<strong>Pick a date-night spot for a nice dinner, a Highway 17 shopping center for a casual meal, or drive 15 minutes north to the MarshWalk for seafood on the water.</strong>",
         "<strong>For a nice dinner</strong>, look for the spots marked date night on our map. Pawleys has some quieter, more grown-up dining rooms, good for an anniversary or a night away from the beach crowd.",
         "<strong>For a casual meal</strong>, the shopping centers along Highway 17 have pizza, tacos, sandwiches and bar food, easy to grab after a beach day.",
         "<strong>For seafood on the water</strong>, the Murrells Inlet MarshWalk is about 15 minutes north, and plenty of Pawleys visitors make the drive for a sunset dinner.",
       ]},
-      {h: "Planning your visit", p: [
-        "Pawleys Island is about 30 to 40 minutes south of Myrtle Beach on Highway 17. Brookgreen Gardens and Huntington Beach State Park are on the way, so it's easy to make a day of it.",
+      {h: "How far is Pawleys Island from Myrtle Beach?", p: [
+        "<strong>Pawleys Island is about 30 to 40 minutes south of Myrtle Beach on Highway 17.</strong> Brookgreen Gardens and Huntington Beach State Park are on the way, so it's easy to make a day of it.",
         "Highway 17 is the main road along this part of the coast, so summer traffic can back up around lunch and dinner. Give yourself a few extra minutes.",
         "Summer is busy, but Pawleys stays calmer than Myrtle Beach. Spring and fall are lovely. Some restaurants close one or two days a week, especially in winter.",
       ]},
@@ -450,17 +451,17 @@ const PAGES = [
     desc: "Local (non-chain) restaurants in Conway, South Carolina, including historic downtown near the Riverwalk, about 20 minutes from Myrtle Beach.",
     intro: "Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River. Its historic downtown and Riverwalk make a nice break from the beach crowds, and it's home to Coastal Carolina University. Here is every local restaurant in Conway on our map.",
     guide: [
-      {h: "What Conway is like", p: [
-        "Conway is an old river town and the county seat of Horry County, about 20 minutes inland from Myrtle Beach. Big live oaks shade the streets, and the historic downtown sits right by the Waccamaw River.",
+      {h: "What is Conway, SC like?", p: [
+        "<strong>Conway is an old river town and the county seat of Horry County, about 20 minutes inland from Myrtle Beach.</strong> Big live oaks shade the streets, and the historic downtown sits right by the Waccamaw River.",
         "Downtown restaurants are mostly local: cafés, Southern cooking, bars, pizza and a few nicer dinner spots, many of them in older storefronts. Out along Highway 501 and near Coastal Carolina University you'll find more casual places and student favorites.",
       ]},
-      {h: "Why eat in Conway", p: [
-        "If you're staying at the beach, Conway makes a nice half-day trip. You trade the tourist crowds for a small Southern downtown where the people at the next table are more likely to be locals than visitors.",
+      {h: "Is Conway worth the drive from the beach for dinner?", p: [
+        "<strong>Yes, if you want a break from the crowds. Conway makes a nice half-day trip from the beach.</strong> You trade the tourist crowds for a small Southern downtown where the people at the next table are more likely to be locals than visitors.",
         "Because Conway doesn't depend on summer visitors, its restaurants don't swing as much with the seasons as the beach spots do. It's a good choice in the off-season, when some beach restaurants cut back.",
         "Pair your meal with a walk on the <strong>Conway Riverwalk</strong>, a boardwalk along the Waccamaw River through cypress trees and river marsh. It's free, shaded and close to downtown.",
       ]},
-      {h: "Planning your visit", p: [
-        "Conway is about 20 to 25 minutes from Myrtle Beach on Highway 501. On summer Saturdays, traffic on 501 mostly backs up heading toward the beach, so driving inland in the afternoon is usually easy.",
+      {h: "How far is Conway from Myrtle Beach?", p: [
+        "<strong>Conway is about 20 to 25 minutes from Myrtle Beach on Highway 501.</strong> On summer Saturdays, traffic on 501 mostly backs up heading toward the beach, so driving inland in the afternoon is usually easy.",
         "Some downtown spots keep shorter hours, and a few close on Sundays or Mondays. Check hours before you drive in.",
         "Coastal Carolina University home football games and graduation weekends bring big crowds, so plan ahead on those dates.",
       ]},
