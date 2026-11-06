@@ -266,15 +266,16 @@ const PAGES = [
     desc: "Local (no chains) romantic restaurants for date night or an anniversary in Myrtle Beach, Murrells Inlet, Pawleys Island and North Myrtle Beach.",
     intro: "Planning an anniversary, a proposal or just a night out without the kids? These are the local spots on our map that we've marked as good for date night: quieter rooms, water views, good wine lists and food worth dressing up for. Most of them take reservations, and the best tables go first on summer weekends.",
     guide: [
-      {h: "Pick the right spot for your night", p: [
+      {h: "What's the best romantic restaurant in Myrtle Beach for my kind of night?", p: [
+        "<strong>Pick Sea Captain's House or Gulfstream Cafe for a sunset water view, Aspen Grille or Thoroughbreds for a dressy dinner, and Toscana or Villa Romana for Italian.</strong>",
         "<strong>A water view at sunset.</strong> Sea Captain's House sits right on the ocean in Myrtle Beach. Gulfstream Cafe in Garden City looks out over the inlet. Wicked Tuna, Wahoo's Fish House and Hot Fish Club are all in Murrells Inlet, and Clark's Seafood and Chophouse is on the water in Little River. Joe's Bar & Grill in North Myrtle Beach is another water-view pick.",
         "<strong>A dressy, special-occasion dinner.</strong> Aspen Grille, Thoroughbreds, SeaBlue Restaurant and Wine Bar and 21 Main Prime Steakhouse are the most upscale spots on this list, with prices to match. Flamingo Grill and Hook and Barrel are good for steak and seafood in a nice room.",
         "<strong>Italian.</strong> Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna, Benny's Trattoria and Angelo's Steak & Pasta all made our date-night list.",
         "<strong>Something a little different.</strong> Rioz Brazilian Steakhouse carves meat at your table. Co Sushi and Art Burger Sushi Bar are fun for a more relaxed date, Bistro90 is another good North Myrtle Beach choice, and Heirloom Bistro works well for a brunch date.",
       ]},
-      {h: "Planning a special night", p: [
-        "Reserve as soon as you know your dates, especially for Friday and Saturday in summer and around Valentine's Day. If a place doesn't take reservations, go early.",
-        "Tell the restaurant if it's a birthday, anniversary or proposal when you book. Many will try to give you a better table.",
+      {h: "How do I plan a special date night in Myrtle Beach?", p: [
+        "<strong>Reserve early, especially for summer weekends and around Valentine's Day, and tell the restaurant if it's a birthday, anniversary or proposal.</strong> If a place doesn't take reservations, go early.",
+        "Many restaurants will try to give you a better table for a birthday, anniversary or proposal.",
         "Dress on the Grand Strand is relaxed. Even at the nicer spots, resort casual is fine: a collared shirt or a sundress. Save the flip-flops for the beach bars.",
         "Plan a walk after dinner. The Murrells Inlet MarshWalk, the Myrtle Beach Boardwalk, Barefoot Landing and the Market Common all make an easy, pretty stroll.",
       ]},
@@ -301,17 +302,18 @@ const PAGES = [
     desc: "Independent Italian restaurants in Myrtle Beach, North Myrtle Beach, Murrells Inlet and nearby, from family red-sauce spots to date night. No chains.",
     intro: "When you've had your fill of fried seafood, a plate of pasta hits the spot. These are the independent Italian restaurants on our map, from casual family places with big portions to quieter rooms for a night out. Spots we've checked by hand are listed first.",
     guide: [
-      {h: "Italian food at the beach", p: [
-        "The Grand Strand has more Italian restaurants than you might expect at a seafood beach. A lot of the local places lean toward hearty, red-sauce cooking with big portions, the kind of meal that's welcome after a long day in the sun.",
-        "There are two main kinds of spots. <strong>Family places</strong> like Luigi's Trattoria, Angelo's Steak & Pasta and Crave Italian Oven & Bar are relaxed, kid-friendly and easy on a group budget. <strong>Date-night rooms</strong> like Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna and Benny's Trattoria are quieter and better for a slow dinner with a glass of wine.",
+      {h: "What kind of Italian restaurants are on the Grand Strand?", p: [
+        "<strong>You'll find two main kinds: relaxed family places with big portions, and quieter date-night rooms.</strong> The Grand Strand has more Italian restaurants than you might expect at a seafood beach, and a lot of the local places lean toward hearty, red-sauce cooking with big portions, the kind of meal that's welcome after a long day in the sun.",
+        "<strong>Family places</strong> like Luigi's Trattoria, Angelo's Steak & Pasta and Crave Italian Oven & Bar are relaxed, kid-friendly and easy on a group budget. <strong>Date-night rooms</strong> like Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna and Benny's Trattoria are quieter and better for a slow dinner with a glass of wine.",
       ]},
-      {h: "How to choose", p: [
+      {h: "How do I choose an Italian restaurant in Myrtle Beach?", p: [
+        "<strong>Choose by location first, then price, then the kind of night you want.</strong>",
         "<strong>Start with location.</strong> The Italian spots are spread from North Myrtle Beach down to the Market Common, and summer traffic on Kings Highway can turn a short trip into a long one. Villa Tuscanna, Benny's Trattoria and Crave are in North Myrtle Beach, Travinia is at the Market Common, and the rest are in Myrtle Beach.",
         "<strong>Check the price level.</strong> Each listing below shows dollar signs. One or two means a casual meal, and three means a nicer night out.",
         "<strong>Think about the night you want.</strong> With kids or a big group, pick a family spot and order a few platters to share. For an anniversary, book one of the quieter rooms and ask for a corner table.",
       ]},
-      {h: "Planning your visit", p: [
-        "Summer evenings from about 6 to 8 PM are the busiest, especially on weekends. Many places take reservations, and an early or late dinner makes a big difference.",
+      {h: "When are Italian restaurants in Myrtle Beach busiest?", p: [
+        "<strong>Summer evenings from about 6 to 8 PM are the busiest, especially on weekends.</strong> Many places take reservations, and an early or late dinner makes a big difference.",
         "In the off-season, some smaller spots close a day or two a week. Call or check online before you drive over.",
       ]},
     ],
@@ -337,17 +339,17 @@ const PAGES = [
     desc: "Local restaurants at The Market Common in Myrtle Beach, the walkable shopping and dining district near the airport and Grand Park. No chains.",
     intro: "The Market Common is a walkable shopping and dining district in south Myrtle Beach, built on the former Myrtle Beach Air Force Base. It's a good pick when you want dinner, a stroll and some shopping in one stop, away from the busy oceanfront. Here are the local restaurants there on our map.",
     guide: [
-      {h: "What the Market Common is like", p: [
-        "The Market Common is a neighborhood and shopping district in south Myrtle Beach, built on the grounds of the former Myrtle Beach Air Force Base. Its main streets have shops and restaurants on the ground floor and apartments above, so it feels more like a small downtown than a mall.",
+      {h: "What is the Market Common like?", p: [
+        "<strong>The Market Common is a walkable neighborhood and shopping district in south Myrtle Beach, built on the former Myrtle Beach Air Force Base.</strong> Its main streets have shops and restaurants on the ground floor and apartments above, so it feels more like a small downtown than a mall.",
         "It's only a few minutes from the airport and the beach, but it has a very different feel from the oceanfront: newer, quieter and easy to walk. Locals come here for dinner and a stroll, and families like it for Grand Park next door.",
       ]},
-      {h: "Where to eat", p: [
-        "Travinia Italian Kitchen and Co Sushi are good choices for date night. King Street Grille is a sports bar that works for families and has a dog-friendly patio. Tidal Creek Brewhouse is a local brewery and café that serves breakfast too, and dogs are welcome there as well.",
+      {h: "Where should I eat at the Market Common?", p: [
+        "<strong>Travinia Italian Kitchen and Co Sushi are good choices for date night, and King Street Grille and Tidal Creek Brewhouse work well for families and dogs.</strong> King Street Grille is a sports bar that works for families and has a dog-friendly patio. Tidal Creek Brewhouse is a local brewery and café that serves breakfast too, and dogs are welcome there as well.",
         "For something quick and light, Bowled serves poke and grain bowls.",
         "Many restaurants here have sidewalk or patio seating, which is the best way to eat at the Market Common on a spring or fall evening.",
       ]},
-      {h: "Planning your visit", p: [
-        "The Market Common is about 10 to 15 minutes south of downtown Myrtle Beach and just a few minutes from Myrtle Beach International Airport. Surfside Beach is a short drive farther south.",
+      {h: "How far is the Market Common from downtown Myrtle Beach?", p: [
+        "<strong>The Market Common is about 10 to 15 minutes south of downtown Myrtle Beach and just a few minutes from Myrtle Beach International Airport.</strong> Surfside Beach is a short drive farther south.",
         "It's busiest on Friday and Saturday evenings and during events in the district and at Grand Park. Weeknights are relaxed, and you can often walk right in.",
         "It's a good pick on a rainy day or in the off-season, when the beachfront is quiet but the Market Common still has people out walking and eating.",
       ]},
