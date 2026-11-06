@@ -122,7 +122,19 @@ $("viewtoggle").onclick = () => { const m = $("main").classList.toggle("showmap"
 const map = L.map("map", {zoomControl:false}).setView([33.70, -78.88], 11);
 L.control.zoom({position:"topright"}).addTo(map);
 // OpenFreeMap: free vector tiles, no key, commercial use allowed.
-L.maplibreGL({style:"https://tiles.openfreemap.org/styles/liberty", attribution:'<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank">OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'}).addTo(map);
+// Backup: if it fails to load, switch to OpenStreetMap's standard map.
+let baseGL = null, usingBackup = false;
+function backupMap() {
+  if (usingBackup) return; usingBackup = true;
+  if (baseGL) { try { map.removeLayer(baseGL); } catch (e) {} }
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:19, attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'}).addTo(map);
+}
+try {
+  baseGL = L.maplibreGL({style:"https://tiles.openfreemap.org/styles/liberty", attribution:'<a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank">OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'}).addTo(map);
+  const gl = baseGL.getMaplibreMap();
+  gl.on("error", () => { if (!gl.isStyleLoaded()) backupMap(); });
+  setTimeout(() => { if (!gl.isStyleLoaded()) backupMap(); }, 10000);
+} catch (e) { backupMap(); }
 const layer = L.layerGroup().addTo(map);
 let meMarker = null;
 
