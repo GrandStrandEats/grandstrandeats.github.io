@@ -620,5 +620,6 @@ window.PLACES = [
   {id:646, n:"Seabrisa's Waterfront Seafood Restaurant", lat:33.87095, lon:-78.61155, area:"Little River", c:"Seafood · California-style American", e:"🦐", p:2, tags:["water"], h:null, web:"https://seabrisaswaterfront.com/", tel:"+18432735052"},
   {id:647, n:"Seabrisa's at the Marina", lat:33.86706, lon:-78.62399, area:"Little River", c:"Seafood", e:"⛵", p:3, tags:["water","date"], h:"Mo-Su 08:00-21:00", web:"https://seabrisasmarina.com/"},
   {id:648, n:"Ducati's Pizza Trattoria", lat:33.76019, lon:-78.81492, area:"Myrtle Beach", c:"Italian · Pizza", e:"🍕", p:2, tags:["family"], h:null, web:"https://www.ducatispizzatrattoria.com/", tel:"+18438395373"},
-  {id:649, n:"Ocean & Oak Coastal Kitchen", lat:33.80101, lon:-78.73154, area:"North Myrtle Beach", c:"Breakfast · Brunch · Coastal", e:"🍳", p:2, tags:["breakfast"], h:null}
+  {id:649, n:"Ocean & Oak Coastal Kitchen", lat:33.80101, lon:-78.73154, area:"North Myrtle Beach", c:"Breakfast · Brunch · Coastal", e:"🍳", p:2, tags:["breakfast"], h:null},
+  {id:650, n:"The Grumpy Mustache", lat:33.58373, lon:-79.01557, area:"Murrells Inlet", c:"Burgers · Sandwiches · Diner", e:"🍔", p:2, tags:[], h:"Mo-Th 11:00-20:00; Fr,Sa 11:00-21:00", web:"https://grumpymustache.com/", tel:"+18433579998"}
 ];
