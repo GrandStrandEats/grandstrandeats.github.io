@@ -150,18 +150,18 @@ const PAGES = [
     desc: "Every local (non-chain) restaurant in Murrells Inlet on our map, including the MarshWalk, with prices, vibes and directions.",
     intro: "Murrells Inlet calls itself the seafood capital of South Carolina, and the MarshWalk boardwalk is lined with restaurants looking out over the marsh. Below is every local spot in Murrells Inlet on our map, MarshWalk places first.",
     guide: [
-      {h: "What makes Murrells Inlet different", p: [
-        "Murrells Inlet is an old fishing village about 15 miles south of Myrtle Beach. The town wraps around a saltwater inlet and marsh, and boats still head out from here for fishing charters and deep-sea trips. That's a big part of why it calls itself the seafood capital of South Carolina.",
+      {h: "What makes Murrells Inlet restaurants different?", p: [
+        "<strong>Murrells Inlet is an old fishing village where most restaurants are local, family-run places with decks over the water, not chains.</strong> It sits about 15 miles south of Myrtle Beach. The town wraps around a saltwater inlet and marsh, and boats still head out from here for fishing charters and deep-sea trips. That's a big part of why it calls itself the seafood capital of South Carolina.",
         "Most of the restaurants sit along Business 17, which runs right beside the inlet. You won't find big resort hotels or a strip of chain restaurants here. It's mostly local, family-run places, and a lot of them have decks looking out over the water.",
         "<strong>The MarshWalk</strong> is the heart of it all. It's a wooden boardwalk along the marsh, lined with restaurants and bars. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and Bubba's Love Shack all open onto it, so you can walk from one to the next. On warm evenings there's often live music, and it's a fun place to watch the sunset and the boats coming in.",
       ]},
-      {h: "Beyond the MarshWalk", p: [
-        "More of the inlet's best-known seafood spots sit just off the boardwalk on the same stretch of water. Wicked Tuna, Capt. Dave's Dockside, The Claw House and Hot Fish Club all have water views, and Wicked Tuna and Hot Fish Club are good picks for a date night.",
+      {h: "Where else can I eat in Murrells Inlet besides the MarshWalk?", p: [
+        "<strong>Wicked Tuna, Capt. Dave's Dockside, The Claw House and Hot Fish Club all sit on the same water just off the boardwalk.</strong> More of the inlet's best-known seafood spots sit just off the boardwalk on the same stretch of water. Wicked Tuna, Capt. Dave's Dockside, The Claw House and Hot Fish Club all have water views, and Wicked Tuna and Hot Fish Club are good picks for a date night.",
         "For a plain, roll-up-your-sleeves seafood meal, try Crab Daddy's Seafood or Inlet Crab House & Raw Bar. Harvest, J Peters Grill & Bar and Inlet Prohibition Company are a few more local options along the main road.",
         "Not every meal here has to be seafood. There's O'Keefe's Irish Pub, River City Cafe for burgers, and Southern buffet cooking at Judy Boone's. Carolina Food Park brings in a rotating lineup of food trucks. Suck Bang Blow is a well-known biker bar, and it gets packed during bike rally weeks.",
       ]},
-      {h: "Planning your visit", p: [
-        "From Myrtle Beach it's about a 25 to 30 minute drive down Highway 17, longer on summer weekends. From Garden City and Surfside Beach it's only a few minutes.",
+      {h: "How far is Murrells Inlet from Myrtle Beach, and when should I go?", p: [
+        "<strong>It's about a 25 to 30 minute drive south on Highway 17, and spring and fall weeknights are the easiest time to get a table.</strong> Expect it to take longer on summer weekends. From Garden City and Surfside Beach it's only a few minutes.",
         "Summer evenings are the busiest. From late May through Labor Day, an hour wait at sunset is common at the waterfront spots. Spring and fall are lovely here: the marsh is green or gold, there are fewer bugs, and you can often walk right in on a weeknight.",
         "Want to make a day of it? Huntington Beach State Park and Brookgreen Gardens are both just south of the inlet on Highway 17, and they pair well with an early dinner on the water.",
       ]},
@@ -188,19 +188,19 @@ const PAGES = [
     desc: "Local (non-chain) restaurants in North Myrtle Beach, from Cherry Grove to Barefoot Landing, with prices, vibes and directions.",
     intro: "North Myrtle Beach has a slower, more local feel than the main strip. Here is every independent restaurant in North Myrtle Beach on our map, starting with the spots we've checked by hand.",
     guide: [
-      {h: "North Myrtle Beach, area by area", p: [
-        "North Myrtle Beach is really four old beach towns that joined together in 1968: Cherry Grove, Ocean Drive, Crescent Beach and Windy Hill. Each one still has its own feel, and the restaurants change as you go.",
+      {h: "What are the different areas of North Myrtle Beach?", p: [
+        "<strong>North Myrtle Beach is made up of Cherry Grove, Ocean Drive, Crescent Beach and Windy Hill, plus Barefoot Landing on the waterway.</strong> North Myrtle Beach is really four old beach towns that joined together in 1968: Cherry Grove, Ocean Drive, Crescent Beach and Windy Hill. Each one still has its own feel, and the restaurants change as you go.",
         "<strong>Cherry Grove</strong>, at the north end, has marsh channels behind the beach and the Cherry Grove Pier. <strong>Ocean Drive</strong>, or OD, is the old center of town around Main Street. It's where the shag, South Carolina's state dance, grew up in the beach clubs. <strong>Crescent Beach</strong> and <strong>Windy Hill</strong>, to the south, are quieter and mostly homes and condos.",
         "<strong>Barefoot Landing</strong> sits on the Intracoastal Waterway near the south end of town, with shops and several restaurants on the water. And just north of the city line, <strong>Little River</strong> is an old fishing village with seafood spots on the waterfront.",
       ]},
-      {h: "What to eat", p: [
-        "Seafood is the big draw. Preston's and The Giant Crab are big seafood buffets, Flying Fish has water views, and Rockefellers Raw Bar and Maine Street Lobster Roll are casual picks for oysters and lobster rolls. Snooky's Oceanfront puts you right by the ocean, with live music and a dog-friendly spot to sit.",
+      {h: "What should I eat in North Myrtle Beach?", p: [
+        "<strong>Seafood is the big draw, from buffets like Preston's and The Giant Crab to oysters at Rockefellers Raw Bar.</strong> Preston's and The Giant Crab are big seafood buffets, Flying Fish has water views, and Rockefellers Raw Bar and Maine Street Lobster Roll are casual picks for oysters and lobster rolls. Snooky's Oceanfront puts you right by the ocean, with live music and a dog-friendly spot to sit.",
         "For a special night out, SeaBlue Restaurant and Wine Bar, 21 Main Prime Steakhouse, Bistro90 and Rioz Brazilian Steakhouse are some of the dressier choices. For Italian, try Villa Tuscanna or Benny's Trattoria.",
         "Breakfast is easy to find too. Hoskin's Restaurant serves Southern breakfast and lunch, and Hot Stacks Pancake House, Kitchen Table and Souffle's are local morning spots. Finish the day with a cone at Original Painter's Homemade Ice Cream.",
         "If you want to see the shag up close, O D Lounge is a classic place to watch beach-music dancing, and Molly Darcy's Irish Pub is a lively spot for a pint.",
       ]},
-      {h: "Planning your visit", p: [
-        "North Myrtle Beach is about 20 to 30 minutes north of downtown Myrtle Beach on Highway 17, depending on traffic. Main Street, Barefoot Landing and Cherry Grove are spread out, so you'll want a car to get between them.",
+      {h: "How far is North Myrtle Beach from Myrtle Beach?", p: [
+        "<strong>It's about 20 to 30 minutes north of downtown Myrtle Beach on Highway 17, depending on traffic.</strong> Main Street, Barefoot Landing and Cherry Grove are spread out, so you'll want a car to get between them.",
         "Summer is busy, but it usually feels calmer than the Myrtle Beach strip. In spring and fall, shag dancing gatherings bring big crowds to Main Street, so expect longer waits on those weekends.",
         "Many restaurants keep shorter hours from November through February, and a few close a day or two a week. Check before you drive over.",
       ]},
@@ -227,18 +227,19 @@ const PAGES = [
     desc: "Local (non-chain) restaurants in Surfside Beach, SC, the family beach south of Myrtle Beach. Prices, vibes and directions.",
     intro: "Surfside Beach is known as \"The Family Beach,\" and its restaurants match: casual, friendly and close to the sand. Here is every independent restaurant in Surfside Beach on our map.",
     guide: [
-      {h: "Eating in \"The Family Beach\"", p: [
-        "Surfside Beach is a small town just south of Myrtle Beach, with Garden City on its other side. It's mostly beach homes, rentals and low-rise hotels, without a big amusement strip, which is how it earned the nickname The Family Beach.",
+      {h: "What are restaurants like in Surfside Beach?", p: [
+        "<strong>They're casual, family-friendly and easy on the budget, and most are fine to walk into straight from the beach.</strong> Surfside Beach is a small town just south of Myrtle Beach, with Garden City on its other side. It's mostly beach homes, rentals and low-rise hotels, without a big amusement strip, which is how it earned the nickname The Family Beach.",
         "The restaurants fit that feel. Think pancake houses, diners, burger joints, pizza and seafood, at prices that work for a family on vacation. Most places are casual enough to walk in straight from the beach.",
         "The Surfside Beach Pier is the center of the beachfront, and most of the restaurants are a short drive away along Highway 17 and the roads that lead down to the ocean.",
       ]},
-      {h: "Where to eat", p: [
+      {h: "Where should I eat in Surfside Beach?", p: [
+        "<strong>Go to Surf Diner or Golden Egg Pancake House for breakfast, Crabby Mike's for seafood, and Hamburger Joe's or Pizza Hyena for a casual meal.</strong>",
         "<strong>Breakfast</strong> is a big deal here. Surf Diner, Golden Egg Pancake House, Johnny D's Waffles and Wooden Spoon are all local morning spots, and Wooden Spoon serves Southern cooking too.",
         "<strong>Seafood:</strong> Crabby Mike's Calabash Seafood is a big buffet with Calabash-style fried seafood, Pirate's Table is another seafood buffet, and Bubba's Fish Shack is a casual place for fried fish.",
         "<strong>Casual eats:</strong> Hamburger Joe's for burgers, Pizza Hyena for pizza, Mango Thai when you want something different, and Neal & Pam's Bar and Grill for a drink and bar food. Hamburger Joe's, Pizza Hyena and Neal & Pam's are marked dog-friendly on our map. End the night with a cone at Painter's Homemade Ice Cream.",
       ]},
-      {h: "Planning your visit", p: [
-        "Surfside is about 15 to 20 minutes south of downtown Myrtle Beach, and only a few minutes from Garden City and the Murrells Inlet MarshWalk. Staying here puts you close to both ends of the action.",
+      {h: "How far is Surfside Beach from Myrtle Beach?", p: [
+        "<strong>Surfside is about 15 to 20 minutes south of downtown Myrtle Beach, and only a few minutes from Garden City and the MarshWalk.</strong> Staying here puts you close to both ends of the action.",
         "Summer weekends are busy, but waits are usually shorter than on the Myrtle Beach strip. Breakfast spots have the longest lines, mostly between 8:30 and 10 AM.",
         "In winter, a few places shorten their hours or close one day a week. It's a quiet, easy time to visit if you don't mind cooler beach days.",
       ]},
