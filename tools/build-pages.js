@@ -153,7 +153,7 @@ const PAGES = [
       {h: "Beyond the MarshWalk", p: [
         "More of the inlet's best-known seafood spots sit just off the boardwalk on the same stretch of water. Wicked Tuna, Capt. Dave's Dockside, The Claw House and Hot Fish Club all have water views, and Wicked Tuna and Hot Fish Club are good picks for a date night.",
         "For a plain, roll-up-your-sleeves seafood meal, try Crab Daddy's Seafood or Inlet Crab House & Raw Bar. Harvest, J Peters Grill & Bar and Inlet Prohibition Company are a few more local options along the main road.",
-        "Not every meal here has to be seafood. There's O'Keefe's Irish Pub, River City Cafe for burgers, Sam's Corner for hot dogs, and Southern buffet cooking at Judy Boone's. Carolina Food Park brings in a rotating lineup of food trucks. Suck Bang Blow is a well-known biker bar, and it gets packed during bike rally weeks.",
+        "Not every meal here has to be seafood. There's O'Keefe's Irish Pub, River City Cafe for burgers, and Southern buffet cooking at Judy Boone's. Carolina Food Park brings in a rotating lineup of food trucks. Suck Bang Blow is a well-known biker bar, and it gets packed during bike rally weeks.",
       ]},
       {h: "Planning your visit", p: [
         "From Myrtle Beach it's about a 25 to 30 minute drive down Highway 17, longer on summer weekends. From Garden City and Surfside Beach it's only a few minutes.",
