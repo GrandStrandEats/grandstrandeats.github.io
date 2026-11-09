@@ -599,6 +599,7 @@ window.PLACES = [
   {id:630, n:"LUNA Mexican Bar & Grill", lat:33.55256, lon:-79.04654, area:"Murrells Inlet", c:"Mexican", e:"🌮", p:2, tags:["date"], h:null, web:"https://www.lunarestaurant.net/", tel:"+18432992365"},
   {id:631, n:"Margaritas Mexican Restaurant", lat:33.78314, lon:-78.78613, area:"Myrtle Beach", c:"Mexican", e:"🌮", p:1, tags:["family"], h:null, tel:"+18434975960"},
   {id:632, n:"Quigley's Pint & Plate", lat:33.50199, lon:-79.12585, area:"Pawleys Island", c:"Brewpub · American", e:"🍺", p:2, tags:["brewery","family"], h:"Mo-Sa 11:30-22:00; Su 11:00-22:00", web:"https://pintandplate.com/", tel:"+18432377010"},
+  {id:653, n:"Quigley's Pint & Plate", lat:33.58848, lon:-79.05495, area:"Murrells Inlet", c:"Brewpub · American", e:"🍺", p:2, tags:["brewery","family"], h:"Mo-Su 11:00-21:00", web:"https://pintandplate.com/", tel:"+18432991452"},
   {id:633, n:"Bistro 217", lat:33.44128, lon:-79.1253, area:"Pawleys Island", c:"American · Asian fusion", e:"🍷", p:3, tags:["date"], h:"Mo-Th 11:00-15:30, 17:00-21:00; Fr,Sa 11:00-15:00, 17:00-21:30", web:"https://www.bistro217.com/", tel:"+18432358217"},
   {id:634, n:"Rosie's Pizzeria", lat:33.43654, lon:-79.13150, area:"Pawleys Island", c:"Pizza · Italian", e:"🍕", p:1, tags:["family"], h:null, tel:"+18433143730"},
   {id:635, n:"Carolina Seafood & Steak", lat:33.77256, lon:-78.80040, area:"Myrtle Beach", c:"Seafood · Steak", e:"🦞", p:2, tags:["family"], h:null, tel:"+18439459288"},
