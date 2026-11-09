@@ -7,9 +7,11 @@ const ROOT = path.join(__dirname, "..");
 global.window = {};
 require(path.join(ROOT, "data.js"));
 const PLACES = window.PLACES;
+require(path.join(ROOT, "todo.js"));
+const THINGS = window.THINGS;
 
 const SITE = "https://grandstrandeats.com/";
-const TAG_LABEL = {water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
+const TAG_LABEL = {free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const MB_AREAS = ["Myrtle Beach", "Market Common", "Boardwalk", "Downtown", "Carolina Forest", "Socastee"];
 
 // Thanksgiving 2026: id -> what the restaurant's own website says. Only add a spot once it has posted 2026 plans.
@@ -488,6 +490,9 @@ const PAGES = [
   },
 ];
 
+// Things-to-do guides (todo.js) live in their own file.
+PAGES.push(...require("./do-pages.js"));
+
 const GYG = q => `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}&partner_id=GFIFJ6X&utm_medium=online_publisher`;
 const TODO = [
   ["🐬", "Dolphin cruises", "Myrtle Beach dolphin"],
@@ -507,7 +512,8 @@ const sortSpots = list => list.slice().sort((a, b) => ((a.id > 124) - (b.id > 12
 
 function spot(p, note) {
   const dir = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n + ", " + p.area + ", SC")}`;
-  const meta = [p.area, p.c.replace(/ · /g, ", "), price(p)].filter(Boolean).join(" · ");
+  const meta = [p.area, p.c.replace(/ · /g, ", "), price(p), p.cost].filter(Boolean).join(" · ");
+  if (p.d) note = [p.d, p.hn, p.tel ? "📞 " + p.tel.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3") : ""].filter(Boolean).join(" · ");
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("");
   return `<li class="spot"><div class="em">${p.e}</div><div><h3>${esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
 }
@@ -517,7 +523,7 @@ function page(cfg, spots) {
   const others = PAGES.filter(o => o !== cfg).map(o => `<a href="../${o.slug}/">${esc(o.h1)}</a>`).join("");
   const ld = {
     "@context": "https://schema.org", "@type": "ItemList", name: cfg.h1, numberOfItems: spots.length,
-    itemListElement: spots.map((p, i) => ({"@type": "ListItem", position: i + 1, item: {"@type": "Restaurant", name: p.n, address: {"@type": "PostalAddress", addressLocality: p.area === "MarshWalk" ? "Murrells Inlet" : p.area, addressRegion: "SC"}, ...(p.web ? {url: p.web} : {})}})),
+    itemListElement: spots.map((p, i) => ({"@type": "ListItem", position: i + 1, item: {"@type": cfg.kind === "do" ? "TouristAttraction" : "Restaurant", name: p.n, ...(p.d ? {description: p.d} : {}), address: {"@type": "PostalAddress", addressLocality: p.area === "MarshWalk" ? "Murrells Inlet" : p.area, addressRegion: "SC"}, ...(p.web ? {url: p.web} : {})}})),
   };
   return `<!doctype html>
 <html lang="en">
@@ -574,16 +580,16 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 <header><a href="../"><span class="logo">🌅</span>Grand Strand Eats</a></header>
 <h1>${esc(cfg.h1)}</h1>
 <p class="intro">${esc(cfg.intro)}</p>
-<a class="cta" href="../">🗺 See them on the map</a>
-<div class="count">${spots.length} local spots · no chains</div>
+<a class="cta" href="../${cfg.kind === "do" ? "?do" : ""}">🗺 See them on the map</a>
+<div class="count">${cfg.kind === "do" ? `${spots.length} things to do` : `${spots.length} local spots · no chains`}</div>
 <ol>
 ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 </ol>
 ${cfg.guide ? cfg.guide.map(s => `<section class="guide"><h2>${esc(s.h)}</h2>${s.p.map(t => `<p>${t}</p>`).join("")}</section>`).join("\n") : ""}
 ${cfg.tips ? `<div class="box tips"><h2>Local tips</h2><ul>${cfg.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
 ${cfg.faq ? `<section class="guide faq"><h2>Common questions</h2>${cfg.faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>` : ""}
-<div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the restaurant's website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
-<div class="box"><h2>After dinner: things to do on the Grand Strand</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
+<div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the ${cfg.kind === "do" ? "attraction" : "restaurant"}'s website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
+<div class="box"><h2>${cfg.kind === "do" ? "Book tours, cruises & shows" : "After dinner: things to do on the Grand Strand"}</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
 <footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free.${INFO_LINKS}</footer>
@@ -690,7 +696,7 @@ ${cfg.body}
 
 const urls = [SITE];
 for (const cfg of PAGES) {
-  let spots = sortSpots(PLACES.filter(cfg.match));
+  let spots = cfg.kind === "do" ? THINGS.filter(cfg.match) : sortSpots(PLACES.filter(cfg.match));
   if (cfg.slug === "murrells-inlet-restaurants") spots = spots.filter(p => p.area === "MarshWalk").concat(spots.filter(p => p.area !== "MarshWalk"));
   const dir = path.join(ROOT, cfg.slug);
   fs.mkdirSync(dir, {recursive: true});

@@ -10,14 +10,23 @@ const VIBES = [
   {k:"oceanfront", l:"🏖 Oceanfront"},
   {k:"saved", l:"♥ My spots"}
 ];
-const TAG_LABEL = {water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
+const DO_VIBES = [
+  {k:"free", l:"🆓 Free"},
+  {k:"kids", l:"🧒 Kids"},
+  {k:"rainy", l:"☔ Rainy day"},
+  {k:"outdoor", l:"🌳 Outdoors"},
+  {k:"night", l:"🌙 Shows & nights"},
+  {k:"pier", l:"🎣 Piers"},
+  {k:"saved", l:"♥ My spots"}
+];
+const TAG_LABEL = {free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const GRADS = ["#ffd6a5,#ffadad","#caffbf,#9bf6ff","#bdb2ff,#ffc6ff","#fdffb6,#ffd6a5","#a0c4ff,#bdb2ff","#9bf6ff,#caffbf"];
 const DAYS = ["Su","Mo","Tu","We","Th","Fr","Sa"];
 const DAY_NAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const WHEN_MIN = {breakfast:8*60, lunch:12*60, dinner:19*60, late:22*60};
 
 const update = () => { render(); fit(); };
-const state = {vibes:new Set(), price:0, when:"any", day:new Date().getDay(), q:"", me:null, hl:null};
+const state = {mode:/[?&]do(&|=|$)/.test(location.search) ? "do" : "eat", vibes:new Set(), price:0, when:"any", day:new Date().getDay(), q:"", me:null, hl:null};
 let saved = new Set();
 try { saved = new Set(JSON.parse(localStorage.getItem("gse-saved") || "[]")); } catch (e) {}
 const persist = () => { try { localStorage.setItem("gse-saved", JSON.stringify([...saved])); } catch (e) {} };
@@ -53,6 +62,9 @@ function parseHours(h) {
   return week;
 }
 PLACES.forEach(p => p.week = parseHours(p.h));
+const THINGS = window.THINGS || [];
+THINGS.forEach(p => p.week = parseHours(p.h));
+const DATA = () => state.mode === "do" ? THINGS : PLACES;
 
 const fmt = m => { const h = Math.floor(m / 60) % 24, mm = m % 60; return `${h % 12 || 12}${mm ? ":" + String(mm).padStart(2, "0") : ""} ${h < 12 ? "AM" : "PM"}`; };
 
@@ -88,10 +100,11 @@ function miles(a, b) {
 function matches(p) {
   for (const v of state.vibes) {
     if (v === "cheap") { if (p.p !== 1) return false; }
+    else if (v === "free" && state.mode === "do") { if (p.cost !== "Free") return false; }
     else if (v === "saved") { if (!saved.has(p.id)) return false; }
     else if (!p.tags.includes(v)) return false;
   }
-  if (state.price && p.p !== state.price) return false;
+  if (state.mode === "eat" && state.price && p.p !== state.price) return false;
   if (state.when !== "any") {
     const now = new Date();
     const min = state.when === "now" ? now.getHours() * 60 + now.getMinutes() : WHEN_MIN[state.when];
@@ -100,14 +113,23 @@ function matches(p) {
   }
   if (state.q) {
     const q = state.q.toLowerCase();
-    if (!(p.n + " " + p.c + " " + p.area).toLowerCase().includes(q)) return false;
+    if (!(p.n + " " + p.c + " " + p.area + " " + (p.d || "")).toLowerCase().includes(q)) return false;
   }
   return true;
 }
 
 // ---------- UI ----------
 const $ = id => document.getElementById(id);
-$("vibes").innerHTML = VIBES.map(v => `<button class="vibe" data-k="${v.k}">${v.l}</button>`).join("");
+function setMode(m) {
+  state.mode = m; state.vibes.clear(); state.hl = null;
+  $("vibes").innerHTML = (m === "do" ? DO_VIBES : VIBES).map(v => `<button class="vibe" data-k="${v.k}">${v.l}</button>`).join("");
+  [...$("mode").children].forEach(b => b.classList.toggle("on", b.dataset.m === m));
+  $("price").style.display = m === "do" ? "none" : "";
+  $("ask").innerHTML = m === "do" ? "What do you feel like <span>doing</span>?" : "What's the <span>vibe</span> tonight?";
+  $("q").placeholder = m === "do" ? "Search piers, museums, shows…" : "Search seafood, pizza, sushi…";
+  try { history.replaceState(null, "", m === "do" ? "?do" : location.pathname); } catch (e) {}
+}
+$("mode").onclick = e => { const b = e.target.closest("button"); if (!b || b.dataset.m === state.mode) return; setMode(b.dataset.m); update(); };
 $("price").innerHTML = ["All", "$", "$$", "$$$", "$$$$"].map((l, i) => `<button data-p="${i}" class="${i === 0 ? "on" : ""}">${l}</button>`).join("");
 $("day").innerHTML = DAY_NAMES.map((d, i) => `<option value="${i}" ${i === state.day ? "selected" : ""}>${i === new Date().getDay() ? "Today" : d}</option>`).join("");
 
@@ -141,17 +163,19 @@ let meMarker = null;
 function card(p, i) {
   const st = statusNow(p);
   const dist = state.me ? `${miles(state.me, p).toFixed(1)} mi · ` : "";
-  const menu = p.web || `https://www.google.com/search?q=${encodeURIComponent(p.n + " " + p.area + " SC menu")}`;
+  const isDo = state.mode === "do";
+  const menu = p.web || `https://www.google.com/search?q=${encodeURIComponent(p.n + " " + p.area + " SC" + (isDo ? "" : " menu"))}`;
   const dir = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`;
   return `<article class="card ${state.hl === p.id ? "hl" : ""} ${p.f ? "feat" : ""}" id="c${p.id}" data-id="${p.id}">
     <div class="thumb" style="background:linear-gradient(135deg,${GRADS[i % GRADS.length]})">${p.e}</div>
     <div>
       <div class="name"><span>${p.n}</span><button class="heart" data-save="${p.id}" aria-label="Save">${saved.has(p.id) ? "❤️" : "🤍"}</button></div>
-      <div class="meta">${dist}${p.area} · ${p.c}${p.p ? ` · <b>${"$".repeat(p.p)}</b>` : ""}</div>
+      <div class="meta">${dist}${p.area} · ${p.c}${p.p ? ` · <b>${"$".repeat(p.p)}</b>` : ""}${p.cost ? ` · <b>${p.cost}</b>` : ""}</div>
+      ${p.d ? `<div class="desc">${p.d}</div>` : ""}
       <div class="status" style="color:var(--${st.cls})"><span class="dot" style="background:var(--${st.cls})"></span>${st.txt}</div>
-      <div class="tags">${p.f ? `<span class="tag feat">⭐ Featured</span>` : ""}${p.tags.map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
+      <div class="tags">${p.f ? `<span class="tag feat">⭐ Featured</span>` : ""}${p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
       <div class="acts">
-        <a href="${menu}" target="_blank" rel="noopener">📖 Menu</a>
+        <a href="${menu}" target="_blank" rel="noopener">${isDo ? "🌐 Website" : "📖 Menu"}</a>
         <a href="${dir}" target="_blank" rel="noopener">🧭 Go</a>
         ${p.tel ? `<a href="tel:${p.tel}">📞 Call</a>` : ""}
       </div>
@@ -182,15 +206,15 @@ function todoBox() {
 
 let shown = [];
 function render() {
-  shown = PLACES.filter(matches);
+  shown = DATA().filter(matches);
   // Featured spots go first unless the list is sorted by distance.
   if (state.me) shown.sort((a, b) => miles(state.me, a) - miles(state.me, b));
   else shown.sort((a, b) => (b.f || 0) - (a.f || 0));
   const list = $("list");
-  list.innerHTML = `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>
-    <div class="count"><span>${shown.length} spot${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
+  list.innerHTML = (state.mode === "do" ? `<div class="note">🎡 New: ${THINGS.length} things to do on the Grand Strand, from free parks and piers to shows. Hours and prices change by season, so check the website before you go.</div>` : `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>`) + `
+    <div class="count"><span>${shown.length} ${state.mode === "do" ? "thing" : "spot"}${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
     (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + card(p)).join("") + (shown.length <= 6 ? todoBox() : "") : `<div class="empty">No matches. Try fewer vibes.</div>` + todoBox()) +
-    `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked ⭐ Featured may be paid placements; every other listing is free.<div class="guides">Guides: <a href="restaurants-open-thanksgiving-myrtle-beach/">Open on Thanksgiving</a> · <a href="waterfront-restaurants-myrtle-beach/">Waterfront restaurants</a> · <a href="seafood-restaurants-myrtle-beach/">Seafood restaurants</a> · <a href="breakfast-myrtle-beach/">Myrtle Beach breakfast</a> · <a href="murrells-inlet-restaurants/">Murrells Inlet &amp; MarshWalk</a> · <a href="north-myrtle-beach-restaurants/">North Myrtle Beach</a> · <a href="surfside-beach-restaurants/">Surfside Beach</a> · <a href="garden-city-restaurants/">Garden City</a> · <a href="pawleys-island-restaurants/">Pawleys Island &amp; Litchfield</a> · <a href="market-common-restaurants/">Market Common</a> · <a href="conway-sc-restaurants/">Conway</a> · <a href="romantic-restaurants-myrtle-beach/">Date night</a> · <a href="italian-restaurants-myrtle-beach/">Italian</a></div><div class="guides"><a href="about/">About</a> · <a href="privacy/">Privacy</a> · <a href="contact/">Contact</a></div></div>`;
+    `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked ⭐ Featured may be paid placements; every other listing is free.<div class="guides">Things to do: <a href="things-to-do-myrtle-beach/">Things to do in Myrtle Beach</a> · <a href="free-things-to-do-myrtle-beach/">Free things to do</a> · <a href="things-to-do-myrtle-beach-with-kids/">With kids</a> · <a href="rainy-day-things-to-do-myrtle-beach/">Rainy day</a> · <a href="myrtle-beach-fishing-piers/">Fishing piers</a></div><div class="guides">Restaurant guides: <a href="restaurants-open-thanksgiving-myrtle-beach/">Open on Thanksgiving</a> · <a href="waterfront-restaurants-myrtle-beach/">Waterfront restaurants</a> · <a href="seafood-restaurants-myrtle-beach/">Seafood restaurants</a> · <a href="breakfast-myrtle-beach/">Myrtle Beach breakfast</a> · <a href="murrells-inlet-restaurants/">Murrells Inlet &amp; MarshWalk</a> · <a href="north-myrtle-beach-restaurants/">North Myrtle Beach</a> · <a href="surfside-beach-restaurants/">Surfside Beach</a> · <a href="garden-city-restaurants/">Garden City</a> · <a href="pawleys-island-restaurants/">Pawleys Island &amp; Litchfield</a> · <a href="market-common-restaurants/">Market Common</a> · <a href="conway-sc-restaurants/">Conway</a> · <a href="romantic-restaurants-myrtle-beach/">Date night</a> · <a href="italian-restaurants-myrtle-beach/">Italian</a></div><div class="guides"><a href="about/">About</a> · <a href="privacy/">Privacy</a> · <a href="contact/">Contact</a></div></div>`;
   const c = $("clear"); if (c) c.onclick = clearAll;
 
   layer.clearLayers();
@@ -219,7 +243,7 @@ function clearAll() {
 
 function highlight(id, fly) {
   state.hl = id;
-  const p = PLACES.find(x => x.id === id);
+  const p = DATA().find(x => x.id === id);
   document.querySelectorAll(".card").forEach(c => c.classList.toggle("hl", +c.dataset.id === id));
   const el = $("c" + id); if (el && getComputedStyle($("list")).display !== "none") el.scrollIntoView({behavior:"smooth", block:"center"});
   if (fly && p) map.flyTo([p.lat, p.lon], 15, {duration:.8});
@@ -267,5 +291,6 @@ if (isIOS && !isStandalone) {
 }
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 
+setMode(state.mode);
 render();
 setInterval(render, 60000); // keeps "open now" current

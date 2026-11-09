@@ -79,6 +79,8 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 .todo-links{display:flex;flex-wrap:wrap;gap:6px}
 .todo-links a{font-size:12.5px;font-weight:800;text-decoration:none;color:var(--brand);border:1.5px solid var(--line);border-radius:10px;padding:5px 9px}
 .todo-f{font-size:11px;color:var(--muted);margin-top:8px}
+.modes{display:inline-flex;margin-top:12px}.modes button{padding:7px 14px;font-size:14px}
+.desc{font-size:13px;line-height:1.4;margin:0 0 6px}
 .guides{margin-top:8px;font-weight:600}.guides a{color:var(--brand);font-weight:800}
 .empty{text-align:center;color:var(--muted);padding:40px 10px}
 .foot{font-size:11.5px;color:var(--muted);line-height:1.5;padding:14px 4px 0;border-top:1px solid var(--line);margin-top:6px}
@@ -117,7 +119,8 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
     <button class="iconbtn install" id="iosinstall">📱 Get the app</button>
     <button class="iconbtn viewtoggle" id="viewtoggle">🗺 Map</button>
   </div>
-  <div class="ask">What's the <span>vibe</span> tonight?</div>
+  <div class="seg modes" id="mode" role="tablist"><button data-m="eat" class="on">🍽 Eat</button><button data-m="do">🎡 Things to do</button></div>
+  <div class="ask" id="ask">What's the <span>vibe</span> tonight?</div>
   <div class="vibes" id="vibes"></div>
   <div class="row2">
     <div class="seg" id="price"></div>
@@ -145,6 +148,7 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"></script>
 <script src="data.js"></script>
+<script src="todo.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
