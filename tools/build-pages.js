@@ -562,6 +562,7 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .tips ul{margin:0;padding-left:20px}.tips li{font-size:14.5px;margin:5px 0}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
 </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963548887313701" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="wrap">
@@ -624,7 +625,7 @@ const INFO = [
 <h2>Affiliate links</h2>
 <p>Some links go to GetYourGuide and to hotel searches through Stay22 and Booking.com. When you click one of these, those companies may set cookies so they can tell that your booking came from us. Their own privacy policies apply on their sites.</p>
 <h2>Advertising</h2>
-<p>We may show ads from Google AdSense in the future. If we do, third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. Google's use of advertising cookies lets it and its partners serve ads to you based on your visits to this and other sites. You can opt out of personalized advertising in <a href="https://www.google.com/settings/ads" rel="noopener">Google's Ads Settings</a>, or opt out of some other vendors' cookies at <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>.</p>
+<p>This site uses Google AdSense to show ads. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. Google's use of advertising cookies lets it and its partners serve ads to you based on your visits to this and other sites. You can opt out of personalized advertising in <a href="https://www.google.com/settings/ads" rel="noopener">Google's Ads Settings</a>, or opt out of some other vendors' cookies at <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>.</p>
 <h2>Analytics</h2>
 <p>We do not use analytics or tracking scripts on this site right now. If that changes, we will update this page.</p>
 <h2>Children</h2>
@@ -665,6 +666,7 @@ function infoPage(cfg, style) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 ${style.replace("</style>", INFO_CSS + "\n</style>")}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963548887313701" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="wrap">
