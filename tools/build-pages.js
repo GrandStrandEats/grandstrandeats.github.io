@@ -21,6 +21,11 @@ const THANKSGIVING = {
   18: "🦃 Seafood & traditional buffet 11 AM–4:30 PM · Adults $48.95, kids 6–11 $15.95, 5 & under free · 20% gratuity added · Reservations preferred: 843-651-5800",
   2: "🦃 Open 11 AM–10:30 PM · Thanksgiving buffet 11 AM–5 PM · Reservations recommended",
   234: "🦃 Thanksgiving Day feature (call 843-497-2636) · At-home dinner for 4, $225, pickup Nov 24–25, 1–5 PM · Order by Sat, Nov 21",
+  39: "🦃 39th annual Thanksgiving Day Feast 1–3 PM · Turkey Trot post-race brunch 8–10 AM · Call 843-238-1013",
+  652: "🦃 To-go Thanksgiving feast $49/person (serves 2–12) · Turkey, sides, rolls & pie · Order by Sun, Nov 22 at noon · Pickup Wed, Nov 25, 2–8 PM at 3200 S Ocean Blvd",
+  71: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
+  126: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
+  591: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
 };
 
 const PAGES = [
@@ -29,7 +34,7 @@ const PAGES = [
     title: "Restaurants Open on Thanksgiving 2026 in Myrtle Beach",
     h1: "Restaurants open on Thanksgiving 2026 in Myrtle Beach",
     desc: "Local Myrtle Beach and Grand Strand restaurants open on Thanksgiving Day, Thursday, November 26, 2026, with holiday hours, prices and to-go options.",
-    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 6, 2026.",
+    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 9, 2026.",
     notes: THANKSGIVING,
     match: p => p.id in THANKSGIVING,
     stay: ["Myrtle Beach", "Murrells Inlet", "Surfside Beach"],
