@@ -11,7 +11,7 @@ require(path.join(ROOT, "todo.js"));
 const THINGS = window.THINGS;
 
 const SITE = "https://grandstrandeats.com/";
-const TAG_LABEL = {free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
+const TAG_LABEL = {holiday:"Holiday", free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const MB_AREAS = ["Myrtle Beach", "Market Common", "Boardwalk", "Downtown", "Carolina Forest", "Socastee"];
 
 // Thanksgiving 2026: id -> what the restaurant's own website says. Only add a spot once it has posted 2026 plans.
