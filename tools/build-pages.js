@@ -535,7 +535,7 @@ function page(cfg, spots) {
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="${esc(cfg.title)}"><meta property="og:description" content="${esc(cfg.desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}share-v2.png"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e7c86">
-<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="icon" href="../icon-192.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
@@ -673,7 +673,7 @@ function infoPage(cfg, style) {
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="${esc(cfg.title)}"><meta property="og:description" content="${esc(cfg.desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}share-v2.png">
 <meta name="theme-color" content="#0e7c86">
-<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="icon" href="../icon-192.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 ${style.replace("</style>", INFO_CSS + "\n</style>")}

@@ -1,6 +1,6 @@
 // Caches the app shell so it opens fast and works with a weak signal.
-const CACHE = "gse-v74";
-const SHELL = ["./", "index.html", "app.js", "data.js", "todo.js", "icon.svg", "logo.jpg", "manifest.webmanifest"];
+const CACHE = "gse-v75";
+const SHELL = ["./", "index.html", "app.js", "data.js", "todo.js", "icon-192.png", "logo.jpg", "manifest.webmanifest"];
 self.addEventListener("install", e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", e => {
