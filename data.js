@@ -17,7 +17,7 @@ window.PLACES = [
   {id:12, n:"Blueberry's Grill", lat:33.75135, lon:-78.8154, area:"Myrtle Beach", c:"Breakfast · Lunch", e:"🫐", p:1, tags:["breakfast","dog","family"], h:"Mo-Su 07:00-15:00"},
   {id:13, n:"Moe Moon's", lat:33.69308, lon:-78.87802, area:"Boardwalk", c:"Bar · Grill", e:"🌙", p:2, tags:["oceanfront","water","dog"], h:"Mo-Su 11:30-22:00", tel:"+18434484926"},
   {id:14, n:"King Street Grille", lat:33.66779, lon:-78.93879, area:"Market Common", c:"Sports bar · American", e:"🏈", p:2, tags:["dog","family"], h:"Mo-Su 11:00-02:00"},
-  {id:15, n:"Dead Dog Saloon", lat:33.55714, lon:-79.03276, area:"MarshWalk", c:"Bar · Seafood", e:"🎸", p:2, tags:["water","music","breakfast"], h:"Mo-Th 08:00-21:30; Fr,Sa 08:00-23:30; Su 08:00-21:30"},
+  {id:15, n:"Dead Dog Saloon", lat:33.55714, lon:-79.03276, area:"MarshWalk", c:"Bar · Seafood", e:"🎸", p:2, tags:["water","music","breakfast"], h:"Mo-Th 08:00-21:30; Fr,Sa 08:00-23:30; Su 08:00-21:30", d:"Local's note: We grabbed a table inside on a weekend in early November, and the live band was great. I had the fish and chips. If you like dinner with live music, this is a fun spot on the MarshWalk."},
   {id:16, n:"Creek Ratz", lat:33.55749, lon:-79.03265, area:"MarshWalk", c:"Seafood · Family", e:"🦀", p:2, tags:["water","music","family"], h:"Mo-Th 11:00-22:00; Fr,Sa 11:00-23:00; Su 11:00-22:00"},
   {id:18, n:"Wahoo's Fish House", lat:33.55899, lon:-79.03095, area:"MarshWalk", c:"Seafood", e:"🐠", p:2, tags:["water","music","date"], h:"Mo-Th 11:30-21:00; Fr,Sa 11:30-22:00; Su 11:30-21:00"},
   {id:19, n:"Drunken Jack's", lat:33.55817, lon:-79.03154, area:"MarshWalk", c:"Seafood · Steak", e:"🏴‍☠️", p:2, tags:["water","family"], h:"Mo-Th 11:00-21:00; Fr,Sa 11:00-21:30; Su 11:00-21:00"},
