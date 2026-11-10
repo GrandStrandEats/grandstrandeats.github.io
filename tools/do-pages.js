@@ -6,16 +6,17 @@ module.exports = [
     title: "Christmas Lights & Holiday Events in Myrtle Beach (2026)",
     h1: "Christmas lights & holiday events in Myrtle Beach",
     desc: "Christmas lights, tree lightings, parades and holiday shows in Myrtle Beach and the Grand Strand for 2026, with dates, times and prices, on a free local map.",
-    intro: "The Grand Strand lights up from mid-November through New Year's. Here are the 2026 light displays, tree lightings, parades and Christmas shows from North Myrtle Beach down to Murrells Inlet, with dates and times taken from each event's official listing. Every one is on our free map, so you can pair it with a local place to eat. Last checked November 9, 2026.",
+    intro: "The Grand Strand lights up from mid-November through New Year's. Here are the 2026 light displays, tree lightings, parades and Christmas shows from North Myrtle Beach down to Murrells Inlet, with dates and times taken from each event's official listing. Every one is on our free map, so you can pair it with a local place to eat. Last checked November 10, 2026.",
     guide: [
       {h: "Where can you see Christmas lights in Myrtle Beach?", p: [
         "<strong>The three big light displays are Nights of a Thousand Candles at Brookgreen Gardens, The Great Christmas Light Show in North Myrtle Beach, and Winter Wonderland at The Beach on the Boardwalk.</strong> Each one is a different kind of night out.",
         "<strong>Nights of a Thousand Candles</strong> is a walk through the gardens in Murrells Inlet on select nights from Nov 27, 2026 to Jan 3, 2027, 4–9 PM. Tickets are required. <strong>The Great Christmas Light Show</strong> is a drive-through at the North Myrtle Beach Park & Sports Complex, Nov 23–Dec 30, 2026, closed on Thanksgiving and Christmas Day.",
         "<strong>Winter Wonderland at The Beach</strong> is free to walk. The lights run along the Boardwalk in downtown Myrtle Beach nightly from 5 to 9 PM, Nov 25, 2026 to Jan 2, 2027.",
+        "In Murrells Inlet, the <strong>MarshWalk Wonderland of Lights</strong> is also free. The lights are on nightly from 5 to 11 PM, Nov 27 to Dec 31, 2026. <strong>Santa's Village</strong> sets up on the MarshWalk on Fridays, Saturdays and Sundays from Nov 27 to Dec 20, 5 to 9 PM. Some activities there cost extra.",
       ]},
       {h: "Are there free Christmas events in Myrtle Beach?", p: [
-        "<strong>Yes. The tree lightings and Christmas parades are free, and so is walking the Boardwalk lights.</strong> Broadway at the Beach lights its tree on Saturday, Nov 14, with fireworks at 8 PM, and Market Common follows on Saturday, Nov 21.",
-        "In December, North Myrtle Beach lights its tree on Dec 1, Surfside Beach on Dec 3 and Murrells Inlet on Dec 5. Parades run Dec 5 at Broadway at the Beach and in North Myrtle Beach, Dec 6 in Murrells Inlet, and Dec 12 in Conway and Surfside Beach.",
+        "<strong>Yes. The tree lightings and Christmas parades are free, and so is walking the Boardwalk lights or the MarshWalk Wonderland of Lights.</strong> Broadway at the Beach lights its tree on Saturday, Nov 14, with fireworks at 8 PM, and Market Common follows on Saturday, Nov 21.",
+        "In December, North Myrtle Beach lights its tree on Dec 1, Surfside Beach on Dec 3 at Memorial Park (lighting at 6:30 PM) and Murrells Inlet on Dec 5 at Morse Park, with cookies, hot cocoa, kids crafts and Santa and Mrs. Claus. Parades run Dec 5 at Broadway at the Beach and in North Myrtle Beach, Dec 6 in Murrells Inlet, and Dec 12 in Conway and Surfside Beach.",
         "For something different, the <strong>Intracoastal Christmas Regatta</strong> sends lighted boats down the waterway from Little River on Saturday, Nov 28 at 5 PM.",
       ]},
       {h: "When do Christmas shows start in Myrtle Beach?", p: [
@@ -33,6 +34,7 @@ module.exports = [
     faq: [
       ["When do the Christmas lights go up in Myrtle Beach?", "The first tree lighting is at Broadway at the Beach on Saturday, November 14, 2026. The big light displays open the week of Thanksgiving: The Great Christmas Light Show on Nov 23, Winter Wonderland at The Beach on Nov 25 and Nights of a Thousand Candles on Nov 27."],
       ["How much is Nights of a Thousand Candles?", "Tickets for 2026 are $40 for adults and $20 for kids ages 4–12, or $35 and $15 for Brookgreen Gardens members. It runs select nights from Nov 27, 2026 to Jan 3, 2027, 4–9 PM."],
+      ["When is the MarshWalk Wonderland of Lights in Murrells Inlet?", "The MarshWalk Wonderland of Lights runs nightly from 5 to 11 PM, November 27 to December 31, 2026, and it is free. Santa's Village is on the MarshWalk on Fridays, Saturdays and Sundays from Nov 27 to Dec 20, 5 to 9 PM, and some activities cost extra."],
       ["Is there a drive-through Christmas light show in Myrtle Beach?", "Yes. The Great Christmas Light Show at the North Myrtle Beach Park & Sports Complex runs Nov 23–Dec 30, 2026, with gates open 5:30–9:30 PM. It costs $25 per standard vehicle on Village Nights and $20 on select other nights through Dec 9. It is closed Nov 26 and Dec 25."],
     ],
     match: p => p.tags.includes("holiday"),
