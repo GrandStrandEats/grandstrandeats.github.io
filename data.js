@@ -106,7 +106,6 @@ window.PLACES = [
   {id:111, n:"Pirate's Cove Rooftop", lat:33.81903, lon:-78.67274, area:"North Myrtle Beach", c:"Rooftop bar", e:"🏴‍☠️", p:2, tags:["oceanfront","water"], h:null, hn:"Temporarily closed"},
   {id:112, n:"The Giant Crab", lat:33.77827, lon:-78.7946, area:"North Myrtle Beach", c:"Seafood buffet", e:"🦀", p:3, tags:["family"], h:"Mo-Su 15:30-21:00", web:"https://giantcrab.com/"},
   {id:113, n:"Rockefellers Raw Bar", lat:33.80273, lon:-78.72571, area:"North Myrtle Beach", c:"Seafood · Raw bar", e:"🦪", p:2, tags:[], h:"Mo 11:30-22:00; Tu off; We-Su 11:30-22:00", web:"https://www.rockefellersrawbar.com/"},
-  {id:114, n:"Maine Street Lobster Roll", lat:33.82616, lon:-78.67914, area:"North Myrtle Beach", c:"Lobster rolls", e:"🦞", p:2, tags:[], h:"Mo-Sa 12:00-18:00", web:"https://www.mainestreetlobsterrollmyrtlebeach.com/", tel:"+18434274111"},
   {id:115, n:"Souffle's", lat:33.84122, lon:-78.66134, area:"North Myrtle Beach", c:"Brunch · Café", e:"🥐", p:2, tags:["breakfast"], h:"Mo-Su 06:00-15:00", web:"https://soufflecoffee.com/", tel:"+18432730847"},
   {id:116, n:"Hot Stacks Pancake House", lat:33.82932, lon:-78.67939, area:"North Myrtle Beach", c:"Breakfast", e:"🥞", p:1, tags:["breakfast","family"], h:"Mo-Su 07:00-13:30", web:"https://hotstacksnmb.org/", tel:"+18432497710"},
   {id:117, n:"Big D's BBQ Trough", lat:33.86203, lon:-79.0938, area:"North Myrtle Beach", c:"Barbecue", e:"🍖", p:1, tags:["family"], h:"Tu-We 11:00-15:00; Th-Sa 11:00-21:00", web:"https://bigdsbbqtrough.com/", tel:"+18433657485"},
