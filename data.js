@@ -617,5 +617,6 @@ window.PLACES = [
   {id:649, n:"Ocean & Oak Coastal Kitchen", lat:33.80101, lon:-78.73154, area:"North Myrtle Beach", c:"Breakfast · Brunch · Coastal", e:"🍳", p:2, tags:["breakfast"], h:null},
   {id:650, n:"The Grumpy Mustache", lat:33.58373, lon:-79.01557, area:"Murrells Inlet", c:"Burgers · Sandwiches · Diner", e:"🍔", p:2, tags:[], h:"Mo-Th 11:00-20:00; Fr,Sa 11:00-21:00", web:"https://grumpymustache.com/", tel:"+18433579998"},
   {id:651, n:"Blue Sky Restaurant", lat:33.5646, lon:-79.03628, area:"Murrells Inlet", c:"Breakfast · Lunch · Diner", e:"🍳", p:1, tags:["breakfast","family"], h:"Mo-Sa 06:00-14:00; Su 06:30-14:00", web:"https://blueskyrestaurantmi.com/", tel:"+18433572785"},
-  {id:652, n:"Ocean Blue Restaurant (The Ellie Beach Resort)", lat:33.65599, lon:-78.92163, area:"Myrtle Beach", c:"American · Seafood", e:"🌊", p:2, tags:["family"], h:null, hn:"Inside The Ellie Beach Resort, 3200 S Ocean Blvd"}
+  {id:652, n:"Ocean Blue Restaurant (The Ellie Beach Resort)", lat:33.65599, lon:-78.92163, area:"Myrtle Beach", c:"American · Seafood", e:"🌊", p:2, tags:["family"], h:null, hn:"Inside The Ellie Beach Resort, 3200 S Ocean Blvd"},
+  {id:654, n:"Castaway Keys on Main", lat:33.82515, lon:-78.67645, area:"North Myrtle Beach", c:"Seafood · Raw bar", e:"🦪", p:2, tags:[], h:null, hn:"661 Main St"}
 ];
