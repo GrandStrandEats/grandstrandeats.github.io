@@ -512,7 +512,8 @@ const sortSpots = list => list.slice().sort((a, b) => ((a.id > 124) - (b.id > 12
 
 function spot(p, note) {
   const dir = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n + ", " + p.area + ", SC")}`;
-  const meta = [p.area, p.c.replace(/ · /g, ", "), price(p), p.cost].filter(Boolean).join(" · ");
+  const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const meta = [p.area, p.c.replace(/ · /g, ", "), price(p), p.cost, p.v ? `✓ Checked ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}` : ""].filter(Boolean).join(" · ");
   if (p.d) note = [p.d, p.hn, p.tel ? "📞 " + p.tel.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3") : ""].filter(Boolean).join(" · ");
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("");
   return `<li class="spot"><div class="em">${p.e}</div><div><h3>${esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
@@ -592,7 +593,7 @@ ${cfg.faq ? `<section class="guide faq"><h2>Common questions</h2>${cfg.faq.map((
 <div class="box"><h2>${cfg.kind === "do" ? "Book tours, cruises & shows" : "After dinner: things to do on the Grand Strand"}</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
-<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free.${INFO_LINKS}</footer>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="https://m.me/61596237747958?text=Update%20for%20Grand%20Strand%20Eats%3A%20" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Message us</a> and we will fix it.${INFO_LINKS}</footer>
 </div>
 </body>
 </html>

@@ -72,7 +72,9 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 .dot{width:8px;height:8px;border-radius:50%}
 .tags{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0}
 .tag{font-size:11.5px;font-weight:700;background:var(--chip);border-radius:8px;padding:3px 7px}
-.acts{display:flex;gap:6px;margin-top:4px}
+.acts{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+.acts a.fix{color:var(--muted);margin-left:auto}
+.chk{font-size:11.5px;font-weight:700;color:var(--muted);margin-left:8px;white-space:nowrap}
 .acts a{font-size:12.5px;font-weight:800;text-decoration:none;color:var(--brand);border:1.5px solid var(--line);border-radius:10px;padding:5px 9px}
 .todo{background:var(--surface);border:1.5px dashed var(--brand);border-radius:18px;padding:12px;margin-bottom:10px}
 .todo-h{font-weight:800;font-size:15px;letter-spacing:-.02em;margin-bottom:8px}
@@ -134,7 +136,7 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
     </select>
     <select id="day" aria-label="Day"></select>
     <button class="iconbtn" id="near">📍 Near me</button>
-    <input type="search" id="q" placeholder="Search seafood, pizza, sushi…">
+    <input type="search" id="q" placeholder="🔎 Search a restaurant or food…" aria-label="Search">
   </div>
 </header>
 <main id="main">
