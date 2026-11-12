@@ -102,8 +102,15 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 @media (max-width:820px){
   main{grid-template-columns:1fr}
   #map{display:none}
-  main.showmap #map{display:block}
+  main.showmap #map{display:block;height:70dvh}
   main.showmap #list{display:none}
+  /* Phone list view: the whole page scrolls, so the filters slide away and the list gets the full screen. */
+  html,body{height:auto}
+  .app{display:block;height:auto}
+  #list{overflow:visible}
+  /* Phone map view: back to one fixed screen so the map fills what is left. */
+  .app:has(main.showmap){display:grid;height:100dvh}
+  .app:has(main.showmap) #map{height:auto}
   .viewtoggle{display:flex}
   .ask{font-size:20px}
 }
