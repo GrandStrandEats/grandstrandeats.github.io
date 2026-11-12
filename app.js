@@ -70,6 +70,7 @@ const DATA = () => state.mode === "do" ? THINGS : PLACES;
 const fmt = m => { const h = Math.floor(m / 60) % 24, mm = m % 60; return `${h % 12 || 12}${mm ? ":" + String(mm).padStart(2, "0") : ""} ${h < 12 ? "AM" : "PM"}`; };
 
 // Returns the span open at this moment, including last night's hours that run past midnight.
+const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/['’`.]/g, "").replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
 function spanAt(p, day, min) {
   return p.week[day].find(s => min >= s[0] && min < s[1]) ||
     p.week[(day + 6) % 7].find(s => s[1] > 1440 && min + 1440 < s[1]);
@@ -113,8 +114,9 @@ function matches(p) {
     if (openAt(p, day, min) === false) return false; // unknown hours stay visible
   }
   if (state.q) {
-    const q = state.q.toLowerCase();
-    if (!(p.n + " " + p.c + " " + p.area + " " + (p.d || "")).toLowerCase().includes(q)) return false;
+    // Forgiving search: ignores capitals, apostrophes, accents and punctuation ("driftwoods" finds "Driftwood's").
+    const hay = norm(p.n + " " + p.c + " " + p.area + " " + (p.d || "")), tight = hay.replace(/ /g, "");
+    if (!norm(state.q).split(" ").every(w => hay.includes(w) || tight.includes(w))) return false;
   }
   return true;
 }
@@ -138,6 +140,8 @@ $("vibes").onclick = e => { const b = e.target.closest(".vibe"); if (!b) return;
 $("price").onclick = e => { const b = e.target.closest("button"); if (!b) return; state.price = +b.dataset.p; [...$("price").children].forEach(x => x.classList.toggle("on", x === b)); update(); };
 $("when").onchange = e => { state.when = e.target.value; $("day").style.display = state.when === "now" ? "none" : ""; update(); };
 $("day").onchange = e => { state.day = +e.target.value; update(); };
+// On a phone, pressing Search/Enter hides the keyboard and jumps to the results.
+$("q").onkeydown = e => { if (e.key === "Enter") { e.target.blur(); if (window.matchMedia("(max-width:820px)").matches) $("main").scrollIntoView({behavior:"smooth", block:"start"}); } };
 $("q").oninput = e => { state.q = e.target.value.trim(); update(); };
 $("viewtoggle").onclick = () => { const m = $("main").classList.toggle("showmap"); $("viewtoggle").textContent = m ? "📋 List" : "🗺 Map"; if (m) setTimeout(() => { map.invalidateSize(); fit(); }, 50); };
 

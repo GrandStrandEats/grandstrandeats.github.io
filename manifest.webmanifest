@@ -1,6 +1,6 @@
 {
   "name": "Grand Strand Eats",
-  "short_name": "Strand Eats",
+  "short_name": "GS Eats",
   "description": "Find Myrtle Beach restaurants by vibe, price and hours.",
   "start_url": "./",
   "display": "standalone",
