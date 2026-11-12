@@ -593,7 +593,7 @@ ${cfg.faq ? `<section class="guide faq"><h2>Common questions</h2>${cfg.faq.map((
 <div class="box"><h2>${cfg.kind === "do" ? "Book tours, cruises & shows" : "After dinner: things to do on the Grand Strand"}</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
-<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="https://m.me/61596237747958?text=Update%20for%20Grand%20Strand%20Eats%3A%20" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Message us</a> and we will fix it.${INFO_LINKS}</footer>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="mailto:hello@grandstrandeats.com?subject=Update%20for%20Grand%20Strand%20Eats" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it.${INFO_LINKS}</footer>
 </div>
 </body>
 </html>
@@ -648,14 +648,14 @@ const INFO = [
   {
     slug: "contact", title: "Contact Grand Strand Eats", h1: "Contact us",
     desc: "Suggest a local Grand Strand restaurant, report wrong hours or prices, or ask about a Featured listing.",
-    body: `<p>The quickest way to reach Grand Strand Eats is to send a message to our <a href="${FB}">Facebook page</a>. We read every message.</p>
+    body: `<p>The quickest way to reach Grand Strand Eats is to email <a href="mailto:hello@grandstrandeats.com">hello@grandstrandeats.com</a>. You can also message our <a href="${FB}">Facebook page</a>. We read every message.</p>
 <h2>Good reasons to get in touch</h2>
 <ul>
 <li><strong>Suggest a spot.</strong> Know a local, non-chain restaurant, food truck or brewery we're missing? Tell us its name and town.</li>
 <li><strong>Fix a listing.</strong> Wrong hours, a closed restaurant, a bad address or a price that's off? Let us know and we'll check it.</li>
 <li><strong>Restaurant owners.</strong> Send your current hours and menu link, or ask about a ⭐ Featured listing.</li>
 </ul>
-<p><a class="cta" href="${FB}">💬 Message us on Facebook</a></p>`,
+<p><a class="cta" href="mailto:hello@grandstrandeats.com">✉️ Email us</a> <a class="cta" href="${FB}">💬 Message us on Facebook</a></p>`,
   },
 ];
 
