@@ -307,7 +307,7 @@ const PAGES = [
     title: "Best Local Pizza in Myrtle Beach & the Grand Strand",
     h1: "Local pizza places on the Grand Strand",
     desc: "Local pizza in Myrtle Beach, North Myrtle Beach, Surfside Beach, Garden City, Murrells Inlet, Pawleys Island and Conway. Independent pizzerias, sorted by town.",
-    intro: "Pizza is the easy answer after a long beach day, and the Grand Strand has a local pizzeria in almost every town. These are the pizza places on our map, from quick slice shops to sit-down Italian spots with a pizza oven. Spots we've checked by hand are listed first, and you can sort by what's open right now.",
+    intro: "Pizza is the easy answer after a long beach day, and the Grand Strand has a local pizzeria in almost every town. These are the pizza places on our map, from quick slice shops to sit-down Italian spots with a pizza oven. Spots we've checked by hand are listed first, and the map shows what's open right now.",
     guide: [
       {h: "Where can I get local pizza near me on the Grand Strand?", p: [
         "<strong>Every town on the Grand Strand has at least one local pizza place, so start with the one closest to where you're staying.</strong> Summer traffic on Kings Highway and Highway 17 can turn a short pizza run into a long one.",
@@ -389,7 +389,7 @@ const PAGES = [
     title: "Mexican Restaurants in Myrtle Beach & the Grand Strand",
     h1: "Mexican restaurants on the Grand Strand",
     desc: "Mexican restaurants and taquerias in Myrtle Beach, North Myrtle Beach, Conway, Surfside Beach, Murrells Inlet and nearby, listed by town.",
-    intro: "Tacos and a basket of chips are a nice break from fried seafood, and they're easy on a vacation budget. These are the Mexican restaurants and taquerias on our map, from Little River down to Georgetown. Spots we've checked by hand are listed first, and you can sort by what's open right now.",
+    intro: "Tacos and a basket of chips are a nice break from fried seafood, and they're easy on a vacation budget. These are the Mexican restaurants and taquerias on our map, from Little River down to Georgetown. Spots we've checked by hand are listed first, and the map shows what's open right now.",
     guide: [
       {h: "Where can I find Mexican food near me on the Grand Strand?", p: [
         "<strong>There's a Mexican restaurant in nearly every town here, so start with the one closest to you.</strong>",
@@ -576,11 +576,30 @@ const PAGES = [
   },
   {
     slug: "conway-sc-restaurants",
-    title: "Conway SC Restaurants: Local Spots Near Myrtle Beach",
-    h1: "Conway, SC restaurants",
-    desc: "Local (non-chain) restaurants in Conway, South Carolina, including historic downtown near the Riverwalk, about 20 minutes from Myrtle Beach.",
-    intro: "Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River. Its historic downtown and Riverwalk make a nice break from the beach crowds, and it's home to Coastal Carolina University. Here is every local restaurant in Conway on our map.",
+    title: "Conway SC Restaurants: Local Places to Eat for Breakfast, Lunch & Dinner",
+    h1: "Restaurants in Conway, SC",
+    desc: "Hungry in Conway, SC? See local restaurants for breakfast, lunch and dinner, with a website and directions for each one and a free map of what's open right now. No chains.",
+    intro: "Looking for food in Conway? Here is every local restaurant in Conway on our map, with a website link and directions for each one. Tap 'See them on the map' to see what's open right now. Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River, and it's home to Coastal Carolina University.",
     guide: [
+      {h: "Where can I get lunch in Conway, SC?", p: [
+        "<strong>For a quick lunch in Conway, try Groucho's Deli, Cheesesteak U or Hop N Wich for sandwiches, Bonfire Taqueria for tacos, or Chantis for pizza and sandwiches.</strong>",
+        "<strong>Burgers.</strong> Crafty Rooster, California Burger and River City Cafe.",
+        "<strong>Something different.</strong> Caribbean Jerk Cuisine serves Jamaican food, Kosta Bowls does bowls, and CW's Wings and Ribs and Toyama Hibachi and Wings both do wings.",
+        "<strong>Mexican.</strong> Bonfire Taqueria, El Patio, El Cerro Mexican Bar and Grill, Margaritas Mexican Restaurant and Loca Luna Cantina.",
+        "<strong>Chinese and Asian.</strong> Lin's Garden, Szechuan Chinese, Spice C and Jo Hibachi.",
+      ]},
+      {h: "Where can I get breakfast or coffee in Conway?", p: [
+        "<strong>Oliver's and Trestle Restaurant are the breakfast spots on our Conway list, and C3 Coffee Bar and Liberty Brew Coffee are the coffee shops.</strong>",
+        "Our listing shows Oliver's open on weekdays from 6:30 AM, and Trestle Restaurant open seven days a week, with shorter hours on Sunday. C3 Coffee Bar opens at 6 AM on weekdays.",
+        "Kosta Bowls opens at 9 AM Monday through Saturday if you want something lighter.",
+      ]},
+      {h: "What are the best restaurants in Conway for dinner?", p: [
+        "<strong>For a nice dinner in Conway, Rivertown Bistro and Whitaker's are the two spots on our date-night list.</strong> Both show three dollar signs, the top price level on our map.",
+        "<strong>Italian and sushi.</strong> Leone's Restaurant is Italian, Ichiban does sushi and Japanese, and Whitaker's is fusion and sushi.",
+        "<strong>Casual dinner and a drink.</strong> Crooked Oak Tavern, Palmetto Taps, Crafty Rooster, The American Tavern, The Coop Bar & Grill and Coastal Ale House.",
+        "<strong>With kids.</strong> Anto's Pizza Romana, Chantis and River City Cafe are marked family-friendly, and Stella's Homemade Ice Cream is the place for dessert.",
+        "Several Conway spots close on Sunday or Monday. Open the map to see today's hours before you go.",
+      ]},
       {h: "What is Conway, SC like?", p: [
         "<strong>Conway is an old river town and the county seat of Horry County, about 20 minutes inland from Myrtle Beach.</strong> Big live oaks shade the streets, and the historic downtown sits right by the Waccamaw River.",
         "Downtown restaurants are mostly local: cafés, Southern cooking, bars, pizza and a few nicer dinner spots, many of them in older storefronts. Out along Highway 501 and near Coastal Carolina University you'll find more casual places and student favorites.",
@@ -604,6 +623,9 @@ const PAGES = [
       "Heading in from the beach? Go inland in the afternoon and drive back after dinner to miss the worst traffic.",
     ],
     faq: [
+      ["What restaurants are open now in Conway, SC?", "Tap \"See them on the map\" on this page. The free Grand Strand Eats map shows which Conway restaurants are open right now, with today's hours. Hours change, so call ahead if it's close to closing time."],
+      ["Where can I get lunch in Conway, SC?", "For sandwiches, try Groucho's Deli, Cheesesteak U or Hop N Wich. For tacos, Bonfire Taqueria. For burgers, Crafty Rooster, California Burger or River City Cafe."],
+      ["What is the nicest restaurant in Conway, SC?", "Rivertown Bistro and Whitaker's are the two Conway restaurants on our date-night list, and both are at the top price level on our map."],
       ["How far is Conway from Myrtle Beach?", "About 20 to 25 minutes by car on Highway 501, depending on where you start and on traffic."],
       ["Is downtown Conway worth visiting?", "Yes, if you want a break from the beach. It's a small, walkable historic downtown with local restaurants, shops and the Riverwalk along the Waccamaw River."],
       ["What is the Conway Riverwalk?", "It's a boardwalk along the Waccamaw River near downtown Conway, with views of cypress trees and river marsh. It's free and makes an easy walk before or after a meal."],

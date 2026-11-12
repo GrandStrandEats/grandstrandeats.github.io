@@ -68,6 +68,12 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 .thumb{border-radius:14px;display:grid;place-items:center;font-size:34px;aspect-ratio:1}
 .name{font-weight:800;font-size:16px;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:6px}
 .heart{border:0;background:none;font-size:18px;padding:0 2px;line-height:1}
+.rate{display:flex;align-items:center;gap:2px;margin:2px 0 3px;font-size:12px;font-weight:700;color:var(--muted)}
+.rate span{margin-right:5px}
+.rate button{border:0;background:none;font-size:21px;line-height:1;padding:2px 3px;color:#cfd6dc;cursor:pointer}
+.rate button.on{color:#f5a623}
+.vibe[data-k="saved"]{border-color:#e0245e;color:#e0245e}
+.vibe[data-k="saved"].on{background:#e0245e;border-color:#e0245e;color:#fff}
 .meta{font-size:13px;color:var(--muted);margin:2px 0 6px}
 .status{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800}
 .dot{width:8px;height:8px;border-radius:50%}

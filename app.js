@@ -1,4 +1,5 @@
 const VIBES = [
+  {k:"saved", l:"♥ My Favorites"},
   {k:"water", l:"🌊 On the water"},
   {k:"music", l:"🎸 Live music"},
   {k:"dog", l:"🐶 Bring the pup"},
@@ -7,18 +8,17 @@ const VIBES = [
   {k:"breakfast", l:"🥞 Breakfast"},
   {k:"brewery", l:"🍺 Breweries"},
   {k:"family", l:"👨‍👩‍👧 Family"},
-  {k:"oceanfront", l:"🏖 Oceanfront"},
-  {k:"saved", l:"♥ My spots"}
+  {k:"oceanfront", l:"🏖 Oceanfront"}
 ];
 const DO_VIBES = [
+  {k:"saved", l:"♥ My Favorites"},
   {k:"holiday", l:"🎄 Holiday"},
   {k:"free", l:"🆓 Free"},
   {k:"kids", l:"🧒 Kids"},
   {k:"rainy", l:"☔ Rainy day"},
   {k:"outdoor", l:"🌳 Outdoors"},
   {k:"night", l:"🌙 Shows & nights"},
-  {k:"pier", l:"🎣 Piers"},
-  {k:"saved", l:"♥ My spots"}
+  {k:"pier", l:"🎣 Piers"}
 ];
 const TAG_LABEL = {holiday:"Holiday", free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const GRADS = ["#ffd6a5,#ffadad","#caffbf,#9bf6ff","#bdb2ff,#ffc6ff","#fdffb6,#ffd6a5","#a0c4ff,#bdb2ff","#9bf6ff,#caffbf"];
@@ -30,7 +30,11 @@ const update = () => { render(); fit(); };
 const state = {mode:/[?&]do(&|=|$)/.test(location.search) ? "do" : "eat", vibes:new Set(), price:0, when:"any", day:new Date().getDay(), q:"", me:null, hl:null};
 let saved = new Set();
 try { saved = new Set(JSON.parse(localStorage.getItem("gse-saved") || "[]")); } catch (e) {}
-const persist = () => { try { localStorage.setItem("gse-saved", JSON.stringify([...saved])); } catch (e) {} };
+let ratings = {};
+try { ratings = JSON.parse(localStorage.getItem("gse-ratings") || "{}") || {}; } catch (e) {}
+const persist = () => { try { localStorage.setItem("gse-saved", JSON.stringify([...saved])); localStorage.setItem("gse-ratings", JSON.stringify(ratings)); } catch (e) {} };
+const favLabel = () => "♥ My Favorites" + (saved.size ? " (" + saved.size + ")" : "");
+const stars = id => `<div class="rate" aria-label="Your rating"><span>${ratings[id] ? "Your rating" : "Rate it"}</span>${[1,2,3,4,5].map(n => `<button data-star="${n}" data-for="${id}" class="${n <= (ratings[id] || 0) ? "on" : ""}" aria-label="${n} star${n > 1 ? "s" : ""}">★</button>`).join("")}</div>`;
 
 // Parses OpenStreetMap hours, e.g. "Mo-Th 11:00-15:00,17:00-21:00; Fr,Sa 11:00-02:00; Su off".
 // week[day] is a list of [open, close] minute spans; close runs past 1440 when a place closes after midnight.
@@ -125,7 +129,7 @@ function matches(p) {
 const $ = id => document.getElementById(id);
 function setMode(m) {
   state.mode = m; state.vibes.clear(); state.hl = null;
-  $("vibes").innerHTML = (m === "do" ? DO_VIBES : VIBES).map(v => `<button class="vibe" data-k="${v.k}">${v.l}</button>`).join("");
+  $("vibes").innerHTML = (m === "do" ? DO_VIBES : VIBES).map(v => `<button class="vibe" data-k="${v.k}">${v.k === "saved" ? favLabel() : v.l}</button>`).join("");
   [...$("mode").children].forEach(b => b.classList.toggle("on", b.dataset.m === m));
   $("price").style.display = m === "do" ? "none" : "";
   $("ask").innerHTML = m === "do" ? "What do you feel like <span>doing</span>?" : "What's the <span>vibe</span> tonight?";
@@ -188,7 +192,7 @@ function card(p, i) {
   return `<article class="card ${state.hl === p.id ? "hl" : ""} ${p.f ? "feat" : ""}" id="c${p.id}" data-id="${p.id}">
     <div class="thumb" style="background:linear-gradient(135deg,${GRADS[i % GRADS.length]})">${p.e}</div>
     <div>
-      <div class="name"><span>${p.n}</span><button class="heart" data-save="${p.id}" aria-label="Save">${saved.has(p.id) ? "❤️" : "🤍"}</button></div>
+      <div class="name"><span>${p.n}</span><button class="heart" data-save="${p.id}" aria-label="${saved.has(p.id) ? "Remove from My Favorites" : "Add to My Favorites"}" title="${saved.has(p.id) ? "In My Favorites" : "Add to My Favorites"}">${saved.has(p.id) ? "❤️" : "🤍"}</button></div>${saved.has(p.id) ? stars(p.id) : ""}
       <div class="meta">${dist}${p.area} · ${p.c}${p.p ? ` · <b>${"$".repeat(p.p)}</b>` : ""}${p.cost ? ` · <b>${p.cost}</b>` : ""}</div>
       ${p.d ? `<div class="desc">${p.d}</div>` : ""}
       <div class="status" style="color:var(--${st.cls})"><span class="dot" style="background:var(--${st.cls})"></span>${st.txt}</div>${p.v ? `<span class="chk">✓ Checked ${checked(p.v)}</span>` : ""}
@@ -230,10 +234,12 @@ function render() {
   // Featured spots go first unless the list is sorted by distance.
   if (state.me) shown.sort((a, b) => miles(state.me, a) - miles(state.me, b));
   else shown.sort((a, b) => (b.f || 0) - (a.f || 0));
+  // In My Favorites, the highest-rated spots go first.
+  if (state.vibes.has("saved")) shown.sort((a, b) => (ratings[b.id] || 0) - (ratings[a.id] || 0));
   const list = $("list");
   list.innerHTML = (state.mode === "do" ? `<div class="note">🎡 New: ${THINGS.length} things to do on the Grand Strand, from free parks and piers to shows. Hours and prices change by season, so check the website before you go.</div>` : `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>`) + `
     <div class="count"><span>${shown.length} ${state.mode === "do" ? "thing" : "spot"}${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
-    (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + card(p)).join("") + (shown.length <= 6 ? todoBox() : "") + (state.q ? notListed(state.q) : "") : (state.q ? `<div class="empty" style="padding:22px 10px">“${esc(state.q)}” isn't on our map yet.${state.vibes.size || state.price || state.when !== "any" ? " Your filters are still on, so try Clear first." : ""}</div>` + notListed(state.q) : `<div class="empty">No matches. Try fewer vibes.</div>`) + todoBox()) +
+    (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + card(p)).join("") + (shown.length <= 6 ? todoBox() : "") + (state.q ? notListed(state.q) : "") : (state.q ? `<div class="empty" style="padding:22px 10px">“${esc(state.q)}” isn't on our map yet.${state.vibes.size || state.price || state.when !== "any" ? " Your filters are still on, so try Clear first." : ""}</div>` + notListed(state.q) : `<div class="empty">${state.vibes.has("saved") && !saved.size ? "Your favorites list is empty. Tap the 🤍 heart on any spot to add it, then give it your own star rating. Your list is saved on this phone." : "No matches. Try fewer vibes."}</div>`) + todoBox()) +
     `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked ⭐ Featured may be paid placements; every other listing is free.<div class="guides">Closed, moved or wrong info? Tap ✏️ Fix on the listing, or <a href="${MSG("Update for Grand Strand Eats: ")}" target="_blank" rel="noopener">email us</a>.</div><div class="guides">Things to do: <a href="christmas-lights-myrtle-beach/">Christmas lights & holiday events</a> · <a href="things-to-do-myrtle-beach/">Things to do in Myrtle Beach</a> · <a href="free-things-to-do-myrtle-beach/">Free things to do</a> · <a href="things-to-do-myrtle-beach-with-kids/">With kids</a> · <a href="rainy-day-things-to-do-myrtle-beach/">Rainy day</a> · <a href="myrtle-beach-fishing-piers/">Fishing piers</a></div><div class="guides">Restaurant guides: <a href="restaurants-open-thanksgiving-myrtle-beach/">Open on Thanksgiving</a> · <a href="waterfront-restaurants-myrtle-beach/">Waterfront restaurants</a> · <a href="seafood-restaurants-myrtle-beach/">Seafood restaurants</a> · <a href="breakfast-myrtle-beach/">Myrtle Beach breakfast</a> · <a href="murrells-inlet-restaurants/">Murrells Inlet &amp; MarshWalk</a> · <a href="north-myrtle-beach-restaurants/">North Myrtle Beach</a> · <a href="surfside-beach-restaurants/">Surfside Beach</a> · <a href="garden-city-restaurants/">Garden City</a> · <a href="pawleys-island-restaurants/">Pawleys Island &amp; Litchfield</a> · <a href="market-common-restaurants/">Market Common</a> · <a href="conway-sc-restaurants/">Conway</a> · <a href="romantic-restaurants-myrtle-beach/">Date night</a> · <a href="italian-restaurants-myrtle-beach/">Italian</a></div><div class="guides"><a href="about/">About</a> · <a href="privacy/">Privacy</a> · <a href="contact/">Contact</a></div></div>`;
   const c = $("clear"); if (c) c.onclick = clearAll;
 
@@ -271,7 +277,10 @@ function highlight(id, fly) {
 
 $("list").onclick = e => {
   const s = e.target.closest("[data-save]");
-  if (s) { const id = +s.dataset.save; saved.has(id) ? saved.delete(id) : saved.add(id); persist(); render(); return; }
+  const favBtn = () => { const b = document.querySelector('.vibe[data-k="saved"]'); if (b) b.textContent = favLabel(); };
+  const r = e.target.closest("[data-star]");
+  if (r) { const id = +r.dataset.for, n = +r.dataset.star; if (ratings[id] === n) delete ratings[id]; else ratings[id] = n; saved.add(id); persist(); favBtn(); render(); return; }
+  if (s) { const id = +s.dataset.save; if (saved.has(id)) { saved.delete(id); delete ratings[id]; } else saved.add(id); persist(); favBtn(); render(); return; }
   if (e.target.closest("a")) return;
   const c = e.target.closest(".card"); if (c) highlight(+c.dataset.id, true);
 };
