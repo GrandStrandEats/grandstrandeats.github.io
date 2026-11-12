@@ -50,6 +50,7 @@ header{padding:14px 16px 10px;background:var(--surface);border-bottom:1px solid 
 .vibe{flex:0 0 auto;border:1.5px solid var(--line);background:var(--surface);border-radius:16px;padding:9px 13px;font-weight:700;font-size:14px;white-space:nowrap;transition:.15s}
 .vibe.on{background:var(--ink);color:var(--surface);border-color:var(--ink)}
 .row2{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.filters{display:contents}
 .seg{display:flex;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
 .seg button{border:0;background:transparent;padding:7px 11px;font-weight:800;font-size:13px;color:var(--muted)}
 .seg button.on{background:var(--brand);color:var(--brand-ink)}
@@ -112,7 +113,28 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
   .app:has(main.showmap){display:grid;height:100dvh}
   .app:has(main.showmap) #map{height:auto}
   .viewtoggle{display:flex}
-  .ask{font-size:20px}
+  /* Phone: a shorter top section so the list starts higher. */
+  header{padding:8px 12px 8px}
+  .top{gap:8px;flex-wrap:wrap}
+  .logo{width:36px;height:36px}
+  .brand{font-size:19px}
+  .brand small{font-size:11.5px;margin-top:0}
+  .iconbtn{padding:6px 10px;font-size:12.5px}
+  .install{order:5;flex:0 0 100%;justify-content:center}
+  .modes{margin-top:8px;padding:3px}.modes button{padding:7px 8px;font-size:14.5px}
+  .ask{font-size:16px;margin:8px 0 6px}
+  .vibes{margin:0 -12px;padding-left:12px;padding-right:12px;gap:6px}
+  .vibe{padding:6px 11px;font-size:13.5px;border-radius:14px}
+  .row2{margin-top:6px;gap:6px}
+  .row2 #near{order:1}
+  .row2 #q{order:2;min-width:0}
+  .filters{order:3;display:flex;gap:6px;flex:0 0 100%;overflow-x:auto;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .filters>*{flex:0 0 auto}
+  .filters .seg button{padding:6px 6px}
+  .filters select{flex:1 1 0;min-width:0;font-size:13px;padding:6px 4px 6px 7px}
+  select,input[type=search]{padding:6px 9px}
+  #list{padding-top:8px}
 }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963548887313701" crossorigin="anonymous"></script>
@@ -132,6 +154,7 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
   <div class="ask" id="ask">What's the <span>vibe</span> tonight?</div>
   <div class="vibes" id="vibes"></div>
   <div class="row2">
+    <div class="filters">
     <div class="seg" id="price"></div>
     <select id="when" aria-label="When">
       <option value="any">Any time</option>
@@ -142,6 +165,7 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
       <option value="late">Late (10 PM)</option>
     </select>
     <select id="day" aria-label="Day"></select>
+    </div>
     <button class="iconbtn" id="near">📍 Near me</button>
     <input type="search" id="q" placeholder="🔎 Search a restaurant or food…" aria-label="Search">
   </div>
