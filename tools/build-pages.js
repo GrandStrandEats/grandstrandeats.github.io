@@ -13,6 +13,13 @@ const THINGS = window.THINGS;
 const SITE = "https://grandstrandeats.com/";
 const TAG_LABEL = {holiday:"Holiday", free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const MB_AREAS = ["Myrtle Beach", "Market Common", "Boardwalk", "Downtown", "Carolina Forest", "Socastee"];
+// Spots within km of a point (landmark coordinates from OpenStreetMap).
+function near(p, lat, lon, km) {
+  const x = (p.lat - lat) * Math.PI / 180, y = (p.lon - lon) * Math.PI / 180 * Math.cos(lat * Math.PI / 180);
+  return 6371 * Math.hypot(x, y) < km;
+}
+const checked = p => p.id <= 124 || !!p.v;
+const LUNCH = /lunch|sandwich|deli\b|burger|hot dog|bbq|barbecue|taco|quick bite|bowls|diner|poke|chicken|wings|soul food|caf[eé]|bagel|food truck/i;
 
 // Thanksgiving 2026: id -> what the restaurant's own website says. Only add a spot once it has posted 2026 plans.
 const THANKSGIVING = {
@@ -632,6 +639,240 @@ const PAGES = [
     ],
     match: p => p.area === "Conway",
     stay: ["Conway"],
+  },
+  {
+    slug: "lunch-myrtle-beach",
+    title: "Lunch in Myrtle Beach: Local Lunch Spots Near You on the Grand Strand",
+    h1: "Where to get lunch in Myrtle Beach",
+    desc: "Local lunch spots in Myrtle Beach, North Myrtle Beach, Surfside, Murrells Inlet and Conway: burgers, BBQ, tacos, sandwiches, bowls and diners. No chains, with a map of what's open now.",
+    intro: "Looking for lunch near you? These are the local lunch spots on our map: burger joints, barbecue, taco shops, delis, diners, bowls and cafés, from Little River to Pawleys Island and inland to Conway. Spots we've checked by hand are listed first. Tap 'See them on the map' to see what's open right now.",
+    guide: [
+      {h: "Where can I get a quick local lunch in Myrtle Beach?", p: [
+        "<strong>For a quick, cheap lunch in Myrtle Beach, try barbecue at Little Pigs BBQ, Fullbelly BBQ or Simply Southern Smokehouse, tacos at Tu Taco, or soul food at Big Mike's Soul Food.</strong> All of them show one dollar sign on our map.",
+        "<strong>Burgers.</strong> Grumpy Monk does burgers and craft beer, Thorny's Steakhouse & Saloon has burgers too, and Art Burger Sushi Bar downtown does both burgers and sushi.",
+        "<strong>Lunch with a view.</strong> RipTydz Oceanfront Grille & Rooftop Bar serves burgers on a rooftop over the ocean.",
+        "<strong>Breakfast that runs into lunch.</strong> Blueberry's Grill serves breakfast and lunch, so it's a good pick if your group can't agree on which meal it is.",
+      ]},
+      {h: "Where can I get lunch in North Myrtle Beach?", p: [
+        "<strong>In North Myrtle Beach, Kitchen Table serves breakfast and lunch, Taco Mundo does tacos, and Big D's BBQ Trough does barbecue.</strong> Souffle's is a brunch café if you want something a little nicer.",
+        "Barefoot Landing and Main Street both have more casual lunch spots within walking distance of each other. See our <a href=\"../barefoot-landing-restaurants/\">Barefoot Landing guide</a> and <a href=\"../north-myrtle-beach-restaurants/\">North Myrtle Beach guide</a>.",
+      ]},
+      {h: "Where can I get lunch in Surfside Beach, Garden City or Murrells Inlet?", p: [
+        "<strong>Surfside Beach has Hamburger Joe's, River City Cafe, Surf Diner and Fat Jack's Wings & Things. Garden City has the Pier Snack Bar, right on the pier. Murrells Inlet has Sam's Corner for hot dogs, River City Cafe and The Grumpy Mustache.</strong>",
+        "The Carolina Food Truck Park in Murrells Inlet has a rotating lineup of food trucks, so it's a good stop when everyone wants something different.",
+        "Down in Pawleys Island, Village Deli & Creamery does sandwiches and ice cream.",
+      ]},
+      {h: "Where can I get lunch in the Market Common or Conway?", p: [
+        "<strong>At the Market Common, Bowled does poke and bowls, and Tidal Creek Brewhouse has a café menu with its beer.</strong>",
+        "<strong>In Conway</strong>, Cheesesteak U does sandwiches, Kosta Bowls does bowls, Crafty Rooster does burgers, Chantis does pizza and sandwiches, and CW's Wings and Ribs and Toyama Hibachi and Wings both do wings. See our <a href=\"../conway-sc-restaurants/\">Conway guide</a> for more.",
+      ]},
+      {h: "When is the best time to get lunch at the beach?", p: [
+        "<strong>Eat before noon or after 1:30 PM in summer to skip the lunch rush.</strong> On rainy days every lunch spot near the beach fills up at once, so go early or call ahead for takeout.",
+        "Lunch is also the cheapest way to try a popular dinner spot. Many sit-down restaurants have lighter lunch menus and shorter waits in the middle of the day.",
+      ]},
+    ],
+    tips: [
+      "Call your order in and pick it up on the way back to the beach. It beats waiting in line in a wet swimsuit.",
+      "Barbecue and taco shops are some of the cheapest ways to feed a group.",
+      "Want a waterfront meal without the sunset crowd? Go to a waterfront spot for lunch instead of dinner.",
+      "Some lunch spots close mid-afternoon or take a day off in the off-season. Check today's hours on the map.",
+      "Rainy day? Expect a crowd everywhere around noon. Go at 11 or after 1:30.",
+    ],
+    faq: [
+      ["Where can I get lunch near me in Myrtle Beach?", "Tap \"See them on the map\" on this page and use Near me. The free Grand Strand Eats map sorts local lunch spots by distance and shows which ones are open right now."],
+      ["What's a good cheap lunch in Myrtle Beach?", "Barbecue at Little Pigs BBQ, Fullbelly BBQ or Simply Southern Smokehouse, tacos at Tu Taco, or soul food at Big Mike's Soul Food. All show one dollar sign on our map."],
+      ["Where can I get lunch on the water in Myrtle Beach?", "RipTydz Oceanfront Grille & Rooftop Bar serves burgers on a rooftop over the ocean, and the Pier Snack Bar in Garden City sits right on the pier. See our waterfront guide for more."],
+      ["Where can I get lunch in North Myrtle Beach?", "Kitchen Table for breakfast and lunch, Taco Mundo for tacos, Big D's BBQ Trough for barbecue, or Souffle's for brunch."],
+    ],
+    match: p => LUNCH.test(p.c),
+    stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
+  },
+  {
+    slug: "grande-dunes-restaurants",
+    title: "Restaurants Near Grande Dunes, Myrtle Beach (Grand Dunes Area)",
+    h1: "Restaurants near Grande Dunes in Myrtle Beach",
+    desc: "Local restaurants near Grande Dunes (often spelled Grand Dunes) in north Myrtle Beach, within about a mile of the resort, marina and Kings Highway. No chains.",
+    intro: "Staying at Grande Dunes, or close by? (Lots of people spell it Grand Dunes.) These are the local, non-chain restaurants on our map within about a mile of the Grande Dunes resort area in north Myrtle Beach, between Kings Highway and the Intracoastal Waterway. Spots we've checked by hand are listed first.",
+    guide: [
+      {h: "Where is Grande Dunes in Myrtle Beach?", p: [
+        "<strong>Grande Dunes is a resort and residential area in the north end of Myrtle Beach, stretching from the ocean across Kings Highway to the Intracoastal Waterway.</strong> It includes the Grande Dunes Ocean Club on the beach and the Marina Inn at Grande Dunes on the waterway, plus golf and homes in between.",
+        "It's about 15 minutes north of Broadway at the Beach and about 15 minutes south of Barefoot Landing, depending on traffic.",
+      ]},
+      {h: "What are the best restaurants near Grande Dunes?", p: [
+        "<strong>For a nice dinner near Grande Dunes, Hook and Barrel is the closest sit-down seafood spot on our date-night list. For something casual, Liberty Tap Room is a brewpub with a big menu, and Blueberry's Grill is the breakfast and lunch pick.</strong>",
+        "<strong>Brunch.</strong> Heirloom Bistro does Southern cooking and brunch, and Mimosa Restaurant is a brunch spot a little farther south.",
+        "<strong>With kids.</strong> Pirate's Voyage Dinner & Show is just up Kings Highway. Ducati's Pizza Trattoria does pizza and Italian, and Cafe Gelato is close by for dessert.",
+        "<strong>Other cuisines nearby.</strong> Our map also lists Opa Opa Taverna (Greek), Peno Mediterranean Grill, Fortune Asian Bistro, Gios Italian Kitchen and Lombardo's Italian Restaurant within about a mile.",
+      ]},
+      {h: "Is there anywhere to eat on the water near Grande Dunes?", p: [
+        "<strong>The closest waterfront dining is on the Intracoastal side near the marina, or at the beach bars along the oceanfront.</strong> For a full list of local spots with a water view, see our <a href=\"../waterfront-restaurants-myrtle-beach/\">waterfront restaurants guide</a>.",
+      ]},
+    ],
+    tips: [
+      "Kings Highway in north Myrtle Beach is lined with restaurants. Most of the spots below are a short drive, not a walk, from the resort.",
+      "Summer dinner waits are long at the popular seafood spots. Go before 5:30 PM or call ahead.",
+      "Staying a week? Liberty Tap Room and Blueberry's Grill are easy, casual picks for a night you don't want to plan.",
+      "Pirate's Voyage is a dinner show, so book tickets ahead instead of just showing up.",
+    ],
+    faq: [
+      ["Is it Grand Dunes or Grande Dunes?", "The official name is Grande Dunes, with an e, but lots of people search for Grand Dunes. It's the same place: a resort area in north Myrtle Beach between the ocean and the Intracoastal Waterway."],
+      ["What restaurants are near Grande Dunes in Myrtle Beach?", "Local spots close by include Hook and Barrel for seafood, Liberty Tap Room for a casual brewpub dinner, Blueberry's Grill for breakfast and lunch, Heirloom Bistro for brunch, and Pirate's Voyage Dinner & Show for families."],
+      ["Where can I get breakfast near Grande Dunes?", "Blueberry's Grill serves breakfast and lunch, and Heirloom Bistro and Mimosa Restaurant do brunch. See our breakfast guide for more."],
+    ],
+    match: p => p.area === "Myrtle Beach" && near(p, 33.760, -78.812, 1.6),
+    stay: ["Myrtle Beach"],
+  },
+  {
+    slug: "broadway-at-the-beach-restaurants",
+    title: "Broadway at the Beach Restaurants: Where to Eat In and Near Broadway",
+    h1: "Restaurants at Broadway at the Beach",
+    desc: "Local restaurants, bars and treats in and around Broadway at the Beach in Myrtle Beach, including Celebrity Square, with prices and a free map of what's open now.",
+    intro: "Spending the day at Broadway at the Beach? These are the restaurants, bars, coffee and treat shops on our map in and right around Broadway, the big shopping and entertainment area on the lake in Myrtle Beach. We leave out the big national chains. Check each spot's website for its exact location inside the complex.",
+    guide: [
+      {h: "Where should I eat at Broadway at the Beach?", p: [
+        "<strong>For a sit-down family meal at Broadway at the Beach, try Paula Deen's Family Kitchen for Southern food or Yamato for hibachi. For a party-style night out, head to Celebrity Square.</strong>",
+        "<strong>Southern and family style.</strong> Paula Deen's Family Kitchen serves Southern dishes family style, which works well for groups.",
+        "<strong>Hibachi.</strong> Yamato cooks at the table, which kids tend to love.",
+        "<strong>Nightlife.</strong> Celebrity Square is Broadway's bar section. Señor Frog's is a Mexican restaurant and party bar, Wet Willie's does frozen daiquiris, and Dueling Pianos and Broadway Louie's have live music.",
+        "<strong>Snacks and treats.</strong> Our map lists coffee, popcorn and ice cream shops in and around Broadway, including Frapp'a Joe, Social Coffee, Sweet South Popcorn Company and The Pineapple Hut.",
+      ]},
+      {h: "Is it worth eating at Broadway at the Beach?", p: [
+        "<strong>Yes, if you're already there for the shops or attractions. Expect tourist prices and crowds at peak times.</strong> Most spots here show two dollar signs on our map.",
+        "If you want local seafood instead of a theme-park feel, drive 20 to 30 minutes south to the <a href=\"../murrells-inlet-restaurants/\">Murrells Inlet MarshWalk</a>, or see our <a href=\"../seafood-restaurants-myrtle-beach/\">seafood guide</a>.",
+      ]},
+      {h: "When is Broadway at the Beach busiest?", p: [
+        "<strong>Summer evenings and rainy days are the busiest times, so eat before 5:30 PM or after 8 PM if you can.</strong> Weekends from late May through Labor Day are the most crowded.",
+        "In the off-season some spots shorten their hours or close a day or two a week. Check the map for today's hours before you go.",
+      ]},
+    ],
+    tips: [
+      "Put your name in at a restaurant first, then walk the shops while you wait.",
+      "Rainy beach days send everyone to Broadway at once. Go early for lunch.",
+      "Celebrity Square gets loud late at night. For a quieter dinner with kids, eat earlier.",
+      "Bigger groups do better with family-style or hibachi spots, where everyone eats at once.",
+    ],
+    faq: [
+      ["What restaurants are at Broadway at the Beach?", "Local spots on our map at or near Broadway include Paula Deen's Family Kitchen, Yamato hibachi, Señor Frog's, Wet Willie's, Dueling Pianos and Broadway Louie's, plus coffee, popcorn and ice cream shops."],
+      ["What is Celebrity Square at Broadway at the Beach?", "It's the nightlife section of Broadway at the Beach, with bars, live music and party-style restaurants. It's busiest late in the evening."],
+      ["Where is a good family restaurant at Broadway at the Beach?", "Paula Deen's Family Kitchen serves Southern food family style, and Yamato does hibachi cooked at the table. Both are marked family-friendly on our map."],
+    ],
+    match: p => near(p, 33.7162, -78.8808, 0.55),
+    stay: ["Myrtle Beach"],
+  },
+  {
+    slug: "barefoot-landing-restaurants",
+    title: "Barefoot Landing Restaurants: Where to Eat at Barefoot Landing, North Myrtle Beach",
+    h1: "Restaurants at and near Barefoot Landing",
+    desc: "Local restaurants at and near Barefoot Landing in North Myrtle Beach, on the Intracoastal Waterway: seafood, waterfront bars, pizza, tacos and ice cream. Free map of what's open now.",
+    intro: "Heading to Barefoot Landing? These are the restaurants, bars and treat shops on our map at Barefoot Landing and within a short walk or drive of it, in North Myrtle Beach on the Intracoastal Waterway. We leave out the big national chains. Spots we've checked by hand are listed first.",
+    guide: [
+      {h: "What are the best restaurants at Barefoot Landing?", p: [
+        "<strong>For dinner on the water at Barefoot Landing, try LuLu's, Big Chill Island House, Flying Fish or Dick's Last Resort.</strong> All four are on the Intracoastal Waterway side.",
+        "<strong>LuLu's</strong> is a Gulf Coast-style seafood spot with live music, and it's marked family-friendly on our map.",
+        "<strong>Big Chill Island House</strong> is a big waterfront bar and grill with live music, good for a drink at sunset.",
+        "<strong>Flying Fish</strong> is a seafood restaurant on the water, and it's marked family-friendly too.",
+        "<strong>Dick's Last Resort</strong> is famous for its rude-on-purpose servers. It's a fun night out, but not for everyone.",
+      ]},
+      {h: "Where can I get a cheap meal or a treat near Barefoot Landing?", p: [
+        "<strong>For something quick and cheap near Barefoot Landing, try Taco Mundo for tacos, Ultimate California Pizza, or River City Cafe for burgers.</strong>",
+        "For breakfast, Blueberry's Grill and Kitchen Table are both close by.",
+        "For dessert, our map lists The Crafty Cow and Sweet Molly's Creamery for ice cream.",
+      ]},
+      {h: "Is Barefoot Landing worth visiting for dinner?", p: [
+        "<strong>Yes. It's one of the easiest places on the Grand Strand to eat on the water and then walk around afterward.</strong> The shops and boardwalks are free to stroll, and the Alabama Theatre is right there if you want to make a night of it.",
+        "Barefoot Landing sits on Highway 17 in North Myrtle Beach, about 25 to 30 minutes north of Broadway at the Beach. For more spots in the area, see our <a href=\"../north-myrtle-beach-restaurants/\">North Myrtle Beach guide</a>.",
+      ]},
+    ],
+    tips: [
+      "Ask for a table by the water when you put your name in. Those go first at sunset.",
+      "Summer weekend waits can be long. Eat before 5:30 PM or after 8 PM.",
+      "Seeing a show at the Alabama Theatre? Eat early so you're not rushing.",
+      "Bring bug spray for waterfront tables around dusk.",
+    ],
+    faq: [
+      ["What restaurants are at Barefoot Landing?", "Local restaurants at Barefoot Landing on our map include LuLu's, Big Chill Island House, Flying Fish and Dick's Last Resort, all on the water, plus taco, pizza, burger and ice cream spots close by."],
+      ["Can you eat on the water at Barefoot Landing?", "Yes. LuLu's, Big Chill Island House, Flying Fish and Dick's Last Resort all sit on the Intracoastal Waterway."],
+      ["Where is Barefoot Landing?", "On Highway 17 in North Myrtle Beach, on the Intracoastal Waterway. It's about 25 to 30 minutes north of Broadway at the Beach, depending on traffic."],
+    ],
+    match: p => near(p, 33.7999, -78.7424, 0.6),
+    stay: ["North Myrtle Beach"],
+  },
+  {
+    slug: "family-restaurants-myrtle-beach",
+    title: "Kid-Friendly Restaurants in Myrtle Beach: Local Family Restaurants",
+    h1: "Kid-friendly family restaurants on the Grand Strand",
+    desc: "Local, kid-friendly family restaurants in Myrtle Beach, North Myrtle Beach, Surfside Beach and Murrells Inlet: pancake houses, seafood buffets, pizza, BBQ, dinner shows and ice cream.",
+    intro: "Feeding a family at the beach? These are the family-friendly spots on our map that we've checked by hand: pancake houses, seafood buffets, pizza, barbecue, dinner shows and ice cream, sorted with the ones we know best first. No chains.",
+    guide: [
+      {h: "What are the best kid-friendly restaurants in Myrtle Beach?", p: [
+        "<strong>For breakfast with kids, go to a pancake house. For dinner, a seafood buffet, pizza place or barbecue joint keeps everyone happy, and a dinner show makes it a night out.</strong>",
+        "<strong>Pancake houses.</strong> Donald's Pancake House and Pan American Pancake & Omelette House in Myrtle Beach, Golden Egg Pancake House, Omega Pancake House and Johnny D's Waffles in Surfside Beach, and Hot Stacks Pancake House in North Myrtle Beach.",
+        "<strong>Seafood buffets.</strong> Captain George's Seafood Restaurant and The Original Benjamin's Calabash Buffet in Myrtle Beach, The Giant Crab in North Myrtle Beach, and Crabby Mike's Calabash Seafood in Surfside Beach. Buffets let picky eaters fill up on whatever they like.",
+        "<strong>Barbecue.</strong> Little Pigs BBQ, Fullbelly BBQ and Simply Southern Smokehouse in Myrtle Beach, and Big D's BBQ Trough in North Myrtle Beach.",
+      ]},
+      {h: "Are there dinner shows for kids in Myrtle Beach?", p: [
+        "<strong>Yes. Pirate's Voyage Dinner & Show and Medieval Times are both dinner shows in Myrtle Beach where you eat while you watch.</strong> They're among the most popular family nights out on the Grand Strand. Book tickets ahead, especially in summer.",
+      ]},
+      {h: "Where can I eat with kids on the water?", p: [
+        "<strong>LuLu's and Flying Fish at Barefoot Landing, Creek Ratz and Drunken Jack's on the Murrells Inlet MarshWalk, and the Pier Snack Bar in Garden City are all marked family-friendly on our map.</strong> Kids can watch boats or the waves while you wait.",
+      ]},
+      {h: "Where can I get ice cream with kids?", p: [
+        "<strong>Painter's Homemade Ice Cream has spots in Surfside Beach and North Myrtle Beach, and Mad Myrtle's Ice Creamery is in Myrtle Beach.</strong> Ice cream after dinner is a beach tradition, so expect a line on summer nights.",
+      ]},
+    ],
+    tips: [
+      "Eat dinner early, around 4:30 or 5 PM. You'll beat the summer waits, and tired kids do better.",
+      "Buffets and pizza are the easiest way to feed a big group without a long wait for every plate.",
+      "Pancake houses are busiest on weekend mornings. Go before 8 AM or after 10.",
+      "Many places have high chairs and kids' menus, but call ahead if you need a big table.",
+      "Bring a small bag of crayons or a card game for the wait on busy nights.",
+    ],
+    faq: [
+      ["What are good family restaurants in Myrtle Beach?", "Popular local picks include pancake houses like Donald's Pancake House, seafood buffets like Captain George's, barbecue at Little Pigs BBQ or Simply Southern Smokehouse, and dinner shows like Pirate's Voyage and Medieval Times."],
+      ["Where can I take kids to breakfast in Myrtle Beach?", "Donald's Pancake House and Pan American Pancake & Omelette House in Myrtle Beach, Golden Egg Pancake House and Johnny D's Waffles in Surfside Beach, or Hot Stacks Pancake House in North Myrtle Beach."],
+      ["Are there seafood buffets in Myrtle Beach?", "Yes. Captain George's Seafood Restaurant, The Original Benjamin's Calabash Buffet, The Giant Crab in North Myrtle Beach and Crabby Mike's in Surfside Beach are all on our map."],
+    ],
+    match: p => p.tags.includes("family") && checked(p),
+    stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
+  },
+  {
+    slug: "cheap-eats-myrtle-beach",
+    title: "Cheap Eats in Myrtle Beach: Local Restaurants on a Budget",
+    h1: "Cheap eats in Myrtle Beach and the Grand Strand",
+    desc: "Cheap local restaurants in Myrtle Beach, North Myrtle Beach, Surfside and Conway: pancake houses, BBQ, tacos, burgers, Jamaican, soul food and pizza. All one dollar sign, no chains.",
+    intro: "Eating out every night of a beach trip adds up fast. These are the local spots on our map that show one dollar sign, our lowest price level, and that we've checked by hand: pancake houses, barbecue, tacos, burgers, Jamaican, soul food, pizza, coffee and ice cream. No chains.",
+    guide: [
+      {h: "Where can I eat cheap in Myrtle Beach?", p: [
+        "<strong>For cheap food in Myrtle Beach, go for barbecue, tacos, soul food or Jamaican.</strong> Little Pigs BBQ, Fullbelly BBQ and Simply Southern Smokehouse do barbecue, Tu Taco does tacos, Big Mike's Soul Food does soul food, and Reggae Island Grill does Jamaican.",
+        "<strong>Breakfast is the cheapest meal out.</strong> Donald's Pancake House, Pan American Pancake & Omelette House and Blueberry's Grill all show one dollar sign.",
+      ]},
+      {h: "Where can I eat cheap in North Myrtle Beach and Surfside Beach?", p: [
+        "<strong>In North Myrtle Beach, try Big D's BBQ Trough, Taco Mundo, Sunday Best Jamaican Cuisine, Hoskin's Restaurant or Kitchen Table.</strong> Hot Stacks Pancake House is the budget breakfast pick.",
+        "<strong>In Surfside Beach, try Hamburger Joe's, River City Cafe, Fat Jack's Wings & Things or Pizza Hyena.</strong> For breakfast, Surf Diner, Wooden Spoon, Golden Egg Pancake House and Johnny D's Waffles are all one dollar sign.",
+        "<strong>Murrells Inlet and Garden City.</strong> Sam's Corner does hot dogs, River City Cafe does burgers, and the Pier Snack Bar in Garden City sits right on the pier.",
+      ]},
+      {h: "Is Conway cheaper than Myrtle Beach for eating out?", p: [
+        "<strong>Often, yes. Conway's restaurants cater mostly to locals and college students, and many show one dollar sign on our map.</strong> Try Cheesesteak U, Kosta Bowls, Bonfire Taqueria, El Patio, CW's Wings and Ribs, Chantis or Trestle Restaurant. See our <a href=\"../conway-sc-restaurants/\">Conway guide</a>.",
+      ]},
+      {h: "How can I save money eating out at the beach?", p: [
+        "<strong>Eat your big meal at lunch, share plates, and skip the oceanfront tourist strip for dinner.</strong> Lunch menus are usually cheaper than dinner, and spots a few blocks off the ocean often cost less than the ones on it.",
+        "Breakfast out and dinner in the condo is a popular budget split. Pancake houses are cheap, filling and great with kids.",
+      ]},
+    ],
+    tips: [
+      "Barbecue, tacos and pizza are the cheapest ways to feed a group.",
+      "Eat your main meal at lunch. Many sit-down spots charge less at midday.",
+      "Drinks add up fast. Water with dinner saves a lot over a week.",
+      "Places a few blocks off the ocean often cost less than oceanfront ones.",
+      "Look for local daily specials on a restaurant's Facebook page before you go.",
+    ],
+    faq: [
+      ["What are cheap places to eat in Myrtle Beach?", "Little Pigs BBQ, Fullbelly BBQ, Simply Southern Smokehouse, Tu Taco, Big Mike's Soul Food and Reggae Island Grill are all one dollar sign on our map. For breakfast, try Donald's Pancake House or Pan American Pancake & Omelette House."],
+      ["What's the cheapest meal to eat out at the beach?", "Breakfast. Pancake houses on the Grand Strand are cheap and filling, and lunch is usually cheaper than dinner at sit-down restaurants."],
+      ["Where can I find cheap food in North Myrtle Beach?", "Big D's BBQ Trough, Taco Mundo, Sunday Best Jamaican Cuisine, Hoskin's Restaurant, Kitchen Table and Hot Stacks Pancake House all show one dollar sign on our map."],
+    ],
+    match: p => p.p === 1 && checked(p) && !/bar$|lounge|daiquiri/i.test(p.c),
+    stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
   },
 ];
 
