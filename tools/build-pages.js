@@ -35,6 +35,7 @@ const THANKSGIVING = {
   71: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
   126: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
   591: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
+  656: "🦃 Thanksgiving Feast Thu, Nov 26, 11 AM–6 PM · Dessert display upstairs in Seaside Vista · Reservations recommended: 843-282-8080",
 };
 
 const PAGES = [
