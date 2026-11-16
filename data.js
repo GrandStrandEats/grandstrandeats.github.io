@@ -620,5 +620,5 @@ window.PLACES = [
   {id:651, n:"Blue Sky Restaurant", lat:33.5646, lon:-79.03628, area:"Murrells Inlet", c:"Breakfast · Lunch · Diner", e:"🍳", p:1, tags:["breakfast","family"], h:"Mo-Sa 06:00-14:00; Su 06:30-14:00", web:"https://blueskyrestaurantmi.com/", tel:"+18433572785"},
   {id:652, n:"Ocean Blue Restaurant (The Ellie Beach Resort)", lat:33.65599, lon:-78.92163, area:"Myrtle Beach", c:"American · Seafood", e:"🌊", p:2, tags:["family"], h:null, hn:"Inside The Ellie Beach Resort, 3200 S Ocean Blvd", v:"2026-11-09"},
   {id:654, n:"Castaway Keys on Main", lat:33.82515, lon:-78.67645, area:"North Myrtle Beach", c:"Seafood · Raw bar", e:"🦪", p:2, tags:[], h:null, hn:"661 Main St"},
-  {id:655, n:"Pirates Voyage Dinner & Show", lat:33.75921, lon:-78.80418, area:"Myrtle Beach", c:"Dinner show · American", e:"🏴‍☠️", p:3, tags:["family"], h:null, hn:"Showtimes vary; Christmas show in season. 4-course meal with the show, tickets required", web:"https://piratesvoyage.com/myrtle-beach/", tel:"+18434979700", v:"2026-11-16"}
+  {id:655, n:"Pirates Voyage Dinner & Show", lat:33.76444, lon:-78.80861, area:"Myrtle Beach", c:"Dinner show · American", e:"🏴‍☠️", p:3, tags:["family"], h:null, hn:"Showtimes vary; Christmas show in season. 4-course meal with the show, tickets required", web:"https://piratesvoyage.com/myrtle-beach/", tel:"+18434979700", v:"2026-11-16"}
 ];
