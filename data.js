@@ -61,7 +61,6 @@ window.PLACES = [
   {id:59, n:"Fullbelly BBQ", lat:33.75147, lon:-78.8689, area:"Myrtle Beach", c:"Barbecue", e:"🍖", p:1, tags:["family"], h:"Mo-Th 11:00-20:15; Fr-Su 11:00-21:00", web:"https://eatatfullbellybbq.com/"},
   {id:60, n:"Simply Southern Smokehouse", lat:33.70867, lon:-78.89801, area:"Myrtle Beach", c:"Barbecue · Southern", e:"🍖", p:1, tags:["family"], h:"Mo off; Tu-Th 11:00-15:00; Fr,Sa 11:00-20:00; Su off"},
   {id:61, n:"Big Mike’s Soul Food", lat:33.69951, lon:-78.87651, area:"Myrtle Beach", c:"Soul food", e:"🍗", p:1, tags:[], h:"Mo-Sa 11:00-21:00; Su off"},
-  {id:62, n:"Pirate's Voyage Dinner & Show", lat:33.76428, lon:-78.80871, area:"Myrtle Beach", c:"Dinner show", e:"🏴‍☠️", p:3, tags:["family"], h:null, hn:"Evening dinner shows · check showtimes"},
   {id:63, n:"Medieval Times", lat:33.71139, lon:-78.93245, area:"Myrtle Beach", c:"Dinner show", e:"🏰", p:3, tags:["family"], h:null, hn:"Evening dinner shows · check showtimes", web:"https://www.medievaltimes.com/", tel:"+18889356878"},
   {id:64, n:"Paula Deen's Family Kitchen", lat:33.71696, lon:-78.87949, area:"Myrtle Beach", c:"Southern", e:"🧈", p:2, tags:["family"], h:"Mo-Th 11:00-20:00; Fr,Sa 11:00-21:00; Su 11:00-20:00"},
   {id:65, n:"Señor Frogs", lat:33.71698, lon:-78.88183, area:"Myrtle Beach", c:"Mexican · Party bar", e:"🐸", p:2, tags:["music"], h:"Mo-Su 11:00-00:00"},

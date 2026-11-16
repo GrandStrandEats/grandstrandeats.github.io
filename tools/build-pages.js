@@ -1031,7 +1031,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sa
 .wrap{max-width:760px;margin:0 auto;padding:0 16px 60px}
 header{display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
 header a{color:inherit;text-decoration:none;font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px}
-.logo{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--sun),#ffbf69 45%,var(--brand));display:grid;place-items:center}
+.logo{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block}
 h1{font-size:30px;line-height:1.15;letter-spacing:-.03em;margin:26px 0 10px}
 .intro{color:var(--muted);font-size:16px;margin:0 0 14px}
 .cta{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:800;text-decoration:none;border-radius:999px;padding:10px 16px;margin:4px 0 8px}
@@ -1059,7 +1059,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 </head>
 <body>
 <div class="wrap">
-<header><a href="../"><span class="logo">🌅</span>Grand Strand Eats</a></header>
+<header><a href="../"><img class="logo" src="../logo.jpg" alt="" width="32" height="32">Grand Strand Eats</a></header>
 <h1>${esc(cfg.h1)}</h1>
 <p class="intro">${esc(cfg.intro)}</p>
 <a class="cta" href="../${cfg.kind === "do" ? "?do" : ""}">🗺 See them on the map</a>
@@ -1163,7 +1163,7 @@ ${style.replace("</style>", INFO_CSS + "\n</style>")}
 </head>
 <body>
 <div class="wrap">
-<header><a href="../"><span class="logo">🌅</span>Grand Strand Eats</a></header>
+<header><a href="../"><img class="logo" src="../logo.jpg" alt="" width="32" height="32">Grand Strand Eats</a></header>
 <h1>${esc(cfg.h1)}</h1>
 <div class="prose">
 ${cfg.body}
@@ -1258,7 +1258,7 @@ ${STYLE.replace("</style>", ".facts{background:var(--surface);border:1px solid v
 </head>
 <body>
 <div class="wrap">
-<header><a href="../../"><span class="logo">🌅</span>Grand Strand Eats</a></header>
+<header><a href="../../"><img class="logo" src="../../logo.jpg" alt="" width="32" height="32">Grand Strand Eats</a></header>
 <div class="crumb"><a href="../../">Map</a>${guides[0] ? ` › <a href="../../${guides[0].slug}/">${esc(guides[0].h1)}</a>` : ""}</div>
 <h1>${p.e} ${esc(p.n)}</h1>
 <p class="intro"><strong>${esc(lead)}</strong>${p.v ? ` We last checked this listing in ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}.` : ""}</p>
