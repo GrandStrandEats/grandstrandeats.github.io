@@ -979,13 +979,25 @@ const price = p => p.p ? "$".repeat(p.p) : "";
 // Hand-checked spots (ids 1-124) first, then A-Z.
 const sortSpots = list => list.slice().sort((a, b) => ((a.id > 124) - (b.id > 124)) || a.n.localeCompare(b.n));
 
+// One page per hand-checked restaurant at /spot/<slug>/ (skips spots closed for now).
+const slugify = t => t.toLowerCase().replace(/&/g, "and").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const SPOT_SLUG = {};
+{
+  const list = PLACES.filter(p => (checked(p) || TRIPLE_D[p.id]) && !/temporarily closed|closed for/i.test(p.hn || ""));
+  const seen = {};
+  list.forEach(p => { const b = slugify(p.n); seen[b] = (seen[b] || 0) + 1; });
+  list.forEach(p => { const b = slugify(p.n); SPOT_SLUG[p.id] = seen[b] > 1 ? b + "-" + slugify(p.area) : b; });
+  const used = new Set();
+  list.forEach(p => { if (used.has(SPOT_SLUG[p.id])) delete SPOT_SLUG[p.id]; else used.add(SPOT_SLUG[p.id]); }); // same name + area = duplicate pin
+}
+
 function spot(p, note) {
   const dir = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n + ", " + p.area + ", SC")}`;
   const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const meta = [p.area, p.c.replace(/ · /g, ", "), price(p), p.cost, p.v ? `✓ Checked ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}` : ""].filter(Boolean).join(" · ");
   if (p.d) note = [p.d, p.hn, p.tel ? "📞 " + p.tel.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3") : ""].filter(Boolean).join(" · ");
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("");
-  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
+  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${SPOT_SLUG[p.id] && PLACES.includes(p) ? `<a href="../spot/${SPOT_SLUG[p.id]}/" style="color:inherit">${esc(p.n)}</a>` : esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
 }
 
 function page(cfg, spots) {
@@ -1183,6 +1195,105 @@ for (const cfg of INFO) {
   urls.push(SITE + cfg.slug + "/");
   console.log(cfg.slug);
 }
+
+// Restaurant pages
+const DAY_NAME = {Mo: "Mon", Tu: "Tue", We: "Wed", Th: "Thu", Fr: "Fri", Sa: "Sat", Su: "Sun"};
+const clock = (H, M) => { H = +H % 24; return (H % 12 || 12) + (M !== "00" ? ":" + M : "") + (H < 12 ? " AM" : " PM"); };
+const fmtHours = h => h.split(";").map(r => r.trim()).filter(r => r && !/^PH/.test(r)).map(r => r
+  .replace(/^Mo-Su\b/, "Daily").replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su)\b/g, d => DAY_NAME[d])
+  .replace(/(\d{1,2}):(\d\d)/g, (m, H, M) => clock(H, M)).replace(/\boff\b/i, "closed").replace(/,(?=\S)/g, ", ").replace(/-/g, " – "));
+const town = p => p.area === "MarshWalk" ? "Murrells Inlet" : ["Boardwalk", "Downtown", "Market Common", "Carolina Forest", "Socastee"].includes(p.area) ? "Myrtle Beach" : p.area;
+const where = p => town(p) === p.area ? p.area : p.area + ", " + town(p);
+const phone = t => t.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3");
+const dist = (a, b) => { const R = 6371, x = (b.lon - a.lon) * Math.PI / 180 * Math.cos((a.lat + b.lat) * Math.PI / 360), y = (b.lat - a.lat) * Math.PI / 180; return R * Math.hypot(x, y); };
+const EAT_PAGES = PAGES.filter(c => c.kind !== "do");
+const SKIP_NOTES = /thanksgiving/;
+
+function spotPage(p) {
+  const slug = SPOT_SLUG[p.id], url = SITE + "spot/" + slug + "/";
+  const cuisine = p.c.replace(/ · /g, ", ");
+  const hours = p.h ? fmtHours(p.h) : [];
+  const addr = (p.hn || "").split(" · ")[0];
+  const hasAddr = /^\d/.test(addr);
+  const guides = EAT_PAGES.filter(c => c.match(p));
+  const notes = [...new Set([p.d, ...guides.filter(c => c.notes && !SKIP_NOTES.test(c.slug)).map(c => c.notes[p.id])].filter(Boolean))];
+  const nearby = PLACES.filter(o => o !== p && SPOT_SLUG[o.id]).map(o => [dist(p, o), o]).sort((a, b) => a[0] - b[0]).slice(0, 6);
+  const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => TAG_LABEL[t]);
+  const priceWord = ["", "inexpensive", "moderately priced", "pricier", "high-end"][p.p || 0];
+  const PROPER = /^(BBQ|[A-Z][a-z]+an|[A-Z][a-z]+ese|[A-Z][a-z]+ish|Greek|Thai|Cajun|Lowcountry|Tex|Mex|Latin|Asian|Creole|French|Southern|New|York|Philly|Chicago|Buffalo|Carolina|Hibachi|Poke|Ramen|Tapas|Pho|Gyro|Gyros)$/;
+  const parts = p.c.split(" · ").map(t => t.split(/(\W+)/).map(w => PROPER.test(w) ? w : w.toLowerCase()).join(""));
+  const phrase = parts.length > 1 ? parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1] : parts[0];
+  const kind = /restaurant|bar|cafe|café|grill|deli|bakery|shack|pub|truck|diner|brewery|market|show|steakhouse|house|shop|stand/i.test(p.c) ? phrase + " spot" : phrase + " restaurant";
+  const lead = `${p.n} is ${priceWord ? (/^[aeiou]/.test(priceWord) ? "an " : "a ") + priceWord + " " : (/^[aeiou]/i.test(kind) ? "an " : "a ")}${kind} in ${where(p)}, South Carolina.`;
+  const title = `${p.n}, ${town(p)} SC: Hours, Phone & Directions`;
+  const desc = `${lead} ${hours.length ? "Hours, " : ""}${p.tel ? "phone, " : ""}directions and nearby local places to eat on the Grand Strand.`.slice(0, 300);
+  const dir = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n + ", " + (hasAddr ? addr + ", " : "") + town(p) + ", SC")}`;
+  const faq = [];
+  if (hours.length) faq.push([`What are ${p.n}'s hours?`, `${p.n} is usually open ${hours.join("; ")}. Hours change by season, so call or check their website before you go.`]);
+  faq.push([`Where is ${p.n}?`, `${p.n} is in ${where(p)}, SC${hasAddr ? " at " + addr : ""}.${nearby.length ? " Nearby local spots include " + nearby.slice(0, 3).map(([, o]) => o.n).join(", ") + "." : ""}`]);
+  if (p.tel) faq.push([`What is ${p.n}'s phone number?`, `You can call ${p.n} at ${phone(p.tel)}.`]);
+  const ld = {"@context": "https://schema.org", "@type": "Restaurant", name: p.n, url, servesCuisine: p.c.split(" · "), ...(p.p ? {priceRange: price(p)} : {}), ...(p.tel ? {telephone: p.tel} : {}), ...(p.web ? {sameAs: [p.web]} : {}),
+    address: {"@type": "PostalAddress", ...(hasAddr ? {streetAddress: addr} : {}), addressLocality: town(p), addressRegion: "SC", addressCountry: "US"},
+    geo: {"@type": "GeoCoordinates", latitude: p.lat, longitude: p.lon}, ...(p.h ? {openingHours: p.h.split(";").map(r => r.trim()).filter(r => r && !/off|closed|^PH/i.test(r))} : {})};
+  const crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{"@type": "ListItem", position: 1, name: "Grand Strand Eats", item: SITE}, ...(guides[0] ? [{"@type": "ListItem", position: 2, name: guides[0].h1, item: SITE + guides[0].slug + "/"}] : []), {"@type": "ListItem", position: guides[0] ? 3 : 2, name: p.n, item: url}]};
+  const MON = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(title)} | Grand Strand Eats</title>
+<meta name="description" content="${esc(desc)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}share-v2.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e7c86">
+<link rel="icon" href="../../icon-192.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">${JSON.stringify(ld)}</script>
+<script type="application/ld+json">${JSON.stringify(crumbs)}</script>
+<script type="application/ld+json">${JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([q, a]) => ({"@type": "Question", name: q, acceptedAnswer: {"@type": "Answer", text: a}}))})}</script>
+${STYLE.replace("</style>", ".facts{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin:14px 0}.facts dt{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:8px}.facts dt:first-child{margin-top:0}.facts dd{margin:2px 0 0;font-size:15px}.crumb{font-size:13px;color:var(--muted);margin-top:14px}.crumb a{color:var(--brand);font-weight:700;text-decoration:none}</style>")}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963548887313701" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrap">
+<header><a href="../../"><span class="logo">🌅</span>Grand Strand Eats</a></header>
+<div class="crumb"><a href="../../">Map</a>${guides[0] ? ` › <a href="../../${guides[0].slug}/">${esc(guides[0].h1)}</a>` : ""}</div>
+<h1>${p.e} ${esc(p.n)}</h1>
+<p class="intro"><strong>${esc(lead)}</strong>${p.v ? ` We last checked this listing in ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}.` : ""}</p>
+<div class="acts">${p.tel ? `<a href="tel:${p.tel}">📞 Call</a>` : ""}${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div>
+<dl class="facts">
+<dt>Location</dt><dd>${esc(hasAddr ? addr + ", " + town(p) + ", SC" : where(p) + ", SC")}</dd>
+<dt>Food</dt><dd>${esc(cuisine)}${p.p ? " · " + price(p) : ""}${p.cost ? " · " + esc(p.cost) : ""}</dd>
+${hours.length ? `<dt>Hours</dt><dd>${hours.map(esc).join("<br>")}</dd>` : ""}
+${p.tel ? `<dt>Phone</dt><dd><a href="tel:${p.tel}" style="color:var(--brand);font-weight:700">${phone(p.tel)}</a></dd>` : ""}
+${tags.length ? `<dt>Good for</dt><dd>${tags.join(", ")}</dd>` : ""}
+</dl>
+${notes.length ? `<section class="guide"><h2>What to know about ${esc(p.n)}</h2>${notes.map(t => `<p>${esc(t)}</p>`).join("")}</section>` : ""}
+<a class="cta" href="../../">🗺 See it on the map</a>
+${nearby.length ? `<section class="guide"><h2>Restaurants near ${esc(p.n)}</h2><ol>${nearby.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
+<section class="guide faq"><h2>Common questions</h2>${faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>
+<div class="note">Hours and prices change, especially between seasons. Call ahead or check ${esc(p.n)}'s website before you go. See something wrong? <a href="mailto:hello@grandstrandeats.com?subject=${encodeURIComponent("Update for " + p.n)}" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it.</div>
+${guides.length ? `<div class="box"><h2>Guides that include ${esc(p.n)}</h2><div>${guides.map(c => `<a href="../../${c.slug}/">${esc(c.h1)}</a>`).join("")}</div></div>` : ""}
+<div class="box"><h2>Where to stay</h2><div><a href="${STAY(town(p))}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${esc(town(p))}</a></div><p>Hotel search through Stay22. Affiliate link.</p></div>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. We are not affiliated with ${esc(p.n)}. Some links are affiliate links: if you book a stay through them, we may earn a small commission at no extra cost to you.${INFO_LINKS.replace(/\.\.\//g, "../../")}</footer>
+</div>
+</body>
+</html>
+`;
+}
+
+let spotCount = 0;
+for (const p of PLACES) {
+  if (!SPOT_SLUG[p.id]) continue;
+  const dir = path.join(ROOT, "spot", SPOT_SLUG[p.id]);
+  fs.mkdirSync(dir, {recursive: true});
+  fs.writeFileSync(path.join(dir, "index.html"), spotPage(p));
+  urls.push(SITE + "spot/" + SPOT_SLUG[p.id] + "/");
+  spotCount++;
+}
+console.log("spot pages", spotCount);
 
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
