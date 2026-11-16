@@ -980,7 +980,7 @@ const price = p => p.p ? "$".repeat(p.p) : "";
 const sortSpots = list => list.slice().sort((a, b) => ((a.id > 124) - (b.id > 124)) || a.n.localeCompare(b.n));
 
 // One page per hand-checked restaurant at /spot/<slug>/ (skips spots closed for now).
-const slugify = t => t.toLowerCase().replace(/&/g, "and").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const slugify = t => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/&/g, "and").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const SPOT_SLUG = {};
 {
   const list = PLACES.filter(p => (checked(p) || TRIPLE_D[p.id]) && !/temporarily closed|closed for/i.test(p.hn || ""));
