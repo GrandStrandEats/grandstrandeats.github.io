@@ -32,9 +32,6 @@ const THANKSGIVING = {
   234: "🦃 Thanksgiving Day feature (call 843-497-2636) · At-home dinner for 4, $225, pickup Nov 24–25, 1–5 PM · Order by Sat, Nov 21",
   39: "🦃 39th annual Thanksgiving Day Feast 1–3 PM · Turkey Trot post-race brunch 8–10 AM · Call 843-238-1013",
   652: "🦃 To-go Thanksgiving feast $49/person (serves 2–12) · Turkey, sides, rolls & pie · Order by Sun, Nov 22 at noon · Pickup Wed, Nov 25, 2–8 PM at 3200 S Ocean Blvd",
-  71: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
-  126: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
-  591: "🦃 Thanksgiving to-go: 8-person package $225, 12-person $300, or à la carte · Pickup Wed, Nov 25 · Order by Sun, Nov 15 at c-chospitality.com/promotions",
   656: "🦃 Thanksgiving Feast Thu, Nov 26, 11 AM–6 PM · Dessert display upstairs in Seaside Vista · Reservations recommended: 843-282-8080",
 };
 
