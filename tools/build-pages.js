@@ -799,6 +799,38 @@ const PAGES = [
     stay: ["Myrtle Beach"],
   },
   {
+    slug: "main-street-north-myrtle-beach-restaurants",
+    title: "Main Street North Myrtle Beach Restaurants: Where to Eat on Main St",
+    h1: "Restaurants on Main Street, North Myrtle Beach",
+    desc: "Local restaurants, bars and treat shops on and near Main Street in North Myrtle Beach's Ocean Drive section: pizza, pancakes, seafood, shag bars and ice cream. Free map, no chains.",
+    intro: "Main Street runs from Highway 17 down to the ocean in the Ocean Drive section of North Myrtle Beach, the home of shag dancing. These are the restaurants, bars and treat shops on our map along Main Street and just off it. We leave out the big national chains.",
+    guide: [
+      {h: "What restaurants are on Main Street in North Myrtle Beach?", p: [
+        "<strong>Main Street has pizza, pancakes, seafood, bagels, Irish and Cuban spots, plus ice cream and milkshake shops, all within a short walk.</strong> Pizza is easy to find here: Georgio's Famous Pizza, The Main Slice and Daniello's Pizzeria & Pub are all on our map. Castaway Keys on Main does seafood and a raw bar, and Golden Griddle Pancake House and The Bagel Factory cover breakfast.",
+        "For dessert, Main Sweets, Melt and The Crazy Mason Milkshake Bar are all close by.",
+      ]},
+      {h: "Where can I go shag dancing on Main Street?", p: [
+        "<strong>The O.D. Lounge and OD Arcade & Lounge near the ocean end of Main Street are part of the shag dancing scene that North Myrtle Beach's Ocean Drive section is famous for.</strong> The shag is South Carolina's state dance, and the Ocean Drive area is where it grew up. Check each bar's own page for music nights before you go.",
+      ]},
+      {h: "Is Main Street North Myrtle Beach walkable?", p: [
+        "<strong>Yes. The ocean end of Main Street is a compact, walkable strip of restaurants, bars and shops a block from the beach.</strong> Park once and walk between dinner, ice cream and the beach. The spots near Highway 17 are a short drive up the road.",
+      ]},
+    ],
+    tips: [
+      "Park once near the ocean end of Main Street and walk. Most spots are a few minutes apart.",
+      "Pizza by the slice is the quick, cheap option on Main Street.",
+      "Main Street gets busy on summer evenings and during shag dance events, so go early for dinner.",
+      "Check hours before you go. Some spots cut back their hours in the off-season.",
+    ],
+    faq: [
+      ["What restaurants are on Main Street in North Myrtle Beach?", "Local spots on our map include Castaway Keys on Main, Georgio's Famous Pizza, The Main Slice, Daniello's Pizzeria & Pub, Golden Griddle Pancake House, Flynn's Irish Tavern, Cuba Bar & Restaurante and The Bagel Factory, plus ice cream at Main Sweets and Melt."],
+      ["Where is Main Street in North Myrtle Beach?", "Main Street runs from Highway 17 down to the ocean in the Ocean Drive section of North Myrtle Beach."],
+      ["Is Main Street North Myrtle Beach good for families?", "Yes. It has pizza, pancakes, ice cream and milkshakes within a short walk of the beach. Some spots are bars, so check before bringing kids at night."],
+    ],
+    match: p => p.area === "North Myrtle Beach" && !/temporarily closed/i.test(p.hn || "") && [[33.8155,-78.6726],[33.8195,-78.6750],[33.8230,-78.6770],[33.8265,-78.6800]].some(([a, o]) => near(p, a, o, 0.25)),
+    stay: ["North Myrtle Beach"],
+  },
+  {
     slug: "barefoot-landing-restaurants",
     title: "Barefoot Landing Restaurants: Where to Eat at Barefoot Landing, North Myrtle Beach",
     h1: "Restaurants at and near Barefoot Landing",
