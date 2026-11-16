@@ -224,7 +224,7 @@ window.PLACES = [
   {id:236, n:"Peace Love & Little Donuts", lat:33.66841, lon:-78.94032, area:"Market Common", c:"Donuts", e:"🍩", p:1, tags:["breakfast","family"], h:null},
   {id:237, n:"Nacho Hippo", lat:33.66918, lon:-78.9407, area:"Market Common", c:"Restaurant", e:"🍽", p:1, tags:[], h:null},
   {id:238, n:"Ultimate California Pizza", lat:33.66982, lon:-78.93917, area:"Market Common", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null},
-  {id:239, n:"Toffino's", lat:33.66512, lon:-78.93616, area:"Market Common", c:"Cafe", e:"☕", p:1, tags:[], h:null},
+  {id:239, n:"Toffino's Italian Bakery Deli Pizzeria", lat:33.66487, lon:-78.93586, area:"Market Common", c:"Italian · Bakery · Deli · Pizza", e:"🍕", p:1, tags:[], h:null, hn:"550 Farrow Pkwy · Seen on Diners, Drive-Ins and Dives"},
   {id:240, n:"Habenero's", lat:33.61516, lon:-79.04808, area:"Garden City", c:"Restaurant", e:"🍽", p:1, tags:[], h:null},
   {id:241, n:"Power House Bar & Grill", lat:33.58694, lon:-79.02807, area:"Garden City", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:242, n:"Southside Pattys", lat:33.59728, lon:-79.02159, area:"Garden City", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
@@ -330,7 +330,7 @@ window.PLACES = [
   {id:351, n:"Nonno's Italian Kitchen", lat:33.63072, lon:-79.02316, area:"Garden City", c:"Italian", e:"🍝", p:2, tags:[], h:null},
   {id:352, n:"Piana's Pizza", lat:33.64186, lon:-79.02998, area:"Myrtle Beach", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null, web:"https://www.nelliespizzadeliveries.com/"},
   {id:353, n:"Captain Jack's Seafood Buffet", lat:33.81606, lon:-78.69696, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:3, tags:["family"], h:null},
-  {id:354, n:"Brisket", lat:33.81418, lon:-78.69894, area:"North Myrtle Beach", c:"BBQ", e:"🍖", p:1, tags:[], h:null},
+  {id:354, n:"Brisket", lat:33.84543, lon:-78.65486, area:"North Myrtle Beach", c:"BBQ", e:"🍖", p:1, tags:[], h:null, hn:"1501 Hwy 17 S · Seen on Diners, Drive-Ins and Dives", web:"https://brisketnmb.com/"},
   {id:355, n:"China Garden", lat:33.68486, lon:-78.96279, area:"Socastee", c:"Chinese", e:"🥡", p:1, tags:[], h:null},
   {id:356, n:"Scores Sports Bar", lat:33.68463, lon:-78.96267, area:"Socastee", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:357, n:"Bully’s Pub & Grill", lat:33.79869, lon:-78.74553, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
@@ -621,5 +621,9 @@ window.PLACES = [
   {id:652, n:"Ocean Blue Restaurant (The Ellie Beach Resort)", lat:33.65599, lon:-78.92163, area:"Myrtle Beach", c:"American · Seafood", e:"🌊", p:2, tags:["family"], h:null, hn:"Inside The Ellie Beach Resort, 3200 S Ocean Blvd", v:"2026-11-09"},
   {id:654, n:"Castaway Keys on Main", lat:33.82515, lon:-78.67645, area:"North Myrtle Beach", c:"Seafood · Raw bar", e:"🦪", p:2, tags:[], h:null, hn:"661 Main St"},
   {id:655, n:"Pirates Voyage Dinner & Show", lat:33.76444, lon:-78.80861, area:"Myrtle Beach", c:"Dinner show · American", e:"🏴‍☠️", p:3, tags:["family"], h:null, hn:"Showtimes vary; Christmas show in season. 4-course meal with the show, tickets required", web:"https://piratesvoyage.com/myrtle-beach/", tel:"+18434979700", v:"2026-11-16"},
-  {id:656, n:"Black Drum Brewing (Kingston Resorts)", lat:33.76751, lon:-78.77890, area:"Myrtle Beach", c:"American · Seafood · Brewpub", e:"🍺", p:2, tags:["water","family"], h:null, hn:"Inside Kingston Resorts, 9800 Queensway Blvd", tel:"+18432828080", v:"2026-11-16"}
+  {id:656, n:"Black Drum Brewing (Kingston Resorts)", lat:33.76751, lon:-78.77890, area:"Myrtle Beach", c:"American · Seafood · Brewpub", e:"🍺", p:2, tags:["water","family"], h:null, hn:"Inside Kingston Resorts, 9800 Queensway Blvd", tel:"+18432828080", v:"2026-11-16"},
+  {id:657, n:"Krave Bagel", lat:33.84175, lon:-78.66248, area:"North Myrtle Beach", c:"Bagels · Breakfast", e:"🥯", p:1, tags:["breakfast"], h:null, hn:"1434 Hwy 17 S · Seen on Diners, Drive-Ins and Dives", tel:"+18434277310"},
+  {id:658, n:"J-Mike's Flavor Station", lat:33.66618, lon:-78.90991, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:[], h:null, hn:"2411 S Ocean Blvd · Seen on Diners, Drive-Ins and Dives"},
+  {id:659, n:"Old Town Crepes", lat:33.71835, lon:-78.85310, area:"Myrtle Beach", c:"Crepes · Cafe", e:"🥞", p:1, tags:["breakfast"], h:null, hn:"4205 N Kings Hwy · Seen on Diners, Drive-Ins and Dives"},
+  {id:660, n:"Seasons By 10/Fold", lat:33.71904, lon:-78.85228, area:"Myrtle Beach", c:"Brunch · Southern", e:"🍳", p:2, tags:["breakfast"], h:null, hn:"4377 N Kings Hwy (formerly 10/Fold Biscuits) · Seen on Diners, Drive-Ins and Dives"}
 ];

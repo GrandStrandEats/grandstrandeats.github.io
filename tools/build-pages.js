@@ -35,7 +35,48 @@ const THANKSGIVING = {
   656: "🦃 Thanksgiving Feast Thu, Nov 26, 11 AM–6 PM · Dessert display upstairs in Seaside Vista · Reservations recommended: 843-282-8080",
 };
 
+const TRIPLE_D = {
+  657: "📺 Aired Fri, Nov 13, 2026 (episode \"Northwest, Southeast\")",
+  354: "📺 Aired Fri, Nov 13, 2026 (episode \"Northwest, Southeast\")",
+  658: "📺 Filmed fall 2026 · Air date not announced yet",
+  239: "📺 Filmed fall 2026 · Air date not announced yet",
+  659: "📺 Filmed fall 2026 · Air date not announced yet",
+  660: "📺 Filmed fall 2026 · Air date not announced yet",
+};
+
 const PAGES = [
+  {
+    slug: "diners-drive-ins-and-dives-myrtle-beach",
+    title: "Diners, Drive-Ins and Dives Restaurants in Myrtle Beach (2026)",
+    h1: "Diners, Drive-Ins and Dives restaurants in Myrtle Beach",
+    desc: "The six Myrtle Beach and North Myrtle Beach restaurants Guy Fieri filmed for Diners, Drive-Ins and Dives in 2026, with addresses, a map and episode air dates.",
+    intro: "Guy Fieri brought Diners, Drive-Ins and Dives to the Grand Strand in 2026 and filmed at six local restaurants. Two have already aired, and we'll add air dates for the other four as they're announced. Last checked November 16, 2026.",
+    guide: [
+      {h: "Which Myrtle Beach restaurants were on Diners, Drive-Ins and Dives?", p: [
+        "<strong>Guy Fieri filmed at six Grand Strand restaurants in 2026: Krave Bagel, Brisket, J-Mike's Flavor Station, Toffino's Italian Bakery Deli Pizzeria, Old Town Crepes and Seasons By 10/Fold.</strong> Krave Bagel and Brisket are in North Myrtle Beach. The other four are in Myrtle Beach.",
+      ]},
+      {h: "When do the Myrtle Beach Triple D episodes air?", p: [
+        "<strong>Krave Bagel and Brisket were on the episode \"Northwest, Southeast,\" which aired Friday, November 13, 2026, on Food Network.</strong> The episodes with J-Mike's Flavor Station, Toffino's, Old Town Crepes and Seasons By 10/Fold are expected in the coming weeks. We'll post each date here once it's announced.",
+      ]},
+      {h: "Where are the Triple D restaurants in Myrtle Beach?", p: [
+        "<strong>In North Myrtle Beach, Krave Bagel (1434 Hwy 17 S) and Brisket (1501 Hwy 17 S) are just down the road from each other</strong>, so you can do breakfast at one and lunch at the other.",
+        "<strong>In Myrtle Beach, Old Town Crepes (4205 N Kings Hwy) and Seasons By 10/Fold (4377 N Kings Hwy) are on the same stretch of Kings Highway.</strong> J-Mike's Flavor Station is at 2411 S Ocean Blvd, and Toffino's is at 550 Farrow Pkwy in Market Common.",
+      ]},
+    ],
+    tips: [
+      "Restaurants usually get much busier right after their episode airs. Go early or on a weekday.",
+      "Check hours before you go. Several of these spots close in the afternoon.",
+      "Seasons By 10/Fold is the old 10/Fold Biscuits, renamed after its renovation.",
+    ],
+    faq: [
+      ["Was Guy Fieri in Myrtle Beach?", "Yes. Guy Fieri filmed Diners, Drive-Ins and Dives at six Myrtle Beach and North Myrtle Beach restaurants in 2026."],
+      ["What North Myrtle Beach restaurants were on Diners, Drive-Ins and Dives?", "Krave Bagel and Brisket, both on Highway 17 South. Their episode aired November 13, 2026."],
+      ["Is Seasons By 10/Fold the same as 10/Fold Biscuits?", "Yes. 10/Fold Biscuits renovated and reopened under the name Seasons By 10/Fold."],
+    ],
+    notes: TRIPLE_D,
+    match: p => p.id in TRIPLE_D,
+    stay: ["Myrtle Beach", "North Myrtle Beach"],
+  },
   {
     slug: "restaurants-open-thanksgiving-myrtle-beach",
     title: "Restaurants Open on Thanksgiving 2026 in Myrtle Beach",
