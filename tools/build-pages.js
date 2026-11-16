@@ -622,9 +622,9 @@ const PAGES = [
   },
   {
     slug: "conway-sc-restaurants",
-    title: "Conway SC Restaurants: Local Places to Eat for Breakfast, Lunch & Dinner",
+    title: "Conway SC Restaurants: Downtown, Riverwalk & Local Places to Eat",
     h1: "Restaurants in Conway, SC",
-    desc: "Hungry in Conway, SC? See local restaurants for breakfast, lunch and dinner, with a website and directions for each one and a free map of what's open right now. No chains.",
+    desc: "Hungry in Conway, SC? See downtown Conway and Riverwalk-area restaurants plus local spots for breakfast, lunch and dinner, with a website and directions for each one and a free map of what's open right now. No chains.",
     intro: "Looking for food in Conway? Here is every local restaurant in Conway on our map, with a website link and directions for each one. Tap 'See them on the map' to see what's open right now. Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River, and it's home to Coastal Carolina University.",
     guide: [
       {h: "Where can I get lunch in Conway, SC?", p: [
@@ -650,6 +650,16 @@ const PAGES = [
         "<strong>Conway is an old river town and the county seat of Horry County, about 20 minutes inland from Myrtle Beach.</strong> Big live oaks shade the streets, and the historic downtown sits right by the Waccamaw River.",
         "Downtown restaurants are mostly local: cafés, Southern cooking, bars, pizza and a few nicer dinner spots, many of them in older storefronts. Out along Highway 501 and near Coastal Carolina University you'll find more casual places and student favorites.",
       ]},
+      {h: "What are the best restaurants in downtown Conway?", p: [
+        "<strong>Downtown Conway's local favorites on our map include Rivertown Bistro and Whitaker's for a nicer dinner, Leone's for Italian, Trestle Restaurant for breakfast, and Hop N Wich, Groucho's Deli and Crafty Rooster for lunch.</strong> All of them are within a few blocks of each other.",
+        "<strong>Pizza and casual.</strong> Anto's Pizza Romana, Chantis, River City Cafe and Bonfire Taqueria.",
+        "<strong>Drinks.</strong> Crooked Oak Tavern, Palmetto Taps and Cosmo's Bar on Elm.",
+        "<strong>Dessert.</strong> Stella's Homemade Ice Cream is right downtown.",
+      ]},
+      {h: "Where can I eat near the Conway Riverwalk?", p: [
+        "<strong>The downtown restaurants are a short walk from the Conway Riverwalk, so it's easy to eat downtown and then walk along the Waccamaw River.</strong> On our map, Bonfire Taqueria, Chantis, Trestle Restaurant, Palmetto Taps and Leone's are among the closest to the river.",
+        "Grab ice cream at Stella's and walk it down to the boardwalk. Open the map to check today's hours before you go.",
+      ]},
       {h: "Is Conway worth the drive from the beach for dinner?", p: [
         "<strong>Yes, if you want a break from the crowds. Conway makes a nice half-day trip from the beach.</strong> You trade the tourist crowds for a small Southern downtown where the people at the next table are more likely to be locals than visitors.",
         "Because Conway doesn't depend on summer visitors, its restaurants don't swing as much with the seasons as the beach spots do. It's a good choice in the off-season, when some beach restaurants cut back.",
@@ -674,6 +684,8 @@ const PAGES = [
       ["What is the nicest restaurant in Conway, SC?", "Rivertown Bistro and Whitaker's are the two Conway restaurants on our date-night list, and both are at the top price level on our map."],
       ["How far is Conway from Myrtle Beach?", "About 20 to 25 minutes by car on Highway 501, depending on where you start and on traffic."],
       ["Is downtown Conway worth visiting?", "Yes, if you want a break from the beach. It's a small, walkable historic downtown with local restaurants, shops and the Riverwalk along the Waccamaw River."],
+      ["What are the best restaurants in downtown Conway?", "Local favorites downtown include Rivertown Bistro and Whitaker's for dinner, Leone's for Italian, Trestle Restaurant for breakfast, and Hop N Wich, Groucho's Deli and Crafty Rooster for lunch."],
+      ["Are there restaurants near the Conway Riverwalk?", "Yes. Downtown Conway's restaurants are a short walk from the Riverwalk, including Bonfire Taqueria, Chantis, Trestle Restaurant, Palmetto Taps and Leone's."],
       ["What is the Conway Riverwalk?", "It's a boardwalk along the Waccamaw River near downtown Conway, with views of cypress trees and river marsh. It's free and makes an easy walk before or after a meal."],
     ],
     match: p => p.area === "Conway",
