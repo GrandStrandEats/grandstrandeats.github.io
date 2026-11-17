@@ -312,7 +312,7 @@ window.PLACES = [
   {id:335, n:"Lulu’s Cafe", lat:33.69969, lon:-78.87193, area:"Myrtle Beach", c:"American", e:"🍽", p:2, tags:[], h:null},
   {id:336, n:"Big League Grill", lat:33.71637, lon:-78.90637, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:337, n:"Cafe Gelato", lat:33.74967, lon:-78.81634, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family"], h:null, web:"https://cafegelato.net/", tel:"+18438397575"},
-  {id:338, n:"Gios Italian Kitchen", lat:33.74995, lon:-78.81594, area:"Myrtle Beach", c:"Italian", e:"🍝", p:2, tags:[], h:"Su-Th 16:30-21:00, Fr-Sa 16:30-22:00", web:"https://www.giositaliankitchenmb.com/", tel:"+18437122238"},
+  {id:338, n:"Gios Italian Kitchen", lat:33.74995, lon:-78.81594, area:"Myrtle Beach", c:"Italian", e:"🍝", p:2, tags:[], h:"Su-Th 16:30-21:00, Fr-Sa 16:30-22:00", web:"https://www.giositaliankitchenmb.com/", tel:"+18437122238", v:"2026-11-16"},
   {id:339, n:"China Dragon", lat:33.74893, lon:-78.81919, area:"Myrtle Beach", c:"Chinese", e:"🥡", p:1, tags:[], h:"Mo-Th 11:00-21:30, Fr-Sa 11:00-22:30, Su 12:00-21:30", web:"http://www.chinadragonsc.com/", tel:"+18436922333"},
   {id:340, n:"39th Ave Bar & Grille", lat:33.8019, lon:-78.72784, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null, tel:"+18434277080", v:"2026-11-09"},
   {id:341, n:"Jerusalem Mediterranean Restaurant", lat:33.74442, lon:-78.82288, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
