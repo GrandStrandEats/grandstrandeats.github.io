@@ -1254,6 +1254,12 @@ const dist = (a, b) => { const R = 6371, x = (b.lon - a.lon) * Math.PI / 180 * M
 const EAT_PAGES = PAGES.filter(c => c.kind !== "do");
 const SKIP_NOTES = /thanksgiving/;
 
+// Spot pages with no "What to know" notes are thin (name/address/hours only): noindex + left out of the sitemap (AdSense "low value content", 2026-11-17).
+function spotNotes(p) {
+  const guides = EAT_PAGES.filter(c => c.match(p));
+  return [...new Set([p.d, ...guides.filter(c => c.notes && !SKIP_NOTES.test(c.slug)).map(c => c.notes[p.id])].filter(Boolean))];
+}
+
 function spotPage(p) {
   const slug = SPOT_SLUG[p.id], url = SITE + "spot/" + slug + "/";
   const cuisine = p.c.replace(/ · /g, ", ");
@@ -1261,7 +1267,8 @@ function spotPage(p) {
   const addr = (p.hn || "").split(" · ")[0];
   const hasAddr = /^\d/.test(addr);
   const guides = EAT_PAGES.filter(c => c.match(p));
-  const notes = [...new Set([p.d, ...guides.filter(c => c.notes && !SKIP_NOTES.test(c.slug)).map(c => c.notes[p.id])].filter(Boolean))];
+  const notes = spotNotes(p);
+  const robots = notes.length ? "" : '<meta name="robots" content="noindex, follow">\n';
   const nearby = PLACES.filter(o => o !== p && SPOT_SLUG[o.id]).map(o => [dist(p, o), o]).sort((a, b) => a[0] - b[0]).slice(0, 6);
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => TAG_LABEL[t]);
   const priceWord = ["", "inexpensive", "moderately priced", "pricier", "high-end"][p.p || 0];
@@ -1298,7 +1305,7 @@ function spotPage(p) {
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script type="application/ld+json">${JSON.stringify(crumbs)}</script>
 <script type="application/ld+json">${JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([q, a]) => ({"@type": "Question", name: q, acceptedAnswer: {"@type": "Answer", text: a}}))})}</script>
-${STYLE.replace("</style>", ".facts{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin:14px 0}.facts dt{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:8px}.facts dt:first-child{margin-top:0}.facts dd{margin:2px 0 0;font-size:15px}.crumb{font-size:13px;color:var(--muted);margin-top:14px}.crumb a{color:var(--brand);font-weight:700;text-decoration:none}</style>")}
+${robots}${STYLE.replace("</style>", ".facts{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin:14px 0}.facts dt{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:8px}.facts dt:first-child{margin-top:0}.facts dd{margin:2px 0 0;font-size:15px}.crumb{font-size:13px;color:var(--muted);margin-top:14px}.crumb a{color:var(--brand);font-weight:700;text-decoration:none}</style>")}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963548887313701" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -1329,16 +1336,16 @@ ${guides.length ? `<div class="box"><h2>Guides that include ${esc(p.n)}</h2><div
 `;
 }
 
-let spotCount = 0;
+let spotCount = 0, spotIndexed = 0;
 for (const p of PLACES) {
   if (!SPOT_SLUG[p.id]) continue;
   const dir = path.join(ROOT, "spot", SPOT_SLUG[p.id]);
   fs.mkdirSync(dir, {recursive: true});
   fs.writeFileSync(path.join(dir, "index.html"), spotPage(p));
-  urls.push(SITE + "spot/" + SPOT_SLUG[p.id] + "/");
+  if (spotNotes(p).length) { urls.push(SITE + "spot/" + SPOT_SLUG[p.id] + "/"); spotIndexed++; }
   spotCount++;
 }
-console.log("spot pages", spotCount);
+console.log("spot pages", spotCount, "indexed", spotIndexed, "noindex", spotCount - spotIndexed);
 
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
