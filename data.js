@@ -188,7 +188,6 @@ window.PLACES = [
   {id:198, n:"Casablanca Café", lat:33.79246, lon:-78.76626, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family"], h:null},
   {id:200, n:"Toscana", lat:33.71871, lon:-78.85318, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:3, tags:["date"], h:null},
   {id:201, n:"Key West Grill", lat:33.71669, lon:-78.88094, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
-  {id:202, n:"Good Time Charley's", lat:33.71692, lon:-78.88157, area:"Myrtle Beach", c:"American", e:"🍽", p:2, tags:[], h:null},
   {id:203, n:"Stranded on a Sand Bar", lat:33.71513, lon:-78.87649, area:"Myrtle Beach", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:204, n:"Jimmagan's Endzone", lat:33.8935, lon:-78.59391, area:"Little River", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:205, n:"China Express", lat:33.70177, lon:-78.92281, area:"Myrtle Beach", c:"Chinese", e:"🥡", p:1, tags:[], h:null},
