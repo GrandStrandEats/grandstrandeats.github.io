@@ -53,6 +53,18 @@ const BUFFETS = {
 };
 const BUFFET_IDS = [47, 618, 524, 37, 112, 392, 475, 450, 297];
 
+// Steakhouses: id -> what the restaurant's own website says (checked 2026-11-17).
+const STEAKS = {
+  234: "🥩 Myrtle Beach fine dining since 1988 · Now called Thoroughbreds Chophouse · Reservations taken",
+  523: "🥩 Over four decades in Myrtle Beach · Certified Angus Beef, hand-cut daily on site · Open daily at 4 PM · Senior and kids' menus",
+  24: "🥩 Brazilian rodizio: beef, pork, lamb and poultry prepared and presented by gauchos · Also in Myrtle Beach",
+  504: "🥩 Brazilian rodizio: beef, pork, lamb and poultry prepared and presented by gauchos · Also in North Myrtle Beach",
+  5: "🥩 Steaks cut on site, served on a sizzling platter · Open daily at 3 PM · Early-bird dinner buffet from 3 PM",
+  391: "🥩 Seafood and chophouse · Open daily from 11 AM",
+  619: "🥩 Wood-fired steaks and local seafood · No reservations needed",
+};
+const STEAK_IDS = [234, 119, 523, 24, 504, 74, 5, 379, 46, 627, 391, 619, 120, 11, 19, 211, 616];
+
 const PAGES = [
   {
     slug: "diners-drive-ins-and-dives-myrtle-beach",
@@ -1010,6 +1022,45 @@ const PAGES = [
     notes: BUFFETS,
     match: p => BUFFET_IDS.includes(p.id),
     stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
+  },
+  {
+    slug: "steakhouses-myrtle-beach",
+    title: "Best Steakhouses in Myrtle Beach & North Myrtle Beach (Local, No Chains)",
+    h1: "Local steakhouses in Myrtle Beach and the Grand Strand",
+    desc: "Local Myrtle Beach steakhouses, no chains: Thoroughbreds, Chuck's, 21 Main Prime, Rioz Brazilian Steakhouse, Angelo's and more, with a map, hours and details from each restaurant's own website.",
+    intro: "From white-tablecloth chophouses on Restaurant Row to Brazilian rodizio and sizzling-platter steaks, these are the local, non-chain steakhouses on our map, plus a few seafood spots known for their steaks. Details come from each restaurant's own website. Last checked November 17, 2026.",
+    guide: [
+      {h: "What are the best steakhouses in Myrtle Beach?", p: [
+        "<strong>For a special night out, locals point to Thoroughbreds and Chuck's Steak House in Myrtle Beach and 21 Main Prime Steakhouse in North Myrtle Beach.</strong> Thoroughbreds has been on Restaurant Row since 1988. Chuck's has served Certified Angus Beef, hand-cut on site, for over four decades. 21 Main Prime is the dressiest steak dinner on the north end.",
+        "<strong>For something different, try Rioz Brazilian Steakhouse.</strong> Gauchos bring skewers of beef, pork, lamb and poultry to your table. Rioz has locations in both Myrtle Beach and North Myrtle Beach.",
+      ]},
+      {h: "Where can I get a good steak in Myrtle Beach without spending a lot?", p: [
+        "<strong>Angelo's Steak & Pasta and Thorny's Steakhouse & Saloon show two dollar signs on our map, our mid price level.</strong> Angelo's cuts its steaks on site, serves them on a sizzling platter, and opens daily at 3 PM with an early-bird dinner buffet.",
+        "Seafood-and-steak spots like Drunken Jack's on the MarshWalk, Captain Archie's in Little River and Sara J's in Garden City are good picks when half the table wants seafood.",
+      ]},
+      {h: "Are there steakhouses in North Myrtle Beach and Little River?", p: [
+        "<strong>Yes. In North Myrtle Beach, try 21 Main Prime, Rioz, Filet's, Joe's Bar & Grill or Tidewater Grill & Bistro. In Little River, The Parson's Table and Clark's Seafood and Chophouse are both steak favorites.</strong> Clark's is open daily from 11 AM, so it works for lunch too.",
+      ]},
+      {h: "Do I need a reservation at a Myrtle Beach steakhouse?", p: [
+        "<strong>For the fine-dining spots on a weekend or in summer, yes.</strong> Thoroughbreds, Chuck's, 21 Main and Rioz all take reservations. Bovine's on the MarshWalk says no reservation is needed. Weeknights in the off-season are much easier.",
+      ]},
+    ],
+    tips: [
+      "Book a table for Friday or Saturday nights, especially in summer and around holidays.",
+      "Several steakhouses have early-bird hours or happy hour before 6 PM. Check their websites.",
+      "Rodizio is all you can eat. Skip the bread and salad bar if you want to try every cut.",
+      "Fine-dining spots like Thoroughbreds and 21 Main are dressier. Leave the flip-flops at the condo.",
+      "Want steak and seafood? Most places on this list serve both.",
+    ],
+    faq: [
+      ["What is the oldest steakhouse in Myrtle Beach?", "Chuck's Steak House has been open for over four decades, and Thoroughbreds dates to 1988. Both are on Restaurant Row in Myrtle Beach."],
+      ["Is there a Brazilian steakhouse in Myrtle Beach?", "Yes. Rioz Brazilian Steakhouse has locations in Myrtle Beach and North Myrtle Beach, with meats served by gauchos at your table."],
+      ["What's the best steakhouse in North Myrtle Beach?", "21 Main Prime Steakhouse is the fine-dining pick. Rioz, Filet's and Joe's Bar & Grill are also popular for steak."],
+      ["Do Myrtle Beach steakhouses have early-bird specials?", "Some do. Angelo's Steak & Pasta opens at 3 PM with an early-bird dinner buffet. Check each restaurant's website for current specials."],
+    ],
+    notes: STEAKS,
+    match: p => STEAK_IDS.includes(p.id),
+    stay: ["Myrtle Beach", "North Myrtle Beach"],
   },
   {
     slug: "cheap-eats-myrtle-beach",
