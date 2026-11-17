@@ -44,6 +44,15 @@ const TRIPLE_D = {
   660: "📺 Filmed fall 2026 · Air date not announced yet",
 };
 
+// Buffets: id -> what the restaurant's own website says (checked 2026-11-17).
+const BUFFETS = {
+  47: "🦀 Crab legs on the buffet · All-you-can-eat seafood buffet $51.99 · Sunday adult buffet $46.99, noon–4 PM",
+  618: "🦀 Crab legs on the buffet · Early bird $44.99 if seated before 5 PM ($10 off)",
+  524: "🦀 All-you-can-eat crab legs, plus shrimp and oysters",
+  37: "🦀 Crab legs on a Calabash-style seafood buffet · Serving crab legs for 36 years",
+};
+const BUFFET_IDS = [47, 618, 524, 37, 112, 392, 475, 450, 297];
+
 const PAGES = [
   {
     slug: "diners-drive-ins-and-dives-myrtle-beach",
@@ -961,6 +970,45 @@ const PAGES = [
       ["Are there seafood buffets in Myrtle Beach?", "Yes. Captain George's Seafood Restaurant, The Original Benjamin's Calabash Buffet, The Giant Crab in North Myrtle Beach and Crabby Mike's in Surfside Beach are all on our map."],
     ],
     match: p => p.tags.includes("family") && checked(p),
+    stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
+  },
+  {
+    slug: "buffets-myrtle-beach",
+    title: "Myrtle Beach Buffets: Seafood Buffets & All-You-Can-Eat Crab Legs",
+    h1: "Buffets in Myrtle Beach, including seafood buffets with crab legs",
+    desc: "Local Myrtle Beach seafood buffets with all-you-can-eat crab legs, plus Asian, hibachi and Southern buffets. Prices from each restaurant's own website, map and hours.",
+    intro: "Calabash-style seafood buffets are a Myrtle Beach tradition, and all-you-can-eat crab legs are the main draw. These are the local buffets on our map, with crab leg and price details taken from each restaurant's own website. Prices change by season, so check before you go. Last checked November 17, 2026.",
+    guide: [
+      {h: "Where can I get all-you-can-eat crab legs in Myrtle Beach?", p: [
+        "<strong>Captain George's, Captain Benjamin's, The Original Benjamin's and Crabby Mike's all list crab legs on their seafood buffets.</strong> Captain George's and Captain Benjamin's are in Myrtle Beach, The Original Benjamin's is on Restaurant Row, and Crabby Mike's is in Surfside Beach.",
+        "The Giant Crab in North Myrtle Beach is another long-running Calabash-style seafood buffet near Barefoot Landing.",
+      ]},
+      {h: "How much is a seafood buffet in Myrtle Beach?", p: [
+        "<strong>Expect about $45 to $55 per adult for a seafood buffet with crab legs.</strong> Captain George's lists its all-you-can-eat seafood buffet at $51.99, with a Sunday adult buffet for $46.99 from noon to 4 PM. Captain Benjamin's early bird price is $44.99 if you're seated before 5 PM, $10 off the regular price.",
+        "Kids' prices are lower at most buffets, and some run weekday specials. Check each restaurant's website or Facebook page before you go.",
+      ]},
+      {h: "What is a Calabash seafood buffet?", p: [
+        "<strong>Calabash style means seafood that's lightly breaded and fried, named after the fishing town of Calabash, North Carolina, just north of the Grand Strand.</strong> A Calabash buffet adds crab legs, steamed shrimp, oysters, fried fish, hush puppies and Southern sides, usually with a dessert bar.",
+      ]},
+      {h: "Are there buffets in Myrtle Beach besides seafood?", p: [
+        "<strong>Yes. Sakura Hibachi Buffet in North Myrtle Beach and Taste of Asia Buffet in Myrtle Beach serve Asian buffets, and Judy Boone's in Murrells Inlet and Coppers in Conway serve Southern-style food.</strong> These cost less than the seafood buffets and work well for a quick family meal.",
+      ]},
+    ],
+    tips: [
+      "Go early. Several seafood buffets charge less if you're seated before 5 PM, and lines get long at dinner in summer.",
+      "Crab legs come out in batches. Ask staff when the next tray is coming instead of taking cold ones.",
+      "Bring wipes. Cracking crab legs gets messy fast.",
+      "Most seafood buffets open in the afternoon, not for lunch. Check hours before you drive over.",
+      "Holiday buffets (Thanksgiving, Mother's Day, Easter) often cost more and need reservations.",
+    ],
+    faq: [
+      ["Which Myrtle Beach buffets have crab legs?", "Captain George's, Captain Benjamin's, The Original Benjamin's and Crabby Mike's all list crab legs on their seafood buffets."],
+      ["How much is the Captain George's buffet?", "Captain George's lists its all-you-can-eat seafood buffet at $51.99, with a Sunday adult buffet for $46.99 from noon to 4 PM (as of November 2026)."],
+      ["Is there an early bird seafood buffet in Myrtle Beach?", "Yes. Captain Benjamin's charges $44.99 if you're seated before 5 PM, $10 less than its regular buffet price."],
+      ["What does Calabash style mean?", "Lightly breaded, fried seafood, named after Calabash, North Carolina, just north of the Grand Strand."],
+    ],
+    notes: BUFFETS,
+    match: p => BUFFET_IDS.includes(p.id),
     stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
   },
   {
