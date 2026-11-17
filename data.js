@@ -203,7 +203,7 @@ window.PLACES = [
   {id:216, n:"Fresh Brewed", lat:33.69535, lon:-78.88235, area:"Myrtle Beach", c:"Cafe", e:"☕", p:1, tags:[], h:null},
   {id:217, n:"Mammy's Kitchen", lat:33.69516, lon:-78.88019, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family","breakfast"], h:null},
   {id:218, n:"Hot Stacks Pancake House", lat:33.69873, lon:-78.87699, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["breakfast","family"], h:null},
-  {id:219, n:"Hooks Calabash Seafood", lat:33.70102, lon:-78.87284, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
+  {id:219, n:"Hooks Calabash Seafood", lat:33.70102, lon:-78.87284, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:"Mo-Fr 15:00-21:00; Sa 15:00-22:00; Su 15:00-21:00", tel:"+18436266889", v:"2026-11-16"},
   {id:220, n:"Cypress Room", lat:33.73223, lon:-78.82951, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:221, n:"The American Tavern", lat:33.79847, lon:-79.01905, area:"Conway", c:"Bar", e:"🍸", p:2, tags:[], h:"Mo-Su 10:00-22:00"},
   {id:222, n:"The Coop Bar & Grill", lat:33.79906, lon:-79.01914, area:"Conway", c:"Bar", e:"🍸", p:2, tags:[], h:"Mo-Su 10:00-22:00"},
