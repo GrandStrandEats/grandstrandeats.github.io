@@ -329,7 +329,7 @@ window.PLACES = [
   {id:351, n:"Nonno's Italian Kitchen", lat:33.63072, lon:-79.02316, area:"Garden City", c:"Italian", e:"🍝", p:2, tags:[], h:null},
   {id:352, n:"Piana's Pizza", lat:33.64186, lon:-79.02998, area:"Myrtle Beach", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null, web:"https://www.nelliespizzadeliveries.com/"},
   {id:353, n:"Captain Jack's Seafood Buffet", lat:33.81606, lon:-78.69696, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:3, tags:["family"], h:null},
-  {id:354, n:"Brisket", lat:33.84543, lon:-78.65486, area:"North Myrtle Beach", c:"BBQ", e:"🍖", p:1, tags:[], h:null, hn:"1501 Hwy 17 S · Seen on Diners, Drive-Ins and Dives", web:"https://brisketnmb.com/"},
+  {id:354, n:"Brisket", lat:33.84543, lon:-78.65486, area:"North Myrtle Beach", c:"BBQ", e:"🍖", p:1, tags:[], h:"Mo-Su 11:30-20:00", hn:"1501 Hwy 17 S · Seen on Diners, Drive-Ins and Dives · Open daily from 11:30 AM until 8-10 PM; closes early when the brisket sells out, so call ahead", web:"https://brisketnmb.com/"},
   {id:355, n:"China Garden", lat:33.68486, lon:-78.96279, area:"Socastee", c:"Chinese", e:"🥡", p:1, tags:[], h:null},
   {id:356, n:"Scores Sports Bar", lat:33.68463, lon:-78.96267, area:"Socastee", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:357, n:"Bully’s Pub & Grill", lat:33.79869, lon:-78.74553, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
