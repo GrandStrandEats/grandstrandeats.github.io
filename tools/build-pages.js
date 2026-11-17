@@ -274,6 +274,51 @@ const PAGES = [
     stay: ["North Myrtle Beach"],
   },
   {
+    slug: "myrtle-beach-restaurants",
+    title: "Myrtle Beach Restaurants: Best Local Spots, No Chains",
+    h1: "Myrtle Beach restaurants",
+    desc: "The best local (non-chain) restaurants in Myrtle Beach, from oceanfront grills and seafood to pancake houses and date-night spots, with prices, vibes and directions.",
+    intro: "Myrtle Beach has thousands of places to eat, and a lot of them are chains. Here is every independent restaurant in Myrtle Beach, Market Common and Carolina Forest on our map, starting with the spots we've checked by hand.",
+    guide: [
+      {h: "What are the best restaurants in Myrtle Beach?", p: [
+        "<strong>For a classic Myrtle Beach meal, locals point to Sea Captain's House for oceanfront seafood, Thoroughbreds or Aspen Grille for a special night, and Donald's Pancake House for breakfast.</strong> Sea Captain's House has been serving seafood on the ocean for decades, and Hook and Barrel is a newer favorite for fresh fish.",
+        "For a casual night with a view, Pier 14 Restaurant sits right at the pier, and RipTydz Oceanfront Grille has a rooftop bar over the beach. Boathouse Waterway Bar & Grill puts you on the Intracoastal Waterway with live music.",
+        "Want something besides seafood? Try Toscana Italian Kitchen or Villa Romana for Italian, Tu Taco for tacos, Fullbelly BBQ or Little Pigs BBQ for barbecue, and Thai-Lao Restaurant or Masala Bistro for something different.",
+      ]},
+      {h: "Where should I eat in each part of Myrtle Beach?", p: [
+        "<strong>Myrtle Beach is spread out, so it helps to pick restaurants near where you're staying.</strong> Here's a quick map of the main areas:",
+        "<strong>Oceanfront and the Boardwalk:</strong> beach bars and grills like Ocean Annie's, 8th Avenue Tiki Bar, Bummz Beach Cafe and Moe Moon's, all close to the sand.",
+        "<strong>Broadway at the Beach:</strong> lots of places to eat around the lake, plus shows and shops. See our <a href=\"../broadway-at-the-beach-restaurants/\">Broadway at the Beach restaurants</a> guide.",
+        "<strong>Market Common:</strong> a walkable shopping district near the south end, with King Street Grille, Tidal Creek Brewhouse, Travinia Italian Kitchen and Tupelo Honey. See our <a href=\"../market-common-restaurants/\">Market Common guide</a>.",
+        "<strong>Grande Dunes and North Kings Highway:</strong> the dressier side of town, home to Thoroughbreds and Aspen Grille. See our <a href=\"../grande-dunes-restaurants/\">Grande Dunes guide</a>.",
+        "<strong>Carolina Forest:</strong> inland neighborhoods west of the waterway, with family spots like The Sneaky Beagle and Walk Ons.",
+      ]},
+      {h: "What food is Myrtle Beach known for?", p: [
+        "<strong>Seafood, especially Calabash-style fried shrimp and fish, and big Southern breakfasts.</strong> Calabash seafood is lightly battered and fried, and you'll find it at buffets like The Original Benjamin's Calabash Buffet and Captain George's Seafood Restaurant. For oysters, try Bimini's Oyster Bar or Clearwater Oyster Bar & Grill. More in our <a href=\"../seafood-restaurants-myrtle-beach/\">seafood guide</a>.",
+        "Pancake houses are a Myrtle Beach tradition too. Donald's Pancake House, Pan American Pancake & Omelette House and Blueberry's Grill are local favorites. See all of them in our <a href=\"../breakfast-myrtle-beach/\">breakfast guide</a>.",
+      ]},
+      {h: "When is the best time to eat out in Myrtle Beach?", p: [
+        "<strong>Go early: eating before 5:30 PM in summer usually means little or no wait.</strong> June through August is the busiest stretch, and popular spots like Sea Captain's House and the seafood buffets fill up fast at peak dinner time.",
+        "From November through February, many restaurants keep shorter hours and a few close a day or two a week. Always check hours before you drive over.",
+      ]},
+    ],
+    tips: [
+      "Traffic on Kings Highway and Ocean Boulevard gets heavy on summer evenings. Pick dinner near your hotel or leave extra time.",
+      "Many oceanfront bars are casual: flip-flops and beach cover-ups are fine at lunch.",
+      "Seafood buffets are a big Myrtle Beach thing. Go hungry, and go early to skip the line.",
+      "Some restaurants take call-ahead seating instead of reservations. It's worth a call.",
+      "Bringing kids? See our family restaurants guide for spots with kids' menus and room to spread out.",
+    ],
+    faq: [
+      ["What is the most famous restaurant in Myrtle Beach?", "Sea Captain's House is one of the best-known local restaurants. It's an oceanfront seafood spot that has been in Myrtle Beach for decades, with views right over the beach."],
+      ["Where can I eat on the water in Myrtle Beach?", "For ocean views, try Sea Captain's House, Pier 14 Restaurant, RipTydz Oceanfront Grille or Ocean Annie's. For the Intracoastal Waterway, try Boathouse Waterway Bar & Grill."],
+      ["What are good cheap eats in Myrtle Beach?", "Tu Taco, Fullbelly BBQ, Little Pigs BBQ, Blueberry's Grill and Donald's Pancake House are local favorites that won't break the budget."],
+      ["What's a good date-night restaurant in Myrtle Beach?", "Thoroughbreds and Aspen Grille are two of the dressier choices. Toscana Italian Kitchen, Hook and Barrel and Villa Romana are good picks too."],
+    ],
+    match: p => MB_AREAS.includes(p.area),
+    stay: ["Myrtle Beach"],
+  },
+  {
     slug: "surfside-beach-restaurants",
     title: "Surfside Beach Restaurants: Local Spots, No Chains",
     h1: "Surfside Beach restaurants",
