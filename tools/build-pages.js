@@ -33,6 +33,9 @@ const THANKSGIVING = {
   39: "🦃 39th annual Thanksgiving Day Feast 1–3 PM · Turkey Trot post-race brunch 8–10 AM · Call 843-238-1013",
   652: "🦃 To-go Thanksgiving feast $49/person (serves 2–12) · Turkey, sides, rolls & pie · Order by Sun, Nov 22 at noon · Pickup Wed, Nov 25, 2–8 PM at 3200 S Ocean Blvd",
   656: "🦃 Thanksgiving Feast Thu, Nov 26, 11 AM–6 PM · Dessert display upstairs in Seaside Vista · Reservations recommended: 843-282-8080",
+  504: "🦃 Thanksgiving Day Feast, opens 12 noon · Reservations: 843-839-0777 · No discounts honored",
+  24: "🦃 Thanksgiving Day Feast, opens 12 noon · Reservations: 843-492-9777 · No discounts honored",
+  391: "🦃 Thanksgiving menu 11 AM–7 PM · Adults $46, kids 12 & under $23 · Prime rib or turkey & ham, sides, pie · Reservations: 843-399-8888 · Takeout preorders welcome",
 };
 
 const TRIPLE_D = {
