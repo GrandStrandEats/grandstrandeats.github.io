@@ -691,9 +691,9 @@ const PAGES = [
   },
   {
     slug: "conway-sc-restaurants",
-    title: "Conway SC Restaurants: Downtown, Riverwalk & Local Places to Eat",
-    h1: "Restaurants in Conway, SC",
-    desc: "Hungry in Conway, SC? See downtown Conway and Riverwalk-area restaurants plus local spots for breakfast, lunch and dinner, with a website and directions for each one and a free map of what's open right now. No chains.",
+    title: "Conway SC Restaurants Near Me: 40 Local Places to Eat",
+    h1: "Restaurants near me in Conway, SC",
+    desc: "Looking for a restaurant near you in Conway, SC? 40 local spots for breakfast, lunch and dinner, downtown, on the Riverwalk and near CCU, with hours, directions and a map of what is open now. No chains.",
     intro: "Looking for food in Conway? Here is every local restaurant in Conway on our map, with a website link and directions for each one. Tap 'See them on the map' to see what's open right now. Conway is the Horry County seat, about 20 minutes inland from Myrtle Beach on the Waccamaw River, and it's home to Coastal Carolina University.",
     guide: [
       {h: "Where can I get lunch in Conway, SC?", p: [
