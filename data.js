@@ -440,7 +440,6 @@ window.PLACES = [
   {id:475, n:"Taste of Asia Buffet", lat:33.72549, lon:-78.87077, area:"Myrtle Beach", c:"Chinese", e:"🥡", p:3, tags:["family"], h:"Mo-Su 11:00-21:30", web:"https://www.tasteofasiabuffet.com/", tel:"+18436268812", v:"2026-11-17"},
   {id:476, n:"Capriccio", lat:33.72521, lon:-78.87049, area:"Myrtle Beach", c:"Italian", e:"🍝", p:3, tags:["date"], h:"Tu-Fr 11:30-21:00; Sa 12:00-21:00; Su,Mo off", web:"https://eatcapriccio.com/", tel:"+18434457100", v:"2026-11-17"},
   {id:477, n:"Thai Bistro", lat:33.72473, lon:-78.86882, area:"Myrtle Beach", c:"Thai", e:"🍜", p:2, tags:[], h:null, web:"http://www.thethaibistro.com/", tel:"+18438089100"},
-  {id:478, n:"The Toasted Yolk", lat:33.75698, lon:-78.96545, area:"Myrtle Beach", c:"Breakfast", e:"🍳", p:1, tags:["breakfast"], h:"Mo-Su 07:00-15:00", web:"https://thetoastedyolk.com/locations/myrtle-beach/", tel:"+18439034100", v:"2026-11-17"},
   {id:480, n:"Handley's Bar and Grill", lat:33.76032, lon:-78.96401, area:"Myrtle Beach", c:"Pub", e:"🍺", p:2, tags:[], h:null},
   {id:481, n:"River City Cafe", lat:33.70184, lon:-78.87117, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family"], h:"Mo-Su 11:00-22:00"},
   {id:482, n:"Calabash Seafood", lat:33.70906, lon:-78.86341, area:"Myrtle Beach", c:"Seafood", e:"🦐", p:2, tags:[], h:null},
