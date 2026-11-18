@@ -149,9 +149,9 @@ const PAGES = [
   },
   {
     slug: "seafood-restaurants-myrtle-beach",
-    title: "Best Local Seafood Restaurants in Myrtle Beach & the Grand Strand",
-    h1: "Local seafood restaurants on the Grand Strand",
-    desc: "Local (no chains) seafood restaurants in Myrtle Beach, Murrells Inlet, North Myrtle Beach and nearby, with prices, vibes and directions.",
+    title: "Best Seafood Restaurants in Myrtle Beach, SC (Local, No Chains)",
+    h1: "Best seafood restaurants in Myrtle Beach",
+    desc: "The best local seafood restaurants in Myrtle Beach, Murrells Inlet and North Myrtle Beach: fresh shrimp, oysters and Calabash-style platters, with hours, prices and directions. No chains.",
     intro: "Fresh shrimp, oysters, flounder and Calabash-style fried platters are what most people come to the Grand Strand to eat. These are the local, non-chain seafood spots on our map, from the Murrells Inlet MarshWalk up to Little River. Waits get long in summer, so go early or call ahead.",
     guide: [
       {h: "What seafood should I order on the Grand Strand?", p: [
@@ -190,9 +190,9 @@ const PAGES = [
   },
   {
     slug: "breakfast-myrtle-beach",
-    title: "Best Local Breakfast Spots in Myrtle Beach",
-    h1: "Local breakfast spots in Myrtle Beach",
-    desc: "Local breakfast and brunch restaurants in Myrtle Beach, Market Common and nearby, no chains. Prices, websites and directions.",
+    title: "Best Breakfast in Myrtle Beach, SC: Local Spots on the Grand Strand",
+    h1: "Best breakfast in Myrtle Beach, SC",
+    desc: "Where to get the best breakfast in Myrtle Beach and on the Grand Strand: local pancake houses, diners and brunch cafes (no chains), with hours, directions and a map of what is open now.",
     intro: "Pancake houses are a Myrtle Beach tradition, but the local diners and cafés are where the regulars go. Here are the independent breakfast spots in and around Myrtle Beach on our map. Morning hours change by season, so check before you go.",
     guide: [
       {h: "Why does Myrtle Beach have so many pancake houses?", p: [
@@ -223,9 +223,9 @@ const PAGES = [
   },
   {
     slug: "murrells-inlet-restaurants",
-    title: "Murrells Inlet Restaurants: Local Seafood & the MarshWalk",
-    h1: "Murrells Inlet restaurants",
-    desc: "Every local (non-chain) restaurant in Murrells Inlet on our map, including the MarshWalk, with prices, vibes and directions.",
+    title: "Murrells Inlet Restaurants: Best Places to Eat on the MarshWalk",
+    h1: "Best places to eat in Murrells Inlet, SC",
+    desc: "Places to eat in Murrells Inlet, SC: every local restaurant on the MarshWalk and beyond, from waterfront seafood to breakfast, with hours, directions and a map of what is open now. No chains.",
     intro: "Murrells Inlet calls itself the seafood capital of South Carolina, and the MarshWalk boardwalk is lined with restaurants looking out over the marsh. Below is every local spot in Murrells Inlet on our map, MarshWalk places first.",
     guide: [
       {h: "What makes Murrells Inlet restaurants different?", p: [
