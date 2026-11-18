@@ -36,6 +36,7 @@ const THANKSGIVING = {
   504: "🦃 Thanksgiving Day Feast, opens 12 noon · Reservations: 843-839-0777 · No discounts honored",
   24: "🦃 Thanksgiving Day Feast, opens 12 noon · Reservations: 843-492-9777 · No discounts honored",
   391: "🦃 Thanksgiving menu 11 AM–7 PM · Adults $46, kids 12 & under $23 · Prime rib or turkey & ham, sides, pie · Reservations: 843-399-8888 · Takeout preorders welcome",
+  661: "🦃 Thanksgiving Thu, Nov 26, 12–4 PM · Holiday menu · Reservations on crookedhammockbrewery.com/thanksgiving · Also open for Black Friday brunch from 10 AM",
 };
 
 const TRIPLE_D = {
@@ -106,7 +107,7 @@ const PAGES = [
     title: "Restaurants Open on Thanksgiving 2026 in Myrtle Beach",
     h1: "Restaurants open on Thanksgiving 2026 in Myrtle Beach",
     desc: "Local Myrtle Beach and Grand Strand restaurants open on Thanksgiving Day, Thursday, November 26, 2026, with holiday hours, prices and to-go options.",
-    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 9, 2026.",
+    intro: "Not cooking this year? These local Grand Strand restaurants are open on Thanksgiving Day, Thursday, November 26, 2026. We only list a spot once the restaurant has posted its own 2026 Thanksgiving plans, and we add more as they come in. Book early, because holiday tables fill up fast. Last checked November 18, 2026.",
     notes: THANKSGIVING,
     match: p => p.id in THANKSGIVING,
     stay: ["Myrtle Beach", "Murrells Inlet", "Surfside Beach"],

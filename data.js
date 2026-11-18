@@ -608,5 +608,6 @@ window.PLACES = [
   {id:657, n:"Krave Bagel", lat:33.84175, lon:-78.66248, area:"North Myrtle Beach", c:"Bagels · Breakfast", e:"🥯", p:1, tags:["breakfast"], h:null, hn:"1434 Hwy 17 S · Seen on Diners, Drive-Ins and Dives", tel:"+18434277310"},
   {id:658, n:"J-Mike's Flavor Station", lat:33.66618, lon:-78.90991, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:[], h:null, hn:"2411 S Ocean Blvd · Seen on Diners, Drive-Ins and Dives"},
   {id:659, n:"Old Town Crepes", lat:33.71835, lon:-78.85310, area:"Myrtle Beach", c:"Crepes · Cafe", e:"🥞", p:1, tags:["breakfast"], h:null, hn:"4205 N Kings Hwy · Seen on Diners, Drive-Ins and Dives"},
-  {id:660, n:"Seasons By 10/Fold", lat:33.71904, lon:-78.85228, area:"Myrtle Beach", c:"Brunch · Southern", e:"🍳", p:2, tags:["breakfast"], h:null, hn:"4377 N Kings Hwy (formerly 10/Fold Biscuits) · Seen on Diners, Drive-Ins and Dives"}
+  {id:660, n:"Seasons By 10/Fold", lat:33.71904, lon:-78.85228, area:"Myrtle Beach", c:"Brunch · Southern", e:"🍳", p:2, tags:["breakfast"], h:null, hn:"4377 N Kings Hwy (formerly 10/Fold Biscuits) · Seen on Diners, Drive-Ins and Dives"},
+  {id:661, n:"Crooked Hammock Brewery", lat:33.79949, lon:-78.74665, area:"North Myrtle Beach", c:"Brewpub · American", e:"🍻", p:2, tags:["brewery","family"], h:null, hn:"4924 Ocean Creek Dr, Barefoot Landing", web:"https://www.crookedhammockbrewery.com/"}
 ];
