@@ -390,7 +390,7 @@ const PAGES = [
         "<strong>A water view at sunset.</strong> Sea Captain's House sits right on the ocean in Myrtle Beach. Gulfstream Cafe in Garden City looks out over the inlet. Wicked Tuna, Wahoo's Fish House and Hot Fish Club are all in Murrells Inlet, and Clark's Seafood and Chophouse is on the water in Little River. Joe's Bar & Grill in North Myrtle Beach is another water-view pick.",
         "<strong>A dressy, special-occasion dinner.</strong> Aspen Grille, Thoroughbreds, SeaBlue Restaurant and Wine Bar and 21 Main Prime Steakhouse are the most upscale spots on this list, with prices to match. Flamingo Grill and Hook and Barrel are good for steak and seafood in a nice room.",
         "<strong>Italian.</strong> Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna, Benny's Trattoria and Angelo's Steak & Pasta all made our date-night list.",
-        "<strong>Something a little different.</strong> Rioz Brazilian Steakhouse carves meat at your table. Co Sushi and Art Burger Sushi Bar are fun for a more relaxed date, Bistro90 is another good North Myrtle Beach choice, and Heirloom Bistro works well for a brunch date.",
+        "<strong>Something a little different.</strong> Rioz Brazilian Steakhouse carves meat at your table. Co Sushi is fun for a more relaxed date, Bistro90 is another good North Myrtle Beach choice, and Heirloom Bistro works well for a brunch date.",
       ]},
       {h: "How do I plan a special date night in Myrtle Beach?", p: [
         "<strong>Reserve early, especially for summer weekends and around Valentine's Day, and tell the restaurant if it's a birthday, anniversary or proposal.</strong> If a place doesn't take reservations, go early.",
@@ -766,7 +766,7 @@ const PAGES = [
     guide: [
       {h: "Where can I get a quick local lunch in Myrtle Beach?", p: [
         "<strong>For a quick, cheap lunch in Myrtle Beach, try barbecue at Little Pigs BBQ, Fullbelly BBQ or Simply Southern Smokehouse, tacos at Tu Taco, or soul food at Big Mike's Soul Food.</strong> All of them show one dollar sign on our map.",
-        "<strong>Burgers.</strong> Grumpy Monk does burgers and craft beer, Thorny's Steakhouse & Saloon has burgers too, and Art Burger Sushi Bar downtown does both burgers and sushi.",
+        "<strong>Burgers.</strong> Grumpy Monk does burgers and craft beer, and Thorny's Steakhouse & Saloon has burgers too.",
         "<strong>Lunch with a view.</strong> RipTydz Oceanfront Grille & Rooftop Bar serves burgers on a rooftop over the ocean.",
         "<strong>Breakfast that runs into lunch.</strong> Blueberry's Grill serves breakfast and lunch, so it's a good pick if your group can't agree on which meal it is.",
       ]},
@@ -818,8 +818,8 @@ const PAGES = [
       {h: "What are the best restaurants near Grande Dunes?", p: [
         "<strong>For a nice dinner near Grande Dunes, Hook and Barrel is the closest sit-down seafood spot on our date-night list. For something casual, Liberty Tap Room is a brewpub with a big menu, and Blueberry's Grill is the breakfast and lunch pick.</strong>",
         "<strong>Brunch.</strong> Heirloom Bistro does Southern cooking and brunch, and Mimosa Restaurant is a brunch spot a little farther south.",
-        "<strong>With kids.</strong> Pirate's Voyage Dinner & Show is just up Kings Highway. Ducati's Pizza Trattoria does pizza and Italian, and Cafe Gelato is close by for dessert.",
-        "<strong>Other cuisines nearby.</strong> Our map also lists Opa Opa Taverna (Greek), Peno Mediterranean Grill, Fortune Asian Bistro, Gios Italian Kitchen and Lombardo's Italian Restaurant within about a mile.",
+        "<strong>With kids.</strong> Pirate's Voyage Dinner & Show is just up Kings Highway. Ducati's Pizza Trattoria does pizza and Italian.",
+        "<strong>Other cuisines nearby.</strong> Our map also lists Opa Opa Taverna (Greek), Peno Mediterranean Grill, Gios Italian Kitchen and Lombardo's Italian Restaurant within about a mile.",
       ]},
       {h: "Is there anywhere to eat on the water near Grande Dunes?", p: [
         "<strong>The closest waterfront dining is on the Intracoastal side near the marina, or at the beach bars along the oceanfront.</strong> For a full list of local spots with a water view, see our <a href=\"../waterfront-restaurants-myrtle-beach/\">waterfront restaurants guide</a>.",
