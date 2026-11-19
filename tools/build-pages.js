@@ -660,7 +660,7 @@ const PAGES = [
   },
   {
     slug: "pawleys-island-restaurants",
-    title: "Pawleys Island & Litchfield Restaurants: Local Spots",
+    title: "Pawleys Island Restaurants: Best Local Places to Eat (+ Litchfield)",
     h1: "Pawleys Island and Litchfield restaurants",
     desc: "Local restaurants in Pawleys Island and Litchfield Beach, SC, at the quiet south end of the Grand Strand. No chains.",
     intro: "Pawleys Island and Litchfield Beach are the quiet south end of the Grand Strand. Pawleys likes to call itself \"arrogantly shabby,\" and the restaurants fit: relaxed, local and unfussy, with some special-occasion spots mixed in. Here is every local restaurant in Pawleys Island and Litchfield on our map.",
@@ -770,8 +770,8 @@ const PAGES = [
   },
   {
     slug: "lunch-myrtle-beach",
-    title: "Lunch in Myrtle Beach: Local Lunch Spots Near You on the Grand Strand",
-    h1: "Where to get lunch in Myrtle Beach",
+    title: "Lunch Near Me in Myrtle Beach, SC: Local Lunch Spots (No Chains)",
+    h1: "Lunch near me in Myrtle Beach: where locals eat",
     desc: "Local lunch spots in Myrtle Beach, North Myrtle Beach, Surfside, Murrells Inlet and Conway: burgers, BBQ, tacos, sandwiches, bowls and diners. No chains, with a map of what's open now.",
     intro: "Looking for lunch near you? These are the local lunch spots on our map: burger joints, barbecue, taco shops, delis, diners, bowls and cafés, from Little River to Pawleys Island and inland to Conway. Spots we've checked by hand are listed first. Tap 'See them on the map' to see what's open right now.",
     guide: [
@@ -817,7 +817,7 @@ const PAGES = [
   },
   {
     slug: "grande-dunes-restaurants",
-    title: "Restaurants Near Grande Dunes, Myrtle Beach (Grand Dunes Area)",
+    title: "Restaurants Near Grand Dunes, Myrtle Beach: Local Places to Eat",
     h1: "Restaurants near Grande Dunes in Myrtle Beach",
     desc: "Local restaurants near Grande Dunes (often spelled Grand Dunes) in north Myrtle Beach, within about a mile of the resort, marina and Kings Highway. No chains.",
     intro: "Staying at Grande Dunes, or close by? (Lots of people spell it Grand Dunes.) These are the local, non-chain restaurants on our map within about a mile of the Grande Dunes resort area in north Myrtle Beach, between Kings Highway and the Intracoastal Waterway. Spots we've checked by hand are listed first.",
@@ -852,7 +852,7 @@ const PAGES = [
   },
   {
     slug: "broadway-at-the-beach-restaurants",
-    title: "Broadway at the Beach Restaurants: Where to Eat In and Near Broadway",
+    title: "Broadway at the Beach Restaurants: Best Local Places to Eat",
     h1: "Restaurants at Broadway at the Beach",
     desc: "Local restaurants, bars and treats in and around Broadway at the Beach in Myrtle Beach, including Celebrity Square, with prices and a free map of what's open now.",
     intro: "Spending the day at Broadway at the Beach? These are the restaurants, bars, coffee and treat shops on our map in and right around Broadway, the big shopping and entertainment area on the lake in Myrtle Beach. We leave out the big national chains. Check each spot's website for its exact location inside the complex.",
@@ -921,7 +921,7 @@ const PAGES = [
   },
   {
     slug: "barefoot-landing-restaurants",
-    title: "Barefoot Landing Restaurants: Where to Eat at Barefoot Landing, North Myrtle Beach",
+    title: "Barefoot Landing Restaurants: Where to Eat in North Myrtle Beach",
     h1: "Restaurants at and near Barefoot Landing",
     desc: "Local restaurants at and near Barefoot Landing in North Myrtle Beach, on the Intracoastal Waterway: seafood, waterfront bars, pizza, tacos and ice cream. Free map of what's open now.",
     intro: "Heading to Barefoot Landing? These are the restaurants, bars and treat shops on our map at Barefoot Landing and within a short walk or drive of it, in North Myrtle Beach on the Intracoastal Waterway. We leave out the big national chains. Spots we've checked by hand are listed first.",
