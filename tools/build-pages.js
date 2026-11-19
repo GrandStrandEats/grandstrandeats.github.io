@@ -11,6 +11,13 @@ require(path.join(ROOT, "todo.js"));
 const THINGS = window.THINGS;
 
 const SITE = "https://grandstrandeats.com/";
+const GTAG = `<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MZS72267"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+</script>`;
 const TAG_LABEL = {holiday:"Holiday", free:"Free", kids:"Kids", rainy:"Indoors", outdoor:"Outdoors", night:"Evenings", pier:"Pier", water:"Waterfront", music:"Live music", dog:"Dog-friendly", breakfast:"Breakfast", date:"Date night", brewery:"Brewery", family:"Family", oceanfront:"Oceanfront"};
 const MB_AREAS = ["Myrtle Beach", "Market Common", "Boardwalk", "Downtown", "Carolina Forest", "Socastee"];
 // Spots within km of a point (landmark coordinates from OpenStreetMap).
@@ -1158,6 +1165,7 @@ function page(cfg, spots) {
   return `<!doctype html>
 <html lang="en">
 <head>
+${GTAG}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(cfg.title)} | Grand Strand Eats</title>
@@ -1268,7 +1276,7 @@ const INFO = [
 <h2>Advertising</h2>
 <p>This site uses Google AdSense to show ads. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. Google's use of advertising cookies lets it and its partners serve ads to you based on your visits to this and other sites. You can opt out of personalized advertising in <a href="https://www.google.com/settings/ads" rel="noopener">Google's Ads Settings</a>, or opt out of some other vendors' cookies at <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>.</p>
 <h2>Analytics</h2>
-<p>We do not use analytics or tracking scripts on this site right now. If that changes, we will update this page.</p>
+<p>We use Google Analytics to count visits and see which pages are popular. It sets cookies and collects things like the pages you view, roughly where you are (city level), and the device and browser you use. We do not see your name or contact details. You can opt out with Google&#39;s <a href="https://tools.google.com/dlpage/gaoptout">Analytics opt-out add-on</a> or by blocking cookies. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses this data</a>.</p>
 <h2>Children</h2>
 <p>This site is meant for a general audience and does not knowingly collect information from children under 13.</p>
 <h2>Changes and questions</h2>
@@ -1296,6 +1304,7 @@ function infoPage(cfg, style) {
   return `<!doctype html>
 <html lang="en">
 <head>
+${GTAG}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(cfg.title)} | Grand Strand Eats</title>
@@ -1395,6 +1404,7 @@ function spotPage(p) {
   return `<!doctype html>
 <html lang="en">
 <head>
+${GTAG}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} | Grand Strand Eats</title>
