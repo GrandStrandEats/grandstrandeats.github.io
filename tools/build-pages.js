@@ -1138,7 +1138,7 @@ const sortSpots = list => list.slice().sort((a, b) => ((a.id > 124) - (b.id > 12
 const slugify = t => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/&/g, "and").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const SPOT_SLUG = {};
 {
-  const list = PLACES.filter(p => (checked(p) || TRIPLE_D[p.id]) && !/temporarily closed|closed for/i.test(p.hn || ""));
+  const list = PLACES.filter(p => (checked(p) || TRIPLE_D[p.id]) && (p.d || !/temporarily closed|closed for/i.test(p.hn || "")));
   const seen = {};
   list.forEach(p => { const b = slugify(p.n); seen[b] = (seen[b] || 0) + 1; });
   list.forEach(p => { const b = slugify(p.n); SPOT_SLUG[p.id] = seen[b] > 1 ? b + "-" + slugify(p.area) : b; });
@@ -1431,7 +1431,7 @@ ${robots}${STYLE.replace("</style>", ".facts{background:var(--surface);border:1p
 <dl class="facts">
 <dt>Location</dt><dd>${esc(hasAddr ? addr + ", " + town(p) + ", SC" : where(p) + ", SC")}</dd>
 <dt>Food</dt><dd>${esc(cuisine)}${p.p ? " · " + price(p) : ""}${p.cost ? " · " + esc(p.cost) : ""}</dd>
-${hours.length ? `<dt>Hours</dt><dd>${hours.map(esc).join("<br>")}</dd>` : ""}
+${hours.length ? `<dt>Hours</dt><dd>${hours.map(esc).join("<br>")}</dd>` : p.hn ? `<dt>Hours</dt><dd>${esc(p.hn)}</dd>` : ""}
 ${p.tel ? `<dt>Phone</dt><dd><a href="tel:${p.tel}" style="color:var(--brand);font-weight:700">${phone(p.tel)}</a></dd>` : ""}
 ${tags.length ? `<dt>Good for</dt><dd>${tags.join(", ")}</dd>` : ""}
 </dl>
