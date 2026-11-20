@@ -311,6 +311,11 @@ const PAGES = [
     h1: "Myrtle Beach restaurants",
     desc: "The best local (non-chain) restaurants in Myrtle Beach, from oceanfront grills and seafood to pancake houses and date-night spots, with prices, vibes and directions.",
     intro: "Myrtle Beach has thousands of places to eat, and a lot of them are chains. Here is every independent restaurant in Myrtle Beach, Market Common and Carolina Forest on our map, starting with the spots we've checked by hand.",
+    local: [
+      "When friends visit, I send them to <a href=\"../spot/outriggers-bar-and-grill/\">Outriggers Bar &amp; Grill</a> in Murrells Inlet. I love the outdoor seating right on the water and the live entertainment, and the food is good too. The owners are very nice and very accommodating.",
+      "The biggest mistake I see visitors make is sticking to the chains and never leaving Ocean Blvd. Some of the best meals around here are just a short drive away.",
+      "On weekends I love to try new restaurants, and whenever I can, I'll pick lunch near or on the water.",
+    ],
     guide: [
       {h: "What are the best restaurants in Myrtle Beach?", p: [
         "<strong>For a classic Myrtle Beach meal, locals point to Sea Captain's House for oceanfront seafood, Thoroughbreds or Aspen Grille for a special night, and Donald's Pancake House for breakfast.</strong> Sea Captain's House has been serving seafood on the ocean for decades, and Hook and Barrel is a newer favorite for fresh fish.",
@@ -1208,6 +1213,7 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .box p{font-size:11.5px;color:var(--muted);margin:8px 0 0}
 .note{font-size:12.5px;color:var(--muted);background:var(--chip);border-radius:12px;padding:10px 12px;margin:18px 0}
 .guide{margin:26px 0}.guide h2{font-size:21px;letter-spacing:-.02em;margin:0 0 8px}.guide p{font-size:15.5px;margin:0 0 12px}.faq h3{font-size:16px;margin:14px 0 4px}
+.box.local p{font-size:15.5px;color:var(--ink);margin:0 0 10px}.box.local p a{font-size:inherit;border:0;padding:0;color:var(--brand);font-weight:700}.box.local .by{font-size:13px;color:var(--muted);font-style:italic;margin:0}
 .tips ul{margin:0;padding-left:20px}.tips li{font-size:14.5px;margin:5px 0}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
 </style>
@@ -1219,6 +1225,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 <h1>${esc(cfg.h1)}</h1>
 <p class="intro">${esc(cfg.intro)}</p>
 <a class="cta" href="../${cfg.kind === "do" ? "?do" : ""}">🗺 See them on the map</a>
+${cfg.local ? `<section class="box local"><h2>From a local</h2>${cfg.local.map(t => `<p>${t}</p>`).join("")}<p class="by">— A Grand Strand local</p></section>` : ""}
 <div class="count">${cfg.kind === "do" ? `${spots.length} things to do` : `${spots.length} local spots · no chains`}</div>
 <ol>
 ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
