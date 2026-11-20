@@ -1398,7 +1398,7 @@ function spotPage(p) {
   if (p.tel) faq.push([`What is ${p.n}'s phone number?`, `You can call ${p.n} at ${phone(p.tel)}.`]);
   const ld = {"@context": "https://schema.org", "@type": "Restaurant", name: p.n, url, servesCuisine: p.c.split(" · "), ...(p.p ? {priceRange: price(p)} : {}), ...(p.tel ? {telephone: p.tel} : {}), ...(p.web ? {sameAs: [p.web]} : {}),
     address: {"@type": "PostalAddress", ...(hasAddr ? {streetAddress: addr} : {}), addressLocality: town(p), addressRegion: "SC", addressCountry: "US"},
-    geo: {"@type": "GeoCoordinates", latitude: p.lat, longitude: p.lon}, ...(p.h ? {openingHours: p.h.split(";").map(r => r.trim()).filter(r => r && !/off|closed|^PH/i.test(r))} : {})};
+    geo: {"@type": "GeoCoordinates", latitude: p.lat, longitude: p.lon}, ...(p.ph ? {image: p.ph.map(([f]) => SITE + "img/spot/" + f)} : {}), ...(p.h ? {openingHours: p.h.split(";").map(r => r.trim()).filter(r => r && !/off|closed|^PH/i.test(r))} : {})};
   const crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{"@type": "ListItem", position: 1, name: "Grand Strand Eats", item: SITE}, ...(guides[0] ? [{"@type": "ListItem", position: 2, name: guides[0].h1, item: SITE + guides[0].slug + "/"}] : []), {"@type": "ListItem", position: guides[0] ? 3 : 2, name: p.n, item: url}]};
   const MON = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   return `<!doctype html>
@@ -1410,7 +1410,7 @@ ${GTAG}
 <title>${esc(title)} | Grand Strand Eats</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
-<meta property="og:type" content="article"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}share-v2.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Grand Strand Eats"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${p.ph ? SITE + "img/spot/" + p.ph[0][0] : SITE + "share-v2.png"}"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e7c86">
 <link rel="icon" href="../../icon-192.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1436,6 +1436,7 @@ ${p.tel ? `<dt>Phone</dt><dd><a href="tel:${p.tel}" style="color:var(--brand);fo
 ${tags.length ? `<dt>Good for</dt><dd>${tags.join(", ")}</dd>` : ""}
 </dl>
 ${notes.length ? `<section class="guide"><h2>What to know about ${esc(p.n)}</h2>${notes.map(t => `<p>${esc(t)}</p>`).join("")}</section>` : ""}
+${p.ph ? `<section class="guide"><h2>Photos from our visit</h2>${p.ph.map(([f, alt]) => `<figure style="margin:0 0 14px"><img src="../../img/spot/${f}" alt="${esc(alt)}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block"><figcaption style="font-size:13px;color:var(--muted);margin-top:4px">${esc(alt)}</figcaption></figure>`).join("")}</section>` : ""}
 <a class="cta" href="../../">🗺 See it on the map</a>
 ${nearby.length ? `<section class="guide"><h2>Restaurants near ${esc(p.n)}</h2><ol>${nearby.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
 <section class="guide faq"><h2>Common questions</h2>${faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>
