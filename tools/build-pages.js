@@ -201,6 +201,9 @@ const PAGES = [
     h1: "Best breakfast in Myrtle Beach, SC",
     desc: "Where to get the best breakfast in Myrtle Beach and on the Grand Strand: local pancake houses, diners and brunch cafes (no chains), with hours, directions and a map of what is open now.",
     intro: "Pancake houses are a Myrtle Beach tradition, but the local diners and cafés are where the regulars go. Here are the independent breakfast spots in and around Myrtle Beach on our map. Morning hours change by season, so check before you go.",
+    local: [
+      "My favorite breakfast spot is <a href=\"../spot/conch-cafe/\">Conch Cafe</a> in Garden City. You can eat out on the deck right over the ocean, which is hard to beat in the morning. I had the pancakes and bacon, and they were the BEST pancakes I've ever had. My husband had an omelet with gravy.",
+    ],
     guide: [
       {h: "Why does Myrtle Beach have so many pancake houses?", p: [
         "<strong>Families on beach vacations wanted a big, affordable breakfast before a long day on the sand, and local pancake houses opened along Kings Highway to serve them.</strong> Drive down Kings Highway and you'll pass one pancake house after another. Myrtle Beach has had a big breakfast culture since the early days of beach vacations, when families wanted a full meal before a long day on the sand. Some of the local pancake houses have been family-run for decades.",
