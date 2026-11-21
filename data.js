@@ -23,9 +23,9 @@ window.PLACES = [
   {id:18, n:"Wahoo's Fish House", lat:33.55899, lon:-79.03095, area:"MarshWalk", c:"Seafood", e:"🐠", p:2, tags:["water","music","date"], h:"Mo-Th 11:30-21:00; Fr,Sa 11:30-22:00; Su 11:30-21:00", v:"2026-11-06"},
   {id:19, n:"Drunken Jack's", lat:33.55817, lon:-79.03154, area:"MarshWalk", c:"Seafood · Steak", e:"🏴‍☠️", p:2, tags:["water","family"], h:"Mo-Th 11:30-21:00; Fr,Sa 11:30-21:30; Su 11:30-21:00", web:"http://drunkenjacks.com/", tel:"+18436512044", v:"2026-11-16"},
   {id:21, n:"Pizza Hyena", lat:33.60533, lon:-78.97251, area:"Surfside Beach", c:"Pizza", e:"🍕", p:1, tags:["dog","family"], h:"Mo-Su 11:00-22:00", web:"https://pizzahyena.com", tel:"+18439459025"},
-  {id:22, n:"Liberty Tap Room", lat:33.7479, lon:-78.81832, area:"Myrtle Beach", c:"Brewpub · American", e:"🍻", p:2, tags:["dog","brewery","family"], h:"Mo-Su 11:00-21:00; Fr,Sa 11:00-22:00"},
+  {id:22, n:"Liberty Tap Room", lat:33.7479, lon:-78.81832, area:"Myrtle Beach", c:"Brewpub · American", e:"🍻", p:2, tags:["dog","brewery","family"], h:"Mo-Su 11:00-21:00; Fr,Sa 11:00-22:00", tel:"+18438394677", v:"2026-11-20"},
   {id:24, n:"Rioz Brazilian Steakhouse", lat:33.84089, lon:-78.66509, area:"North Myrtle Beach", c:"Brazilian steakhouse", e:"🥩", p:3, tags:["date"], h:"Mo-Sa 16:00-21:00; Su 12:00-21:00", web:"https://www.rioz.com/", tel:"+18434929777", v:"2026-11-17"},
-  {id:25, n:"Aspen Grille", lat:33.72547, lon:-78.84515, area:"Myrtle Beach", c:"Fine dining", e:"🍷", p:4, tags:["date"], h:"Mo off; Tu-Su 16:30-21:30"},
+  {id:25, n:"Aspen Grille", lat:33.72547, lon:-78.84515, area:"Myrtle Beach", c:"Fine dining", e:"🍷", p:4, tags:["date"], h:"Mo off; Tu-Su 16:30-21:30", tel:"+18434499191", v:"2026-11-20"},
   {id:26, n:"Gordon Biersch Brewery", lat:33.66865, lon:-78.93911, area:"Market Common", c:"Brewery · American", e:"🍺", p:2, tags:["brewery"], h:"Mo-Th 11:00-22:00; Fr,Sa 11:00-23:00; Su 11:00-22:00"},
   {id:28, n:"Gulfstream Cafe", lat:33.55155, lon:-79.01964, area:"Garden City", c:"Seafood", e:"🌅", p:3, tags:["water","date"], h:"Mo-Sa 16:00-20:00; Su 10:00-20:00", v:"2026-11-03"},
   {id:29, n:"The Claw House", lat:33.55694, lon:-79.03371, area:"Murrells Inlet", c:"Seafood", e:"🦀", p:2, tags:["water","family"], h:"Mo-Th 11:00-20:30; Fr,Sa 11:00-21:00; Su 11:00-20:30", web:"https://www.theclawhouse.com/", tel:"+18436514415", v:"2026-11-16"},
@@ -609,5 +609,6 @@ window.PLACES = [
   {id:658, n:"J-Mike's Flavor Station", lat:33.66618, lon:-78.90991, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:[], h:null, hn:"2411 S Ocean Blvd · Seen on Diners, Drive-Ins and Dives"},
   {id:659, n:"Old Town Crepes", lat:33.71835, lon:-78.85310, area:"Myrtle Beach", c:"Crepes · Cafe", e:"🥞", p:1, tags:["breakfast"], h:null, hn:"4205 N Kings Hwy · Seen on Diners, Drive-Ins and Dives"},
   {id:660, n:"Seasons By 10/Fold", lat:33.71904, lon:-78.85228, area:"Myrtle Beach", c:"Brunch · Southern", e:"🍳", p:2, tags:["breakfast"], h:null, hn:"4377 N Kings Hwy (formerly 10/Fold Biscuits) · Seen on Diners, Drive-Ins and Dives"},
-  {id:661, n:"Crooked Hammock Brewery", lat:33.79949, lon:-78.74665, area:"North Myrtle Beach", c:"Brewpub · American", e:"🍻", p:2, tags:["brewery","family"], h:null, hn:"4924 Ocean Creek Dr, Barefoot Landing", web:"https://www.crookedhammockbrewery.com/"}
+  {id:661, n:"Crooked Hammock Brewery", lat:33.79949, lon:-78.74665, area:"North Myrtle Beach", c:"Brewpub · American", e:"🍻", p:2, tags:["brewery","family"], h:null, hn:"4924 Ocean Creek Dr, Barefoot Landing", web:"https://www.crookedhammockbrewery.com/"},
+  {id:662, n:"Dockside Dawgs", lat:33.68580, lon:-79.00300, area:"Socastee", c:"Hot Dogs · Burgers", e:"🌭", p:1, tags:["breakfast"], h:null, hn:"4211 Peachtree Rd, near the Socastee Swing Bridge · Breakfast until 11 AM, lunch/dinner menu all day", tel:"+18439030888", web:"https://www.facebook.com/profile.php?id=61586658448241", v:"2026-11-20"}
 ];
