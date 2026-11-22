@@ -376,7 +376,7 @@ window.PLACES = [
   {id:416, n:"Bimini's Oyster Bar and Seafood Cafe", lat:33.77754, lon:-78.79096, area:"Myrtle Beach", c:"Seafood", e:"🦐", p:2, tags:[], h:null},
   {id:417, n:"The Hang Out", lat:33.71472, lon:-78.87813, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:418, n:"Athens Pizza", lat:33.68156, lon:-79.0019, area:"Socastee", c:"Greek · Pizza", e:"🥙", p:2, tags:[], h:"Mo-Su 11:00-21:00", web:"https://athenspizzatogo.com/", tel:"+18436500044", v:"2026-11-17"},
-  {id:419, n:"ATMOSPHERA Restaurant", lat:33.68344, lon:-78.95719, area:"Market Common", c:"American · Greek", e:"🍽", p:3, tags:["date"], h:null},
+  {id:419, n:"ATMOSPHERA Restaurant", lat:33.68344, lon:-78.95719, area:"Market Common", c:"Eastern European", e:"🍽", p:3, tags:["date"], h:null},
   {id:420, n:"Liberty Brew Coffee", lat:33.82079, lon:-78.93048, area:"Conway", c:"Cafe", e:"☕", p:1, tags:[], h:"Mo-Fr 07:00-14:00; Sa 08:00-14:00; Su 10:00-13:00", tel:"+18432341300", v:"2026-11-19"},
   {id:421, n:"Thai Cuisine & Sushi Bar", lat:33.69639, lon:-78.87879, area:"Myrtle Beach", c:"Thai", e:"🍜", p:2, tags:[], h:"Tu off; Mo,We-Fr 11:00-15:00,16:00-21:00; Sa 11:00-21:00; Su 12:00-21:00", web:"https://thaicuisinemb.com/"},
   {id:422, n:"Blue Elephant", lat:33.54992, lon:-79.04266, area:"Murrells Inlet", c:"Thai", e:"🍜", p:2, tags:[], h:"Mo-Fr 17:00-20:00", tel:"+18436515863", v:"2026-11-21"},
@@ -607,5 +607,6 @@ window.PLACES = [
   {id:659, n:"Old Town Crepes", lat:33.71835, lon:-78.85310, area:"Myrtle Beach", c:"Crepes · Cafe", e:"🥞", p:1, tags:["breakfast"], h:null, hn:"4205 N Kings Hwy · Seen on Diners, Drive-Ins and Dives"},
   {id:660, n:"Seasons By 10/Fold", lat:33.71904, lon:-78.85228, area:"Myrtle Beach", c:"Brunch · Southern", e:"🍳", p:2, tags:["breakfast"], h:null, hn:"4377 N Kings Hwy (formerly 10/Fold Biscuits) · Seen on Diners, Drive-Ins and Dives"},
   {id:661, n:"Crooked Hammock Brewery", lat:33.79949, lon:-78.74665, area:"North Myrtle Beach", c:"Brewpub · American", e:"🍻", p:2, tags:["brewery","family"], h:null, hn:"4924 Ocean Creek Dr, Barefoot Landing", web:"https://www.crookedhammockbrewery.com/"},
-  {id:662, n:"Dockside Dawgs", lat:33.68580, lon:-79.00300, area:"Socastee", c:"Hot Dogs · Burgers", e:"🌭", p:1, tags:["breakfast"], h:null, hn:"4211 Peachtree Rd, near the Socastee Swing Bridge · Breakfast until 11 AM, lunch/dinner menu all day", tel:"+18439030888", web:"https://www.facebook.com/profile.php?id=61586658448241", v:"2026-11-20"}
+  {id:662, n:"Dockside Dawgs", lat:33.68580, lon:-79.00300, area:"Socastee", c:"Hot Dogs · Burgers", e:"🌭", p:1, tags:["breakfast"], h:null, hn:"4211 Peachtree Rd, near the Socastee Swing Bridge · Breakfast until 11 AM, lunch/dinner menu all day", tel:"+18439030888", web:"https://www.facebook.com/profile.php?id=61586658448241", v:"2026-11-20"},
+  {id:663, n:"Fratelli's Pizza", lat:33.67275, lon:-78.95123, area:"Market Common", c:"Pizza", e:"🍕", p:1, tags:[], h:null, hn:"1600 Farrow Pkwy, Market Common · Order online on Slice", web:"https://slicelife.com/restaurants/sc/myrtle-beach/29577/fratelli-s-pizza-myrtle-beach/menu", v:"2026-11-21"},
 ];
