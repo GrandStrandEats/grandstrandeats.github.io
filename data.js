@@ -468,7 +468,7 @@ window.PLACES = [
   {id:519, n:"Finocchio's", lat:33.58129, lon:-79.01972, area:"Garden City", c:"Italian", e:"🍝", p:2, tags:[], h:null},
   {id:520, n:"Sweet Adventures", lat:33.57809, lon:-79.0225, area:"Garden City", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:null},
   {id:521, n:"Wild Horse Saloon", lat:33.61604, lon:-79.04771, area:"Garden City", c:"Bar", e:"🍸", p:2, tags:["music"], h:"Mo-Th 11:00-24:00; Fr,Sa 11:00-02:00; Su 11:00-24:00", v:"2026-11-21"},
-  {id:522, f:1, n:"Fork'n Links", lat:33.6326, lon:-79.03444, area:"Garden City", c:"Bar · Burgers · Hot dogs", e:"🍔", p:1, tags:["music"], h:"Mo-Su 11:00-23:00", web:"https://forknlinks.com/", tel:"+18436684991", v:"2026-11-18"},
+  {id:522, f:1, n:"Fork'n Links", lat:33.6326, lon:-79.03444, area:"Garden City", c:"Bar · Burgers · Hot dogs", e:"🍔", p:1, tags:["music"], h:"Mo-Su 11:00-23:00", web:"https://forknlinks.com/", tel:"+18436684991", d:"Local's note: Amazing! We heard a live acoustic guitarist, had huge, delicious cheeseburgers and fries, and enjoyed their beer selection too.", v:"2026-11-18"},
   {id:523, n:"Chuck's Steakhouse", lat:33.77906, lon:-78.79339, area:"Myrtle Beach", c:"Steakhouse", e:"🥩", p:3, tags:[], h:null, hn:"Open daily from 4 PM", web:"https://www.chuckssteakhousemb.com/", tel:"+18434497611"},
   {id:524, n:"The Original Benjamin's Calabash Buffet", lat:33.77755, lon:-78.79577, area:"Myrtle Beach", c:"Seafood", e:"🦐", p:3, tags:["family"], h:null, web:"https://www.originalbenjamins.com/", tel:"+18434490821"},
   {id:525, n:"Hot Stacks Cafe", lat:33.77977, lon:-78.79178, area:"North Myrtle Beach", c:"Breakfast · Pancake", e:"🍳", p:1, tags:["breakfast"], h:null},
