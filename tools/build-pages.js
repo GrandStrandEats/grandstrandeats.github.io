@@ -1169,6 +1169,50 @@ function spot(p, note) {
   return `<li class="spot"><div class="em">${p.e}</div><div><h3>${SPOT_SLUG[p.id] && PLACES.includes(p) ? `<a href="../spot/${SPOT_SLUG[p.id]}/" style="color:inherit">${esc(p.n)}</a>` : esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}${nearby(p)}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
 }
 
+// "You might also like" box under each guide list: the seasonal page first, then hand-picked related guides.
+// Swap SEASONAL when the season changes (Christmas lights until early Jan 2027).
+const SEASONAL = "christmas-lights-myrtle-beach";
+const RELATED = {
+  "diners-drive-ins-and-dives-myrtle-beach": ["seafood-restaurants-myrtle-beach","cheap-eats-myrtle-beach","buffets-myrtle-beach"],
+  "restaurants-open-thanksgiving-myrtle-beach": ["buffets-myrtle-beach","family-restaurants-myrtle-beach","steakhouses-myrtle-beach"],
+  "waterfront-restaurants-myrtle-beach": ["seafood-restaurants-myrtle-beach","murrells-inlet-restaurants","romantic-restaurants-myrtle-beach"],
+  "seafood-restaurants-myrtle-beach": ["waterfront-restaurants-myrtle-beach","buffets-myrtle-beach","murrells-inlet-restaurants"],
+  "breakfast-myrtle-beach": ["lunch-myrtle-beach","cheap-eats-myrtle-beach","family-restaurants-myrtle-beach"],
+  "murrells-inlet-restaurants": ["waterfront-restaurants-myrtle-beach","seafood-restaurants-myrtle-beach","garden-city-restaurants"],
+  "north-myrtle-beach-restaurants": ["main-street-north-myrtle-beach-restaurants","barefoot-landing-restaurants","live-music-myrtle-beach"],
+  "myrtle-beach-restaurants": ["broadway-at-the-beach-restaurants","cheap-eats-myrtle-beach","things-to-do-myrtle-beach"],
+  "surfside-beach-restaurants": ["garden-city-restaurants","seafood-restaurants-myrtle-beach","breakfast-myrtle-beach"],
+  "romantic-restaurants-myrtle-beach": ["steakhouses-myrtle-beach","italian-restaurants-myrtle-beach","waterfront-restaurants-myrtle-beach"],
+  "pizza-myrtle-beach": ["italian-restaurants-myrtle-beach","cheap-eats-myrtle-beach","family-restaurants-myrtle-beach"],
+  "live-music-myrtle-beach": ["north-myrtle-beach-restaurants","waterfront-restaurants-myrtle-beach","free-things-to-do-myrtle-beach"],
+  "mexican-restaurants-myrtle-beach": ["cheap-eats-myrtle-beach","lunch-myrtle-beach","pizza-myrtle-beach"],
+  "italian-restaurants-myrtle-beach": ["romantic-restaurants-myrtle-beach","pizza-myrtle-beach","steakhouses-myrtle-beach"],
+  "market-common-restaurants": ["grande-dunes-restaurants","myrtle-beach-restaurants","family-restaurants-myrtle-beach"],
+  "garden-city-restaurants": ["surfside-beach-restaurants","murrells-inlet-restaurants","myrtle-beach-fishing-piers"],
+  "pawleys-island-restaurants": ["murrells-inlet-restaurants","seafood-restaurants-myrtle-beach","romantic-restaurants-myrtle-beach"],
+  "conway-sc-restaurants": ["lunch-myrtle-beach","cheap-eats-myrtle-beach","rainy-day-things-to-do-myrtle-beach"],
+  "lunch-myrtle-beach": ["breakfast-myrtle-beach","cheap-eats-myrtle-beach","mexican-restaurants-myrtle-beach"],
+  "grande-dunes-restaurants": ["market-common-restaurants","steakhouses-myrtle-beach","romantic-restaurants-myrtle-beach"],
+  "broadway-at-the-beach-restaurants": ["family-restaurants-myrtle-beach","things-to-do-myrtle-beach-with-kids","myrtle-beach-restaurants"],
+  "main-street-north-myrtle-beach-restaurants": ["north-myrtle-beach-restaurants","barefoot-landing-restaurants","breakfast-myrtle-beach"],
+  "barefoot-landing-restaurants": ["north-myrtle-beach-restaurants","main-street-north-myrtle-beach-restaurants","live-music-myrtle-beach"],
+  "family-restaurants-myrtle-beach": ["things-to-do-myrtle-beach-with-kids","pizza-myrtle-beach","buffets-myrtle-beach"],
+  "buffets-myrtle-beach": ["seafood-restaurants-myrtle-beach","family-restaurants-myrtle-beach","cheap-eats-myrtle-beach"],
+  "steakhouses-myrtle-beach": ["romantic-restaurants-myrtle-beach","italian-restaurants-myrtle-beach","grande-dunes-restaurants"],
+  "cheap-eats-myrtle-beach": ["lunch-myrtle-beach","pizza-myrtle-beach","free-things-to-do-myrtle-beach"],
+  "christmas-lights-myrtle-beach": ["murrells-inlet-restaurants","free-things-to-do-myrtle-beach","family-restaurants-myrtle-beach","romantic-restaurants-myrtle-beach"],
+  "things-to-do-myrtle-beach": ["free-things-to-do-myrtle-beach","things-to-do-myrtle-beach-with-kids","myrtle-beach-restaurants"],
+  "free-things-to-do-myrtle-beach": ["things-to-do-myrtle-beach","cheap-eats-myrtle-beach","myrtle-beach-fishing-piers"],
+  "things-to-do-myrtle-beach-with-kids": ["family-restaurants-myrtle-beach","things-to-do-myrtle-beach","rainy-day-things-to-do-myrtle-beach"],
+  "rainy-day-things-to-do-myrtle-beach": ["things-to-do-myrtle-beach-with-kids","buffets-myrtle-beach","things-to-do-myrtle-beach"],
+  "myrtle-beach-fishing-piers": ["seafood-restaurants-myrtle-beach","garden-city-restaurants","free-things-to-do-myrtle-beach"]
+};
+function likes(cfg) {
+  const slugs = [SEASONAL, ...(RELATED[cfg.slug] || [])].filter((x, i, a) => x !== cfg.slug && a.indexOf(x) === i);
+  const list = slugs.map(x => PAGES.find(o => o.slug === x)).filter(Boolean).slice(0, 4);
+  return list.length ? `<section class="like"><h2>You might also like</h2><div>${list.map(o => `<a href="../${o.slug}/">${esc(o.h1)}<span>→</span></a>`).join("")}</div></section>` : "";
+}
+
 function page(cfg, spots) {
   const url = SITE + cfg.slug + "/";
   const others = PAGES.filter(o => o !== cfg).map(o => `<a href="../${o.slug}/">${esc(o.h1)}</a>`).join("");
@@ -1213,6 +1257,7 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .meta{font-size:13.5px;color:var(--muted)}
 .hol{font-size:13.5px;font-weight:600;margin:5px 0 2px}
 .near{font-size:13.5px;margin:6px 0 2px}.near a{color:var(--brand);font-weight:700}
+.like{margin:22px 0}.like h2{font-size:20px;margin:0 0 10px}.like div{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:640px){.like div{grid-template-columns:1fr 1fr}}.like a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--surface,#fff);border:1.5px solid var(--line,#e6e0d6);border-radius:14px;padding:12px 14px;font-weight:700;font-size:15px;color:var(--ink,#14212b);text-decoration:none}.like a span{color:var(--brand);font-weight:800}
 .tags{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0 2px}
 .tag{font-size:11.5px;font-weight:700;background:var(--chip);border-radius:8px;padding:3px 7px}
 .acts{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
@@ -1240,6 +1285,7 @@ ${cfg.local ? `<section class="box local"><h2>From a local</h2>${cfg.local.map(t
 <ol>
 ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 </ol>
+${likes(cfg)}
 ${cfg.guide ? cfg.guide.map(s => `<section class="guide"><h2>${esc(s.h)}</h2>${s.p.map(t => `<p>${t}</p>`).join("")}</section>`).join("\n") : ""}
 ${cfg.tips ? `<div class="box tips"><h2>Local tips</h2><ul>${cfg.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
 ${cfg.faq ? `<section class="guide faq"><h2>Common questions</h2>${cfg.faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>` : ""}
