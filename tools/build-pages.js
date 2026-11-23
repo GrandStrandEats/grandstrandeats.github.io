@@ -1207,6 +1207,14 @@ const RELATED = {
   "rainy-day-things-to-do-myrtle-beach": ["things-to-do-myrtle-beach-with-kids","buffets-myrtle-beach","things-to-do-myrtle-beach"],
   "myrtle-beach-fishing-piers": ["seafood-restaurants-myrtle-beach","garden-city-restaurants","free-things-to-do-myrtle-beach"]
 };
+// "Jump to" menu under the intro: tap a chip to scroll to that part of the page.
+function jump(cfg) {
+  const j = [["list", cfg.kind === "do" ? "Things to do" : "Restaurants"]];
+  if (cfg.tips) j.push(["tips", "Local tips"]);
+  if (cfg.faq) j.push(["faq", "Common questions"]);
+  j.push(["stay", "Where to stay"]);
+  return `<nav class="jump" aria-label="Jump to"><b>Jump to:</b>${j.map(([id, l]) => `<a href="#${id}">${esc(l)}</a>`).join("")}</nav>`;
+}
 function likes(cfg) {
   const slugs = [SEASONAL, ...(RELATED[cfg.slug] || [])].filter((x, i, a) => x !== cfg.slug && a.indexOf(x) === i);
   const list = slugs.map(x => PAGES.find(o => o.slug === x)).filter(Boolean).slice(0, 4);
@@ -1258,6 +1266,8 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .hol{font-size:13.5px;font-weight:600;margin:5px 0 2px}
 .near{font-size:13.5px;margin:6px 0 2px}.near a{color:var(--brand);font-weight:700}
 .like{margin:22px 0}.like h2{font-size:20px;margin:0 0 10px}.like div{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:640px){.like div{grid-template-columns:1fr 1fr}}.like a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--surface,#fff);border:1.5px solid var(--line,#e6e0d6);border-radius:14px;padding:12px 14px;font-weight:700;font-size:15px;color:var(--ink,#14212b);text-decoration:none}.like a span{color:var(--brand);font-weight:800}
+.jump{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 4px;font-size:13px}.jump b{color:var(--muted);font-weight:700;margin-right:2px}.jump a{font-weight:700;text-decoration:none;color:var(--ink);background:var(--chip);border-radius:999px;padding:5px 11px}
+[id]{scroll-margin-top:14px}html{scroll-behavior:smooth}
 .tags{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0 2px}
 .tag{font-size:11.5px;font-weight:700;background:var(--chip);border-radius:8px;padding:3px 7px}
 .acts{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
@@ -1280,18 +1290,19 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 <h1>${esc(cfg.h1)}</h1>
 <p class="intro">${esc(cfg.intro)}</p>
 <a class="cta" href="../${cfg.kind === "do" ? "?do" : ""}">🗺 See them on the map</a>
+${jump(cfg)}
 ${cfg.local ? `<section class="box local"><h2>From a local</h2>${cfg.local.map(t => `<p>${t}</p>`).join("")}<p class="by">— A Grand Strand local</p></section>` : ""}
 <div class="count">${cfg.kind === "do" ? `${spots.length} things to do` : `${spots.length} local spots · no chains`}</div>
-<ol>
+<ol id="list">
 ${spots.map(p => spot(p, cfg.notes && cfg.notes[p.id])).join("\n")}
 </ol>
 ${likes(cfg)}
-${cfg.guide ? cfg.guide.map(s => `<section class="guide"><h2>${esc(s.h)}</h2>${s.p.map(t => `<p>${t}</p>`).join("")}</section>`).join("\n") : ""}
-${cfg.tips ? `<div class="box tips"><h2>Local tips</h2><ul>${cfg.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
-${cfg.faq ? `<section class="guide faq"><h2>Common questions</h2>${cfg.faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>` : ""}
+${cfg.guide ? cfg.guide.map((s, i) => `<section class="guide" id="g${i}"><h2>${esc(s.h)}</h2>${s.p.map(t => `<p>${t}</p>`).join("")}</section>`).join("\n") : ""}
+${cfg.tips ? `<div class="box tips" id="tips"><h2>Local tips</h2><ul>${cfg.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>` : ""}
+${cfg.faq ? `<section class="guide faq" id="faq"><h2>Common questions</h2>${cfg.faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>` : ""}
 <div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the ${cfg.kind === "do" ? "attraction" : "restaurant"}'s website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
 <div class="box"><h2>${cfg.kind === "do" ? "Book tours, cruises & shows" : "After dinner: things to do on the Grand Strand"}</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
-<div class="box"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
+<div class="box" id="stay"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
 <footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="mailto:hello@grandstrandeats.com?subject=Update%20for%20Grand%20Strand%20Eats" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it.${INFO_LINKS}</footer>
 </div>
