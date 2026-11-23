@@ -511,7 +511,7 @@ window.PLACES = [
   {id:563, n:"Pelican's Snoballs", lat:33.58704, lon:-79.01006, area:"Garden City", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:null},
   {id:564, n:"Millstone Biscuit", lat:33.58784, lon:-79.00872, area:"Garden City", c:"Restaurant", e:"🍽", p:1, tags:["breakfast","family"], h:"Mo off; Tu-Sa 07:00-14:00; Su 08:00-14:00", v:"2026-11-21"},
   {id:565, n:"Saltys Pub & Grub", lat:33.58808, lon:-79.01001, area:"Garden City", c:"Pub", e:"🍺", p:2, tags:[], h:null},
-  {id:566, n:"Greg's Cabana", lat:33.58788, lon:-79.01015, area:"Garden City", c:"Restaurant", e:"🍽", p:2, tags:[], h:null, tel:"+18436511836"},
+  {id:566, n:"Greg's Cabana", lat:33.58788, lon:-79.01015, area:"Garden City", c:"Restaurant", e:"🍽", p:2, tags:[], h:"Mo-Sa 11:00-21:00; Su off", tel:"+18436511836"},
   {id:567, n:"Garden City Pancake House", lat:33.58613, lon:-79.01285, area:"Murrells Inlet", c:"Restaurant", e:"🍽", p:1, tags:["breakfast","family"], h:"Mo-Fr 07:00-13:00; Sa,Su 07:00-14:00", tel:"+18436512200", v:"2026-11-21"},
   {id:568, n:"Beachin Southern Restaurant", lat:33.58369, lon:-79.0165, area:"Garden City", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
   {id:569, n:"Froyoz", lat:33.58963, lon:-79.0061, area:"Garden City", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:null},
