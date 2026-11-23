@@ -160,6 +160,9 @@ const PAGES = [
     h1: "Best seafood restaurants in Myrtle Beach",
     desc: "The best local seafood restaurants in Myrtle Beach, Murrells Inlet and North Myrtle Beach: fresh shrimp, oysters and Calabash-style platters, with hours, prices and directions. No chains.",
     intro: "Fresh shrimp, oysters, flounder and Calabash-style fried platters are what most people come to the Grand Strand to eat. These are the local, non-chain seafood spots on our map, from the Murrells Inlet MarshWalk up to Little River. Waits get long in summer, so go early or call ahead.",
+    local: [
+      "Of the seafood buffets I've tried, <a href=\"../spot/captain-georges-seafood-restaurant/\">Captain George's</a> is my favorite. They kept the fresh steamed crab legs coming, and there are so many options to choose from. If dessert is your thing, though, <a href=\"../spot/captain-benjamins-calabash-seafood/\">Captain Benjamin's</a> has a whole lot more dessert selections."
+    ],
     guide: [
       {h: "What seafood should I order on the Grand Strand?", p: [
         "<strong>Try Calabash-style fried seafood, shrimp and grits, she-crab soup, a Lowcountry boil, or the fresh catch of the day.</strong> Here's what each one is.",
