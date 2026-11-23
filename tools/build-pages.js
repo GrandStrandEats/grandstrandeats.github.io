@@ -1307,7 +1307,7 @@ ${cfg.faq ? `<section class="guide faq" id="faq"><h2>Common questions</h2>${cfg.
 <div class="box"><h2>${cfg.kind === "do" ? "Book tours, cruises & shows" : "After dinner: things to do on the Grand Strand"}</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box" id="stay"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
-<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="mailto:hello@grandstrandeats.com?subject=Update%20for%20Grand%20Strand%20Eats" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it.${INFO_LINKS}</footer>
+<footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="mailto:hello@grandstrandeats.com?subject=Update%20for%20Grand%20Strand%20Eats" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it. Own a local restaurant? <a href="../for-restaurants/" style="color:var(--brand);font-weight:700">Get it featured</a>.${INFO_LINKS}</footer>
 </div>
 </body>
 </html>
@@ -1360,6 +1360,35 @@ const INFO = [
 <p>If this policy changes, the date at the top will change too. Questions? See the <a href="../contact/">contact page</a>.</p>`,
   },
   {
+    slug: "for-restaurants", title: "Get Your Restaurant Featured | For Restaurant Owners", h1: "Get your restaurant featured on Grand Strand Eats",
+    desc: "Local Grand Strand restaurants: get a Featured listing on Grand Strand Eats. First month free, then $25/month founding price for the first 10 restaurants.",
+    body: `<p>Grand Strand Eats is a free local guide to independent restaurants from North Myrtle Beach to Pawleys Island. Every local restaurant is listed for free. A Featured listing helps visitors find you first.</p>
+<p class="season">☀️ <strong>Busy season is closer than it looks.</strong> Visitors start planning spring break and summer trips in the new year, and they're searching for where to eat before they ever arrive. Start your free month now, and your listing will be working for you before the crowds show up.</p>
+<p><a class="cta" href="mailto:hello@grandstrandeats.com?subject=Featured%20listing">📧 Email us to get featured</a></p>
+<h2>What you get</h2>
+<ul class="get">
+<li><b>⭐ Featured badge</b>Your card is highlighted and marked Featured on the map.</li>
+<li><b>Shown first</b>Featured restaurants appear at the top of the map's restaurant list.</li>
+<li><b>Your photos and description</b>We add your photos and a short write-up to your restaurant's own page.</li>
+<li><b>Up-to-date info</b>Send us new hours, menus or specials any time and we'll update them.</li>
+<li><b>A monthly update</b>A short email each month with how many people viewed your page.</li>
+</ul>
+<h2>Pricing</h2>
+<div class="price">
+<div class="pr hi"><small>Start here</small><strong>Free</strong><span>Your first month, no strings</span></div>
+<div class="pr"><small>Founding price</small><strong>$25/mo</strong><span>First 10 restaurants only. Locked in for as long as you stay featured.</span></div>
+<div class="pr"><small>Regular price</small><strong>$49/mo</strong><span>After the founding spots are gone</span></div>
+</div>
+<p class="fine">No contract. Cancel any time by replying to any email from us. Featured listings are always labeled, and featured restaurants never get fake reviews or ratings.</p>
+<h2>How to sign up</h2>
+<p>Email <a href="mailto:hello@grandstrandeats.com?subject=Featured%20listing">hello@grandstrandeats.com</a> with your restaurant's name and the best way to reach you. We'll set up your free month within a few days.</p>
+<h2>Common questions</h2>
+<h3>Is my restaurant already listed?</h3><p>Probably. We list local, non-chain restaurants across the Grand Strand. If you're missing, email us and we'll add you for free.</p>
+<h3>Can chains be featured?</h3><p>No. Grand Strand Eats is only for local, independent restaurants.</p>
+<h3>How do I pay?</h3><p>After your free month, we email you a simple monthly invoice you can pay by card.</p>
+<h3>Can I cancel?</h3><p>Yes, any time. Your restaurant stays on the map for free.</p>`,
+  },
+  {
     slug: "contact", title: "Contact Grand Strand Eats", h1: "Contact us",
     desc: "Suggest a local Grand Strand restaurant, report wrong hours or prices, or ask about a Featured listing.",
     body: `<p>The quickest way to reach Grand Strand Eats is to email <a href="mailto:hello@grandstrandeats.com">hello@grandstrandeats.com</a>. You can also message our <a href="${FB}">Facebook page</a>. We read every message.</p>
@@ -1367,14 +1396,20 @@ const INFO = [
 <ul>
 <li><strong>Suggest a spot.</strong> Know a local, non-chain restaurant, food truck or brewery we're missing? Tell us its name and town.</li>
 <li><strong>Fix a listing.</strong> Wrong hours, a closed restaurant, a bad address or a price that's off? Let us know and we'll check it.</li>
-<li><strong>Restaurant owners.</strong> Send your current hours and menu link, or ask about a ⭐ Featured listing.</li>
+<li><strong>Restaurant owners.</strong> Send your current hours and menu link, or ask about a <a href="../for-restaurants/">⭐ Featured listing</a>.</li>
 </ul>
 <p><a class="cta" href="mailto:hello@grandstrandeats.com">✉️ Email us</a> <a class="cta" href="${FB}">💬 Message us on Facebook</a></p>`,
   },
 ];
 
-const INFO_CSS = `.prose h2{font-size:19px;letter-spacing:-.02em;margin:26px 0 6px}.prose p,.prose li{font-size:15.5px}.prose a:not(.cta){color:var(--brand);font-weight:700}.prose ul{padding-left:20px}`;
-const INFO_LINKS = `<div style="margin-top:8px;font-weight:700"><a href="../about/" style="color:var(--brand)">About</a> · <a href="../privacy/" style="color:var(--brand)">Privacy</a> · <a href="../contact/" style="color:var(--brand)">Contact</a></div>`;
+const INFO_CSS = `.prose h2{font-size:19px;letter-spacing:-.02em;margin:26px 0 6px}.prose p,.prose li{font-size:15.5px}.prose a:not(.cta){color:var(--brand);font-weight:700}.prose ul{padding-left:20px}.prose h3{font-size:16px;margin:16px 0 4px}.prose h3+p{margin-top:0}
+.season{background:var(--chip);border-radius:12px;padding:12px 14px}
+.prose ul.get{list-style:none;padding:0;display:grid;gap:8px}.get li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}.get b{display:block}
+.price{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:600px){.price{grid-template-columns:1fr 1fr 1fr}}
+.pr{background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:16px;text-align:center}.pr.hi{border:2px solid var(--brand)}
+.pr small{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--brand)}.pr strong{display:block;font-size:30px;letter-spacing:-.03em;margin:4px 0}.pr span{font-size:13.5px;color:var(--muted)}
+.fine{font-size:13.5px;color:var(--muted)}`;
+const INFO_LINKS = `<div style="margin-top:8px;font-weight:700"><a href="../about/" style="color:var(--brand)">About</a> · <a href="../privacy/" style="color:var(--brand)">Privacy</a> · <a href="../contact/" style="color:var(--brand)">Contact</a> · <a href="../for-restaurants/" style="color:var(--brand)">For restaurants</a></div>`;
 
 function infoPage(cfg, style) {
   const url = SITE + cfg.slug + "/";
@@ -1517,6 +1552,7 @@ ${p.ph ? `<section class="guide"><h2>Photos from our visit</h2>${p.ph.map(([f, a
 <a class="cta" href="../../">🗺 See it on the map</a>
 ${nearby.length ? `<section class="guide"><h2>Restaurants near ${esc(p.n)}</h2><ol>${nearby.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
 <section class="guide faq"><h2>Common questions</h2>${faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>
+${p.f ? "" : `<p class="note">Own ${esc(p.n)}? <a href="../../for-restaurants/" style="color:var(--brand);font-weight:700">Get it featured on Grand Strand Eats</a>.</p>`}
 <div class="note">Hours and prices change, especially between seasons. Call ahead or check ${esc(p.n)}'s website before you go. See something wrong? <a href="mailto:hello@grandstrandeats.com?subject=${encodeURIComponent("Update for " + p.n)}" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it.</div>
 ${guides.length ? `<div class="box"><h2>Guides that include ${esc(p.n)}</h2><div>${guides.map(c => `<a href="../../${c.slug}/">${esc(c.h1)}</a>`).join("")}</div></div>` : ""}
 <div class="box"><h2>Where to stay</h2><div><a href="${STAY(town(p))}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${esc(town(p))}</a></div><p>Hotel search through Stay22. Affiliate link.</p></div>
