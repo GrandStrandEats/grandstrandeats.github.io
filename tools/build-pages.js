@@ -1154,13 +1154,19 @@ const SPOT_SLUG = {};
   list.forEach(p => { if (used.has(SPOT_SLUG[p.id])) delete SPOT_SLUG[p.id]; else used.add(SPOT_SLUG[p.id]); }); // same name + area = duplicate pin
 }
 
+// "Eat nearby" links on things-to-do cards (eat:[place ids] in todo.js).
+function nearby(p) {
+  const list = (p.eat || []).map(id => PLACES.find(x => x.id === id)).filter(x => x && SPOT_SLUG[x.id]);
+  return list.length ? `<div class="near">🍽️ Eat nearby: ${list.map(x => `<a href="../spot/${SPOT_SLUG[x.id]}/">${esc(x.n)}</a>`).join(", ")}</div>` : "";
+}
+
 function spot(p, note) {
   const dir = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.n + ", " + p.area + ", SC")}`;
   const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const meta = [p.area, p.c.replace(/ · /g, ", "), price(p), p.cost, p.v ? `✓ Checked ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}` : ""].filter(Boolean).join(" · ");
   if (p.d) note = [p.d, p.hn, p.tel ? "📞 " + p.tel.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3") : ""].filter(Boolean).join(" · ");
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("");
-  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${SPOT_SLUG[p.id] && PLACES.includes(p) ? `<a href="../spot/${SPOT_SLUG[p.id]}/" style="color:inherit">${esc(p.n)}</a>` : esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
+  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${SPOT_SLUG[p.id] && PLACES.includes(p) ? `<a href="../spot/${SPOT_SLUG[p.id]}/" style="color:inherit">${esc(p.n)}</a>` : esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}${nearby(p)}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
 }
 
 function page(cfg, spots) {
@@ -1206,6 +1212,7 @@ ol{list-style:none;padding:0;margin:0}
 h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .meta{font-size:13.5px;color:var(--muted)}
 .hol{font-size:13.5px;font-weight:600;margin:5px 0 2px}
+.near{font-size:13.5px;margin:6px 0 2px}.near a{color:var(--brand);font-weight:700}
 .tags{display:flex;gap:5px;flex-wrap:wrap;margin:6px 0 2px}
 .tag{font-size:11.5px;font-weight:700;background:var(--chip);border-radius:8px;padding:3px 7px}
 .acts{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
