@@ -900,7 +900,7 @@ const PAGES = [
   },
   {
     slug: "main-street-north-myrtle-beach-restaurants",
-    title: "Main Street North Myrtle Beach Restaurants: Where to Eat on Main St",
+    title: "Restaurants on Main Street, North Myrtle Beach: Where to Eat",
     h1: "Restaurants on Main Street, North Myrtle Beach",
     desc: "Local restaurants, bars and treat shops on and near Main Street in North Myrtle Beach's Ocean Drive section: pizza, pancakes, seafood, shag bars and ice cream. Free map, no chains.",
     intro: "Main Street runs from Highway 17 down to the ocean in the Ocean Drive section of North Myrtle Beach, the home of shag dancing. These are the restaurants, bars and treat shops on our map along Main Street and just off it. We leave out the big national chains.",
@@ -1008,7 +1008,7 @@ const PAGES = [
   },
   {
     slug: "buffets-myrtle-beach",
-    title: "Myrtle Beach Buffets: Seafood Buffets & All-You-Can-Eat Crab Legs",
+    title: "Seafood Buffets Near Myrtle Beach: All-You-Can-Eat Crab Legs",
     h1: "Buffets in Myrtle Beach, including seafood buffets with crab legs",
     desc: "Local Myrtle Beach seafood buffets with all-you-can-eat crab legs, plus Asian, hibachi and Southern buffets. Prices from each restaurant's own website, map and hours.",
     intro: "Calabash-style seafood buffets are a Myrtle Beach tradition, and all-you-can-eat crab legs are the main draw. These are the local buffets on our map, with crab leg and price details taken from each restaurant's own website. Prices change by season, so check before you go. Last checked November 17, 2026.",
