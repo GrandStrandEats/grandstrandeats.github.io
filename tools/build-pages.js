@@ -788,7 +788,7 @@ const PAGES = [
     guide: [
       {h: "Where can I get a quick local lunch in Myrtle Beach?", p: [
         "<strong>For a quick, cheap lunch in Myrtle Beach, try barbecue at Little Pigs BBQ, Fullbelly BBQ or Simply Southern Smokehouse, tacos at Tu Taco, or soul food at Big Mike's Soul Food.</strong> All of them show one dollar sign on our map.",
-        "<strong>Burgers.</strong> Grumpy Monk does burgers and craft beer, and Thorny's Steakhouse & Saloon has burgers too.",
+        "<strong>Burgers.</strong> Grumpy Monk does burgers and craft beer.",
         "<strong>Lunch with a view.</strong> RipTydz Oceanfront Grille & Rooftop Bar serves burgers on a rooftop over the ocean.",
         "<strong>Breakfast that runs into lunch.</strong> Blueberry's Grill serves breakfast and lunch, so it's a good pick if your group can't agree on which meal it is.",
       ]},
@@ -1057,7 +1057,7 @@ const PAGES = [
         "<strong>For something different, try Rioz Brazilian Steakhouse.</strong> Gauchos bring skewers of beef, pork, lamb and poultry to your table. Rioz has locations in both Myrtle Beach and North Myrtle Beach.",
       ]},
       {h: "Where can I get a good steak in Myrtle Beach without spending a lot?", p: [
-        "<strong>Angelo's Steak & Pasta and Thorny's Steakhouse & Saloon show two dollar signs on our map, our mid price level.</strong> Angelo's cuts its steaks on site, serves them on a sizzling platter, and opens daily at 3 PM with an early-bird dinner buffet.",
+        "<strong>Angelo's Steak & Pasta shows two dollar signs on our map, our mid price level.</strong> Angelo's cuts its steaks on site, serves them on a sizzling platter, and opens daily at 3 PM with an early-bird dinner buffet.",
         "Seafood-and-steak spots like Drunken Jack's on the MarshWalk, Captain Archie's in Little River and Sara J's in Garden City are good picks when half the table wants seafood.",
       ]},
       {h: "Are there steakhouses in North Myrtle Beach and Little River?", p: [
