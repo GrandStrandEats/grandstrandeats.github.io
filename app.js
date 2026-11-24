@@ -198,6 +198,7 @@ function card(p, i) {
       <div class="status" style="color:var(--${st.cls})"><span class="dot" style="background:var(--${st.cls})"></span>${st.txt}</div>${p.v ? `<span class="chk">✓ Checked ${checked(p.v)}</span>` : ""}
       <div class="tags">${p.f ? `<span class="tag feat">⭐ Featured</span>` : ""}${p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
       <div class="acts">
+        ${!isDo && window.SPOT_SLUG && SPOT_SLUG[p.id] ? `<a class="more" href="spot/${SPOT_SLUG[p.id]}/">ℹ️ Details</a>` : ""}
         <a href="${menu}" target="_blank" rel="noopener">${isDo ? "🌐 Website" : "📖 Menu"}</a>
         <a href="${dir}" target="_blank" rel="noopener">🧭 Go</a>
         ${p.tel ? `<a href="tel:${p.tel}">📞 Call</a>` : ""}
@@ -228,6 +229,34 @@ function todoBox() {
     <div class="todo-f">Tours booked through GetYourGuide, hotels through Stay22. Affiliate links.</div></div>`;
 }
 
+// "Popular guides" box in the list (after the 14th card): the most-searched guides, seasonal first.
+const GUIDES_EAT = [
+  ["🎄", "Christmas lights & events", "christmas-lights-myrtle-beach"],
+  ...(new Date() < new Date("2026-11-27") ? [["🦃", "Open on Thanksgiving", "restaurants-open-thanksgiving-myrtle-beach"]] : []),
+  ["🌊", "On the water", "waterfront-restaurants-myrtle-beach"],
+  ["🦐", "Seafood", "seafood-restaurants-myrtle-beach"],
+  ["🦀", "Seafood buffets", "buffets-myrtle-beach"],
+  ["🥞", "Breakfast", "breakfast-myrtle-beach"],
+  ["🥪", "Lunch", "lunch-myrtle-beach"],
+  ["💸", "Cheap eats", "cheap-eats-myrtle-beach"],
+  ["🌿", "Murrells Inlet & MarshWalk", "murrells-inlet-restaurants"],
+  ["🏛", "Conway", "conway-sc-restaurants"],
+  ["📺", "Diners, Drive-Ins & Dives", "diners-drive-ins-and-dives-myrtle-beach"],
+];
+const GUIDES_DO = [
+  ["🎄", "Christmas lights & events", "christmas-lights-myrtle-beach"],
+  ["🆓", "Free things to do", "free-things-to-do-myrtle-beach"],
+  ["🧒", "With kids", "things-to-do-myrtle-beach-with-kids"],
+  ["☔", "Rainy day", "rainy-day-things-to-do-myrtle-beach"],
+  ["🎣", "Fishing piers", "myrtle-beach-fishing-piers"],
+  ["🎡", "All things to do", "things-to-do-myrtle-beach"],
+];
+function guidesBox() {
+  const g = state.mode === "do" ? GUIDES_DO : GUIDES_EAT;
+  return `<div class="todo guidebox"><div class="todo-h">Popular local guides</div>
+    <div class="todo-links">${g.map(([e, l, s]) => `<a href="${s}/">${e} ${l}</a>`).join("")}</div></div>`;
+}
+
 let shown = [];
 function render() {
   shown = DATA().filter(matches);
@@ -239,7 +268,7 @@ function render() {
   const list = $("list");
   list.innerHTML = (state.mode === "do" ? `<div class="note">🎡 New: ${THINGS.length} things to do on the Grand Strand, from free parks and piers to shows. Hours and prices change by season, so check the website before you go.</div>` : `<div class="note">🧪 Early version: ${PLACES.length} local Grand Strand spots. Locations are from OpenStreetMap; vibes, prices and hours are still being verified.</div>`) + `
     <div class="count"><span>${shown.length} ${state.mode === "do" ? "thing" : "spot"}${shown.length === 1 ? "" : "s"} match</span>${state.vibes.size || state.price || state.when !== "any" || state.q ? `<button class="iconbtn" id="clear">Clear</button>` : ""}</div>` +
-    (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + card(p)).join("") + (shown.length <= 6 ? todoBox() : "") + (state.q ? notListed(state.q) : "") : (state.q ? `<div class="empty" style="padding:22px 10px">“${esc(state.q)}” isn't on our map yet.${state.vibes.size || state.price || state.when !== "any" ? " Your filters are still on, so try Clear first." : ""}</div>` + notListed(state.q) : `<div class="empty">${state.vibes.has("saved") && !saved.size ? "Your favorites list is empty. Tap the 🤍 heart on any spot to add it, then give it your own star rating. Your list is saved on this phone." : "No matches. Try fewer vibes."}</div>`) + todoBox()) +
+    (shown.length ? shown.map((p, i) => (i === 6 ? todoBox() : "") + (i === 14 ? guidesBox() : "") + card(p, i)).join("") + (shown.length <= 6 ? todoBox() : "") + (shown.length <= 14 ? guidesBox() : "") + (state.q ? notListed(state.q) : "") : (state.q ? `<div class="empty" style="padding:22px 10px">“${esc(state.q)}” isn't on our map yet.${state.vibes.size || state.price || state.when !== "any" ? " Your filters are still on, so try Clear first." : ""}</div>` + notListed(state.q) : `<div class="empty">${state.vibes.has("saved") && !saved.size ? "Your favorites list is empty. Tap the 🤍 heart on any spot to add it, then give it your own star rating. Your list is saved on this phone." : "No matches. Try fewer vibes."}</div>`) + todoBox()) +
     `<div class="foot">Some links on Grand Strand Eats are affiliate links. If you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked ⭐ Featured may be paid placements; every other listing is free.<div class="guides">Closed, moved or wrong info? Tap ✏️ Fix on the listing, or <a href="${MSG("Update for Grand Strand Eats: ")}" target="_blank" rel="noopener">email us</a>.</div><div class="guides">Things to do: <a href="christmas-lights-myrtle-beach/">Christmas lights & holiday events</a> · <a href="things-to-do-myrtle-beach/">Things to do in Myrtle Beach</a> · <a href="free-things-to-do-myrtle-beach/">Free things to do</a> · <a href="things-to-do-myrtle-beach-with-kids/">With kids</a> · <a href="rainy-day-things-to-do-myrtle-beach/">Rainy day</a> · <a href="myrtle-beach-fishing-piers/">Fishing piers</a></div><div class="guides">Restaurant guides: <a href="restaurants-open-thanksgiving-myrtle-beach/">Open on Thanksgiving</a> · <a href="waterfront-restaurants-myrtle-beach/">Waterfront restaurants</a> · <a href="seafood-restaurants-myrtle-beach/">Seafood restaurants</a> · <a href="buffets-myrtle-beach/">Seafood buffets</a> · <a href="steakhouses-myrtle-beach/">Steakhouses</a> · <a href="breakfast-myrtle-beach/">Myrtle Beach breakfast</a> · <a href="murrells-inlet-restaurants/">Murrells Inlet &amp; MarshWalk</a> · <a href="north-myrtle-beach-restaurants/">North Myrtle Beach</a> · <a href="surfside-beach-restaurants/">Surfside Beach</a> · <a href="garden-city-restaurants/">Garden City</a> · <a href="pawleys-island-restaurants/">Pawleys Island &amp; Litchfield</a> · <a href="market-common-restaurants/">Market Common</a> · <a href="conway-sc-restaurants/">Conway</a> · <a href="romantic-restaurants-myrtle-beach/">Date night</a> · <a href="italian-restaurants-myrtle-beach/">Italian</a> · <a href="pizza-myrtle-beach/">Pizza</a> · <a href="mexican-restaurants-myrtle-beach/">Mexican</a> · <a href="live-music-myrtle-beach/">Live music</a> · <a href="lunch-myrtle-beach/">Lunch</a> · <a href="cheap-eats-myrtle-beach/">Cheap eats</a> · <a href="diners-drive-ins-and-dives-myrtle-beach/">Diners, Drive-Ins and Dives</a> · <a href="family-restaurants-myrtle-beach/">Kid-friendly</a> · <a href="grande-dunes-restaurants/">Grande Dunes</a> · <a href="broadway-at-the-beach-restaurants/">Broadway at the Beach</a> · <a href="barefoot-landing-restaurants/">Barefoot Landing</a> · <a href="main-street-north-myrtle-beach-restaurants/">Main Street NMB</a></div><div class="guides"><a href="about/">About</a> · <a href="privacy/">Privacy</a> · <a href="contact/">Contact</a></div></div>`;
   const c = $("clear"); if (c) c.onclick = clearAll;
 
@@ -322,4 +351,9 @@ if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catc
 
 setMode(state.mode);
 render();
+// "Food near me" links from guide and spot pages land on /?near: sort by distance right away.
+if (/[?&]near(&|=|$)/.test(location.search)) {
+  try { history.replaceState(null, "", location.pathname); } catch (e) {}
+  $("near").click();
+}
 setInterval(render, 60000); // keeps "open now" current

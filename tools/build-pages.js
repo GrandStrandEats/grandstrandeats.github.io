@@ -1218,10 +1218,32 @@ function jump(cfg) {
   j.push(["stay", "Where to stay"]);
   return `<nav class="jump" aria-label="Jump to"><b>Jump to:</b>${j.map(([id, l]) => `<a href="#${id}">${esc(l)}</a>`).join("")}</nav>`;
 }
-function likes(cfg) {
+function likes(cfg, title) {
   const slugs = [SEASONAL, ...(RELATED[cfg.slug] || [])].filter((x, i, a) => x !== cfg.slug && a.indexOf(x) === i);
   const list = slugs.map(x => PAGES.find(o => o.slug === x)).filter(Boolean).slice(0, 4);
-  return list.length ? `<section class="like"><h2>You might also like</h2><div>${list.map(o => `<a href="../${o.slug}/">${esc(o.h1)}<span>→</span></a>`).join("")}</div></section>` : "";
+  return list.length ? `<section class="like"><h2>${title || "You might also like"}</h2><div>${list.map(o => `<a href="../${o.slug}/">${esc(o.h1)}<span>→</span></a>`).join("")}</div></section>` : "";
+}
+
+// Engagement (2026-11-23): seasonal banner at the top, sticky "Near me / Map" bar, "Keep exploring" at the bottom.
+// Swap SEASON_TEXT with SEASONAL (NYE page after Christmas).
+const SEASON_TEXT = "🎄 Christmas lights & holiday events on the Grand Strand";
+const TODAY = new Date().toISOString().slice(0, 10);
+function banner(slug, up) {
+  if (slug === SEASONAL) return "";
+  const over = slug === "restaurants-open-thanksgiving-myrtle-beach" && TODAY > "2026-11-26";
+  return `<a class="season-b" href="${up}${SEASONAL}/">${over ? "Thanksgiving is over for this year. Next up: " : ""}${SEASON_TEXT}<span>→</span></a>`;
+}
+const BAR_CSS = `.season-b{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:14px 0 0;background:#fff4e8;color:#7a3b00;border:1.5px solid #ffcf9e;border-radius:14px;padding:10px 14px;font-weight:800;font-size:14px;text-decoration:none}.season-b span{font-size:16px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .season-b{background:#2b2016;color:#ffcf9e;border-color:#5a3a1c}}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+.bar a{flex:1;max-width:240px;text-align:center;font-weight:800;font-size:14.5px;text-decoration:none;border-radius:999px;padding:10px 12px;border:1.5px solid var(--brand);color:var(--brand)}.bar a.go{background:var(--brand);color:var(--brand-ink)}
+body{padding-bottom:76px}
+.keep p{margin:0}.keep .cta{margin:0 6px 8px 0}`;
+function bar(up, isDo) {
+  return `<nav class="bar" aria-label="Explore"><a class="go" href="${up}?near">📍 Food near me</a><a href="${up}${isDo ? "?do" : ""}">🗺 Full map</a></nav>`;
+}
+function keep(cfg) {
+  return `<section class="like keep" id="keep"><h2>Keep exploring</h2><p><a class="cta" href="../?near">📍 Restaurants near me</a><a class="cta" href="../">🗺 All 600+ spots on the map</a></p></section>${likes(cfg, "More guides you'll like")}`;
 }
 
 function page(cfg, spots) {
@@ -1284,12 +1306,14 @@ h3{margin:0;font-size:17px;letter-spacing:-.02em}
 .box.local p{font-size:15.5px;color:var(--ink);margin:0 0 10px}.box.local p a{font-size:inherit;border:0;padding:0;color:var(--brand);font-weight:700}.box.local .by{font-size:13px;color:var(--muted);font-style:italic;margin:0}
 .tips ul{margin:0;padding-left:20px}.tips li{font-size:14.5px;margin:5px 0}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+${BAR_CSS}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963548887313701" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="wrap">
 <header><a href="../"><img class="logo" src="../logo.jpg" alt="" width="32" height="32">Grand Strand Eats</a></header>
+${banner(cfg.slug, "../")}
 <h1>${esc(cfg.h1)}</h1>
 <p class="intro">${esc(cfg.intro)}</p>
 <a class="cta" href="../${cfg.kind === "do" ? "?do" : ""}">🗺 See them on the map</a>
@@ -1306,9 +1330,11 @@ ${cfg.faq ? `<section class="guide faq" id="faq"><h2>Common questions</h2>${cfg.
 <div class="note">Hours, prices and vibes change, and some listings are still being checked. Call ahead or check the ${cfg.kind === "do" ? "attraction" : "restaurant"}'s website before you go. Know a local spot we're missing? Tell us on our <a href="https://www.facebook.com/profile.php?id=61596237747958">Facebook page</a>.</div>
 <div class="box"><h2>${cfg.kind === "do" ? "Book tours, cruises & shows" : "After dinner: things to do on the Grand Strand"}</h2><div>${TODO.map(([e, label, q]) => `<a href="${GYG(q)}" target="_blank" rel="noopener sponsored">${e} ${label}</a>`).join("")}</div><p>Booked through GetYourGuide. Affiliate links.</p></div>
 <div class="box" id="stay"><h2>Where to stay</h2><div>${cfg.stay.map(a => `<a href="${STAY(a)}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${a}</a>`).join("")}</div><p>Hotel search through Stay22. Affiliate links.</p></div>
+${keep(cfg)}
 <div class="box"><h2>More Grand Strand guides</h2><div>${others}</div></div>
 <footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. Locations come from OpenStreetMap. Some links are affiliate links: if you book a tour, activity or stay through them, we may earn a small commission at no extra cost to you. Spots marked Featured in the app may be paid placements; every other listing is free. See a spot that has closed, moved or has wrong info? <a href="mailto:hello@grandstrandeats.com?subject=Update%20for%20Grand%20Strand%20Eats" target="_blank" rel="noopener" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it. Own a local restaurant? <a href="../for-restaurants/" style="color:var(--brand);font-weight:700">Get it featured</a>.${INFO_LINKS}</footer>
 </div>
+${bar("../", cfg.kind === "do")}
 </body>
 </html>
 `;
@@ -1440,6 +1466,7 @@ ${cfg.body}
 <div class="box"><h2>Grand Strand guides</h2><div>${PAGES.map(o => `<a href="../${o.slug}/">${esc(o.h1)}</a>`).join("")}</div></div>
 <footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants.${INFO_LINKS}</footer>
 </div>
+${bar("../")}
 </body>
 </html>
 `;
@@ -1494,6 +1521,9 @@ function spotPage(p) {
   const notes = spotNotes(p);
   const robots = notes.length ? "" : '<meta name="robots" content="noindex, follow">\n';
   const nearby = PLACES.filter(o => o !== p && SPOT_SLUG[o.id]).map(o => [dist(p, o), o]).sort((a, b) => a[0] - b[0]).slice(0, 6);
+  // "More <food> spots": same main food type, nearest first, not already in the nearby list.
+  const foodKey = p.c.split(" · ")[0].toLowerCase();
+  const similar = PLACES.filter(o => o !== p && SPOT_SLUG[o.id] && !nearby.some(([, x]) => x === o) && o.c.toLowerCase().split(" · ").includes(foodKey)).map(o => [dist(p, o), o]).sort((a, b) => a[0] - b[0]).slice(0, 4);
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => TAG_LABEL[t]);
   const priceWord = ["", "inexpensive", "moderately priced", "pricier", "high-end"][p.p || 0];
   const PROPER = /^(BBQ|[A-Z][a-z]+an|[A-Z][a-z]+ese|[A-Z][a-z]+ish|Greek|Thai|Cajun|Lowcountry|Tex|Mex|Latin|Asian|Creole|French|Southern|New|York|Philly|Chicago|Buffalo|Carolina|Hibachi|Poke|Ramen|Tapas|Pho|Gyro|Gyros)$/;
@@ -1536,6 +1566,7 @@ ${robots}${STYLE.replace("</style>", ".facts{background:var(--surface);border:1p
 <body>
 <div class="wrap">
 <header><a href="../../"><img class="logo" src="../../logo.jpg" alt="" width="32" height="32">Grand Strand Eats</a></header>
+${banner("", "../../")}
 <div class="crumb"><a href="../../">Map</a>${guides[0] ? ` › <a href="../../${guides[0].slug}/">${esc(guides[0].h1)}</a>` : ""}</div>
 <h1>${p.e} ${esc(p.n)}</h1>
 <p class="intro"><strong>${esc(lead)}</strong>${p.v ? ` We last checked this listing in ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}.` : ""}</p>
@@ -1551,6 +1582,7 @@ ${notes.length ? `<section class="guide"><h2>What to know about ${esc(p.n)}</h2>
 ${p.ph ? `<section class="guide"><h2>Photos from our visit</h2>${p.ph.map(([f, alt]) => `<figure style="margin:0 0 14px"><img src="../../img/spot/${f}" alt="${esc(alt)}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block"><figcaption style="font-size:13px;color:var(--muted);margin-top:4px">${esc(alt)}</figcaption></figure>`).join("")}</section>` : ""}
 <a class="cta" href="../../">🗺 See it on the map</a>
 ${nearby.length ? `<section class="guide"><h2>Restaurants near ${esc(p.n)}</h2><ol>${nearby.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
+${similar.length ? `<section class="guide"><h2>More ${esc(foodKey)} spots on the Grand Strand</h2><ol>${similar.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
 <section class="guide faq"><h2>Common questions</h2>${faq.map(([q, a]) => `<h3>${esc(q)}</h3><p>${esc(a)}</p>`).join("")}</section>
 ${p.f ? "" : `<p class="note">Own ${esc(p.n)}? <a href="../../for-restaurants/" style="color:var(--brand);font-weight:700">Get it featured on Grand Strand Eats</a>.</p>`}
 <div class="note">Hours and prices change, especially between seasons. Call ahead or check ${esc(p.n)}'s website before you go. See something wrong? <a href="mailto:hello@grandstrandeats.com?subject=${encodeURIComponent("Update for " + p.n)}" style="color:var(--brand);font-weight:700">Email us</a> and we will fix it.</div>
@@ -1558,11 +1590,14 @@ ${guides.length ? `<div class="box"><h2>Guides that include ${esc(p.n)}</h2><div
 <div class="box"><h2>Where to stay</h2><div><a href="${STAY(town(p))}" target="_blank" rel="noopener sponsored">🏨 Hotels in ${esc(town(p))}</a></div><p>Hotel search through Stay22. Affiliate link.</p></div>
 <footer>Grand Strand Eats is a free map of local Myrtle Beach and Grand Strand restaurants. We are not affiliated with ${esc(p.n)}. Some links are affiliate links: if you book a stay through them, we may earn a small commission at no extra cost to you.${INFO_LINKS.replace(/\.\.\//g, "../../")}</footer>
 </div>
+${bar("../../")}
 </body>
 </html>
 `;
 }
 
+// The app reads this to link each card to its /spot/ page.
+fs.writeFileSync(path.join(ROOT, "spots.js"), "// Built by tools/build-pages.js: place id -> /spot/<slug>/ page.\nwindow.SPOT_SLUG = " + JSON.stringify(SPOT_SLUG) + ";\n");
 let spotCount = 0, spotIndexed = 0;
 for (const p of PLACES) {
   if (!SPOT_SLUG[p.id]) continue;

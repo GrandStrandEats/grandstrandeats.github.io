@@ -96,6 +96,10 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 .todo-links{display:flex;flex-wrap:wrap;gap:6px}
 .todo-links a{font-size:12.5px;font-weight:800;text-decoration:none;color:var(--brand);border:1.5px solid var(--line);border-radius:10px;padding:5px 9px}
 .todo-f{font-size:11px;color:var(--muted);margin-top:8px}
+/* Engagement 2026-11-23: Near me is the #1 search, so it's the loudest button; Details opens the spot page. */
+#near{background:var(--brand);color:var(--brand-ink);border-color:var(--brand);font-weight:800;box-shadow:0 4px 14px rgba(14,124,134,.3)}
+.acts a.more{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.guidebox{border-style:solid;border-color:var(--line)}
 .modes{display:flex;margin-top:12px;max-width:520px;padding:4px;gap:4px;border:0;border-radius:16px;background:var(--chip)}.modes button{flex:1;padding:11px 8px;font-size:15.5px;border-radius:12px;color:var(--ink);white-space:nowrap}.modes button.on{box-shadow:var(--shadow)}
 .desc{font-size:13px;line-height:1.4;margin:0 0 6px}
 .guides{margin-top:8px;font-weight:600}.guides a{color:var(--brand);font-weight:800}
@@ -196,6 +200,7 @@ main{display:grid;grid-template-columns:420px 1fr;min-height:0}
 <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"></script>
 <script src="data.js"></script>
 <script src="todo.js"></script>
+<script src="spots.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
