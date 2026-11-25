@@ -1169,7 +1169,7 @@ function spot(p, note) {
   const meta = [p.area, p.c.replace(/ · /g, ", "), price(p), p.cost, p.v ? `✓ Checked ${MON[+p.v.slice(5, 7) - 1]} ${p.v.slice(0, 4)}` : ""].filter(Boolean).join(" · ");
   if (p.d) note = [p.d, p.hn, p.tel ? "📞 " + p.tel.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3") : ""].filter(Boolean).join(" · ");
   const tags = p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("");
-  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${SPOT_SLUG[p.id] && PLACES.includes(p) ? `<a href="../spot/${SPOT_SLUG[p.id]}/" style="color:inherit">${esc(p.n)}</a>` : esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}${nearby(p)}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
+  return `<li class="spot"><div class="em">${p.e}</div><div><h3>${SPOT_SLUG[p.id] && PLACES.includes(p) ? `<a href="../spot/${SPOT_SLUG[p.id]}/" style="color:inherit">${esc(p.n)}</a>` : esc(p.n)}</h3><div class="meta">${esc(meta)}</div>${note ? `<div class="hol">${esc(note)}</div>` : ""}${p.lp ? `<div class="hol">🙋 Locals' Pick: ${esc(p.lp.n)} always orders the ${esc(p.lp.o.replace(/ (.*)$/, ""))}</div>` : ""}${tags ? `<div class="tags">${tags}</div>` : ""}${nearby(p)}<div class="acts">${p.web ? `<a href="${esc(p.web)}" target="_blank" rel="noopener">Website</a>` : ""}<a href="${dir}" target="_blank" rel="noopener">Directions</a></div></div></li>`;
 }
 
 // "You might also like" box under each guide list: the seasonal page first, then hand-picked related guides.
@@ -1519,7 +1519,7 @@ function spotPage(p) {
   const hasAddr = /^\d/.test(addr);
   const guides = EAT_PAGES.filter(c => c.match(p));
   const notes = spotNotes(p);
-  const robots = notes.length ? "" : '<meta name="robots" content="noindex, follow">\n';
+  const robots = notes.length || p.lp ? "" : '<meta name="robots" content="noindex, follow">\n';
   const nearby = PLACES.filter(o => o !== p && SPOT_SLUG[o.id]).map(o => [dist(p, o), o]).sort((a, b) => a[0] - b[0]).slice(0, 6);
   // "More <food> spots": same main food type, nearest first, not already in the nearby list.
   const foodKey = p.c.split(" · ")[0].toLowerCase();
@@ -1579,7 +1579,7 @@ ${p.tel ? `<dt>Phone</dt><dd><a href="tel:${p.tel}" style="color:var(--brand);fo
 ${tags.length ? `<dt>Good for</dt><dd>${tags.join(", ")}</dd>` : ""}
 </dl>
 ${notes.length ? `<section class="guide"><h2>What to know about ${esc(p.n)}</h2>${notes.map(t => `<p>${esc(t)}</p>`).join("")}</section>` : ""}
-${p.ph ? `<section class="guide"><h2>Photos from our visit</h2>${p.ph.map(([f, alt]) => `<figure style="margin:0 0 14px"><img src="../../img/spot/${f}" alt="${esc(alt)}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block"><figcaption style="font-size:13px;color:var(--muted);margin-top:4px">${esc(alt)}</figcaption></figure>`).join("")}</section>` : ""}
+${p.lp ? `<section class="guide"><h2>🙋 Locals' Pick</h2><p><strong>${esc(p.lp.n)}, ${esc(p.lp.w)}, always orders the ${esc(p.lp.o)}.</strong></p><blockquote style="margin:0 0 14px;padding:10px 14px;border-left:4px solid var(--brand);background:var(--chip);border-radius:0 12px 12px 0;font-size:15px">“${esc(p.lp.q)}”<br><span style="font-size:13px;color:var(--muted)">— ${esc(p.lp.n)}, local</span></blockquote>${p.lp.ph ? `<figure style="margin:0 0 14px"><img src="../../img/spot/${p.lp.ph}" alt="${esc(p.lp.o + " at " + p.n + ", photo by " + p.lp.n)}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block"><figcaption style="font-size:13px;color:var(--muted);margin-top:4px">${esc(p.lp.o.replace(/ (.*)$/, ""))} at ${esc(p.n)}. Photo shared by ${esc(p.lp.n)}.</figcaption></figure>` : ""}<p style="font-size:14px">Got a favorite local spot? <a href="../../share-your-pick/" style="color:var(--brand);font-weight:700">Share your Local Pick</a>.</p></section>` : ""}${p.ph ? `<section class="guide"><h2>Photos from our visit</h2>${p.ph.map(([f, alt]) => `<figure style="margin:0 0 14px"><img src="../../img/spot/${f}" alt="${esc(alt)}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block"><figcaption style="font-size:13px;color:var(--muted);margin-top:4px">${esc(alt)}</figcaption></figure>`).join("")}</section>` : ""}
 <a class="cta" href="../../">🗺 See it on the map</a>
 ${nearby.length ? `<section class="guide"><h2>Restaurants near ${esc(p.n)}</h2><ol>${nearby.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
 ${similar.length ? `<section class="guide"><h2>More ${esc(foodKey)} spots on the Grand Strand</h2><ol>${similar.map(([km, o]) => spot(o, (km * 0.621).toFixed(1) + " miles away").replace(/\.\.\/spot\//g, "../")).join("\n")}</ol></section>` : ""}
@@ -1604,7 +1604,7 @@ for (const p of PLACES) {
   const dir = path.join(ROOT, "spot", SPOT_SLUG[p.id]);
   fs.mkdirSync(dir, {recursive: true});
   fs.writeFileSync(path.join(dir, "index.html"), spotPage(p));
-  if (spotNotes(p).length) { urls.push(SITE + "spot/" + SPOT_SLUG[p.id] + "/"); spotIndexed++; }
+  if (spotNotes(p).length || p.lp) { urls.push(SITE + "spot/" + SPOT_SLUG[p.id] + "/"); spotIndexed++; }
   spotCount++;
 }
 console.log("spot pages", spotCount, "indexed", spotIndexed, "noindex", spotCount - spotIndexed);

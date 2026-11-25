@@ -194,7 +194,7 @@ function card(p, i) {
     <div>
       <div class="name"><span>${p.n}</span><button class="heart" data-save="${p.id}" aria-label="${saved.has(p.id) ? "Remove from My Favorites" : "Add to My Favorites"}" title="${saved.has(p.id) ? "In My Favorites" : "Add to My Favorites"}">${saved.has(p.id) ? "❤️" : "🤍"}</button></div>${saved.has(p.id) ? stars(p.id) : ""}
       <div class="meta">${dist}${p.area} · ${p.c}${p.p ? ` · <b>${"$".repeat(p.p)}</b>` : ""}${p.cost ? ` · <b>${p.cost}</b>` : ""}</div>
-      ${p.d ? `<div class="desc">${p.d}</div>` : ""}
+      ${p.d ? `<div class="desc">${p.d}</div>` : ""}${p.lp ? `<div class="desc">🙋 Locals' Pick: ${p.lp.n} always orders the ${p.lp.o.replace(/ (.*)$/, "")}</div>` : ""}
       <div class="status" style="color:var(--${st.cls})"><span class="dot" style="background:var(--${st.cls})"></span>${st.txt}</div>${p.v ? `<span class="chk">✓ Checked ${checked(p.v)}</span>` : ""}
       <div class="tags">${p.f ? `<span class="tag feat">⭐ Featured</span>` : ""}${p.tags.filter(t => TAG_LABEL[t]).map(t => `<span class="tag">${TAG_LABEL[t]}</span>`).join("")}</div>
       <div class="acts">
