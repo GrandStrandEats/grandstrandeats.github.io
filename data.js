@@ -550,7 +550,7 @@ window.PLACES = [
   {id:603, n:"Poolside Bar And Grill", lat:33.79016, lon:-78.73648, area:"North Myrtle Beach", c:"Bar", e:"🍸", p:2, tags:[], h:null},
   {id:604, n:"El Cerro Grande", lat:33.37133, lon:-79.28035, area:"Georgetown", c:"Mexican", e:"🌮", p:1, tags:[], h:"Mo-Sa 11:00-22:00; Su 11:00-21:00", tel:"+18435463795"},
   {id:605, n:"Southern Pizza Company", lat:33.36952, lon:-79.27668, area:"Georgetown", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null, tel:"+18438338448"},
-  {id:606, n:"Gator Zone Sports Bar & Grill", lat:33.57375, lon:-79.02539, area:"Murrells Inlet", c:"Bar", e:"🍸", p:2, tags:["music"], h:null, tel:"+18436514964", web:"https://www.gatorzonemurrellsinlet.com/", v:"2026-11-21"},
+  {id:606, n:"Gator Zone Sports Bar & Grill", lat:33.57375, lon:-79.02539, area:"Murrells Inlet", c:"Bar", e:"🍸", p:2, tags:["music"], h:null, tel:"+18436514964", web:"https://www.gatorzonemurrellsinlet.com/", v:"2026-11-21", lp:{n:"Angela", w:"Murrells Inlet", o:"burger and pizza (the half-pound burger)", q:"Locally owned and operated by a service family."}},
   {id:607, n:"Basil's Pizza", lat:33.82846, lon:-78.64343, area:"North Myrtle Beach", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null},
   {id:608, n:"Nick's New York Pub and Grill", lat:33.82975, lon:-78.67888, area:"North Myrtle Beach", c:"American", e:"🍽", p:2, tags:[], h:"Mo-Sa 11:30-22:00", tel:"+18432497600"},
   {id:609, n:"Cuba Bar & Restaurante", lat:33.82794, lon:-78.68102, area:"North Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:[], h:null},
