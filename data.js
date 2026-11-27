@@ -472,7 +472,7 @@ window.PLACES = [
   {id:525, n:"Hot Stacks Cafe", lat:33.77977, lon:-78.79178, area:"North Myrtle Beach", c:"Breakfast · Pancake", e:"🍳", p:1, tags:["breakfast"], h:null},
   {id:526, n:"Ultimate California Pizza", lat:33.77644, lon:-78.79162, area:"North Myrtle Beach", c:"Pizza", e:"🍕", p:1, tags:["family"], h:null},
   {id:527, n:"Calli Baker's Firehouse & Grill", lat:33.77707, lon:-78.79086, area:"Myrtle Beach", c:"Pizza · Burgers", e:"🍕", p:1, tags:["family"], h:"Mo-Su 11:00-23:00", web:"https://www.callibakersfirehouse.com/", tel:"+18436920788", v:"2026-11-17"},
-  {id:528, n:"Dairy Hut", lat:33.82824, lon:-78.64237, area:"North Myrtle Beach", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:"Mo-Su 11:00-21:00", tel:"+18436636939"},
+  {id:528, n:"Dairy Hut", lat:33.82824, lon:-78.64237, area:"North Myrtle Beach", c:"Ice cream", e:"🍦", p:1, tags:["family"], h:null, tel:"+18436636939", hn:"Seasonal, March through November: Sun-Thu 11-9, Fri-Sat 11-10. Reopens in March", web:"https://boulineaus.com/our-businesses/dairy-hut/", v:"2026-11-27"},
   {id:529, n:"GiGi's Pizza", lat:33.68168, lon:-78.88976, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:1, tags:["family"], h:null},
   {id:530, n:"McAdoo's Cafe", lat:33.68153, lon:-78.88963, area:"Myrtle Beach", c:"Cafe", e:"☕", p:1, tags:["family"], h:null},
   {id:531, n:"Drafts Sports Bar & Grill", lat:33.68059, lon:-78.89144, area:"Myrtle Beach", c:"Restaurant", e:"🍽", p:2, tags:[], h:null},
