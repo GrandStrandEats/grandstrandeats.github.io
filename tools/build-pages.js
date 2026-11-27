@@ -447,7 +447,7 @@ const PAGES = [
         "<strong>Every town on the Grand Strand has at least one local pizza place, so start with the one closest to where you're staying.</strong> Summer traffic on Kings Highway and Highway 17 can turn a short pizza run into a long one.",
         "<strong>Myrtle Beach.</strong> Scottos Pizzeria, Marco Polo Pizzeria, Piana's Pizza, River Oaks Pizzeria, Pizza de Roma, Amici Pizza and Genova's Pizza & Pasta are all local pizza shops. Hot Tomato and Ducati's Pizza Trattoria are sit-down Italian spots that also do pizza.",
         "<strong>North Myrtle Beach.</strong> Daniello's Pizzeria & Pub, North Beach Pizza Co., Georgio's Famous Pizza, The Main Slice, Basil's Pizza and Crave Italian Oven & Bar. Papa's Pizza is just up the road in Little River.",
-        "<strong>Surfside Beach and Garden City.</strong> Pizza Hyena, Anthony's Pan Pizza and Casa Calamari are in Surfside Beach. Francesco's Pizza Kitchen, Aromas, Milardo's Pizzeria and Franco's Pizza are in Garden City.",
+        "<strong>Surfside Beach and Garden City.</strong> Pizza Hyena and Casa Calamari are in Surfside Beach. Francesco's Pizza Kitchen, Aromas, Milardo's Pizzeria and Franco's Pizza are in Garden City.",
         "<strong>Murrells Inlet and Pawleys Island.</strong> Danny's Pizza and a second Francesco's Pizza Kitchen are in Murrells Inlet. DeRoMa's Pizzeria, Rosie's Pizzeria and South End Bistro are in Pawleys Island.",
         "<strong>The Market Common and Conway.</strong> Mama Mia Pizzeria and Ultimate California Pizza are at the Market Common. Anto's Pizza Romana and Chantis are in Conway.",
       ]},
@@ -472,7 +472,7 @@ const PAGES = [
     faq: [
       ["Where can I get good local pizza in Myrtle Beach?", "Local pizza shops in Myrtle Beach include Scottos Pizzeria, Marco Polo Pizzeria, Piana's Pizza, River Oaks Pizzeria, Pizza de Roma and Amici Pizza. For a sit-down meal with pizza on the menu, try Hot Tomato or Ducati's Pizza Trattoria."],
       ["Is there local pizza in North Myrtle Beach?", "Yes. Daniello's Pizzeria & Pub, North Beach Pizza Co., Georgio's Famous Pizza, The Main Slice, Basil's Pizza and Crave Italian Oven & Bar are all in North Myrtle Beach."],
-      ["Where can I get pizza in Surfside Beach or Garden City?", "In Surfside Beach, try Pizza Hyena, Anthony's Pan Pizza or Casa Calamari. In Garden City, try Francesco's Pizza Kitchen, Aromas, Milardo's Pizzeria or Franco's Pizza."],
+      ["Where can I get pizza in Surfside Beach or Garden City?", "In Surfside Beach, try Pizza Hyena or Casa Calamari. In Garden City, try Francesco's Pizza Kitchen, Aromas, Milardo's Pizzeria or Franco's Pizza."],
     ],
     match: p => /pizza/i.test(p.c),
     stay: ["Myrtle Beach", "North Myrtle Beach", "Surfside Beach"],
