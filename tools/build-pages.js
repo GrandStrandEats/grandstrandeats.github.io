@@ -734,6 +734,14 @@ const PAGES = [
         "<strong>With kids.</strong> Anto's Pizza Romana, Chantis and River City Cafe are marked family-friendly, and Stella's Homemade Ice Cream is the place for dessert.",
         "Several Conway spots close on Sunday or Monday. Open the map to see today's hours before you go.",
       ]},
+      {h: "Which Conway restaurants are open on Sunday and Monday?", p: [
+        "<strong>Leone's, Whitaker's and Chantis list hours on both Sunday and Monday on their own websites.</strong> Leone's lists 11 AM to 3 PM and 4 to 9 PM every day. Whitaker's lists 11 AM to 10 PM seven days a week, with happy hour weekdays from 4 to 7 PM. Chantis lists 11 AM to 9 PM Sunday through Thursday and 11 AM to 10 PM Friday and Saturday, and says it closes on Thanksgiving and December 24 and 25.",
+        "<strong>Sunday only.</strong> Trestle's cafe lists 10 AM to 2 PM on Sunday. Bonfire Taqueria lists Wednesday through Sunday hours, with brunch Saturday and Sunday from 11 AM to 3 PM, and no Monday or Tuesday hours.",
+        "<strong>Closed both days.</strong> Rivertown Bistro is closed Sunday and Monday. It lists lunch Tuesday through Saturday from 11:30 AM to 3 PM and dinner from 5 to 9:30 PM.",
+      ]},
+      {h: "Do I need a reservation to eat in Conway?", p: [
+        "<strong>Not at Chantis, which says reservations are not necessary but welcome, and recommends making one ahead of time.</strong> For any other spot, call before you go if you have a big group or a game weekend.",
+      ]},
       {h: "What is Conway, SC like?", p: [
         "<strong>Conway is an old river town and the county seat of Horry County, about 20 minutes inland from Myrtle Beach.</strong> Big live oaks shade the streets, and the historic downtown sits right by the Waccamaw River.",
         "Downtown restaurants are mostly local: cafés, Southern cooking, bars, pizza and a few nicer dinner spots, many of them in older storefronts. Out along Highway 501 and near Coastal Carolina University you'll find more casual places and student favorites.",
