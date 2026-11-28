@@ -253,12 +253,24 @@ const PAGES = [
       {h: "What makes Murrells Inlet restaurants different?", p: [
         "<strong>Murrells Inlet is an old fishing village where most restaurants are local, family-run places with decks over the water, not chains.</strong> It sits about 15 miles south of Myrtle Beach. The town wraps around a saltwater inlet and marsh, and boats still head out from here for fishing charters and deep-sea trips. That's a big part of why it calls itself the seafood capital of South Carolina.",
         "Most of the restaurants sit along Business 17, which runs right beside the inlet. You won't find big resort hotels or a strip of chain restaurants here. It's mostly local, family-run places, and a lot of them have decks looking out over the water.",
-        "<strong>The MarshWalk</strong> is the heart of it all. It's a wooden boardwalk along the marsh, lined with restaurants and bars. Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and The Claw House all open onto it, so you can walk from one to the next. On warm evenings there's often live music, and it's a fun place to watch the sunset and the boats coming in.",
+        "<strong>The MarshWalk</strong> is the heart of it all. It's a half-mile wooden boardwalk along the saltwater estuary, lined with restaurants and bars. The MarshWalk's own website lists Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon, The Claw House, Wicked Tuna and Bovine's, so you can walk from one to the next. On warm evenings there's often live music, and it's a fun place to watch the sunset and the boats coming in.",
       ]},
       {h: "Where else can I eat in Murrells Inlet besides the MarshWalk?", p: [
-        "<strong>Wicked Tuna, The Claw House and Hot Fish Club all sit on the same water just off the boardwalk.</strong> More of the inlet's best-known seafood spots sit just off the boardwalk on the same stretch of water. Wicked Tuna, The Claw House and Hot Fish Club all have water views, and Wicked Tuna and Hot Fish Club are good picks for a date night.",
-        "For a plain, roll-up-your-sleeves seafood meal, try Crab Daddy's Seafood or Inlet Crab House & Raw Bar. Harvest, J Peters Grill & Bar and Inlet Prohibition Company are a few more local options along the main road.",
+        "<strong>Hot Fish Club, Crab Daddy's Seafood and Inlet Crab House & Raw Bar are well-known inlet seafood spots that are not on the MarshWalk's restaurant list.</strong> Hot Fish Club has water views and is a good pick for a date night.",
+        "For a plain, roll-up-your-sleeves seafood meal, try Crab Daddy's or Inlet Crab House. Harvest, J Peters Grill & Bar and Inlet Prohibition Company are a few more local options along the main road.",
         "Not every meal here has to be seafood. There's O'Keefe's Irish Pub, River City Cafe for burgers, and Southern buffet cooking at Judy Boone's. Carolina Food Park brings in a rotating lineup of food trucks. Suck Bang Blow is a well-known biker bar, and it gets packed during bike rally weeks.",
+      ]},
+      {h: "What hours are Murrells Inlet restaurants open?", p: [
+        "<strong>Creek Ratz and Drunken Jack's list hours from 11 AM every day, while Hot Fish Club opens at 4 PM and is closed Mondays.</strong> These hours come from each restaurant's own website.",
+        "<strong>Creek Ratz</strong> lists 11 AM to 10 PM Sunday through Thursday and 11 AM to 11 PM Friday and Saturday. <strong>Drunken Jack's</strong> lists 11 AM to 9 PM, and until 9:30 PM Friday and Saturday.",
+        "<strong>Hot Fish Club</strong> lists 4 to 9 PM Tuesday through Thursday and Sunday, and 4 PM to 1:30 AM Friday and Saturday. <strong>Crab Daddy's</strong> lists 2:30 to 10 PM Monday through Thursday, noon to 10:30 PM Friday and Saturday, and noon to 10 PM Sunday. <strong>Inlet Crab House</strong> lists 11:30 AM to 9 PM Monday through Saturday and is closed Sunday.",
+      ]},
+      {h: "Which Murrells Inlet restaurants take reservations or have a kids menu?", p: [
+        "<strong>Hot Fish Club takes reservations by phone or OpenTable, and Crab Daddy's takes them by phone or online.</strong>",
+        "<strong>With kids or for outdoor seating,</strong> Creek Ratz lists a kids' menu, plus indoor and outdoor dining and bars overlooking the marsh.",
+      ]},
+      {h: "What is happening on the MarshWalk at Christmas?", p: [
+        "<strong>The MarshWalk's Wonderland of Lights runs November 27 through December 31, 2026, with free admission and lights from 5 PM nightly.</strong> The MarshWalk website also announces Santa's Village on Fridays, Saturdays and Sundays through December 20, from 5 to 9 PM.",
       ]},
       {h: "How far is Murrells Inlet from Myrtle Beach, and when should I go?", p: [
         "<strong>It's about a 25 to 30 minute drive south on Highway 17, and spring and fall weeknights are the easiest time to get a table.</strong> Expect it to take longer on summer weekends. From Garden City and Surfside Beach it's only a few minutes.",
@@ -275,7 +287,7 @@ const PAGES = [
     ],
     faq: [
       ["Is Murrells Inlet worth the drive from Myrtle Beach?", "Yes, if you like seafood and water views. It's about 25 to 30 minutes south, and it's mostly local, family-run restaurants instead of chains. The MarshWalk lets you try more than one spot in a single night."],
-      ["Where is the Murrells Inlet MarshWalk?", "It runs along the marsh side of Business 17 in Murrells Inlet. Restaurants like Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon and The Claw House open right onto the boardwalk."],
+      ["Where is the Murrells Inlet MarshWalk?", "It runs along the marsh side of Business 17 in Murrells Inlet. Restaurants like Drunken Jack's, Wahoo's Fish House, Creek Ratz, Dead Dog Saloon, The Claw House and Wicked Tuna are right on the boardwalk."],
       ["Is the MarshWalk good for kids?", "Yes, especially earlier in the evening. The boardwalk is free to walk, and family-friendly spots like Creek Ratz and Drunken Jack's welcome kids. Later at night the bars get louder with live music."],
     ],
     match: p => p.area === "Murrells Inlet" || p.area === "MarshWalk",
