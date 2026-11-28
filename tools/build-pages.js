@@ -412,7 +412,7 @@ const PAGES = [
         "<strong>A water view at sunset.</strong> Sea Captain's House sits right on the ocean in Myrtle Beach. Gulfstream Cafe in Garden City looks out over the inlet. Wicked Tuna, Wahoo's Fish House and Hot Fish Club are all in Murrells Inlet, and Clark's Seafood and Chophouse is on the water in Little River. Joe's Bar & Grill in North Myrtle Beach is another water-view pick.",
         "<strong>A dressy, special-occasion dinner.</strong> Aspen Grille, Thoroughbreds, SeaBlue Restaurant and Wine Bar and 21 Main Prime Steakhouse are the most upscale spots on this list, with prices to match. Flamingo Grill and Hook and Barrel are good for steak and seafood in a nice room.",
         "<strong>Italian.</strong> Toscana Italian Kitchen and Bar, Villa Romana, Travinia Italian Kitchen, Villa Tuscanna, Benny's Trattoria and Angelo's Steak & Pasta all made our date-night list.",
-        "<strong>Something a little different.</strong> Rioz Brazilian Steakhouse carves meat at your table. Co Sushi is fun for a more relaxed date, Bistro90 is another good North Myrtle Beach choice, and Heirloom Bistro works well for a brunch date.",
+        "<strong>Something a little different.</strong> Rioz Brazilian Steakhouse carves meat at your table. Co Sushi is fun for a more relaxed date, and Bistro90 is another good North Myrtle Beach choice.",
       ]},
       {h: "How do I plan a special date night in Myrtle Beach?", p: [
         "<strong>Reserve early, especially for summer weekends and around Valentine's Day, and tell the restaurant if it's a birthday, anniversary or proposal.</strong> If a place doesn't take reservations, go early.",
@@ -839,7 +839,7 @@ const PAGES = [
       ]},
       {h: "What are the best restaurants near Grande Dunes?", p: [
         "<strong>For a nice dinner near Grande Dunes, Hook and Barrel is the closest sit-down seafood spot on our date-night list. For something casual, Liberty Tap Room is a brewpub with a big menu, and Blueberry's Grill is the breakfast and lunch pick.</strong>",
-        "<strong>Brunch.</strong> Heirloom Bistro does Southern cooking and brunch, and Mimosa Restaurant is a brunch spot a little farther south.",
+        "<strong>Brunch.</strong> Mimosa Restaurant is a brunch spot a little farther south.",
         "<strong>With kids.</strong> Pirate's Voyage Dinner & Show is just up Kings Highway. Ducati's Pizza Trattoria does pizza and Italian.",
         "<strong>Other cuisines nearby.</strong> Our map also lists Opa Opa Taverna (Greek), Peno Mediterranean Grill, Gios Italian Kitchen and Lombardo's Italian Restaurant within about a mile.",
       ]},
@@ -855,8 +855,8 @@ const PAGES = [
     ],
     faq: [
       ["Is it Grand Dunes or Grande Dunes?", "The official name is Grande Dunes, with an e, but lots of people search for Grand Dunes. It's the same place: a resort area in north Myrtle Beach between the ocean and the Intracoastal Waterway."],
-      ["What restaurants are near Grande Dunes in Myrtle Beach?", "Local spots close by include Hook and Barrel for seafood, Liberty Tap Room for a casual brewpub dinner, Blueberry's Grill for breakfast and lunch, Heirloom Bistro for brunch, and Pirate's Voyage Dinner & Show for families."],
-      ["Where can I get breakfast near Grande Dunes?", "Blueberry's Grill serves breakfast and lunch, and Heirloom Bistro and Mimosa Restaurant do brunch. See our breakfast guide for more."],
+      ["What restaurants are near Grande Dunes in Myrtle Beach?", "Local spots close by include Hook and Barrel for seafood, Liberty Tap Room for a casual brewpub dinner, Blueberry's Grill for breakfast and lunch, and Pirate's Voyage Dinner & Show for families."],
+      ["Where can I get breakfast near Grande Dunes?", "Blueberry's Grill serves breakfast and lunch, and Mimosa Restaurant does brunch. See our breakfast guide for more."],
     ],
     match: p => p.area === "Myrtle Beach" && near(p, 33.760, -78.812, 1.6),
     stay: ["Myrtle Beach"],
