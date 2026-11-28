@@ -216,6 +216,15 @@ const PAGES = [
         "<strong>Blueberry's Grill and Mimosa Restaurant are good local picks, and Sea Captain's House serves breakfast with an ocean view.</strong> For something more Southern, look for biscuits and gravy, a side of grits, country ham, and shrimp and grits on brunch menus. Blueberry's Grill is a popular local breakfast and lunch spot, and Mimosa Restaurant is a good pick when you want brunch with a mimosa to match the name.",
         "Want breakfast with an ocean view? Sea Captain's House serves breakfast in its oceanfront dining room, and it's one of the few places where you can watch the waves over a plate of eggs.",
       ]},
+      {h: "What time do Myrtle Beach breakfast spots open and close?", p: [
+        "<strong>Pan American Pancake & Omelette House lists 6 AM to 1:30 PM daily, and Donald's Pancake House and Mimosa Restaurant list 7 AM to 2 PM seven days a week.</strong> Those hours are from each restaurant's own website.",
+        "<strong>Sea Captain's House</strong> lists breakfast from 7 to 10:30 AM and says its hours may vary by season. This winter it lists closures December 24 to 26, and January 4 to 10 for renovations.",
+        "<strong>Conch Cafe</strong> in Garden City says it is closed for the season and will see guests in 2027.",
+      ]},
+      {h: "Which breakfast spots take a waitlist or reservations, or have outdoor seating?", p: [
+        "<strong>Sea Captain's House takes reservations online, and Blueberry's Grill has a Join the Waitlist link on its website.</strong> Sea Captain's House also lists a children's menu.",
+        "For fresh air, Mimosa Restaurant describes large outdoor spaces and an indoor and outdoor bar, less than half a mile from the beach.",
+      ]},
       {h: "Where can I get coffee before the beach in Myrtle Beach?", p: [
         "<strong>Local coffee shops like Grand Strand Coffee and HiFi Coffeebar are good for a latte and a pastry before the beach.</strong> They're a nice pick if you're not a big-breakfast person. Check their hours before you go, since some open later in the morning.",
       ]},
